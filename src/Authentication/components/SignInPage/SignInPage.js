@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {MainPageContainer,SignInForm,Title} from './styledComponents';
+import './signinPage.css';
 import {Footer,Link,ButtonTextLabel} from '../../common/styledComponents';
 import strings from '../../../Common/i18n/strings.json';
 import {Logo} from '../../../Common/components/Logo';
@@ -19,7 +20,7 @@ class SignInPage extends Component {
                     <InputElementWithLabel label={username} value={userName} onChange={onChangeUsername}/>
                     <InputElementWithLabel label={password} value={pwd} onChange={onChangePassword}/>
                     <Button onClick={onClickSignIn} buttonName={signup}
-                            className={'signupButtonStyling'} textLabel={ButtonTextLabel}
+                            className={'signinButtonStyling'} textLabel={ButtonTextLabel}
                         />
                     <Footer>{haveAnAccount}
                         <Link>{` ${signUplink}`}</Link>

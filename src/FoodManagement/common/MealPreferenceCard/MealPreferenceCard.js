@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {CardLayout,Header,ButtonTextLabel} from './styledComponents';
+import {CardLayout,Header,ButtonTextLabel,TitleBox,FoodType,FoodTimigs} from './styledComponents';
 import './MealPreferenceCard.css'
 import {Button} from '../../../Common/components/Button';
 import strings from '../../../Common/i18n/strings.json';
@@ -16,6 +16,11 @@ class MealPreferenceCard extends Component {
             <CardLayout>
                 <Header>
                     <IconHolder svg={svg}/>
+                    <TitleBox>
+                        <FoodType>{`Breakfast`}</FoodType>
+                        <FoodTimigs>{`7:00 - 9:00`}</FoodTimigs>
+                        
+                    </TitleBox>
                 </Header>
                 <Button buttonName={editPreference} className={`button-styling`} 
                 onClickFunction={this.onClick} textLabel={ButtonTextLabel}/>

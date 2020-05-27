@@ -15,4 +15,7 @@ const Icon = styled.img`
     height: 20px;
     object-fit: contain;
 `
-export {IconLayout,Icon}
+const TitleBox =styled.div`
+` 
+
+export {IconLayout,Icon,TitleBox}
