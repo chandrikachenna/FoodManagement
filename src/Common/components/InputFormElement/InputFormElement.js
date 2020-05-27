@@ -3,8 +3,9 @@ import {InputElement} from './styledComponents';
 
 class InputFormElement extends Component {
     render() {
+        const {value,onClick}=this.props;
         return (
-                <InputElement />
+                <InputElement  value={value} onClick={onClick}/>
         );
     }
 }

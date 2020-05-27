@@ -7,7 +7,7 @@ const MainPageContainer = styled.div`
     ${tw`flex justify-center items-center `}
     background-color:#f1f7ff;
 `
-const SignInForm = styled.form`
+const SignInForm = styled.div`
     ${tw`flex flex-col justify-around items-center`}
     margin:168px 452px;
     padding-top:50px;
