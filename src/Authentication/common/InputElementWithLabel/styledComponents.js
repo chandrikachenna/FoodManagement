@@ -6,7 +6,7 @@ const Div = styled.div`
     ${tw`flex flex-col items-start`}
 `
 const MessageBox=styled.span`
-    height:30px;
+    height:15px;
 `
 
 export {Div,MessageBox}
