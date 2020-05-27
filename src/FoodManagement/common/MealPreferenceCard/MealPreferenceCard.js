@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {CardLayout} from './styledComponents';
-import {SetPreferenceButton} from '../../../Common/components/SetPreferenceButton';
+import {CardLayout,ButtonTextLabel} from './styledComponents';
+import './MealPreferenceCard.css'
+import {Button} from '../../../Common/components/Button';
 import strings from '../../../Common/i18n/strings.json';
 
 class MealPreferenceCard extends Component {
@@ -8,10 +9,11 @@ class MealPreferenceCard extends Component {
 
     }
     render() {
-        const {foodManagement}=strings
+        const {setPreference}=strings.foodManagement
         return (
             <CardLayout>
-                <SetPreferenceButton name={foodManagement.setPreference} onClick={this.onClick}/>
+                <Button buttonName={setPreference} className={`button-styling`} 
+                onClickFunction={this.onClick} textLabel={ButtonTextLabel}/>
             </CardLayout>
         );
     }

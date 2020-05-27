@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
+import {COLORS} from '../../../Common/theme/Colors';
 import {Typo32DarkBlueGreyRubikRegular} from '../../../Common/styleGuide/Typo';
 
 const MainPageContainer = styled.div`
-    ${tw`flex justify-center items-center min-h-screen`}
+    ${tw`flex justify-center items-center `}
     background-color:#f1f7ff;
 `
-const SignupForm = styled.div`
+const SignInForm = styled.form`
     ${tw`flex flex-col justify-around items-center`}
     margin:168px 452px;
     padding-top:50px;
@@ -14,14 +15,8 @@ const SignupForm = styled.div`
     padding-left:40px;
     padding-right:40px;
     border-radius: 8px;
-    background-color:#ffffff;
+    background-color: ${COLORS.white};
+    
 `
-const IBHUBSLogo = styled.img`
-    width: 90px;    
-    height: 90px;
-    object-fit: contain;
-`
-
 const Title = styled(Typo32DarkBlueGreyRubikRegular)``
-
-export {MainPageContainer,SignupForm,IBHUBSLogo,Title}
+export {MainPageContainer,SignInForm,Title}

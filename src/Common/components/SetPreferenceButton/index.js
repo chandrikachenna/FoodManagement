@@ -1,1 +1,0 @@
-export {SetPreferenceButton} from './SetPreferenceButton';

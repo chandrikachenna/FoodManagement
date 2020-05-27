@@ -1,7 +1,7 @@
 import React from 'react';
-import {MainPageContainer,SignupForm} from './styledComponent';
+import {MainPageContainer,SignupForm,Title} from './styledComponent';
 import './signupPage.css';
-import {Typo32DarkBlueGreyRubikRegular,Typo14DarkBlueGreyHKGroteskRegular} from '../../../Common/styleGuide/Typo';
+import {Footer,Link,ButtonTextLabel} from '../../common/styledComponents';
 import strings from '../../../Common/i18n/strings.json';
 import {Logo} from '../../../Common/components/Logo';
 import {Button} from '../../../Common/components/Button';
@@ -12,23 +12,21 @@ class SignupPage extends React.Component{
 
     }
     render(){
-        const {signUpTitle,username,password,confirmPassword,signup,haveAnAccount}=strings.signUpPage
+        const {signUpTitle,username,password,confirmPassword,signup,haveAnAccount,login}=strings.authentication
         return(
                 <MainPageContainer>
                     <SignupForm>
                         <Logo />
-                        <Typo32DarkBlueGreyRubikRegular>
-                            {signUpTitle}
-                        </Typo32DarkBlueGreyRubikRegular>
+                        <Title>{signUpTitle}</Title>
                         <InputElementWithLabel label={username}/>
                         <InputElementWithLabel label={password}/>
                         <InputElementWithLabel label={confirmPassword}/>
                         <Button onClick={this.onClick} buttonName={signup}
-                            className={'signupButtonStyling'}
+                            className={'signupButtonStyling'} textLabel={ButtonTextLabel}
                         />
-                        <Typo14DarkBlueGreyHKGroteskRegular>
-                            {haveAnAccount}
-                        </Typo14DarkBlueGreyHKGroteskRegular>
+                        <Footer>{haveAnAccount}
+                            <Link>{` ${login}`}</Link>
+                        </Footer>
                     </SignupForm>
                 </MainPageContainer>
             );

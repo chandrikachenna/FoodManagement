@@ -1,14 +1,16 @@
 {
-    "signUpPage":{
+    "authentication":{
         "signUpTitle":"Hi there, please sign up",
         "username":"USER NAME",
         "password":"PASSWORD",
         "confirmPassword":"CONFIRM PASSWORD",
         "signup":"SIGNUP",
-        "haveAnAccount":"Already have an account",
+        "haveAnAccount":"Already have an account?",
         "login":"Log in",
         "passwordWeak":"Weak",
-        "passwordStrong":"Strong"
+        "passwordStrong":"Strong",
+        "signUplink":"SignUp",
+        "notAUSer":"Don't have an account?"
     },
     "foodManagement":{
         "home":"Home",
