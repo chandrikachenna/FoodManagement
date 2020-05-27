@@ -8,7 +8,8 @@ import {InputElementWithLabel} from '../../common/InputElementWithLabel';
 
 class SignInPage extends Component {
     render() {
-        const {signUpTitle,username,password,confirmPassword,signup,haveAnAccount,signUplink,notAUSer}=strings.authentication
+        // const {username,password,onChangeUsername,onChangePassword,onClickSignIn}=this.props;
+        const {signUpTitle,username,password,signup,haveAnAccount,signUplink,notAUSer}=strings.authentication
         return (
             <MainPageContainer>
                 <SignInForm>
