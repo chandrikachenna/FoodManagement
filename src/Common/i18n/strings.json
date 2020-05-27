@@ -1,0 +1,21 @@
+{
+    "signUpPage":{
+        "signUpTitle":"Hi there, please sign up",
+        "username":"USER NAME",
+        "password":"PASSWORD",
+        "confirmPassword":"CONFIRM PASSWORD",
+        "signup":"SIGNUP",
+        "haveAnAccount":"Already have an account",
+        "login":"Log in",
+        "passwordWeak":"Weak",
+        "passwordStrong":"Strong"
+    },
+    "foodManagement":{
+        "home":"Home",
+        "weeklyMenu":"WeeklyMenu",
+        "profile":"Profile",
+
+
+        "setPreference":"Set Preference"
+    }
+}

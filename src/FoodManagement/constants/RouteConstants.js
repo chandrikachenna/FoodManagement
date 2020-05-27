@@ -1,0 +1,1 @@
+export const SMART_FOOD_MANAGEMENT_PATH = "/food-management/home";

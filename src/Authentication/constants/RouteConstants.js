@@ -1,0 +1,1 @@
+export const SIGN_UP_PATH = "/food-management/sign-up";
