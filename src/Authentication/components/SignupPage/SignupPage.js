@@ -3,9 +3,9 @@ import {MainPageContainer,SignupForm} from './styledComponent';
 import './signupPage.css';
 import {Typo32DarkBlueGreyRubikRegular,Typo14DarkBlueGreyHKGroteskRegular} from '../../../Common/styleGuide/Typo';
 import strings from '../../../Common/i18n/strings.json';
-import {InputFormElementWithLabel} from '../../../Common/components/InputFormElementWithLabel';
 import {Logo} from '../../../Common/components/Logo';
 import {Button} from '../../../Common/components/Button';
+import {InputElementWithLabel} from '../../common/InputElementWithLabel';
 
 class SignupPage extends React.Component{
     onClick=()=>{
@@ -20,9 +20,9 @@ class SignupPage extends React.Component{
                         <Typo32DarkBlueGreyRubikRegular>
                             {signUpTitle}
                         </Typo32DarkBlueGreyRubikRegular>
-                        <InputFormElementWithLabel label={username}/>
-                        <InputFormElementWithLabel label={password}/>
-                        <InputFormElementWithLabel label={confirmPassword}/>
+                        <InputElementWithLabel label={username}/>
+                        <InputElementWithLabel label={password}/>
+                        <InputElementWithLabel label={confirmPassword}/>
                         <Button onClick={this.onClick} buttonName={signup}
                             className={'signupButtonStyling'}
                         />

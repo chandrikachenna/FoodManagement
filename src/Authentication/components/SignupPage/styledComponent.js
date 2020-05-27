@@ -6,12 +6,12 @@ const MainPageContainer = styled.div`
     background-color:#f1f7ff;
 `
 const SignupForm = styled.div`
-    ${tw`flex flex-col justify-between items-center`}
+    ${tw`flex flex-col justify-around items-center`}
     width: 536px;
     height: 687px;
     margin:168px 452px;
-    padding-top:70px;
-    padding-bottom:200px;
+    padding-top:50px;
+    padding-bottom:70px;
     border-radius: 8px;
     background-color:#ffffff;
 `
