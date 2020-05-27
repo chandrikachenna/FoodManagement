@@ -6,22 +6,20 @@ import HomePage from './components/HomePage'
 import Page1 from './components/Page1'
 
 import authRoutes from './Authentication/routes';
-import authStores from './Authentication/stores';
-import foodManagementRotes from './FoodManagement/routes';
+import authStore from './Authentication/stores';
+import foodManagementRoutes from './FoodManagement/routes';
 
 import "./App.css";
-
-
 
 @observer
 class App extends React.Component{
   render(){
     return(
-      <Provider {...authStores}>
+      <Provider {...authStore} >
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               {authRoutes}
-              {foodManagementRotes}
+              {foodManagementRoutes}
               <Route exact path="/page-1">
                 <Page1 />
               </Route>

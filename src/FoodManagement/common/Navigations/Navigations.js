@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {Typo20DarkBlueGreyHKGroteskMedium} from '../../../Common/styleGuide/Typo';
+import {Text} from './styledComponents';
 
 class Navigations extends Component {
     render() {
         const {navigator,onClick}=this.props;
         return (
-            <Typo20DarkBlueGreyHKGroteskMedium onClick={onClick}>
+            <Text onClick={onClick}>
                 {navigator}
-            </Typo20DarkBlueGreyHKGroteskMedium>
+            </Text>
         );
     }
 }

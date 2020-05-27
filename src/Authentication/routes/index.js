@@ -11,10 +11,8 @@ import {SignupRoute} from "./SignupRoute";
 import {SigninRoute} from './SigninRoute';
 
 const routes = [
-  <>
-    <Route path={SIGN_UP_PATH} component={SignupRoute} />
-    <Route path={SIGN_IN_PATH} component={SigninRoute} />
-  </>
+    // <Route exact path={SIGN_UP_PATH} component={SignupRoute} />,
+    <Route exact path={SIGN_IN_PATH} component={SigninRoute} />
 ];
 
 export default routes;

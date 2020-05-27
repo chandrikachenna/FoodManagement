@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {HomePage} from '../../components/HomePage';
+import { withRouter } from "react-router-dom";
+
+
 class HomePageRoute extends Component {
     render() {
         return (
@@ -8,4 +11,4 @@ class HomePageRoute extends Component {
     }
 }
 
-export {HomePageRoute};
+export default withRouter(HomePageRoute);

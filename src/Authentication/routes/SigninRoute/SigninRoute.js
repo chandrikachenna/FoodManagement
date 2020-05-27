@@ -4,7 +4,7 @@ import { observer, inject } from "mobx-react";
 import { observable } from "mobx";
 import { withRouter } from "react-router-dom";
 
-@inject('authStores')
+@inject('authStore')
 @observer
 class SigninRoute extends Component {
     @observable username;
@@ -17,8 +17,9 @@ class SigninRoute extends Component {
         this.password=event.target.value;
     }
     onSuccesSignIn=()=>{
+        console.log('hey')
         const {history}=this.props;
-        history.push("food-management/home");
+        history.replace("home");
     }
     onFailureSignIn=()=>{
         const { getUserSignInAPIError: apiError } = this.props.authStore;
@@ -45,7 +46,7 @@ class SigninRoute extends Component {
                 password={this.password}
                 onChangeUsername={this.onChangeUsername}
                 onChangePassword={this.onChangePassword}
-                onClickSignIn={this.onClickSignIn}
+                onClickSignIn={this.onSuccesSignIn}
                 errorMessage={this.errorMessage}
                 loginStatus={this.props.authStore.getUserSignInAPIStatus}
            />
