@@ -3,6 +3,9 @@ import './Carousel.css';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import TweenOne from 'rc-tween-one';
 import 'rc-banner-anim/assets/index.css';
+import Layout1 from '../../../Common/images/layout1.png';
+import Layout2 from '../../../Common/images/layout2.png';
+
 const BgElement = Element.BgElement;
 class Carousel extends React.Component {
   render(){
@@ -16,7 +19,7 @@ class Carousel extends React.Component {
             key="bg"
             className="bg"
             style={{
-              background: '#364D79',
+              backgroundImage: `url(${Layout1})`,
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
@@ -41,7 +44,7 @@ due to requests from south Indians
             key="bg"
             className="bg"
             style={{
-              background: '#64CBCC',
+              backgroundImage: `url(${Layout2})`,
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>

@@ -1,0 +1,1 @@
+export {MealInfoStore} from './MealInfoStore';

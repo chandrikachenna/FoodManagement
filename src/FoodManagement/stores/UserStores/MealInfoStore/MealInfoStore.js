@@ -2,8 +2,9 @@ import {observable,action,computed} from "mobx"
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
 import {MealType} from '../../Models/MealType';
+import getMealInfo from '../../../fixtures/getMealInfo.json'
 
-class MealnfoStore{
+class MealInfoStore{
     @observable getMealInfoAPIStatus;
     @observable getMealInfoAPIError;
     @observable MealsAPIService;
@@ -22,10 +23,11 @@ class MealnfoStore{
     }
     @action.bound
     getMealInfo(){
-        const mealInfoPromise=this.MealsAPIService.getMealsAPI();
-        return bindPromiseWithOnSuccess(mealInfoPromise)
-        .to(this.setGetProductListAPIStatus,this.setProductListResponse)
-        .catch(this.setGetProductListAPIError);
+        // const mealInfoPromise=this.MealsAPIService.getMealsAPI();
+        // return bindPromiseWithOnSuccess(mealInfoPromise)
+        // .to(this.setGetProductListAPIStatus,this.setProductListResponse)
+        // .catch(this.setGetProductListAPIError);
+        this.mealInfo=JSON.stringify(getMealInfo);
     }
     @action.bound
     setGetProductListAPIStatus(apiStatus){
@@ -41,4 +43,4 @@ class MealnfoStore{
     }
 }
 
-export {MealnfoStore}
+export {MealInfoStore}

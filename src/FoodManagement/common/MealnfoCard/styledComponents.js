@@ -6,6 +6,7 @@ const CardLayout =  styled.div`
     ${tw`flex flex-col justify-start items-center`}
     width: 360px;
     height: 304px;
+    margin:15px 0px;
     padding:25px 22px;
     border-radius: 4px;
     border: solid 1px #d7dfe9;
