@@ -101,3 +101,15 @@ width: 67px;
 export {Typo32DarkBlueGreyRubikRegular,Typo12SteelHKGroteskSemiBold,Typo14WhiteRubikMedium,Typo14DarkBlueGreyHKGroteskRegular,
     Typo20DarkBlueGreyHKGroteskMedium,Typo14WhiteHKGroteskSemiBold
 }
+
+export const Typo16SteelHKGroteskRegular=styled.span`
+    height: 24px;
+    font-family: HKGrotesk;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: ${COLORS.steel};
+`

@@ -25,21 +25,40 @@ class MealInfoStore{
     getMealInfo(){
         // const mealInfoPromise=this.MealsAPIService.getMealsAPI();
         // return bindPromiseWithOnSuccess(mealInfoPromise)
-        // .to(this.setGetProductListAPIStatus,this.setProductListResponse)
-        // .catch(this.setGetProductListAPIError);
+        // .to(this.setMealInfoAPIStatus,this.setMealInfoResponse)
+        // .catch(this.setMealInfoAPIError);
         this.mealInfo=JSON.stringify(getMealInfo);
     }
     @action.bound
-    setGetProductListAPIStatus(apiStatus){
+    setMealInfoAPIStatus(apiStatus){
         this.getMealInfoAPIStatus=apiStatus;
     }
     @action.bound
-    setGetProductListAPIError(error){
+    setMealInfoAPIError(error){
         this.getMealInfoAPIError=error;
     }
     @action.bound
-    setProductListResponse(mealInfoResponse){
+    setMealInfoResponse(mealInfoResponse){
         this.mealInfo=mealInfoResponse.map(mealType => new MealType(product));
+    }
+    @action.bound
+    updateMealInfo(requestObject){
+        const updateMealInfoPromise=this.UpdateMealsAPIService.setMealsAPI(requestObject);
+        return bindPromiseWithOnSuccess(updateMealInfoPromise)
+        .to(this.setMealInfoAPIStatus,this.setUpdateMealInfoResponse)
+        .catch(this.setMealInfoAPIError);
+    }
+    @action.bound
+    setUpdateMealInfoResponse(UpdateMealInfoResponse){
+        this.mealInfo=UpdateMealInfoResponse;
+    }
+    @action.bound
+    onChangeDate(){
+
+    }
+    @action.bound
+    goBackHome(){
+
     }
 }
 

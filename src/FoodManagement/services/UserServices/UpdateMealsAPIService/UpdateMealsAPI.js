@@ -9,7 +9,7 @@ class UpdateMealsAPI{
             baseURL:'https://127.0.0.1:8080/'
         })
     }
-    getProductsAPI(requestObject){
+    setMealsAPI(requestObject){
         return networkCallWithApisauce(
             this.api,
             `food_management/`,
