@@ -18,8 +18,8 @@ class MealPreferenceCard extends Component {
                 <Header>
                     <IconHolder svg={svg}/>
                     <TitleBox>
-                        <FoodType>{`Breakfast`}</FoodType>
-                        <FoodTimigs>{`7:00 - 9:00`}</FoodTimigs>
+                        <FoodType>{`mealType`}</FoodType>
+                        <FoodTimigs>{`timing`}</FoodTimigs>
                     </TitleBox>
                     <Menubar />
                 </Header>

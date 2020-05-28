@@ -5,17 +5,18 @@ import {Carousel} from '../../common/Carousel';
 import {DatePickerComponent} from '../../../Common/components/DatePickerComponent';
 import {MealPreferenceCard} from '../../common/MealPreferenceCard';
 
-
+import {UserDayMenu} from '../UserDayMenu'
 class HomePage extends Component {
     render() {
         return (
             <HomePageContainer>
                 <Navbar />
                 <Carousel/>
-                <Div>
+                {/* <Div>
                     <DatePickerComponent />
                 </Div>
-                <MealPreferenceCard/>
+                <MealPreferenceCard/> */}
+                <UserDayMenu/>
             </HomePageContainer>
         );
     }
