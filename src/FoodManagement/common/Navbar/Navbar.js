@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
-import {Navbarcontainer,SubNav,OptionsBar,Div,SpareOptionsBar} from './styledComponents';
-import {Navigations} from '../../common/Navigations';
+import {Navbarcontainer,SubNav,OptionsBar,Div,SpareOptionsBar,Link} from './styledComponents';
 import {Logo} from '../../../Common/components/Logo';
 import strings from '../../../Common/i18n/strings.json';
 
 class Navbar extends Component {
     render() {
         const {onClickGoHome,onClickGoWeeklyMenu,onClickForProfile}=this.props;
+        const {home,profile,weeklyMenu}=strings.foodManagement;
         return (
         <>
             <Navbarcontainer>
                 <Div>
                     <SubNav>
                         <Logo/>
-                        <Navigations navigator={strings.foodManagement.home} onClick={onClickGoHome}/>
+                        <Link onClick={onClickGoHome}>{home}</Link>
                     </SubNav>
                     <OptionsBar>
-                        <Navigations navigator={strings.foodManagement.profile} onClick={onClickForProfile}/>
-                        <Navigations navigator={strings.foodManagement.weeklyMenu} onClick={onClickGoWeeklyMenu}/>
+                        <Link onClick={onClickForProfile}>{profile}</Link>
+                        <Link onClick={onClickGoWeeklyMenu}>{weeklyMenu}</Link>
                     </OptionsBar>
                 </Div>
             </Navbarcontainer>
             <SpareOptionsBar>
-                    <Navigations navigator={strings.foodManagement.profile} onClick={onClickForProfile}/>
-                    <Navigations navigator={strings.foodManagement.weeklyMenu} onClick={onClickGoWeeklyMenu}/>
+                    <Link onClick={onClickForProfile}>{profile}</Link>
+                    <Link onClick={onClickGoWeeklyMenu}>{weeklyMenu}</Link>
             </SpareOptionsBar>
         </>
         );

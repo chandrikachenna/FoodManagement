@@ -1,1 +1,0 @@
-export {MealPreferenceCard} from './MealPreferenceCard';

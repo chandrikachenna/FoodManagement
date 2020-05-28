@@ -1,1 +1,0 @@
-export {UserDayMenu} from './UserDayMenu';

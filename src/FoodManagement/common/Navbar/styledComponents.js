@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
+import {Typo20DarkBlueGreyHKGroteskMedium} from '../../../Common/styleGuide/Typo';
+
+const Link= styled(Typo20DarkBlueGreyHKGroteskMedium)`
+    ${tw`cursor-pointer`}
+`
 
 const Navbarcontainer = styled.div`
     width: 1440px;
@@ -28,4 +33,4 @@ const SpareOptionsBar = styled.div`
     flex-grow:1
 `
 
-export {Navbarcontainer,SubNav,OptionsBar,Div,SpareOptionsBar}
+export {Navbarcontainer,SubNav,OptionsBar,Div,SpareOptionsBar,Link}
