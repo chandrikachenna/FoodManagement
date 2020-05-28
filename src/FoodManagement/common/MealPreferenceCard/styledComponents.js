@@ -4,8 +4,8 @@ import {Typo16DarkBlueGreyHKGroteskMedium,Typo12SteelHKGroteskRegular,Typo14Whit
 
 const CardLayout =  styled.div`
     ${tw`flex flex-col justify-start items-center`}
-    width: 300px;
-    height: 295px;
+    width: 360px;
+    height: 304px;
     padding:25px 22px;
     border-radius: 4px;
     border: solid 1px #d7dfe9;
@@ -14,7 +14,7 @@ const CardLayout =  styled.div`
 
 const Header = styled.div`
     ${tw`flex flex-row justify-start flex-grow self-start`}
-    width: 254px;
+    width: 314px;
 `
 const TitleBox = styled.div`
     ${tw`flex flex-col justify-start flex-wrap`}
@@ -34,7 +34,7 @@ const FoodItemsContainer=styled.div`
 `
 const EditPreferenceBox=styled.span`
     ${tw`flex flex-grow flex-row justify-end items-center`}
-    width: 254px;
+    width: 314px;
     padding:5px 0px;
 `
 export {CardLayout,ButtonTextLabel,Header,TitleBox,FoodType,FoodTimigs,FoodItemsContainer,EditPreferenceBox}

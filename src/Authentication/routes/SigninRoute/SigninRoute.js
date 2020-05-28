@@ -46,7 +46,7 @@ class SigninRoute extends Component {
                 password={this.password}
                 onChangeUsername={this.onChangeUsername}
                 onChangePassword={this.onChangePassword}
-                onClickSignIn={this.onSuccesSignIn}
+                onClickSignIn={this.onClickSignIn}
                 errorMessage={this.errorMessage}
                 loginStatus={this.props.authStore.getUserSignInAPIStatus}
            />

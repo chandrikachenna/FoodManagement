@@ -12,7 +12,7 @@ class AuthAPI{
         return networkCallWithApisauce(
             this.api,
             'sign_in/v1/',
-            {requestObject},
+            requestObject,
             apiMethods.post
         )
     }

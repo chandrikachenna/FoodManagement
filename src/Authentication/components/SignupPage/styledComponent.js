@@ -3,12 +3,12 @@ import tw from 'tailwind.macro';
 import {Typo32DarkBlueGreyRubikRegular} from '../../../Common/styleGuide/Typo';
 
 const MainPageContainer = styled.div`
-    ${tw`flex justify-center items-center min-h-screen`}
+    ${tw`flex justify-center items-center `}
+    height:100vh;
     background-color:#f1f7ff;
 `
 const SignupForm = styled.div`
     ${tw`flex flex-col justify-around items-center`}
-    margin:168px 452px;
     padding-top:50px;
     padding-bottom:70px;
     padding-left:40px;
