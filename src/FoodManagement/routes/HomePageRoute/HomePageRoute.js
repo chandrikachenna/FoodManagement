@@ -19,11 +19,10 @@ class HomePageRoute extends Component {
         this.props.mealInfoStore.getMealInfo();
     }
     render() {
-        const list=this.props.mealInfoStore.mealInfo;
-        console.log(list)
         return (
             <HomePage 
                 onClickSignOut={this.onClickSignOut}
+                mealInfoList={this.props.mealInfoStore.mealInfo}
             />
         );
     }

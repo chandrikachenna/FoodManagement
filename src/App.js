@@ -23,6 +23,7 @@ class App extends React.Component{
       <Provider {...authStore} {...foodManagementStores}>
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
+            
               {authRoutes}
               {foodManagementRoutes}
               <Route path="/">

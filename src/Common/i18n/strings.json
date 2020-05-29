@@ -10,7 +10,9 @@
         "passwordWeak":"Weak",
         "passwordStrong":"Strong",
         "signUplink":"SignUp",
-        "notAUSer":"Don't have an account?"
+        "notAUSer":"Don't have an account?",
+        "signInTitle":"Hi there, login",
+        "signIn":"LOGIN"
     },
     "foodManagement":{
         "home":"Home",

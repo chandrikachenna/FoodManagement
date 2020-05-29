@@ -7,6 +7,7 @@ ${tw`border border-red-900 flex items-center justify-center`}
 width: 80px;
 height: 24px;
 border-radius: 4px;
+text-align:center;
 `
 const Text=styled(Typo12InterSemiBold)`
     ${tw`text-red-900 `}

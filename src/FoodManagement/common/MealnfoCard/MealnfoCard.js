@@ -11,35 +11,40 @@ import {TextLabel} from '../../../Common/components/TextLabel';
 
 class MealInfoCard extends Component {
     onClick=()=>{
-        console.log('hi');
         const {history}=this.props;
         history.push('/food-management/set-meal-preference')
     }
     render() {
         const {editPreference}=strings.foodManagement
-        const {svg}=this.props;
+        const {meal_type,meal_items,meal_preference,meal_starttime,meal_endtime,meal_icon}=this.props.info;
         return (
             <CardLayout>
                 <Header>
-                    <IconHolder svg={svg}/>
+                    <IconHolder svg={meal_icon}/>
                     <TitleBox>
-                        <FoodType>{`mealType`}</FoodType>
-                        <FoodTimigs>{`timing`}</FoodTimigs>
+                        <FoodType>{meal_type}</FoodType>
+                        <FoodTimigs>{meal_starttime}{` - ${meal_endtime}`}</FoodTimigs>
                     </TitleBox>
                     <Label>
                         <Menubar />
-                        <TextLabel text={'mealCourse'}/>
+                        <TextLabel text={meal_preference}/>
                     </Label>
                     
                 </Header>
                 <FoodItemsContainer>
                     <Left>
-                        <FoodItem>Idly</FoodItem>
-                        <FoodItem>Chutney</FoodItem>
+                        {
+                            meal_items.map((item,index)=>
+                                index<3 && <FoodItem>{item.item_name}</FoodItem>
+                            )
+                        }
                     </Left>
                     <Right>
-                        <FoodItem>Upma</FoodItem>
-                        <FoodItem>Chapathi</FoodItem>
+                        {
+                            meal_items.map((item,index)=>
+                                index>=3 && <FoodItem>{item.item_name}</FoodItem>
+                            )
+                        }   
                     </Right>
                 </FoodItemsContainer>
                 <EditPreferenceBox></EditPreferenceBox>

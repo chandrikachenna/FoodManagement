@@ -11,15 +11,15 @@ import {InputElementWithLabel} from '../../common/InputElementWithLabel';
 class SignInPage extends Component {
     render() {
         const {username:userName,password:pwd,onChangeUsername,onChangePassword,onClickSignIn,errorMessage,loginStatus}=this.props;
-        const {signUpTitle,username,password,signup,haveAnAccount,signUplink}=strings.authentication
+        const {signInTitle,username,password,signIn,haveAnAccount,signUplink}=strings.authentication
         return (
             <MainPageContainer>
                 <SignInForm>
                     <Logo/>
-                    <Title>{signUpTitle}</Title>
+                    <Title>{signInTitle}</Title>
                     <InputElementWithLabel  label={username} type="text" placeholder="Username" value={userName} onChange={onChangeUsername}/>
                     <InputElementWithLabel  label={password} type="password" placeholder="Password" value={pwd} onChange={onChangePassword}/>
-                    <Button onClickFunction={onClickSignIn} buttonName={signup} type="button" text="Sign in"
+                    <Button onClickFunction={onClickSignIn} buttonName={signIn} type="button" text="Sign in"
                             className={'signinButtonStyling'} textLabel={ButtonTextLabel}
                         />
                     <Footer>{haveAnAccount}
