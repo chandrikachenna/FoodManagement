@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import {HomePageContainer} from './styledComponents';
+import {MealPreferencePageContainer} from './styledComponents';
 import {Navbar} from '../../common/Navbar';
 import {Carousel} from '../../common/Carousel';
-
+import {MealPreferenceCard} from '../../common/MealPreferenceCard';
 
 class MealPreferencePage extends Component {
     render() {
         const {onClickSignOut}=this.props;
         return (
-            <HomePageContainer>
+            <MealPreferencePageContainer>
                 <Navbar onClickSignOut={onClickSignOut}/>
                 <Carousel/>
-            </HomePageContainer>
+                <MealPreferenceCard/>
+            </MealPreferencePageContainer>
         );
     }
 }

@@ -125,3 +125,14 @@ export  const Typo12InterSemiBold=styled.span`
   line-height: 1.17;
   letter-spacing: normal;
 `
+
+export const Typo14HKGrotesk=styled.span`
+  height: 24px;
+  font-family: HKGrotesk;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+`

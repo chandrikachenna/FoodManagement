@@ -4,5 +4,6 @@ export const COLORS={
     white:`#ffffff`,
     brightBlue:'#0b69ff',
     whiteTwo:'#fbfbfb',
-    lightBlueGrey:'#d7dfe9'
+    lightBlueGrey:'#d7dfe9',
+    jade:"#1db05f"
 }
