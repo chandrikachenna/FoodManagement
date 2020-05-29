@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import {Layout,Div} from './styledComponents';
+import {Layout,Header,Footer,InfoBox,Title,SelectionField} from './styledComponents';
 import { withRouter } from "react-router-dom";
-import {Logo} from '../../../Common/components/Logo';
+import {ButtonComponent} from '../../../Common/components/ButtonComponent';
+import strings from '../../../Common/i18n/strings.json';
+import {DatePickerComponent} from '../../../Common/components/DatePickerComponent';
+import {TabBar} from '../../../Common/components/TabBar';
+import {Counter} from '../../../Common/components/Counter';
+
 
 class MealPreferenceCard extends Component {
     onClick=()=>{
@@ -9,9 +14,24 @@ class MealPreferenceCard extends Component {
         history.push('/food-management/home');
     }
     render() {
+        const {skipMeal,back,save}=strings.foodManagement
         return (
             <Layout>
-                <button onClick={this.onClick}>hey</button>
+                <Header>
+                    <Title>{'BreakFast'}</Title>
+                    <ButtonComponent onClick={this.onClick} text={skipMeal}/>
+                </Header>
+                <SelectionField>
+                    {/* <TabBar /> props*/}
+                    <DatePickerComponent/>
+                </SelectionField>
+                <InfoBox>
+                   {/* <Counter/> */}
+                </InfoBox>
+                <Footer>
+                    <ButtonComponent onClick={this.onClick} text={back}/>
+                    <ButtonComponent onClick={this.onClick} text={save}/>
+                </Footer>
             </Layout>
         );
     }

@@ -12,6 +12,7 @@ class MealPreferenceRoute extends Component {
         history.replace({pathname:"sign-in"})
     }
     render() {
+        console.log(this.props.mealInfoStore.mealInfo)
         console.log(this.props.mealInfoStore.selectedMealType)
         return (
             <MealPreferencePage 

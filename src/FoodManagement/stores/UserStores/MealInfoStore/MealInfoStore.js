@@ -8,11 +8,13 @@ class MealInfoStore{
     @observable getMealInfoAPIStatus;
     @observable getMealInfoAPIError;
     @observable MealsAPIService;
+    @observable mealPreferenceFixture
     @observable UpdateMealsAPIService;
     @observable mealInfo;
     @observable selectedMealType;
-    constructor(MealsAPIService,UpdateMealsAPIService){
+    constructor(MealsAPIService,mealPreferenceFixture,UpdateMealsAPIService){
         this.MealsAPIService=MealsAPIService;
+        this.mealPreferenceFixture=mealPreferenceFixture;
         this.UpdateMealsAPIService=UpdateMealsAPIService
         this.init();
     }
@@ -43,8 +45,7 @@ class MealInfoStore{
     }
     @action.bound
     onClickEdit(){
-        const apiEdit=new MealsFixture()
-        this.selectedMealType=new MealModel(apiEdit);
+        this.selectedMealType=new MealModel(this.mealPreferenceFixture);
     }
     @action.bound
     updateMealInfo(requestObject){

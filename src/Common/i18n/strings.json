@@ -18,8 +18,10 @@
         "home":"Home",
         "weeklyMenu":"WeeklyMenu",
         "profile":"Profile",
+        "editPreference":"Edit",
+        "skipMeal":"Skip Meal",
+        "back":"Back",
+        "save":"Save"
 
-
-        "editPreference":"Edit"
     }
 }

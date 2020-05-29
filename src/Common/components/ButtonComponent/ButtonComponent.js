@@ -3,10 +3,10 @@ import {ButtonTag,Text} from './styledComponents';
 
 class ButtonComponent extends Component {
     render() {
-        const {btnBg,textBg,text,onClick}=this.props
+        const {onClick,text} =this.props;   
         return (
-            <ButtonTag color={btnBg} onClick={onClick}>
-                <Text color={textBg}>
+            <ButtonTag  onClick={onClick}>
+                <Text >
                     {text}
                 </Text>
             </ButtonTag>

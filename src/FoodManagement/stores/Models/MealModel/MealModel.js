@@ -12,14 +12,16 @@ class MealModel{
         this.editPreferenceAPI=api;
         this.init();
     }
+    @action.bound
     init(){
         this.getMealItemsAPIStatus=API_INITIAL;
         this.getMealItemsAPIError=null;
         this.mealItems=[];
         this.getEditPreference();
     }
+    @action.bound
     getEditPreference(){
-        const mealItemsPromise=this.editPreferenceAPI.getMealsAPI();
+        const mealItemsPromise=this.editPreferenceAPI.getMealPreferenceAPI();
         return bindPromiseWithOnSuccess(mealItemsPromise)
         .to(this.setMealItemsAPIStatus,this.setMealItemsResponse)
         .catch(this.setMealItemsAPIError);
