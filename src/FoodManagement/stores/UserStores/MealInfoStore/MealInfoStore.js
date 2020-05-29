@@ -44,8 +44,8 @@ class MealInfoStore{
         this.mealInfo=mealInfoResponse
     }
     @action.bound
-    onClickEdit(){
-        this.selectedMealType=new MealModel(this.mealPreferenceFixture);
+    onClickEdit(mealType){
+        this.selectedMealType=new MealModel(this.mealPreferenceFixture,mealType);
     }
     @action.bound
     updateMealInfo(requestObject){

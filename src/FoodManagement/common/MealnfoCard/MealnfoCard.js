@@ -12,7 +12,7 @@ import {TextLabel} from '../../../Common/components/TextLabel';
 class MealInfoCard extends Component {
     onClick=()=>{
         const {history}=this.props;
-        this.props.onClickEdit();
+        this.props.onClickEdit(this.props.info.meal_type);
         history.push('/food-management/set-meal-preference');
         console.log('infoCard')
     }

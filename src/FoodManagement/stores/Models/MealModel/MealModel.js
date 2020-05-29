@@ -8,8 +8,9 @@ class MealModel{
     @observable getMealItemsAPIError;
     @observable editPreferenceAPI;
     @observable mealItems;
-    constructor(api){
+    constructor(api,mealType){
         this.editPreferenceAPI=api;
+        this.mealType=mealType;
         this.init();
     }
     @action.bound
@@ -37,6 +38,7 @@ class MealModel{
     @action.bound
     setMealItemsResponse(mealItemsResponse){
         this.mealItems=mealItemsResponse;
+        this.mealItems.mealType=this.mealType;
     }
 }
 export {MealModel}

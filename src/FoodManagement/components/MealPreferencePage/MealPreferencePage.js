@@ -6,12 +6,12 @@ import {MealPreferenceCard} from '../../common/MealPreferenceCard';
 
 class MealPreferencePage extends Component {
     render() {
-        const {onClickSignOut}=this.props;
+        const {onClickSignOut,selectedMealTypeInfo}=this.props;
         return (
             <MealPreferencePageContainer>
                 <Navbar onClickSignOut={onClickSignOut}/>
                 <Carousel/>
-                <MealPreferenceCard/>
+                <MealPreferenceCard selectedMealTypeInfo={selectedMealTypeInfo}/>
             </MealPreferencePageContainer>
         );
     }

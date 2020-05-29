@@ -24,12 +24,13 @@ class App extends React.Component{
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
             
-              {authRoutes}
+             {authRoutes}
               {foodManagementRoutes}
-              <Route path="/">
+              <Route exact path="/">
                 <HomePage />
               </Route>
             </Switch>
+
           </Router>
       </Provider>
     )

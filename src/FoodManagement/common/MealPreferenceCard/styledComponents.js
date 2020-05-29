@@ -31,6 +31,12 @@ const Title=styled(Typo32DarkBlueGreyHKGroteskMedium)`
 `
 
 const SelectionField=styled.div`
-    ${tw`flex flex-row items-center`}
+    ${tw`flex flex-row items-center justify-between`}
 `
-export {Layout,Header,Footer,InfoBox,Title,SelectionField}
+
+const ImageHolder=styled.img`
+  width: 276px;
+  height: 276px;
+  object-fit: contain;
+`
+export {Layout,Header,Footer,InfoBox,Title,SelectionField,ImageHolder}

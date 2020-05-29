@@ -1,0 +1,1 @@
+export {MealPreferenceDefault} from './MealPreferenceDefault';
