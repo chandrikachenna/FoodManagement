@@ -17,7 +17,6 @@ class SigninRoute extends Component {
         this.password=event.target.value;
     }
     onSuccesSignIn=()=>{
-        console.log('hey')
         const {history}=this.props;
         history.replace("home");
     }
@@ -28,7 +27,6 @@ class SigninRoute extends Component {
         }
     }
     onClickSignIn=()=>{
-        console.log('hi');
         if(this.username && this.password)
         {
             this.errorMessage="Loading...";

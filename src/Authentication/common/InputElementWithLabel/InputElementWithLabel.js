@@ -8,7 +8,7 @@ class InputElementWithLabel extends Component {
     render() {
         const {label,value,type,placeholder,onChange}=this.props;
         return (
-            <Div>
+            <Div >
                 <Label>{label}</Label>
                 <InputFormElement value={value} type={type} placeholder={placeholder} onChange ={onChange} />
                 <MessageBox></MessageBox>

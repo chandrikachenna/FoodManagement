@@ -1,0 +1,28 @@
+[
+	{ 
+		"break_fast": 
+		  { "meal_format": "string", 
+		  "open_time": "open_time", 
+		  "close_time": "close_time", 
+		  "meal_items": {
+			"meal_item":"string"
+		  }, 
+		  "edit_preference_dead_line": "string" }, 
+		"lunch": 
+			{ "meal_format": "string", 
+			"open_time": "open_time", 
+			"close_time": "close_time", 
+			"meal_items": {
+				"meal_item":"string"
+			  }, 
+			"edit_preference_dead_line": "string" }, 
+		"dinner": 
+			{ "meal_format": "string", 
+			"open_time": "open_time", 
+			"close_time": "close_time", 
+			"meal_items": {
+				"meal_item":"string"
+			  }, 
+			"edit_preference_dead_line": "string" }
+	  }  
+]

@@ -17,9 +17,9 @@ class SignInPage extends Component {
                 <SignInForm>
                     <Logo/>
                     <Title>{signUpTitle}</Title>
-                    <InputElementWithLabel label={username} type="text" placeholder="Username" value={userName} onChange={onChangeUsername}/>
-                    <InputElementWithLabel label={password} type="password" placeholder="Password" value={pwd} onChange={onChangePassword}/>
-                    <Button onClick={onClickSignIn} buttonName={signup} type="button" text="Sign in"
+                    <InputElementWithLabel  label={username} type="text" placeholder="Username" value={userName} onChange={onChangeUsername}/>
+                    <InputElementWithLabel  label={password} type="password" placeholder="Password" value={pwd} onChange={onChangePassword}/>
+                    <Button onClickFunction={onClickSignIn} buttonName={signup} type="button" text="Sign in"
                             className={'signinButtonStyling'} textLabel={ButtonTextLabel}
                         />
                     <Footer>{haveAnAccount}

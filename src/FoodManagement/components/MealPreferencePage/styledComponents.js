@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
 import {Typo14WhiteRubikMedium} from '../../../Common/styleGuide/Typo'
 const HomePageContainer = styled.div`
-    ${tw`flex flex-col min-h-screen justify-between `}
+    ${tw`flex flex-col min-h-screen justify-start `}
     background-color:#fbfbfb;
 `
 const Div=styled.div`

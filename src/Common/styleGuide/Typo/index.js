@@ -113,3 +113,15 @@ export const Typo16SteelHKGroteskRegular=styled.span`
     letter-spacing: normal;
     color: ${COLORS.steel};
 `
+
+export  const Typo12InterSemiBold=styled.span`
+    width: 64px;
+  height: 14px;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+`

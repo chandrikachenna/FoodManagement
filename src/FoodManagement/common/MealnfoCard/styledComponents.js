@@ -23,6 +23,12 @@ const TitleBox = styled.div`
     flex-grow:1;
     padding-left:15px;
 `
+const Label=styled.div`
+    ${tw`flex flex-col justify-end items-end flex-wrap`}
+    flex-grow:1;
+`
+
+
 const FoodType = styled(Typo16DarkBlueGreyHKGroteskMedium)``
 
 const ButtonTextLabel = styled(Typo14WhiteHKGroteskSemiBold)``
@@ -51,5 +57,5 @@ const Right=styled.div`
 `
 const FoodItem=styled(Typo16SteelHKGroteskRegular)``
 export {CardLayout,ButtonTextLabel,Header,TitleBox,FoodType,FoodTimigs,FoodItemsContainer,
-    EditPreferenceBox,Left,Right,FoodItem}
+    EditPreferenceBox,Left,Right,FoodItem,Label}
 

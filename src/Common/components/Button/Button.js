@@ -5,9 +5,9 @@ import { observer } from "mobx-react";
 @observer
 class Button extends Component {
     render() {
-        const {onClick,buttonName,className,textLabel:TextLabel}=this.props
+        const {onClickFunction,buttonName,className,textLabel:TextLabel}=this.props
         return (
-            <ButtonTag onClick={onClick} className={className}>
+            <ButtonTag onClick={onClickFunction} className={className}>
                 <TextLabel>{buttonName}</TextLabel>
             </ButtonTag>
         );
