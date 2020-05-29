@@ -28,7 +28,7 @@ class MealInfoStore{
         // return bindPromiseWithOnSuccess(mealInfoPromise)
         // .to(this.setMealInfoAPIStatus,this.setMealInfoResponse)
         // .catch(this.setMealInfoAPIError);
-        this.mealInfo=getMealInfo;
+        this.mealInfo=spare;
     }
     @action.bound
     setMealInfoAPIStatus(apiStatus){
@@ -55,7 +55,7 @@ class MealInfoStore{
     }
     @action.bound
     onChangeDate(){
-
+        
     }
     @action.bound
     goBackHome(){

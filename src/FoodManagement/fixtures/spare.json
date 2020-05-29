@@ -1,28 +1,42 @@
 [
 	{ 
-		"break_fast": 
-		  { "meal_format": "string", 
-		  "open_time": "open_time", 
-		  "close_time": "close_time", 
-		  "meal_items": {
-			"meal_item":"string"
-		  }, 
-		  "edit_preference_dead_line": "string" }, 
-		"lunch": 
-			{ "meal_format": "string", 
-			"open_time": "open_time", 
-			"close_time": "close_time", 
-			"meal_items": {
-				"meal_item":"string"
-			  }, 
-			"edit_preference_dead_line": "string" }, 
-		"dinner": 
-			{ "meal_format": "string", 
-			"open_time": "open_time", 
-			"close_time": "close_time", 
-			"meal_items": {
-				"meal_item":"string"
-			  }, 
-			"edit_preference_dead_line": "string" }
+		"break_fast": { 
+		  "meal_type":"Breakfast",
+		  "meal_format": "FullMeal", 
+		  "open_time": "7:00", 
+		  "close_time": "10:00", 
+		  "meal_items": [
+			  {
+				"meal_item":"Idly"
+			  }
+			], 
+		  "edit_preference_dead_line": "string" 
+		}, 
+
+		"lunch": { 
+			"meal_type":"Lunch",
+			"meal_format":  "FullMeal", 
+			"open_time": "12:30", 
+			"close_time": "14:00", 
+			"meal_items":[
+				{
+					"meal_item":"Rice"
+			  	}
+			], 
+			"edit_preference_dead_line": "string" 
+		}, 
+
+		"dinner": { 
+			"meal_type":"Dinner",
+			"meal_format":  "FullMeal", 
+			"open_time":"19:30", 
+			"close_time": "22:00", 
+			"meal_items": [
+				{
+					"meal_item":"Mango Dal"
+			  	}
+			], 
+			"edit_preference_dead_line": "string" 
+		}
 	  }  
 ]

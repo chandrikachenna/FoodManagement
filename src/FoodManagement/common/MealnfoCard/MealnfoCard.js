@@ -16,18 +16,18 @@ class MealInfoCard extends Component {
     }
     render() {
         const {editPreference}=strings.foodManagement
-        const {meal_type,meal_items,meal_preference,meal_starttime,meal_endtime,meal_icon}=this.props.info;
+        const {meal_type,meal_items, meal_format,open_time,close_time,meal_icon}=this.props.info;
         return (
             <CardLayout>
                 <Header>
                     <IconHolder svg={meal_icon}/>
                     <TitleBox>
                         <FoodType>{meal_type}</FoodType>
-                        <FoodTimigs>{meal_starttime}{` - ${meal_endtime}`}</FoodTimigs>
+                        <FoodTimigs>{open_time}{` - ${close_time}`}</FoodTimigs>
                     </TitleBox>
                     <Label>
                         <Menubar />
-                        <TextLabel text={meal_preference}/>
+                        <TextLabel text={meal_format}/>
                     </Label>
                     
                 </Header>
@@ -35,14 +35,14 @@ class MealInfoCard extends Component {
                     <Left>
                         {
                             meal_items.map((item,index)=>
-                                index<3 && <FoodItem>{item.item_name}</FoodItem>
+                                index<3 && <FoodItem>{item.meal_item}</FoodItem>
                             )
                         }
                     </Left>
                     <Right>
                         {
                             meal_items.map((item,index)=>
-                                index>=3 && <FoodItem>{item.item_name}</FoodItem>
+                                index>=3 && <FoodItem>{item.meal_item}</FoodItem>
                             )
                         }   
                     </Right>

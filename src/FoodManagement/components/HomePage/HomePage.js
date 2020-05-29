@@ -8,7 +8,7 @@ import {DatePickerComponent} from '../../../Common/components/DatePickerComponen
 class HomePage extends Component {
     render() {
         const {onClickSignOut,mealInfoList}=this.props;
-        return (
+        return (    
             <HomePageContainer>
                 <Navbar onClickSignOut={onClickSignOut}/>
                 <Carousel/>
