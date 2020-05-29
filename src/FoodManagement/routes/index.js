@@ -8,9 +8,10 @@ import {
 } from "../constants/RouteConstants";
 
 import {HomePageRoute} from "./HomePageRoute";
+import { ProtectedRoute } from "../../Common/utils/ProtectedRoute/ProtectedRoute";
 
 const routes = [
-  <Route exact path={SMART_FOOD_MANAGEMENT_PATH} component={HomePageRoute} />
+  <ProtectedRoute exact path={SMART_FOOD_MANAGEMENT_PATH} component={HomePageRoute} />
 ];
 
 export default routes;

@@ -5,15 +5,15 @@ class AuthAPI{
     api;
     constructor(){
         this.api=create({
-            baseURL:"https://127.0.0.1:8080/food_management/"
+            baseURL:"https://5ea1a14db9f5ca00166c1f27.mockapi.io/api/"
         })
     }
-    signInAPI(requestObject){
+    signInAPI(){
         return networkCallWithApisauce(
             this.api,
-            'sign_in/v1/',
-            requestObject,
-            apiMethods.post
+            'v1/signin/',
+            {},
+            apiMethods.get
         )
     }
 }

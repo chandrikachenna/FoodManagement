@@ -28,11 +28,11 @@ class SigninRoute extends Component {
         }
     }
     onClickSignIn=()=>{
+        console.log('hi');
         if(this.username && this.password)
         {
             this.errorMessage="Loading...";
-            const requestObject={username:this.username,password:this.password}
-            this.props.authStore.userSignIn(this.onSuccesSignIn,this.onFailureSignIn,requestObject);
+            this.props.authStore.userSignIn(this.onSuccesSignIn,this.onFailureSignIn);
         }
         else if(!this.username)
             this.errorMessage="Please enter username";

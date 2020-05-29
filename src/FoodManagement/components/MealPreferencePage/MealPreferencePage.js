@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
-import {HomePageContainer,Div,ButtonTextLabel} from './styledComponents';
-import {Mealcards} from '../Mealcards'
+import {HomePageContainer} from './styledComponents';
 import {Navbar} from '../../common/Navbar';
 import {Carousel} from '../../common/Carousel';
-import {DatePickerComponent} from '../../../Common/components/DatePickerComponent';
+import React, { Component } from 'react';
 
-class HomePage extends Component {
+class MealPreferencePage extends Component {
     render() {
         const {onClickSignOut}=this.props;
         return (
             <HomePageContainer>
                 <Navbar onClickSignOut={onClickSignOut}/>
                 <Carousel/>
-                <Div>
-                    <DatePickerComponent />
-                </Div>
-                <Mealcards />
             </HomePageContainer>
         );
     }
 }
 
-export {HomePage};
+export  {MealPreferencePage};

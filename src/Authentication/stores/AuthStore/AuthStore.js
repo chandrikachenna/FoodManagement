@@ -31,8 +31,8 @@ class AuthStore{
         setAccessToken(this.Access_token);
     }
     @action.bound
-    userSignIn(onSuccess,onFailure,requestObject){
-        const signInPromise=this.authAPIService.signInAPI(requestObject);
+    userSignIn(onSuccess,onFailure){
+        const signInPromise=this.authAPIService.signInAPI();
         return bindPromiseWithOnSuccess(signInPromise)
         .to(
             this.setGetUserSignInAPIStatus,

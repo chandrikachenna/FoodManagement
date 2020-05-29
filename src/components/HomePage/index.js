@@ -18,7 +18,7 @@ function App() {
             >
                Learn React
             </a>
-            <Link to='/page-1'>Page 1</Link>
+            <Link to='/food-management/home'>Food Management</Link>
          </header>
       </div>
    )

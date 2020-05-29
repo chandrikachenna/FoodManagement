@@ -5,7 +5,7 @@ import strings from '../../../Common/i18n/strings.json';
 
 class Navbar extends Component {
     render() {
-        const {onClickGoHome,onClickGoWeeklyMenu,onClickForProfile}=this.props;
+        const {onClickGoHome,onClickGoWeeklyMenu,onClickForProfile,onClickSignOut}=this.props;
         const {home,profile,weeklyMenu}=strings.foodManagement;
         return (
         <>
@@ -16,6 +16,7 @@ class Navbar extends Component {
                         <Link onClick={onClickGoHome}>{home}</Link>
                     </SubNav>
                     <OptionsBar>
+                        <Link onClick={onClickSignOut}>{'Logout'}</Link>
                         <Link onClick={onClickForProfile}>{profile}</Link>
                         <Link onClick={onClickGoWeeklyMenu}>{weeklyMenu}</Link>
                     </OptionsBar>
