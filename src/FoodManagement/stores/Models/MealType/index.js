@@ -1,1 +1,0 @@
-export {MealType} from './MealType';

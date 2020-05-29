@@ -9,16 +9,19 @@ const mealTypeIcons ={'break_fast':BreakFastIcon,'lunch':LunchIcon,'dinner':Dinn
 
 class Mealcards extends Component {
     render() {
-        const {mealInfoList}=this.props;
-         Object.entries(mealInfoList[0]).forEach(([key, value]) => {
-            value.meal_icon=mealTypeIcons[key];
-         });
-         const list=Object.entries(mealInfoList[0]).map(([key, value]) => value)
+        const {mealInfoList,onClickEdit}=this.props;
+        let list;
+        if(mealInfoList.length){
+            Object.entries(mealInfoList[0]).forEach(([key, value]) => {
+                value.meal_icon=mealTypeIcons[key];
+             });
+             list=Object.entries(mealInfoList[0]).map(([key, value]) => value)
+        }
         return (
                 <CardsContainer>
                     {
-                      list.map(info => 
-                        <MealInfoCard info={info} />)  
+                     list && list.map(info => 
+                        <MealInfoCard info={info} onClickEdit={onClickEdit}/>)  
                     }
                 </CardsContainer>
         );

@@ -1,98 +1,76 @@
-[{
-    "meal_preference": "Full meal",
-    "meal_items": [{
-            "meal_item_id": 0,
-            "item_name": "Poori",
-            "serving_size_unit": "piece",
-            "category": "Indian bread",
-            "quantity": 4
-        },
-        {
-            "meal_item_id": 1,
-            "item_name": "Aloo Curry",
-            "serving_size_unit": "Cups",
-            "category": "Curry",
-            "quantity": 2
-        },
-        {
-            "meal_item_id": 2,
-            "item_name": "Fried Rice",
-            "serving_size_unit": "Cups",
-            "category": "Rice",
-            "quantity": 2
-        },
-        {
-            "meal_item_id": 3,
-            "item_name": "Masala Rice",
-            "serving_size_unit": "Cups",
-            "category": "Rice",
-            "quantity": 2
-        }
-    ]
-},
 {
-    "meal_preference": "Half meal",
-    "meal_items": [{
-            "meal_item_id": 0,
-            "item_name": "Poori",
-            "serving_size_unit": "piece",
-            "category": "Indian bread",
-            "quantity": 2
+    "full_meal": [
+      {
+        "item": {
+          "item_id": 0,
+          "name": "Poori",
+          "catageory": "Indian bread",
+          "unit": "piece"
         },
-        {
-            "meal_item_id": 1,
-            "item_name": "Aloo Curry",
-            "serving_size_unit": "Cups",
-            "category": "Curry",
-            "quantity": 1
-        },
-        {
-            "meal_item_id": 2,
-            "item_name": "Fried Rice",
-            "serving_size_unit": "Cups",
-            "category": "Rice",
-            "quantity": 1
-        },
-        {
-            "meal_item_id": 3,
-            "item_name": "Masala Rice",
-            "serving_size_unit": "Cups",
-            "category": "Rice",
-            "quantity": 1
+        "quantity": {
+          "number": 4
         }
+      },
+      {
+        "item": {
+          "item_id": 0,
+          "name": "Aloo Curry",
+          "catageory": "Curry",
+          "unit": "Cups"
+        },
+        "quantity": {
+          "number": 2
+        }
+      }
+    ],
+    "half_meal": [
+      {
+        "item": {
+          "item_id": 0,
+          "name": "Poori",
+          "catageory": "Indian bread",
+          "unit": "piece"
+        },
+        "quantity": {
+          "number": 2
+        }
+      },
+      {
+        "item": {
+          "item_id": 0,
+          "name": "Aloo Curry",
+          "catageory": "Curry",
+          "unit": "Cups"
+        },
+        "quantity": {
+          "number": 1
+        }
+      }
+    ],
+    "custom": [
+        {
+            "item": {
+              "item_id": 0,
+              "name": "Poori",
+              "catageory": "Indian bread",
+              "unit": "piece"
+            },
+            "quantity": {
+              "number": 0
+            }
+          },
+          {
+            "item": {
+              "item_id": 0,
+              "name": "Aloo Curry",
+              "catageory": "Curry",
+              "unit": "Cups"
+            },
+            "quantity": {
+              "number": 0
+            }
+          }
     ]
+  }
 
-},
-{
-    "meal_preference": "Custom",
-    "meal_items": [{
-            "meal_item_id": 0,
-            "item_name": "Poori",
-            "serving_size_unit": "piece",
-            "category": "Indian bread",
-            "quantity": 0
-        },
-        {
-            "meal_item_id": 1,
-            "item_name": "Aloo Curry",
-            "serving_size_unit": "Cups",
-            "category": "Curry",
-            "quantity": 0
-        },
-        {
-            "meal_item_id": 2,
-            "item_name": "Fried Rice",
-            "serving_size_unit": "Cups",
-            "category": "Rice",
-            "quantity": 0
-        },
-        {
-            "meal_item_id": 3,
-            "item_name": "Masala Rice",
-            "serving_size_unit": "Cups",
-            "category": "Rice",
-            "quantity": 0
-        }
-    ]
-}
-]
+

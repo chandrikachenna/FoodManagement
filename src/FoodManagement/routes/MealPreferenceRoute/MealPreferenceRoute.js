@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import {MealPreferencePage} from '../../components/MealPreferencePage';
 import { observer, inject } from "mobx-react";
 
-@inject('authStore')
+@inject('authStore','mealInfoStore')
 @observer
 class MealPreferenceRoute extends Component {
     onClickSignOut=()=>{
@@ -12,6 +12,7 @@ class MealPreferenceRoute extends Component {
         history.replace({pathname:"sign-in"})
     }
     render() {
+        console.log(this.props.mealInfoStore.selectedMealType)
         return (
             <MealPreferencePage 
                 onClickSignOut={this.onClickSignOut}

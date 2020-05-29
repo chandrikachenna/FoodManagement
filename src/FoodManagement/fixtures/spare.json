@@ -1,42 +1,95 @@
-[
-	{ 
-		"break_fast": { 
-		  "meal_type":"Breakfast",
-		  "meal_format": "FullMeal", 
-		  "open_time": "7:00", 
-		  "close_time": "10:00", 
-		  "meal_items": [
-			  {
-				"meal_item":"Idly"
-			  }
-			], 
-		  "edit_preference_dead_line": "string" 
-		}, 
 
-		"lunch": { 
-			"meal_type":"Lunch",
-			"meal_format":  "FullMeal", 
-			"open_time": "12:30", 
-			"close_time": "14:00", 
-			"meal_items":[
-				{
-					"meal_item":"Rice"
-			  	}
-			], 
-			"edit_preference_dead_line": "string" 
-		}, 
 
-		"dinner": { 
-			"meal_type":"Dinner",
-			"meal_format":  "FullMeal", 
-			"open_time":"19:30", 
-			"close_time": "22:00", 
-			"meal_items": [
-				{
-					"meal_item":"Mango Dal"
-			  	}
-			], 
-			"edit_preference_dead_line": "string" 
+[{
+	"meal_type": "Breakfast",
+	"meal_items": [{
+			"meal_item_id": 0,
+			"item_name": "Idly"
+		},
+		{
+			"meal_item_id": 1,
+			"item_name": "Chutney"
+		},
+		{
+			"meal_item_id": 2,
+			"item_name": "Sambar"
+		},
+		{
+			"meal_item_id": 3,
+			"item_name": "Masala Rice"
+		},
+		{
+			"meal_item_id": 4,
+			"item_name": "Upma"
 		}
-	  }  
+	],
+	"meal_preference": "FullMeal",
+	"meal_preference_deadline": "2020-05-28T08:46:18.010Z",
+	"meal_starttime": "7:00",
+	"meal_endtime": "10:00"
+},
+{
+	"meal_type": "Lunch",
+	"meal_items": [{
+			"meal_item_id": 0,
+			"item_name": "Rice"
+		},
+		{
+			"meal_item_id": 1,
+			"item_name": "Mango Dal"
+		},
+		{
+			"meal_item_id": 2,
+			"item_name": "Cabbage Chutney"
+		},
+		{
+			"meal_item_id": 3,
+			"item_name": "Cabbage Pickle"
+		},
+		{
+			"meal_item_id": 4,
+			"item_name": "Sambar"
+		},
+		{
+			"meal_item_id": 5,
+			"item_name": "Butter Milk"
+		}
+	],
+	"meal_preference": "FullMeal",
+	"meal_preference_deadline": "2020-05-28T08:46:18.010Z",
+	"meal_starttime": "12:30",
+	"meal_endtime": "14:00"
+},
+{
+	"meal_type": "Dinner",
+	"meal_items": [{
+			"meal_item_id": 0,
+			"item_name": "Rice"
+		},
+		{
+			"meal_item_id": 1,
+			"item_name": "Mango Dal"
+		},
+		{
+			"meal_item_id": 2,
+			"item_name": "Cabbage Chutney"
+		},
+		{
+			"meal_item_id": 3,
+			"item_name": "Cabbage Pickle"
+		},
+		{
+			"meal_item_id": 4,
+			"item_name": "Sambar"
+		},
+		{
+			"meal_item_id": 5,
+			"item_name": "Butter Milk"
+		}
+	],
+	"meal_preference": "FullMeal",
+	"meal_preference_deadline": "2020-05-28T08:46:18.010Z",
+	"meal_starttime": "19:30",
+	"meal_endtime": "22:00"
+}
 ]

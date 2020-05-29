@@ -15,7 +15,7 @@ class HomePageRoute extends Component {
         const {history}=this.props;
         history.replace({pathname:"sign-in"})
     }
-    doNetworkCalls(){
+    doNetworkCalls=()=>{
         this.props.mealInfoStore.getMealInfo();
     }
     render() {
@@ -23,6 +23,7 @@ class HomePageRoute extends Component {
             <HomePage 
                 onClickSignOut={this.onClickSignOut}
                 mealInfoList={this.props.mealInfoStore.mealInfo}
+                onClickEdit={this.props.mealInfoStore.onClickEdit}
             />
         );
     }

@@ -1,9 +1,8 @@
 import {observable,action,computed} from "mobx"
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
-import {MealType} from '../../Models/MealType';
-import getMealInfo from '../../../fixtures/getMealInfo.json';
-import spare from '../../../fixtures/spare.json';
+import {MealModel} from '../../Models/MealModel';
+import {MealsFixture} from '../../../services/UserServices/MealsAPIService/Meals.fixture';
 
 class MealInfoStore{
     @observable getMealInfoAPIStatus;
@@ -11,6 +10,7 @@ class MealInfoStore{
     @observable MealsAPIService;
     @observable UpdateMealsAPIService;
     @observable mealInfo;
+    @observable selectedMealType;
     constructor(MealsAPIService,UpdateMealsAPIService){
         this.MealsAPIService=MealsAPIService;
         this.UpdateMealsAPIService=UpdateMealsAPIService
@@ -24,11 +24,10 @@ class MealInfoStore{
     }
     @action.bound
     getMealInfo(){
-        // const mealInfoPromise=this.MealsAPIService.getMealsAPI();
-        // return bindPromiseWithOnSuccess(mealInfoPromise)
-        // .to(this.setMealInfoAPIStatus,this.setMealInfoResponse)
-        // .catch(this.setMealInfoAPIError);
-        this.mealInfo=spare;
+        const mealInfoPromise=this.MealsAPIService.getMealsAPI();
+        return bindPromiseWithOnSuccess(mealInfoPromise)
+        .to(this.setMealInfoAPIStatus,this.setMealInfoResponse)
+        .catch(this.setMealInfoAPIError);
     }
     @action.bound
     setMealInfoAPIStatus(apiStatus){
@@ -40,7 +39,12 @@ class MealInfoStore{
     }
     @action.bound
     setMealInfoResponse(mealInfoResponse){
-        this.mealInfo=mealInfoResponse.map(mealType => new MealType(product));
+        this.mealInfo=mealInfoResponse
+    }
+    @action.bound
+    onClickEdit(){
+        const apiEdit=new MealsFixture()
+        this.selectedMealType=new MealModel(apiEdit);
     }
     @action.bound
     updateMealInfo(requestObject){
