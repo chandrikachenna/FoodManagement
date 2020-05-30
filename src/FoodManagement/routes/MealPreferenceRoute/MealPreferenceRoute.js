@@ -14,7 +14,10 @@ class MealPreferenceRoute extends Component {
         const {history}=this.props;
         history.replace({pathname:"sign-in"})
     }
-    
+    onClickGoHome=()=>{
+        const {history}=this.props;
+        history.push('/food-management/home')
+    }
     render() {
         const selectedMealTypeInfo={...this.props.mealInfoStore.selectedMealType}
         
@@ -22,7 +25,7 @@ class MealPreferenceRoute extends Component {
             <MealPreferencePage 
                 onClickSignOut={this.onClickSignOut}
                 selectedMealTypeInfo={selectedMealTypeInfo}
-
+                onClickGoHome={this.onClickGoHome}
             />
         );
     }

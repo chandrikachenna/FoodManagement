@@ -3,12 +3,24 @@
 	{ 
 		"break_fast": { 
 		  "meal_type":"Breakfast",
-		  "meal_format": "FullMeal", 
+		  "meal_format": "HalfMeal", 
 		  "open_time": "7:00", 
 		  "close_time": "10:00", 
 		  "meal_items": [
 			  {
 				"meal_item":"Idly"
+			  },
+			  {
+				"meal_item":"Chutney"
+			  },
+			  {
+				"meal_item":"Sambar"
+			  },
+			  {
+				"meal_item":"Masala Rice"
+			  },
+			  {
+				"meal_item":"Upma"
 			  }
 			], 
 		  "edit_preference_dead_line": "string" 
@@ -16,12 +28,28 @@
 
 		"lunch": { 
 			"meal_type":"Lunch",
-			"meal_format":  "FullMeal", 
+			"meal_format":  "Custom", 
 			"open_time": "12:30", 
 			"close_time": "14:00", 
 			"meal_items":[
-				{
-					"meal_item":"Rice"
+				
+				  {
+					"meal_item":"White Rice"
+				  },
+				  {
+					"meal_item":"Mango daal"
+				  },
+				  {
+					"meal_item":"Cabbage fry"
+				  },
+				  {
+					"meal_item":"Cabbage pickle"
+				  },
+				  {
+					"meal_item":"Sambar"
+				  },
+				  {
+					"meal_item":"Butter Milk"
 			  	}
 			], 
 			"edit_preference_dead_line": "string" 
@@ -34,7 +62,22 @@
 			"close_time": "22:00", 
 			"meal_items": [
 				{
-					"meal_item":"Mango Dal"
+					"meal_item":"White Rice"
+				  },
+				  {
+					"meal_item":"Mango daal"
+				  },
+				  {
+					"meal_item":"Cabbage fry"
+				  },
+				  {
+					"meal_item":"Cabbage pickle"
+				  },
+				  {
+					"meal_item":"Sambar"
+				  },
+				  {
+					"meal_item":"Butter Milk"
 			  	}
 			], 
 			"edit_preference_dead_line": "string" 

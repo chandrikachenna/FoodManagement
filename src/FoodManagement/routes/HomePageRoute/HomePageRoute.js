@@ -18,12 +18,18 @@ class HomePageRoute extends Component {
     doNetworkCalls=()=>{
         this.props.mealInfoStore.getMealInfo();
     }
+    onClickGoHome=()=>{
+        const {history}=this.props;
+        this.doNetworkCalls();
+        history.push('/food-management/home')
+    }
     render() {
         return (
             <HomePage 
                 onClickSignOut={this.onClickSignOut}
                 mealInfoList={this.props.mealInfoStore.mealInfo}
                 onClickEdit={this.props.mealInfoStore.onClickEdit}
+                onClickGoHome={this.onClickGoHome}
             />
         );
     }

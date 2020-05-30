@@ -7,10 +7,10 @@ import {DatePickerComponent} from '../../../Common/components/DatePickerComponen
 
 class HomePage extends Component {
     render() {
-        const {onClickSignOut,mealInfoList,onClickEdit}=this.props;
+        const {onClickSignOut,mealInfoList,onClickEdit,onClickGoHome}=this.props;
         return (    
             <HomePageContainer>
-                <Navbar onClickSignOut={onClickSignOut}/>
+                <Navbar onClickSignOut={onClickSignOut} onClickGoHome={onClickGoHome}/>
                 <Carousel/>
                 <Div>
                     <DatePickerComponent />
