@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import {MealPreferencePage} from '../../components/MealPreferencePage';
-import { observer, inject } from "mobx-react";
 import { observable } from "mobx";
-import {MealPreferenceCard} from '../../common/MealPreferenceCard';
+import { observer, inject } from "mobx-react";
+
+import {MealPreferencePage} from '../../components/MealPreferencePage';
+
 
 @inject('authStore','mealInfoStore')
 @observer
 class MealPreferenceRoute extends Component {
-    
+    componentDidMount=()=>{
+        //this.props.mealInfoStore.onClickEdit('Breakfast')
+    }
     onClickSignOut=()=>{
         this.props.authStore.userSignOut();
         const {history}=this.props;

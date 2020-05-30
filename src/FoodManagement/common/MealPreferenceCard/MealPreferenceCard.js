@@ -39,7 +39,7 @@ class MealPreferenceCard extends Component {
                 <>
                     <Header>
                         <Title>{selectedMealTypeInfo.mealItems.mealType}</Title>
-                        <ButtonComponent onClick={selectedMealTypeInfo.onClickSkipMeal} text={skipMeal}/>
+                        <ButtonComponent onClick={this.onClikFullMeal} text={skipMeal}/>
                     </Header>
                     <SelectionField>
                         <TabBar onClikFullMeal={this.onClikFullMeal} onClikHalfMeal={this.onClikHalfMeal} onClikCustom={this.onClikCustom}/>

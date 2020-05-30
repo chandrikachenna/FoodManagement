@@ -3,7 +3,6 @@ import {Redirect,Route} from "react-router-dom";
 import {getAccessToken} from '../../../Authentication/utils/StorageUtils';
 class ProtectedRoute extends React.Component{
     render(){
-        
         const {component:Component}=this.props;
         if(getAccessToken())
         {
@@ -12,8 +11,7 @@ class ProtectedRoute extends React.Component{
         else
             return( 
                 <Redirect to={{pathname:'/food-management/sign-in'}}/>
-            )
-            
+            )  
     }
 }
 

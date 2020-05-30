@@ -11,6 +11,7 @@ class MealInfoStore{
     @observable UpdateMealsAPIService;
     @observable mealInfo;
     @observable selectedMealType;
+    
     constructor(MealsAPIService,mealPreferenceFixture,UpdateMealsAPIService){
         this.MealsAPIService=MealsAPIService;
         this.mealPreferenceFixture=mealPreferenceFixture;
@@ -25,10 +26,10 @@ class MealInfoStore{
     }
     @action.bound
     getMealInfo(){
-        const mealInfoPromise=this.MealsAPIService.getMealsAPI();
-        return bindPromiseWithOnSuccess(mealInfoPromise)
-        .to(this.setMealInfoAPIStatus,this.setMealInfoResponse)
-        .catch(this.setMealInfoAPIError);
+            const mealInfoPromise=this.MealsAPIService.getMealsAPI();
+            return bindPromiseWithOnSuccess(mealInfoPromise)
+            .to(this.setMealInfoAPIStatus,this.setMealInfoResponse)
+            .catch(this.setMealInfoAPIError);
     }
     @action.bound
     setMealInfoAPIStatus(apiStatus){
@@ -41,7 +42,7 @@ class MealInfoStore{
     }
     @action.bound
     setMealInfoResponse(mealInfoResponse){
-        this.mealInfo=mealInfoResponse
+            this.mealInfo=mealInfoResponse
     }
     @action.bound
     onClickEdit(mealType){

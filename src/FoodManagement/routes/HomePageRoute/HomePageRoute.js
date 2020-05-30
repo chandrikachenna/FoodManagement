@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {HomePage} from '../../components/HomePage';
 import { withRouter } from "react-router-dom";
 import { observer, inject } from "mobx-react";
+import {Mealcards} from '../../components/Mealcards';
 
 @inject('mealInfoStore','authStore')
 @observer
@@ -23,13 +24,26 @@ class HomePageRoute extends Component {
         this.doNetworkCalls();
         history.push('/food-management/home');
     }
+    renderSuccessUI=observer(()=>{
+        return(
+            <Mealcards 
+                mealInfoList={this.props.mealInfoStore.mealInfo}
+                onClickEdit={this.props.mealInfoStore.onClickEdit}
+            />
+        );
+    })
     render() {
+        const {getMealInfoAPIStatus,getMealInfoAPIError}=this.props.mealInfoStore;
         return (
             <HomePage 
                 onClickSignOut={this.onClickSignOut}
                 mealInfoList={this.props.mealInfoStore.mealInfo}
                 onClickEdit={this.props.mealInfoStore.onClickEdit}
                 onClickGoHome={this.onClickGoHome}
+                doNetworkCalls={this.doNetworkCalls}
+                renderSuccessUI={this.renderSuccessUI}
+                getMealInfoAPIStatus={getMealInfoAPIStatus}
+                getMealInfoAPIError={getMealInfoAPIError}
             />
         );
     }
