@@ -24,7 +24,7 @@ const Footer=styled.div`
   width:250px;
 `
 const InfoBox=styled.div`
-  flex-grow:1;
+  ${tw`flex flex-row`}
   padding:20px 0px
 `
 const Title=styled(Typo32DarkBlueGreyHKGroteskMedium)`
@@ -39,4 +39,8 @@ const ImageHolder=styled.img`
   height: 276px;
   object-fit: contain;
 `
-export {Layout,Header,Footer,InfoBox,Title,SelectionField,ImageHolder}
+const Wrap=styled.div`
+  ${tw`flex `}
+  flex-grow:1;
+`
+export {Layout,Header,Footer,InfoBox,Title,SelectionField,ImageHolder,Wrap}

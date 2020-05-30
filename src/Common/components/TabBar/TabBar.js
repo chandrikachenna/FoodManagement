@@ -9,26 +9,26 @@ class TabBar extends Component {
     @observable selectedBtn='FullMeal';
     onclickFullMeal=()=>{
         this.selectedBtn='FullMeal';
-        this.props.onclickFullMeal()
+        this.props.onClikFullMeal()
     }
     onclickHalfMeal=()=>{
         this.selectedBtn='HalfMeal';
-        this.props.onclickHalfMeal()
+        this.props.onClikHalfMeal()
     }
     onclickCustom=()=>{
         this.selectedBtn='CustomMeal';
-        this.props.onclickCustom()
+        this.props.onClikCustom()
     }
     render() {
-        const {fullMeal,HalfMeal,Custom}=this.props;
+       
         return (
             <Layout>
                 <Button onClick={this.onclickFullMeal} styled={{color:this.selectedBtn.match('FullMeal')&&'blue'}}>
-                    <Text>{fullMeal}</Text></Button>
+                    <Text>{'Full Meal'}</Text></Button>
                 <Button onClick={this.onclickHalfMeal} styled={{color:this.selectedBtn.match('HalfMeal')&&'blue'}}>
-                    <Text>{HalfMeal}</Text></Button>
+                    <Text>{'Half Meal'}</Text></Button>
                 <Button onClick={this.onclickCustom} styled={{color:this.selectedBtn.match('CustomMeal')&&'blue'}}>
-                    <Text>{Custom}</Text></Button>
+                    <Text>{'Custom'}</Text></Button>
             </Layout>
         );
     }

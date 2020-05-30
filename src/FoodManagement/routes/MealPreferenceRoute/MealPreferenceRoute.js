@@ -14,13 +14,15 @@ class MealPreferenceRoute extends Component {
         const {history}=this.props;
         history.replace({pathname:"sign-in"})
     }
+    
     render() {
         const selectedMealTypeInfo={...this.props.mealInfoStore.selectedMealType}
+        
        return( 
             <MealPreferencePage 
                 onClickSignOut={this.onClickSignOut}
                 selectedMealTypeInfo={selectedMealTypeInfo}
-                mealPreferenceInfo={selectedMealTypeInfo.mealItems}
+
             />
         );
     }

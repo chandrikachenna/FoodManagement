@@ -40,5 +40,21 @@ class MealModel{
         this.mealItems=mealItemsResponse;
         this.mealItems.mealType=this.mealType;
     }
+    @action.bound
+    onClickSkipMeal(){
+        console.log(skipped);
+    }
+    @action.bound
+    onClickSave(){
+        console.log(Save);
+    }
+    @action.bound
+    onClickBack(){
+        console.log(Back);
+    }
+    @action.bound
+    onSelectedDate(){
+        console.log(date);
+    }
 }
 export {MealModel}
