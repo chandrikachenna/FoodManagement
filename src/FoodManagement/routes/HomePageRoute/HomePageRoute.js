@@ -21,7 +21,7 @@ class HomePageRoute extends Component {
     onClickGoHome=()=>{
         const {history}=this.props;
         this.doNetworkCalls();
-        history.push('/food-management/home')
+        history.push('/food-management/home');
     }
     render() {
         return (

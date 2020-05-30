@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Layout,Button} from './styledComponents';
+import {Layout,Button,Text} from './styledComponents';
 
 class Counter extends Component {
     render() {
@@ -7,9 +7,9 @@ class Counter extends Component {
         console.log(number)
         return (
             <Layout>
-                <Button onClick={onIncrement}>-</Button>
-                <Button>{number}</Button>
-                <Button onClick={onDecrement}>+</Button>
+                <Button onClick={onDecrement} disabled={number<=0&&'true'}>-</Button>
+                <Text>{number}</Text>
+                <Button onClick={onIncrement} >+</Button>
             </Layout>
         );
     }

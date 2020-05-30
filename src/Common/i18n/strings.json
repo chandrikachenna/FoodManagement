@@ -12,7 +12,20 @@
         "signUplink":"SignUp",
         "notAUSer":"Don't have an account?",
         "signInTitle":"Hi there, login",
-        "signIn":"LOGIN"
+        "signIn":"LOGIN",
+        "typeText":"text",
+        "usernamePlaceholder":"Username",
+        "passwordPlaceholder":"Password",
+        "typePassword":"password",
+        "typeButton":"button",
+        "signInText":"Sign in",
+        "ButtonClassName":"signinButtonStyling",
+        "signInButtonTestId":"sign-in-button",
+        "enterUsernameMsg":"Please enter username",
+        "enterPasswordMsg":"Please enter password",
+        "networkErrorMsg":"Network Error",
+        "loadingMsg":"Loading...",
+        "homePageEndPoint":"home"
     },
     "foodManagement":{
         "home":"Home",

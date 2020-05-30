@@ -22,5 +22,13 @@ describe('SignInPage',() => {
         const passwordField=getByPlaceholderText('Password');
         expect(passwordField.value).toBe(password);
     });
+
+    it("should render given error message", () => {
+        const errorMessage="invalid username";
+        const { getByText } = render(
+          <SignInPage errorMessage={errorMessage} />
+        )
+        getByText(/invalid username/i);
+    });
     
 })

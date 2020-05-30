@@ -2,7 +2,6 @@ import {observable,action,computed} from "mobx"
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
 import {MealModel} from '../../Models/MealModel';
-import {MealsFixture} from '../../../services/UserServices/MealsAPIService/Meals.fixture';
 
 class MealInfoStore{
     @observable getMealInfoAPIStatus;
@@ -64,10 +63,7 @@ class MealInfoStore{
     onChangeDate(){
         
     }
-    @action.bound
-    goBackHome(){
-
-    }
+    
 }
 
 export {MealInfoStore}

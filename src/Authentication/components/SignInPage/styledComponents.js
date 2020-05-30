@@ -16,7 +16,10 @@ const SignInForm = styled.div`
     padding-right:40px;
     border-radius: 8px;
     background-color: ${COLORS.white};
-    
+`
+const MsgShowField=styled.span`
+    ${tw`text-red-700 text-sm self-center`}
+    height:30px;
 `
 const Title = styled(Typo32DarkBlueGreyRubikRegular)``
-export {MainPageContainer,SignInForm,Title}
+export {MainPageContainer,SignInForm,Title,MsgShowField}

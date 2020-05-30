@@ -6,11 +6,14 @@ import { observer } from "mobx-react";
 
 @observer
 class MealPreferenceCustom extends Component {
-    render() {
-        const {info}=this.props;
-        Object.entries(info).map(([key, value]) => {
+    componentDidMount=()=>{
+        Object.entries(this.props.info).map(([key, value]) => {
             value.quantity=new CounterModel();
          })
+    }
+    render() {
+        const {info}=this.props;
+        
         return (
             <Wrap>
                 {
@@ -22,8 +25,8 @@ class MealPreferenceCustom extends Component {
                             </Left>
                             <Right>
                                 <Counter number={value.quantity.counter} 
-                                        onIncrement={()=>value.quantity.onIncrement}
-                                        onDecrement={()=>value.quantity.onDecrement}
+                                        onIncrement={value.quantity.onIncrement}
+                                        onDecrement={value.quantity.onDecrement}
                                     />
                                 {` ${value.item.unit}`}
                             </Right>

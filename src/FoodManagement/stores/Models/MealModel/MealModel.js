@@ -41,11 +41,11 @@ class MealModel{
     }
     @action.bound
     onClickSkipMeal(){
-        console.log(skipped);
+        console.log('post requested updated mealItems');
     }
     @action.bound
     onClickSave(){
-        console.log(Save);
+        console.log('post requested updated mealItems');
     }
     @action.bound
     onClickBack(){
@@ -53,7 +53,7 @@ class MealModel{
     }
     @action.bound
     onSelectedDate(){
-        console.log(date);
+        
     }
 }
 export {MealModel}

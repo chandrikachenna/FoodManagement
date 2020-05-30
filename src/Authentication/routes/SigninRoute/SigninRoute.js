@@ -3,6 +3,9 @@ import {SignInPage} from '../../components/SignInPage';
 import { observer, inject } from "mobx-react";
 import { observable } from "mobx";
 import { withRouter } from "react-router-dom";
+import strings from '../../../Common/i18n/strings.json'
+
+const {enterUsernameMsg,enterPasswordMsg,networkErrorMsg,loadingMsg,homePageEndPoint}=strings.authentication;
 
 @inject('authStore')
 @observer
@@ -18,24 +21,24 @@ class SigninRoute extends Component {
     }
     onSuccesSignIn=()=>{
         const {history}=this.props;
-        history.replace("home");
+        history.replace(homePageEndPoint);
     }
     onFailureSignIn=()=>{
         const { getUserSignInAPIError: apiError } = this.props.authStore;
         if (apiError !== null && apiError !== undefined) {
-            this.errorMessage = 'Network Error';
+            this.errorMessage = networkErrorMsg;
         }
     }
     onClickSignIn=()=>{
         if(this.username && this.password)
         {
-            this.errorMessage="Loading...";
+            this.errorMessage=loadingMsg;
             this.props.authStore.userSignIn(this.onSuccesSignIn,this.onFailureSignIn);
         }
         else if(!this.username)
-            this.errorMessage="Please enter username";
+            this.errorMessage=enterUsernameMsg;
         else if(!this.password)
-            this.errorMessage="Please enter password";
+            this.errorMessage=enterPasswordMsg;
     }
     render() {
         return (
