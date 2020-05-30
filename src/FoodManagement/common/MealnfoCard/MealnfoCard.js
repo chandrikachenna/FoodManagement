@@ -14,7 +14,6 @@ class MealInfoCard extends Component {
         const {history}=this.props;
         this.props.onClickEdit(this.props.info.meal_type);
         history.push('/food-management/set-meal-preference');
-        console.log('infoCard')
     }
     render() {
         const {editPreference}=strings.foodManagement

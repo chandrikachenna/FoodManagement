@@ -22,15 +22,12 @@ class MealPreferenceCard extends Component {
         history.push('/food-management/home');
     }
     onClikFullMeal=()=>{
-        console.log('full');
         this.mealFormate='full_meal';
     }
     onClikHalfMeal=()=>{
-        console.log('h')
         this.mealFormate='half_meal';
     }
     onClikCustom=()=>{
-        console.log('c')
         this.mealFormate='custom';
     }
     render() {

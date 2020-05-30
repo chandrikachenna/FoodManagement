@@ -34,6 +34,7 @@ class MealInfoStore{
     @action.bound
     setMealInfoAPIStatus(apiStatus){
         this.getMealInfoAPIStatus=apiStatus;
+        console.log(this.getMealInfoAPIStatus);
     }
     @action.bound
     setMealInfoAPIError(error){
@@ -46,6 +47,7 @@ class MealInfoStore{
     @action.bound
     onClickEdit(mealType){
         this.selectedMealType=new MealModel(this.mealPreferenceFixture,mealType);
+        this.selectedMealType.getEditPreference();
     }
     @action.bound
     updateMealInfo(requestObject){

@@ -5,9 +5,7 @@ import {Layout,Left,Right,Wrap} from './styledcomponents'
 class MealPreferenceDefault extends Component {
     render() {
         const {info}=this.props;
-        Object.entries(info).forEach(([key, value]) => {
-            console.log(value.item,value.quantity)
-         })
+        
         return (
             <Wrap>
             {
