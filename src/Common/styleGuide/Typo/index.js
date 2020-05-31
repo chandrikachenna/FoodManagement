@@ -148,3 +148,37 @@ line-height: 1.25;
 letter-spacing: normal;
 color: ${COLORS.darkBlueGrey};
 `
+
+export const Typo20BlackHKGroteskMedium=styled.span`
+
+  font-family: HKGrotesk;
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: ${COLORS.black};
+`
+
+export const Typo18SteelHKGroteskMedium=styled.span`
+font-family: HKGrotesk;
+font-size: 18px;
+font-weight: 500;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.33;
+letter-spacing: normal;
+color:${COLORS.steel};
+`
+
+export const Typo14Steel60HKGroteskRegular=styled.span`
+font-family: HKGrotesk;
+font-size: 14px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: normal;
+color: ${COLORS.steel60};
+`

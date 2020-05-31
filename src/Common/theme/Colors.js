@@ -6,5 +6,6 @@ export const COLORS={
     whiteTwo:'#fbfbfb',
     lightBlueGrey:'#d7dfe9',
     jade:"#1db05f",
-    black:"#000"
+    black:"#000",
+    steel60:'rgba(126, 133, 142, 0.6)'
 }

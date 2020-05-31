@@ -34,7 +34,8 @@
         "editPreference":"Edit",
         "skipMeal":"Skip Meal",
         "back":"Back",
-        "save":"Save"
-
+        "save":"Save",
+        "done":"Done",
+        "writeReview":"Write Review"
     }
 }

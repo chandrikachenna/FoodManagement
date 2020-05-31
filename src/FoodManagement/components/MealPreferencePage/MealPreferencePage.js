@@ -3,6 +3,7 @@ import {MealPreferencePageContainer} from './styledComponents';
 import {Navbar} from '../../common/Navbar';
 import {Carousel} from '../../common/Carousel';
 import {MealPreferenceCard} from '../../common/MealPreferenceCard';
+import {ReviewCard} from '../ReviewCard';
 
 class MealPreferencePage extends Component {
     render() {
@@ -12,7 +13,8 @@ class MealPreferencePage extends Component {
             <MealPreferencePageContainer>
                 <Navbar onClickSignOut={onClickSignOut} onClickGoHome={onClickGoHome}/>
                 <Carousel/>
-                <MealPreferenceCard selectedMealTypeInfo={selectedMealTypeInfo}/>
+                <ReviewCard/>
+                {/* <MealPreferenceCard selectedMealTypeInfo={selectedMealTypeInfo}/> */}
             </MealPreferencePageContainer>
         );
     }
