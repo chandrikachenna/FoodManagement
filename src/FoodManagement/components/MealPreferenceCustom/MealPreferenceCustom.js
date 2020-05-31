@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Layout,Left,Right,Wrap} from './styledComponents';
 import {Counter} from '../../../Common/components/Counter';
-import {CounterModel} from '../../stores/Models/CounterModel';
+import {CounterModel} from '../../stores/models/CounterModel';
 import { observer } from "mobx-react";
 
 @observer
@@ -9,11 +9,10 @@ class MealPreferenceCustom extends Component {
     componentDidMount=()=>{
         Object.entries(this.props.info).map(([key, value]) => {
             value.quantity=new CounterModel();
-         })
+        })
     }
     render() {
-        const {info}=this.props;
-        
+        const {info}=this.props
         return (
             <Wrap>
                 {

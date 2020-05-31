@@ -6,7 +6,7 @@ import{
 } from '@ib/api-constants';
 
 
-import {MealPreferenceFixture} from '../../../services/UserServices/MealPreferenceServices/MealPreference.fixture';
+import {MealPreferenceFixture} from '../../../services/MealPreferenceServices/MealPreference.fixture';
 import getMealPreferenceInfo from '../../../fixtures/getMealPreferenceInfo.json';
 
 import {MealModel} from './MealModel';

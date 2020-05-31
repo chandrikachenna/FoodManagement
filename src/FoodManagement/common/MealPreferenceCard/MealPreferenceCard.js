@@ -48,7 +48,7 @@ class MealPreferenceCard extends Component {
                         {this.mealFormate.match('full_meal') && <MealPreferenceDefault info={selectedMealTypeInfo.mealItems.full_meal}/>}
                         { this.mealFormate.match('half_meal') && <MealPreferenceDefault  info={selectedMealTypeInfo.mealItems.half_meal}/>}
                         { this.mealFormate.match('custom') && <MealPreferenceCustom  info={selectedMealTypeInfo.mealItems.custom} />}
-                        </Wrap>  
+                    </Wrap>  
                     <ImageHolder src={FoodPreferenceImage}/>
                     </InfoBox>
                     <Footer>

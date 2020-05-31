@@ -1,4 +1,4 @@
-import getMealInfo from '../../../fixtures/getMealInfo.json';
+import getMealInfo from '../../fixtures/getMealInfo.json';
 
 class MealsFixture{
     

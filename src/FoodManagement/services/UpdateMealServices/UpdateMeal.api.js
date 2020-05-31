@@ -1,6 +1,6 @@
-import {networkCallWithApisauce} from '../../../utils/APIUtils'
+import {networkCallWithApisauce} from '../../utils/APIUtils'
 import { create } from "apisauce";
-import {apiMethods} from '../../../constants/APIConstants';
+import {apiMethods} from '../../constants/APIConstants';
 
 class UpdateMealsAPI{
     api;

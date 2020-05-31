@@ -1,7 +1,7 @@
 import {observable,action,computed} from "mobx"
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
-import {MealModel} from '../../Models/MealModel';
+import {MealModel} from '../models/MealModel';
 
 class MealInfoStore{
     @observable getMealInfoAPIStatus;

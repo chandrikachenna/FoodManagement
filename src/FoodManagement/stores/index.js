@@ -1,11 +1,11 @@
-import {MealsAPI} from '../services/UserServices/MealsAPIService/MealsAPI';
-import {MealsFixture} from '../services/UserServices/MealsAPIService/Meals.fixture';
+import {MealsAPI} from '../services/MealInfoServices/Meals.api';
+import {MealsFixture} from '../services/MealInfoServices/Meals.fixture';
 
-import {MealPreferenceFixture} from '../services/UserServices/MealPreferenceServices/MealPreference.fixture';
+import {MealPreferenceFixture} from '../services/MealPreferenceServices/MealPreference.fixture';
 
-import {UpdateMealsAPI} from '../services/UserServices/UpdateMealsAPIService/UpdateMealsAPI';
+import {UpdateMealsAPI} from '../services/UpdateMealServices/UpdateMeal.api';
 
-import {MealInfoStore} from './UserStores/MealInfoStore';
+import {MealInfoStore} from './MealInfoStore';
 
 
 const mealsAPI=new MealsAPI();
