@@ -3,16 +3,14 @@ import {Layout,Header,Footer,InfoBox,Title,SelectionField,ImageHolder,Wrap} from
 import { withRouter } from "react-router-dom";
 import {ButtonComponent} from '../../../Common/components/ButtonComponent';
 import strings from '../../../Common/i18n/strings.json';
-import {DatePickerComponent} from '../../../Common/components/DatePickerComponent';
+import {DatePicker} from '../../../Common/components/DatePicker';
 import {TabBar} from '../../../Common/components/TabBar';
-import {Counter} from '../../../Common/components/Counter';
 import FoodPreferenceImage from '../../../Common/images/foodPreference.png';
 import { observer } from "mobx-react";
 import { observable } from "mobx";
 
 import {MealPreferenceCustom} from '../../components/MealPreferenceCustom';
 import {MealPreferenceDefault} from '../../components/MealPreferenceDefault';
-
 
 @observer
 class MealPreferenceCard extends Component {
@@ -43,7 +41,7 @@ class MealPreferenceCard extends Component {
                     </Header>
                     <SelectionField>
                         <TabBar onClikFullMeal={this.onClikFullMeal} onClikHalfMeal={this.onClikHalfMeal} onClikCustom={this.onClikCustom}/>
-                        <DatePickerComponent/>
+                        <DatePicker/>
                     </SelectionField>
                     <InfoBox>
                     <Wrap>

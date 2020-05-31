@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {CardLayout,Header,ButtonTextLabel,TitleBox,FoodType,FoodTimigs,
     FoodItemsContainer,EditPreferenceBox,Left,Right,FoodItem,Label} from './styledComponents';
-import './MealnfoCard.css'
+import './MealnfoCard.css';
 import {Button} from '../../../Common/components/Button';
 import strings from '../../../Common/i18n/strings.json';
 import {IconHolder} from '../../../Common/components/IconHolder';
@@ -50,8 +50,7 @@ class MealInfoCard extends Component {
                 </FoodItemsContainer>
                 <EditPreferenceBox></EditPreferenceBox>
                 <Button buttonName={editPreference} className={`button-styling`} 
-                    onClickFunction={this.onClick} textLabel={ButtonTextLabel}/>
-                
+                    onClickFunction={this.onClick} textLabel={ButtonTextLabel} />
             </CardLayout>
         );
     }

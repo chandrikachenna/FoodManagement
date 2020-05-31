@@ -18,12 +18,12 @@ class Mealcards extends Component {
              list=Object.entries(mealInfoList[0]).map(([key, value]) => value)
         }
         return (
-                <CardsContainer>
+                <>
                     {
                      list && list.map(info => 
                         <MealInfoCard info={info} onClickEdit={onClickEdit}/>)  
                     }
-                </CardsContainer>
+                </>
         );
     }
 }

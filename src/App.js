@@ -4,17 +4,13 @@ import { Provider, observer } from "mobx-react";
 
 import "./App.css";
 
-import HomePage from './components/HomePage'
-import Page1 from './components/Page1'
+import HomePage from './components/HomePage';
 
 import authRoutes from './Authentication/routes';
 import authStore from './Authentication/stores';
 import foodManagementRoutes from './FoodManagement/routes';
 
 import foodManagementStores from './FoodManagement/stores';
-
-
-
 
 @observer
 class App extends React.Component{
@@ -24,7 +20,7 @@ class App extends React.Component{
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
             
-             {authRoutes}
+              {authRoutes}
               {foodManagementRoutes}
               <Route exact path="/">
                 <HomePage />

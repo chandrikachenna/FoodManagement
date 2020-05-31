@@ -10,5 +10,12 @@ const Div=styled.div`
     padding:15px 0px;
     height:70px;
 `
+const CardsContainer=styled.div`
+    ${tw`flex flex-col xl:flex-row items-center justify-between w-full`}
+    width:100%;
+    min-height:400px;
+    padding:0px 100px;
+`
 const ButtonTextLabel = styled(Typo14WhiteRubikMedium)``
-export {HomePageContainer,Div,ButtonTextLabel}
+
+export {HomePageContainer,Div,ButtonTextLabel,CardsContainer}

@@ -3,7 +3,7 @@ import {HomePage} from '../../components/HomePage';
 import { withRouter } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import {Mealcards} from '../../components/Mealcards';
-
+import {Carousel} from '../../common/Carousel';
 @inject('mealInfoStore','authStore')
 @observer
 class HomePageRoute extends Component {
