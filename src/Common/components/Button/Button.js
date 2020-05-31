@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import {ButtonTag} from './styledComponents';
+import {ButtonTag,Text} from './styledComponents';
 import { observer } from "mobx-react";
 
 @observer
 class Button extends Component {
     render() {
-        const {onClickFunction,buttonName,className,textLabel:TextLabel}=this.props
+        const {variant,onClick,name,width,color}=this.props;
+        console.log(name);
         return (
-            <ButtonTag onClick={onClickFunction} className={className}>
-                <TextLabel>{buttonName}</TextLabel>
+            <ButtonTag onClick={onClick} variant={variant} width={width}  >
+                <Text color={color}>{name}</Text>
             </ButtonTag>
         );
     }

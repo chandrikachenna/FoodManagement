@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
 
 import {MealPreferencePage} from '../../components/MealPreferencePage';
@@ -10,7 +9,8 @@ import {MealPreferencePage} from '../../components/MealPreferencePage';
 @observer
 class MealPreferenceRoute extends Component {
     componentDidMount=()=>{
-        //this.props.mealInfoStore.onClickEdit('Breakfast')
+        const {onClickEdit,selectedMealType}=this.props.mealInfoStore;
+        onClickEdit(selectedMealType);
     }
     onClickSignOut=()=>{
         this.props.authStore.userSignOut();
@@ -22,9 +22,8 @@ class MealPreferenceRoute extends Component {
         history.push('/food-management/home')
     }
     render() {
-        const selectedMealTypeInfo={...this.props.mealInfoStore.selectedMealType}
-        
-       return( 
+        const selectedMealTypeInfo={...this.props.mealInfoStore.selectedMealTypeInfo}
+        return( 
             <MealPreferencePage 
                 onClickSignOut={this.onClickSignOut}
                 selectedMealTypeInfo={selectedMealTypeInfo}

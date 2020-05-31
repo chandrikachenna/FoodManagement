@@ -3,11 +3,12 @@ import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
 
 
-class MealModel{
+class MealInfoItemModel{
     @observable getMealItemsAPIStatus;
     @observable getMealItemsAPIError;
     @observable editPreferenceAPI;
     @observable mealItems;
+    @observable mealItemsInfo;
     constructor(api,mealType){
         this.editPreferenceAPI=api;
         this.mealType=mealType;
@@ -56,4 +57,4 @@ class MealModel{
         
     }
 }
-export {MealModel}
+export {MealInfoItemModel}

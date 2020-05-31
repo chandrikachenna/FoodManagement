@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
-import {Typo14WhiteRubikMedium} from '../../../Common/styleGuide/Typo'
+
 const HomePageContainer = styled.div`
     ${tw`flex flex-col min-h-screen justify-between `}
     background-color:#fbfbfb;
@@ -16,6 +16,5 @@ const CardsContainer=styled.div`
     min-height:400px;
     padding:0px 100px;
 `
-const ButtonTextLabel = styled(Typo14WhiteRubikMedium)``
 
-export {HomePageContainer,Div,ButtonTextLabel,CardsContainer}
+export {HomePageContainer,Div,CardsContainer}

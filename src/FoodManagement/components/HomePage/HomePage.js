@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {HomePageContainer,Div,CardsContainer,ButtonTextLabel} from './styledComponents';
+import {HomePageContainer,Div,CardsContainer} from './styledComponents';
 import {Navbar} from '../../common/Navbar';
 import {Carousel} from '../../common/Carousel';
 import {DatePicker} from '../../../Common/components/DatePicker';
 import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure';
 import { API_FETCHING} from '@ib/api-constants';
+
 
 class HomePage extends Component {
     render() {

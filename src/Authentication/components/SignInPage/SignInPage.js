@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {MainPageContainer,SignInForm,Title,MsgShowField} from './styledComponents';
-import './signinPage.css';
+
 
 import {InputElementWithLabel} from '../../common/InputElementWithLabel';
 import {Footer,Link,ButtonTextLabel} from '../../common/styledComponents';
@@ -9,6 +9,7 @@ import {Footer,Link,ButtonTextLabel} from '../../common/styledComponents';
 import strings from '../../../Common/i18n/strings.json';
 import {Logo} from '../../../Common/components/Logo';
 import {Button} from '../../../Common/components/Button';
+import { COLORS } from "../../../Common/theme/Colors";
 
 
 class SignInPage extends Component {
@@ -23,9 +24,12 @@ class SignInPage extends Component {
                     <Title>{signInTitle}</Title>
                     <InputElementWithLabel  label={username} type={typeText} placeholder={usernamePlaceholder} value={userName} onChange={onChangeUsername}/>
                     <InputElementWithLabel  label={password} type={typePassword} placeholder={passwordPlaceholder} value={pwd} onChange={onChangePassword}/>
-                    <Button onClickFunction={onClickSignIn} buttonName={signIn} type={typeButton} text={signInText} disabled={(loginStatus==100)?true:false} 
-                            data-testid={signInButtonTestId} className={ButtonClassName} textLabel={ButtonTextLabel}
+                    <Button onClick={onClickSignIn} name={signIn} width={'320px'} variant={COLORS.brightBlue}
+                            type={typeButton} text={signInText} 
+                            disabled={(loginStatus==100)?true:false} 
+                            data-testid={signInButtonTestId} 
                         />
+                    
                     <MsgShowField>{errorMessage && errorMessage}</MsgShowField>
                     <Footer>{haveAnAccount}
                         <Link>{` ${signUplink}`}</Link>

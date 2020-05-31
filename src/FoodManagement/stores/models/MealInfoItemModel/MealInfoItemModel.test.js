@@ -9,7 +9,7 @@ import{
 import {MealPreferenceFixture} from '../../../services/MealPreferenceServices/MealPreference.fixture';
 import getMealPreferenceInfo from '../../../fixtures/getMealPreferenceInfo.json';
 
-import {MealModel} from './MealModel';
+import {MealModel} from './MealInfoItemModel';
 
 describe('mealModel tests',()=>{
     let mealPreferenceFixture;

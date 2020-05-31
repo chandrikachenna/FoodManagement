@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import {Layout,Header,Footer,InfoBox,Title,SelectionField,ImageHolder,Wrap} from './styledComponents';
-import { withRouter } from "react-router-dom";
-import {ButtonComponent} from '../../../Common/components/ButtonComponent';
-import strings from '../../../Common/i18n/strings.json';
-import {DatePicker} from '../../../Common/components/DatePicker';
-import {TabBar} from '../../../Common/components/TabBar';
-import FoodPreferenceImage from '../../../Common/images/foodPreference.png';
 import { observer } from "mobx-react";
 import { observable } from "mobx";
+import { withRouter } from "react-router-dom";
+
+import {Layout,Header,Footer,InfoBox,Title,SelectionField,ImageHolder,Wrap} from './styledComponents';
 
 import {MealPreferenceCustom} from '../../components/MealPreferenceCustom';
 import {MealPreferenceDefault} from '../../components/MealPreferenceDefault';
+
+import {DatePicker} from '../../../Common/components/DatePicker';
+import {TabBar} from '../../../Common/components/TabBar';
+import FoodPreferenceImage from '../../../Common/images/foodPreference.png';
+import {Button} from '../../../Common/components/Button';
+import {COLORS} from '../../../Common/theme/Colors';
+import strings from '../../../Common/i18n/strings.json';
+
 
 @observer
 class MealPreferenceCard extends Component {
@@ -31,29 +35,41 @@ class MealPreferenceCard extends Component {
     render() {
         const {skipMeal,back,save}=strings.foodManagement;
         const {selectedMealTypeInfo}=this.props;
+        // if(selectedMealTypeInfo.getMealItemsAPIStatus===200){
+        //     Object.entries(selectedMealTypeInfo.mealItems).map(([mealFormate, mealItemsList]) => {
+        //         console.log(mealFormate,mealItemsList);
+                
+        //     })
+        // }
         return (
             <Layout>
                 {selectedMealTypeInfo.getMealItemsAPIStatus===200 &&
                 <>
                     <Header>
                         <Title>{selectedMealTypeInfo.mealItems.mealType}</Title>
-                        <ButtonComponent onClick={this.onClikFullMeal} text={skipMeal}/>
+                        <Button variant={COLORS.white} onClick={this.onClikFullMeal} width={'102px'}
+                                name={skipMeal} color={COLORS.black}
+                        />
                     </Header>
                     <SelectionField>
                         <TabBar onClikFullMeal={this.onClikFullMeal} onClikHalfMeal={this.onClikHalfMeal} onClikCustom={this.onClikCustom}/>
                         <DatePicker/>
                     </SelectionField>
                     <InfoBox>
-                    <Wrap>
-                        {this.mealFormate.match('full_meal') && <MealPreferenceDefault info={selectedMealTypeInfo.mealItems.full_meal}/>}
-                        { this.mealFormate.match('half_meal') && <MealPreferenceDefault  info={selectedMealTypeInfo.mealItems.half_meal}/>}
-                        { this.mealFormate.match('custom') && <MealPreferenceCustom  info={selectedMealTypeInfo.mealItems.custom} />}
-                    </Wrap>  
+                        <Wrap>
+                            { this.mealFormate.match('full_meal') && <MealPreferenceDefault info={selectedMealTypeInfo.mealItems.full_meal}/>}
+                            { this.mealFormate.match('half_meal') && <MealPreferenceDefault  info={selectedMealTypeInfo.mealItems.half_meal}/>}
+                            { this.mealFormate.match('custom') && <MealPreferenceCustom  info={selectedMealTypeInfo.mealItems.custom} />}
+                        </Wrap>  
                     <ImageHolder src={FoodPreferenceImage}/>
                     </InfoBox>
-                    <Footer>
-                        <ButtonComponent onClick={this.onClick} text={back}/>
-                        <ButtonComponent onClick={this.onClick} text={save}/>
+                    <Footer>  
+                        <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}
+                                name={back} color={COLORS.black}
+                        />
+                        <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}
+                                name={save} color={COLORS.black}
+                        />   
                     </Footer>
                 </>
             }

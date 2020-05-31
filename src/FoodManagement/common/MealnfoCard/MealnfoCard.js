@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import {CardLayout,Header,ButtonTextLabel,TitleBox,FoodType,FoodTimigs,
-    FoodItemsContainer,EditPreferenceBox,Left,Right,FoodItem,Label} from './styledComponents';
-import './MealnfoCard.css';
+import { withRouter } from "react-router-dom";
+
+import {CardLayout,Header,TitleBox,FoodType,FoodTimigs,
+    FoodItemsContainer,Left,Right,FoodItem,Label} from './styledComponents';
+
 import {Button} from '../../../Common/components/Button';
-import strings from '../../../Common/i18n/strings.json';
 import {IconHolder} from '../../../Common/components/IconHolder';
 import {Menubar} from '../../../Common/components/Menubar';
-import { withRouter } from "react-router-dom";
 import {TextLabel} from '../../../Common/components/TextLabel';
+import {COLORS} from '../../../Common/theme/Colors';
+import strings from '../../../Common/i18n/strings.json';
+
 
 class MealInfoCard extends Component {
     onClick=()=>{
@@ -16,6 +19,7 @@ class MealInfoCard extends Component {
         history.push('/food-management/set-meal-preference');
     }
     render() {
+        const {typeButton}=strings.authentication
         const {editPreference}=strings.foodManagement
         const {meal_type,meal_items, meal_format,open_time,close_time,meal_icon}=this.props.info;
         return (
@@ -48,9 +52,9 @@ class MealInfoCard extends Component {
                         }   
                     </Right>
                 </FoodItemsContainer>
-                <EditPreferenceBox></EditPreferenceBox>
-                <Button buttonName={editPreference} className={`button-styling`} 
-                    onClickFunction={this.onClick} textLabel={ButtonTextLabel} />
+                <Button onClick={this.onClick} name={editPreference} width={'314px'} variant={COLORS.brightBlue}
+                            type={typeButton} text={editPreference} 
+                        />
             </CardLayout>
         );
     }

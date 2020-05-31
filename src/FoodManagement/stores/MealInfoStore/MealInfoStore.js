@@ -1,7 +1,7 @@
 import {observable,action,computed} from "mobx"
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
-import {MealModel} from '../models/MealModel';
+import {MealInfoItemModel} from '../models/MealInfoItemModel';
 
 class MealInfoStore{
     @observable getMealInfoAPIStatus;
@@ -10,8 +10,9 @@ class MealInfoStore{
     @observable mealPreferenceFixture
     @observable UpdateMealsAPIService;
     @observable mealInfo;
+    @observable selectedMealTypeInfo;
     @observable selectedMealType;
-    
+
     constructor(MealsAPIService,mealPreferenceFixture,UpdateMealsAPIService){
         this.MealsAPIService=MealsAPIService;
         this.mealPreferenceFixture=mealPreferenceFixture;
@@ -48,8 +49,9 @@ class MealInfoStore{
     }
     @action.bound
     onClickEdit(mealType){
-        this.selectedMealType=new MealModel(this.mealPreferenceFixture,mealType);
-        this.selectedMealType.getEditPreference();
+        this.selectedMealTypeInfo=new MealInfoItemModel(this.mealPreferenceFixture,mealType);
+        this.selectedMealTypeInfo.getEditPreference();
+        this.selectedMealType=mealType;
     }
     @action.bound
     updateMealInfo(requestObject){

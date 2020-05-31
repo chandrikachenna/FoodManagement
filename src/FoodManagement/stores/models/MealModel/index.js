@@ -1,1 +1,0 @@
-export {MealModel} from './MealModel';

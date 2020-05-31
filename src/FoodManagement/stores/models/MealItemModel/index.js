@@ -1,0 +1,1 @@
+export {MealItemModel} from './MealItemModel';

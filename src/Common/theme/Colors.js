@@ -5,5 +5,6 @@ export const COLORS={
     brightBlue:'#0b69ff',
     whiteTwo:'#fbfbfb',
     lightBlueGrey:'#d7dfe9',
-    jade:"#1db05f"
+    jade:"#1db05f",
+    black:"#000"
 }

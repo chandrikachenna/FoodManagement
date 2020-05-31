@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
-import {Typo16SteelHKGroteskRegular,Typo16DarkBlueGreyHKGroteskMedium,Typo12SteelHKGroteskRegular,Typo14WhiteHKGroteskSemiBold} from '../../../Common/styleGuide/Typo'
+import {Typo16SteelHKGroteskRegular,Typo16DarkBlueGreyHKGroteskMedium,Typo12SteelHKGroteskRegular} from '../../../Common/styleGuide/Typo'
 
 
 const CardLayout =  styled.div`
@@ -31,17 +31,10 @@ const Label=styled.div`
 
 const FoodType = styled(Typo16DarkBlueGreyHKGroteskMedium)``
 
-const ButtonTextLabel = styled(Typo14WhiteHKGroteskSemiBold)``
+
 
 const FoodTimigs =styled(Typo12SteelHKGroteskRegular)``
 
-
-const EditPreferenceBox=styled.span`
-    ${tw`flex flex-grow flex-row justify-end items-center`}
-    width: 314px;
-    height:30px;
-    padding:5px 0px;
-`
 const FoodItemsContainer=styled.div`
     ${tw`flex flex-row w-full`}
     flex-grow:1;
@@ -56,6 +49,5 @@ const Right=styled.div`
     flex-grow:1;
 `
 const FoodItem=styled(Typo16SteelHKGroteskRegular)``
-export {CardLayout,ButtonTextLabel,Header,TitleBox,FoodType,FoodTimigs,FoodItemsContainer,
-    EditPreferenceBox,Left,Right,FoodItem,Label}
+export {CardLayout,Header,TitleBox,FoodType,FoodTimigs,FoodItemsContainer,Left,Right,FoodItem,Label}
 
