@@ -1,1 +1,1 @@
-export  {ReviewCard} from './ReviewCard';
+export  {default as ReviewCard} from './ReviewCard';

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import {Layout,Title,SubTitle,Header,Review,Item,InfoContainer} from './styledComponents';
 import {StarRating} from '../../common/StarRating';
 import {Button} from '../../../Common/components/Button';
@@ -8,7 +9,8 @@ import {TextArea} from '../../../Common/components/TextArea';
 
 class ReviewCard extends Component {
     onClick=()=>{
-
+        const {history}=this.props;
+        history.push('/food-management/home');
     }
     render() {
         const {done}=strings.foodManagement
@@ -24,7 +26,7 @@ class ReviewCard extends Component {
                         <Item>Poori</Item>
                         <Item>Chapathi</Item>
                         <Item>Dosa</Item>
-                        <Item>idly  </Item>
+                        <Item>Idly  </Item>
                     </InfoContainer>
                     <InfoContainer>
                     <StarRating/>
@@ -46,7 +48,7 @@ class ReviewCard extends Component {
     }
 }
 
-export {ReviewCard};
+export default withRouter(ReviewCard);
 
 
 

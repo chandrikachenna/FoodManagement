@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import {HomePage} from '../../components/HomePage';
 import { withRouter } from "react-router-dom";
 import { observer, inject } from "mobx-react";
-import {Mealcards} from '../../components/Mealcards';
-import {Carousel} from '../../common/Carousel';
+import {MealInfo} from '../../components/MealInfo';
+
 @inject('mealInfoStore','authStore')
 @observer
 class HomePageRoute extends Component {
@@ -26,10 +26,11 @@ class HomePageRoute extends Component {
     }
     renderSuccessUI=observer(()=>{
         return(
-            <Mealcards 
+            <MealInfo 
                 mealInfoList={this.props.mealInfoStore.mealInfo}
                 onClickEdit={this.props.mealInfoStore.onClickEdit}
             />
+           
         );
     })
     render() {

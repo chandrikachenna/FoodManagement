@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import {MealPreferencePageContainer} from './styledComponents';
 import {Navbar} from '../../common/Navbar';
-import {Carousel} from '../../common/Carousel';
-import {MealPreferenceCard} from '../../common/MealPreferenceCard';
-import {ReviewCard} from '../ReviewCard';
+import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure';
 
 class MealPreferencePage extends Component {
     render() {
-        const {onClickSignOut,selectedMealTypeInfo,onClickGoHome}=this.props;
+        const {onClickSignOut,onClickGoHome,getMealItemsAPIError,getMealItemsAPIStatus,doNetworkCalls,renderSuccessUI}=this.props;
         
         return (
             <MealPreferencePageContainer>
                 <Navbar onClickSignOut={onClickSignOut} onClickGoHome={onClickGoHome}/>
-                <Carousel/>
-                <ReviewCard/>
-                {/* <MealPreferenceCard selectedMealTypeInfo={selectedMealTypeInfo}/> */}
+                <LoadingWrapperWithLoader
+                        apiStatus={getMealItemsAPIStatus}
+                        apiError={getMealItemsAPIError}
+                        onRetryClick={doNetworkCalls}
+                        renderSuccessUI={renderSuccessUI}
+                    />
             </MealPreferencePageContainer>
         );
     }

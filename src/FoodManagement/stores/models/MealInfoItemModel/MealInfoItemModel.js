@@ -29,7 +29,10 @@ class MealInfoItemModel{
     }
     @action.bound
     setMealItemsAPIStatus(apiStatus){
-        this.getMealItemsAPIStatus=apiStatus;
+        setTimeout(()=>{
+            this.getMealItemsAPIStatus=apiStatus;
+        })
+        this.getMealItemsAPIStatus=100;
     }
     @action.bound
     setMealItemsAPIError(error){
