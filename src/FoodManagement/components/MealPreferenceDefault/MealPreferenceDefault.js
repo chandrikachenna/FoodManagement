@@ -4,23 +4,22 @@ import {Layout,Left,Right,Wrap} from './styledcomponents'
 
 class MealPreferenceDefault extends Component {
     render() {
-        const {info}=this.props;
-        
+        const {mealItems}=this.props;
         return (
             <Wrap>
             {
-                Object.entries(info).map(([key, value]) => 
+                mealItems.map((info)=>
                     <Layout>
                         <Left>
-                            <p>{value.item.name}</p>
-                            <p>{value.item.catageory}</p>
+                            <p>{info.mealItemInfo.name}</p>
+                            <p>{info.mealItemInfo.catageory}</p>
                         </Left>
                         <Right>
-                            <p>{value.quantity.number}</p> 
-                            <p>{` ${value.item.unit}`}</p>
+                            <p>{info.quantity}</p> 
+                            <p>{` ${info.mealItemInfo.unit}`}</p>
                         </Right>
                     </Layout>
-                )
+                ) 
             }
             
         </Wrap>

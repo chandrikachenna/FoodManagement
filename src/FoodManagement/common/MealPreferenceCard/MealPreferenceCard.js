@@ -34,9 +34,7 @@ class MealPreferenceCard extends Component {
     }
     render() {
         const {skipMeal,back,save}=strings.foodManagement;
-        const {mealType,full_meal,half_meal,custom}=this.props.selectedMealTypeInfo.mealItems;
-        const {mealItems}=this.props.selectedMealTypeInfo
-        
+        const {mealType,mealItemsInfo}=this.props.selectedMealTypeInfo;
         return (
             <Layout>
                 <Header>
@@ -51,9 +49,9 @@ class MealPreferenceCard extends Component {
                 </SelectionField>
                 <InfoBox>
                     <Wrap>
-                        { this.mealFormate.match('full_meal') && <MealPreferenceDefault info={full_meal}/>}
-                        { this.mealFormate.match('half_meal') && <MealPreferenceDefault  info={half_meal}/>}
-                        { this.mealFormate.match('custom') && <MealPreferenceCustom  info={custom} />}
+                        { this.mealFormate.match('full_meal') && <MealPreferenceDefault  mealItems={mealItemsInfo[0]}/>}
+                        { this.mealFormate.match('half_meal') && <MealPreferenceDefault  mealItems={mealItemsInfo[1]}/>}
+                        { this.mealFormate.match('custom') && <MealPreferenceCustom  mealItems={mealItemsInfo[2]} />}
                     </Wrap>  
                 <ImageHolder src={FoodPreferenceImage}/>
                 </InfoBox>

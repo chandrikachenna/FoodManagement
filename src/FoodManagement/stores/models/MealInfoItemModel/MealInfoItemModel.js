@@ -7,8 +7,8 @@ class MealInfoItemModel{
     @observable getMealItemsAPIStatus;
     @observable getMealItemsAPIError;
     @observable editPreferenceAPI;
-    @observable mealItems;
     @observable mealItemsInfo;
+    @observable mealType;
     constructor(api,mealType){
         this.editPreferenceAPI=api;
         this.mealType=mealType;
@@ -19,6 +19,7 @@ class MealInfoItemModel{
         this.getMealItemsAPIStatus=API_INITIAL;
         this.getMealItemsAPIError=null;
         this.mealItems=[];
+        this.mealItemsInfo=[];
     }
     @action.bound
     getEditPreference(){
@@ -40,18 +41,16 @@ class MealInfoItemModel{
     }
     @action.bound
     setMealItemsResponse(mealItemsResponse){
-        // this.mealItems=mealItemsResponse;
-        // this.mealItems.mealType=this.mealType;
+       
 
-        
         Object.entries(mealItemsResponse).forEach(([mealFormate, mealItemsList]) => {
-            mealItemsList=mealItemsList.map(item=>{
-                item=new MealItemModel(item)
+            let ItemModel=[];
+            mealItemsList.forEach(item=>{
+                ItemModel.push(new MealItemModel(item));
             })
+            this.mealItemsInfo.push(ItemModel);
         })
-        this.mealItemsInfo=mealItemsResponse;
-        console.log(this.mealItemsInfo);
-        
+
     }
     @action.bound
     onClickSkipMeal(){

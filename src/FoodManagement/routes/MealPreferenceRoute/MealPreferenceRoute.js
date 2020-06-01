@@ -30,10 +30,9 @@ class MealPreferenceRoute extends Component {
     renderSuccessUI=observer(()=>{
         const selectedMealTypeInfo={...this.props.mealInfoStore.selectedMealTypeInfo}
         return(
-            // <MealPreference 
-            //     selectedMealTypeInfo={selectedMealTypeInfo}
-            // />
-            <p>hi</p>
+            <MealPreference 
+                selectedMealTypeInfo={selectedMealTypeInfo}
+            />
         );
     })
     render() {

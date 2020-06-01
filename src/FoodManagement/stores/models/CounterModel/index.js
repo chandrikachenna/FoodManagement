@@ -1,1 +1,0 @@
-export {CounterModel} from './CounterModel';
