@@ -7,9 +7,10 @@ import "./App.css";
 import HomePage from './components/HomePage';
 
 import authRoutes from './Authentication/routes';
-import authStore from './Authentication/stores';
 import foodManagementRoutes from './FoodManagement/routes';
+import adminRoutes from './Admin/routes';
 
+import authStore from './Authentication/stores';
 import foodManagementStores from './FoodManagement/stores';
 
 @observer
@@ -19,9 +20,9 @@ class App extends React.Component{
       <Provider {...authStore} {...foodManagementStores}>
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
-            
               {authRoutes}
               {foodManagementRoutes}
+              {adminRoutes}
               <Route exact path="/">
                 <HomePage />
               </Route>
