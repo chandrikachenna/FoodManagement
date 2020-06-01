@@ -34,45 +34,37 @@ class MealPreferenceCard extends Component {
     }
     render() {
         const {skipMeal,back,save}=strings.foodManagement;
-        const {selectedMealTypeInfo}=this.props;
-        // if(selectedMealTypeInfo.getMealItemsAPIStatus===200){
-        //     Object.entries(selectedMealTypeInfo.mealItems).map(([mealFormate, mealItemsList]) => {
-        //         console.log(mealFormate,mealItemsList);
-                
-        //     })
-        // }
+        const {mealType,full_meal,half_meal,custom}=this.props.selectedMealTypeInfo.mealItems;
+        const {mealItems}=this.props.selectedMealTypeInfo
+        
         return (
             <Layout>
-                {selectedMealTypeInfo.getMealItemsAPIStatus===200 &&
-                <>
-                    <Header>
-                        <Title>{selectedMealTypeInfo.mealItems.mealType}</Title>
-                        <Button variant={COLORS.white} onClick={this.onClikFullMeal} width={'102px'}
-                                name={skipMeal} color={COLORS.black}
-                        />
-                    </Header>
-                    <SelectionField>
-                        <TabBar onClikFullMeal={this.onClikFullMeal} onClikHalfMeal={this.onClikHalfMeal} onClikCustom={this.onClikCustom}/>
-                        <DatePicker/>
-                    </SelectionField>
-                    <InfoBox>
-                        <Wrap>
-                            { this.mealFormate.match('full_meal') && <MealPreferenceDefault info={selectedMealTypeInfo.mealItems.full_meal}/>}
-                            { this.mealFormate.match('half_meal') && <MealPreferenceDefault  info={selectedMealTypeInfo.mealItems.half_meal}/>}
-                            { this.mealFormate.match('custom') && <MealPreferenceCustom  info={selectedMealTypeInfo.mealItems.custom} />}
-                        </Wrap>  
-                    <ImageHolder src={FoodPreferenceImage}/>
-                    </InfoBox>
-                    <Footer>  
-                        <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}
-                                name={back} color={COLORS.black}
-                        />
-                        <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}
-                                name={save} color={COLORS.black}
-                        />   
-                    </Footer>
-                </>
-            }
+                <Header>
+                    <Title>{mealType}</Title>
+                    <Button variant={COLORS.white} onClick={this.onClick} width={'102px'}
+                            name={skipMeal} color={COLORS.black}
+                    />
+                </Header>
+                <SelectionField>
+                    <TabBar onClikFullMeal={this.onClikFullMeal} onClikHalfMeal={this.onClikHalfMeal} onClikCustom={this.onClikCustom}/>
+                    <DatePicker/>
+                </SelectionField>
+                <InfoBox>
+                    <Wrap>
+                        { this.mealFormate.match('full_meal') && <MealPreferenceDefault info={full_meal}/>}
+                        { this.mealFormate.match('half_meal') && <MealPreferenceDefault  info={half_meal}/>}
+                        { this.mealFormate.match('custom') && <MealPreferenceCustom  info={custom} />}
+                    </Wrap>  
+                <ImageHolder src={FoodPreferenceImage}/>
+                </InfoBox>
+                <Footer>  
+                    <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}
+                            name={back} color={COLORS.black}
+                    />
+                    <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}
+                            name={save} color={COLORS.black}
+                    />   
+                </Footer>
             </Layout>
         );
     }

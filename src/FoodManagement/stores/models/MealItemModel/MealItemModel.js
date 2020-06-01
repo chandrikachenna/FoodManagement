@@ -1,18 +1,22 @@
-import { action } from "@storybook/addon-actions";
+
+import { observable, action } from "mobx";
 
 class MealItemModel{
-    @observer quantitiy;
-    constructor(){
+   
+   @observable quantity;
+   constructor(mealItemInfo){
+       this.quantity=mealItemInfo.quantity.number;
+      // console.log(mealItemInfo);
+   }
+   @action.bound
+   onIncrement(){
+        this.quantity++;
         
-    }
-    @action.bound
-    onIncrement(){
-        this.quantitiy++;
-    }
-    @action.bound
-    onDecrement(){
-        this.quantitiy--;
-    }
+   }
+   @action.bound
+   onDecrement(){
+        this.quantity--;
+   }
 }
 
 export {MealItemModel}

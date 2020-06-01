@@ -13,6 +13,7 @@ class MealPreferenceCustom extends Component {
     }
     render() {
         const {info}=this.props
+        console.log(info)
         return (
             <Wrap>
                 {

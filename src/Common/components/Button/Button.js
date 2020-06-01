@@ -6,7 +6,6 @@ import { observer } from "mobx-react";
 class Button extends Component {
     render() {
         const {variant,onClick,name,width,color}=this.props;
-        console.log(name);
         return (
             <ButtonTag onClick={onClick} variant={variant} width={width}  >
                 <Text color={color}>{name}</Text>

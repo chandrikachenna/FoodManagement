@@ -1,7 +1,7 @@
 import { observable, action } from "mobx";
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
-
+import {MealItemModel} from '../MealItemModel';
 
 class MealInfoItemModel{
     @observable getMealItemsAPIStatus;
@@ -40,8 +40,18 @@ class MealInfoItemModel{
     }
     @action.bound
     setMealItemsResponse(mealItemsResponse){
-        this.mealItems=mealItemsResponse;
-        this.mealItems.mealType=this.mealType;
+        // this.mealItems=mealItemsResponse;
+        // this.mealItems.mealType=this.mealType;
+
+        
+        Object.entries(mealItemsResponse).forEach(([mealFormate, mealItemsList]) => {
+            mealItemsList=mealItemsList.map(item=>{
+                item=new MealItemModel(item)
+            })
+        })
+        this.mealItemsInfo=mealItemsResponse;
+        console.log(this.mealItemsInfo);
+        
     }
     @action.bound
     onClickSkipMeal(){
