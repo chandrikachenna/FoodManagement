@@ -37,5 +37,12 @@
         "save":"Save",
         "done":"Done",
         "writeReview":"Write Review"
+    },
+    "admin":{
+        "scheduleMeal":"Schedule Meal",
+        "headCount":"Head Count",
+        "mealFeedback":"Meal feedback",
+        "foodTrack":"Food Track"
     }
+
 }

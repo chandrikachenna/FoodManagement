@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import {HomePageContainer} from './styledComponents';
+import {Navbar} from '../../common/Navbar';
+import {MealSchedule} from '../MealSchedule';
+import {Carousel} from '../../common/Carousel';
 
 class MealSchedulePage extends Component {
     render() {
+        const {onClickSignOut,onClickGoHome}=this.props;
         return (
-            <div>
-               hi 
-            </div>
+            <HomePageContainer>
+               <Navbar onClickSignOut={onClickSignOut} onClickGoHome={onClickGoHome}/>
+               <Carousel/>
+                <MealSchedule/>
+            </HomePageContainer>
         );
     }
 }

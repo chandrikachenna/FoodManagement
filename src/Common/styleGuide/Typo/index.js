@@ -137,8 +137,6 @@ export const Typo14HKGrotesk=styled.span`
   letter-spacing: normal;
 `
 export const Typo32DarkBlueGreyHKGroteskMedium=styled.span`
-width: 137px;
-height: 40px;
 font-family: HKGrotesk;
 font-size: 32px;
 font-weight: 500;
@@ -181,4 +179,14 @@ font-style: normal;
 line-height: normal;
 letter-spacing: normal;
 color: ${COLORS.steel60};
+`
+export const Typo16BrightBlueHKGroteskMedium=styled.span`
+font-family: HKGrotesk;
+font-size: 16px;
+font-weight: 500;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.5;
+letter-spacing: normal;
+color: ${COLORS.brightBlue};
 `
