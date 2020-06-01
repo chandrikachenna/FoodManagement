@@ -23,7 +23,7 @@
 				"meal_item":"Upma"
 			  }
 			], 
-		  "edit_preference_dead_line": "string" 
+		  "edit_preference_dead_line": "2020-06-01T70:00:00" 
 		}, 
 
 		"lunch": { 
@@ -52,7 +52,7 @@
 					"meal_item":"Butter Milk"
 			  	}
 			], 
-			"edit_preference_dead_line": "string" 
+			"edit_preference_dead_line": "2020-06-01T14:00:00" 
 		}, 
 
 		"dinner": { 
@@ -80,7 +80,7 @@
 					"meal_item":"Butter Milk"
 			  	}
 			], 
-			"edit_preference_dead_line": "string" 
+			"edit_preference_dead_line": "2020-06-01T22:00:00" 
 		}
 	  }  
 ]

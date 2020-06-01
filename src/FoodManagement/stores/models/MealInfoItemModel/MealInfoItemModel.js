@@ -18,7 +18,6 @@ class MealInfoItemModel{
     init(){
         this.getMealItemsAPIStatus=API_INITIAL;
         this.getMealItemsAPIError=null;
-        this.mealItems=[];
         this.mealItemsInfo=[];
     }
     @action.bound

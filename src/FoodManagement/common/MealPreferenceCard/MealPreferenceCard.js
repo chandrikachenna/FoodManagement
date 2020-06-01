@@ -34,11 +34,13 @@ class MealPreferenceCard extends Component {
     }
     render() {
         const {skipMeal,back,save}=strings.foodManagement;
+        const {selectedMealType}=this.props;
+        
         const {mealType,mealItemsInfo}=this.props.selectedMealTypeInfo;
         return (
             <Layout>
                 <Header>
-                    <Title>{mealType}</Title>
+                    <Title>{selectedMealType}</Title>
                     <Button variant={COLORS.white} onClick={this.onClick} width={'102px'}
                             name={skipMeal} color={COLORS.black}
                     />

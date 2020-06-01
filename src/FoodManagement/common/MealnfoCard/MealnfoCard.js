@@ -10,6 +10,7 @@ import {Menubar} from '../../../Common/components/Menubar';
 import {TextLabel} from '../../../Common/components/TextLabel';
 import {COLORS} from '../../../Common/theme/Colors';
 import strings from '../../../Common/i18n/strings.json';
+import { observable } from "mobx";
 
 
 class MealInfoCard extends Component {
@@ -40,7 +41,7 @@ class MealInfoCard extends Component {
                     <Left>
                         {
                             meal_items.map((item,index)=>
-                                index<3 && <FoodItem>{item.meal_item}</FoodItem>
+                                index<3 && <FoodItem >{item.meal_item}</FoodItem>
                             )
                         }
                     </Left>

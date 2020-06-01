@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {CardsContainer} from './styledComponents';
 import {MealInfoCard} from '../../common/MealnfoCard';
 import BreakFastIcon from '../../../Common/icons/breakfast_icon.svg';
 import LunchIcon from '../../../Common/icons/lunch_icon.svg';
@@ -21,7 +20,7 @@ class Mealcards extends Component {
                 <>
                     {
                      list && list.map(info => 
-                        <MealInfoCard info={info} onClickEdit={onClickEdit}/>)  
+                        <MealInfoCard key={(Math.random()).toString()} info={info} onClickEdit={onClickEdit} />)  
                     }
                 </>
         );

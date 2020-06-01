@@ -29,6 +29,7 @@ class HomePageRoute extends Component {
             <MealInfo 
                 mealInfoList={this.props.mealInfoStore.mealInfo}
                 onClickEdit={this.props.mealInfoStore.onClickEdit}
+                onChangeDate={this.props.mealInfoStore.onChangeDate}
             />
            
         );

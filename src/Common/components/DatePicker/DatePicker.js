@@ -9,23 +9,11 @@ class DatePicker extends Component {
     @observable startDate = new Date();
     handleChange = (date) => {
           this.startDate = date
-      };   
+    };   
     render() {
         return (
             <ReactDatePicker
                 selected={this.startDate}
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
                 onChange={this.handleChange}
             />
         );

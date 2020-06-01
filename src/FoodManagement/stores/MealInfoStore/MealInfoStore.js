@@ -12,12 +12,16 @@ class MealInfoStore{
     @observable mealInfo;
     @observable selectedMealTypeInfo;
     @observable selectedMealType;
+    @observable timeCounter;
 
     constructor(MealsAPIService,mealPreferenceFixture,UpdateMealsAPIService){
         this.MealsAPIService=MealsAPIService;
         this.mealPreferenceFixture=mealPreferenceFixture;
-        this.UpdateMealsAPIService=UpdateMealsAPIService
+        this.UpdateMealsAPIService=UpdateMealsAPIService;
         this.init();
+    }
+    componentDidMount=()=>{
+        this.timeCounter=Date.parse(new Date());
     }
     @action.bound
     init(){
@@ -25,6 +29,7 @@ class MealInfoStore{
         this.getMealInfoAPIError=null;
         this.mealInfo=[];
     }
+
     @action.bound
     getMealInfo(){
             const mealInfoPromise=this.MealsAPIService.getMealsAPI();
@@ -65,8 +70,8 @@ class MealInfoStore{
         this.mealInfo=UpdateMealInfoResponse;
     }
     @action.bound
-    onChangeDate(){
-        
+    onChangeDate(changedDateTime){
+        this.timeCounter=Date.parse(changedDateTime);
     }
     
 }
