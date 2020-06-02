@@ -190,3 +190,14 @@ line-height: 1.5;
 letter-spacing: normal;
 color: ${COLORS.brightBlue};
 `
+
+export const Typo12CoolGreyHKGroteskRegular=styled.span`
+font-family: HKGrotesk;
+font-size: 12px;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.33;
+letter-spacing: normal;
+color: ${COLORS.coolGrey};
+`

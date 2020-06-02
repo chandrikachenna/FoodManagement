@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { observable } from "mobx";
 import { withRouter } from "react-router-dom";
 
-import {Layout,Header,Footer,InfoBox,Title,SelectionField,Wrap} from './styledComponents';
+import {Layout,Header,Footer,InfoBox,Items,Title,SelectionField,Wrap,ItemsBox,AlignButton} from './styledComponents';
 
 import {DatePicker} from '../../../Common/components/DatePicker';
 import {TabBar} from '../../../Common/components/TabBar';
@@ -11,6 +11,7 @@ import {Button} from '../../../Common/components/Button';
 import {COLORS} from '../../../Common/theme/Colors';
 import strings from '../../../Common/i18n/strings.json';
 
+import {MealItem} from '../../common/MealItem';
 
 @observer
 class MealSchedule extends Component {
@@ -30,7 +31,7 @@ class MealSchedule extends Component {
     }
     render() {
         const {back,save}=strings.foodManagement;
-        const {scheduleMeal}=strings.admin;
+        const {scheduleMeal,addAnItem}=strings.admin;
 
         return (
             <Layout>
@@ -42,9 +43,21 @@ class MealSchedule extends Component {
                     <DatePicker/>
                 </SelectionField>
                 <InfoBox>
-                    <Wrap>
-                       
-                    </Wrap>  
+                    <ItemsBox>
+                        <Items>
+                            <MealItem/>
+                            <MealItem/>
+                        </Items>
+                        <Items>
+                            <MealItem/>
+                            <MealItem/>
+                        </Items>
+                    </ItemsBox>
+                    <AlignButton>
+                        <Button variant={COLORS.jade} onClick={this.onClick} width={'107px'}
+                                name={addAnItem} color={COLORS.white}
+                        /> 
+                    </AlignButton>
                 </InfoBox>
                 <Footer>  
                     <Button variant={COLORS.white} onClick={this.onClick} width={'71px'}

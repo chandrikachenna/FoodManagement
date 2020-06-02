@@ -11,7 +11,7 @@ const Layout = styled.div`
   background-color: white;
   position:absolute;
   z-index:3;
-  top:332px;
+  top:200px;
   left:310px;   
   padding:30px 60px;
   ${tw`flex flex-col flex-grow justify-center`}
@@ -25,10 +25,19 @@ const Footer=styled.div`
   width:250px;
 `
 const InfoBox=styled.div`
-  ${tw`flex flex-row`}
+  ${tw`flex flex-col justify-between `}
+  width:600px;
   padding:20px 0px;
   flex-grow:1
 `
+const ItemsBox=styled.div`
+  ${tw`flex flex-row justify-between `} 
+  flex-grow:1;
+`
+const Items=styled.div`
+  ${tw`flex flex-col justify-around items-center`}
+`
+
 const Title=styled(Typo32DarkBlueGreyHKGroteskMedium)`
 padding-bottom:10px;
     border-bottom:1px solid ${COLORS.brightBlue};
@@ -40,4 +49,7 @@ const SelectionField=styled.div`
 const Wrap=styled.div`
   ${tw`flex `}
 `
-export {Layout,Header,Footer,InfoBox,Title,SelectionField,Wrap}
+const AlignButton=styled.div`
+  align-self:flex-end;
+`
+export {Layout,Header,Footer,InfoBox,Title,SelectionField,Wrap,Items,ItemsBox,AlignButton}

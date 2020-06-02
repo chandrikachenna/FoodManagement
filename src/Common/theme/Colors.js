@@ -8,5 +8,6 @@ export const COLORS={
     jade:"#1db05f",
     black:"#000",
     steel60:'rgba(126, 133, 142, 0.6)',
-    darkBlueGrey16:'rgba(23, 31, 70, 0.16)'
+    darkBlueGrey16:'rgba(23, 31, 70, 0.16)',
+    coolGrey:"#b5b7c4"
 }

@@ -42,7 +42,8 @@
         "scheduleMeal":"Schedule Meal",
         "headCount":"Head Count",
         "mealFeedback":"Meal feedback",
-        "foodTrack":"Food Track"
+        "foodTrack":"Food Track",
+        "addAnItem":"ADD ITEM"
     }
 
 }
