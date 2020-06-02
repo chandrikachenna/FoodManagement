@@ -3,11 +3,11 @@ import { withRouter } from "react-router-dom";
 import {HeadCountsPage} from '../../components/HeadCountsPage';
 import { observer, inject } from "mobx-react";
 
-@inject('authStore')
+@inject('authStore','headCountsStore')
 @observer
 class HeadCountsRoute extends Component {
     componentDidMount=()=>{
-        
+        this.props.headCountsStore.getHeadCountsInfo();
     }
     onClickSignOut=()=>{
         this.props.authStore.userSignOut();

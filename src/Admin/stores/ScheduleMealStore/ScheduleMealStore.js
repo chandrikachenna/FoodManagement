@@ -21,7 +21,6 @@ class ScheduleMealStore{
     @action.bound
     setScheduleMealInfoAPIStatus(apiStatus){
         this.getScheduleMealInfoAPIStatus=apiStatus;
-        
     }
     @action.bound
     setScheduleMealInfoAPIError(error){
