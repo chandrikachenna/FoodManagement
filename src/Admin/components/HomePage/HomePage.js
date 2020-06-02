@@ -8,7 +8,7 @@ import strings from '../../../Common/i18n/strings.json';
 class HomePage extends Component {
     render() {
         const {scheduleMeal,headCount,mealFeedback,foodTrack}=strings.admin;
-        const {onClickSignOut,onClickGoHome}=this.props;
+        const {onClickSignOut,onClickGoHome,onClickScheduleMeal}=this.props;
         return (
             <HomePageContainer>
                <Navbar onClickSignOut={onClickSignOut} onClickGoHome={onClickGoHome}/>
@@ -19,10 +19,11 @@ class HomePage extends Component {
                             <Title>Welcome</Title>
                                 <Links>
                                     <Text>
-                                        <Link href={'food-management/home'}>{scheduleMeal}</Link>
+                                        {/* <Link onClick={onClickScheduleMeal}>{scheduleMeal}</Link> */}
+                                        <Link href={'food-management/admin/schedule-menu'}>{scheduleMeal}</Link>
                                     </Text>
                                     <Text>
-                                         <Link>{headCount}</Link>
+                                         <Link href={'food-management/admin/headCounts'}>{headCount}</Link>
                                     </Text>
                                     <Text>
                                          <Link>{mealFeedback}</Link>

@@ -1,0 +1,1 @@
+export {HeadCountsPage} from './HeadCountsPage';

@@ -12,12 +12,13 @@ import adminRoutes from './Admin/routes';
 
 import authStore from './Authentication/stores';
 import foodManagementStores from './FoodManagement/stores';
+import adminStores from './Admin/stores';
 
 @observer
 class App extends React.Component{
   render(){
     return(
-      <Provider {...authStore} {...foodManagementStores}>
+      <Provider {...authStore} {...foodManagementStores} {...adminStores}>
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               {authRoutes}

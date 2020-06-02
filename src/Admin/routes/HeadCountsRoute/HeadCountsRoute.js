@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-import {HomePage} from '../../components/HomePage';
+import {HeadCountsPage} from '../../components/HeadCountsPage';
 import { observer, inject } from "mobx-react";
 
-@inject('authStore','scheduleMealStore')
+@inject('authStore')
 @observer
-class HomePageRoute extends Component {
+class HeadCountsRoute extends Component {
+    componentDidMount=()=>{
+        
+    }
     onClickSignOut=()=>{
         this.props.authStore.userSignOut();
         const {history}=this.props;
@@ -17,13 +20,12 @@ class HomePageRoute extends Component {
     }
     render() {
         return (
-           <HomePage 
+            <HeadCountsPage
                 onClickGoHome={this.onClickGoHome}
                 onClickSignOut={this.onClickSignOut}
-                onClickScheduleMeal={this.onClickScheduleMeal}
-           />
+            />
         );
     }
 }
 
-export default withRouter(HomePageRoute);
+export default withRouter(HeadCountsRoute);

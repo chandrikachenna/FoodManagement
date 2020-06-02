@@ -15,19 +15,19 @@ import {MealItem} from '../../common/MealItem';
 
 @observer
 class MealSchedule extends Component {
-    @observable mealFormate='full_meal';
+    @observable mealType='breakfast';
     onClick=()=>{
         const {history}=this.props;
-        history.push('/food-management/home');
+        history.push('/food-management/admin/home');
     }
-    onClikFullMeal=()=>{
-        this.mealFormate='full_meal';
+    onClickBreakfast=()=>{
+        this.mealType='breakfast';
     }
-    onClikHalfMeal=()=>{
-        this.mealFormate='half_meal';
+    onClickLunch=()=>{
+        this.mealType='lunch';
     }
-    onClikCustom=()=>{
-        this.mealFormate='custom';
+    onClickDinner=()=>{
+        this.mealType='dinner';
     }
     render() {
         const {back,save}=strings.foodManagement;
@@ -39,7 +39,7 @@ class MealSchedule extends Component {
                     <Title>{scheduleMeal}</Title>
                 </Header>
                 <SelectionField>
-                    <TabBar onClikFullMeal={this.onClikFullMeal} onClikHalfMeal={this.onClikHalfMeal} onClikCustom={this.onClikCustom}/>
+                    <TabBar onClikFullMeal={this.onClickBreakfast} onClikHalfMeal={this.onClickLunch} onClikCustom={this.onClickDinner}/>
                     <DatePicker/>
                 </SelectionField>
                 <InfoBox>

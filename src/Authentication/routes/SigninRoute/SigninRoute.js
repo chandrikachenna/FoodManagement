@@ -5,7 +5,7 @@ import { observable } from "mobx";
 import { withRouter } from "react-router-dom";
 import strings from '../../../Common/i18n/strings.json'
 
-const {enterUsernameMsg,enterPasswordMsg,networkErrorMsg,loadingMsg,homePageEndPoint}=strings.authentication;
+const {enterUsernameMsg,enterPasswordMsg,networkErrorMsg,loadingMsg}=strings.authentication;
 
 @inject('authStore')
 @observer
@@ -21,7 +21,7 @@ class SigninRoute extends Component {
     }
     onSuccesSignIn=()=>{
         const {history}=this.props;
-        history.replace(homePageEndPoint);
+        history.replace('/food-management/admin/home');
     }
     onFailureSignIn=()=>{
         const { getUserSignInAPIError: apiError } = this.props.authStore;

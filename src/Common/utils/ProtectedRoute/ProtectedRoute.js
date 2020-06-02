@@ -6,7 +6,7 @@ class ProtectedRoute extends React.Component{
         const {component:Component}=this.props;
         if(getAccessToken())
         {
-            return <Route path='/food-management/home' component={Component}/>
+            return <Route path='/food-management/admin/home' component={Component}/>
         }
         else
             return( 

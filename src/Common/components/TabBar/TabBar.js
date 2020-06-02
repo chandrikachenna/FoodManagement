@@ -13,7 +13,7 @@ class TabBar extends Component {
     }
     onclickHalfMeal=()=>{
         this.selectedBtn='HalfMeal';
-        this.props.onClikHalfMeal()
+        this.props.onClikHalfMeal();
     }
     onclickCustom=()=>{
         this.selectedBtn='CustomMeal';

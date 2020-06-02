@@ -1,5 +1,6 @@
 import { observable, action } from "mobx";
 import { API_INITIAL} from "@ib/api-constants";
+import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
 import {MealItem} from '../models/MealItem';
 
 class ScheduleMealStore{
@@ -18,14 +19,9 @@ class ScheduleMealStore{
         this.getScheduleMealInfoAPIError=null
     }
     @action.bound
-    onClickScheduleMeal(){
-        this.getScheduleMealInfo();
-    }
     setScheduleMealInfoAPIStatus(apiStatus){
-        setTimeout(()=>{
-            this.getScheduleMealInfoAPIStatus=apiStatus;
-        },1000)
-        this.getScheduleMealInfoAPIStatus=100
+        this.getScheduleMealInfoAPIStatus=apiStatus;
+        
     }
     @action.bound
     setScheduleMealInfoAPIError(error){
@@ -33,7 +29,14 @@ class ScheduleMealStore{
     }
     @action.bound
     setScheduleMealInfoResponse(mealInfoResponse){
-
+        Object.entries(mealInfoResponse[0]).forEach(([mealType, mealItemsList]) => {
+            let mealItems=[];
+           mealItemsList.forEach((item)=>{
+               mealItems.push(new MealItem(item));
+           })
+           this.scheduleMealInfo.push(mealItems);
+        })
+        console.log(this.scheduleMealInfo);
     }
     @action.bound
     getScheduleMealInfo(){
@@ -56,10 +59,6 @@ class ScheduleMealStore{
     }
     @action.bound
     onSaveUpdate(){
-
-    }
-    @action.bound
-    onClickBack(){
 
     }
 }
