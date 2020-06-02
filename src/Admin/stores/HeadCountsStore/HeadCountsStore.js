@@ -10,6 +10,7 @@ class HeadCountsStore{
     @observable headCountsInfo;
     constructor(headCountsInfoService){
         this.headCountsInfoService=headCountsInfoService;
+        this.init();
     }
     @action.bound
     init(){
