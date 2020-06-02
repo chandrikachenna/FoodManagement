@@ -29,7 +29,7 @@ export const getUserDisplayableErrorMessage = (error) => {
    return formattedError.description
 }
 
-export function isNetworkError(error): boolean {
+export function isNetworkError(error) {
    const apiError = JSON.parse(error)
    const { networkError, timeoutError } = apiErrorProblems
    return apiError.problem === networkError || apiError.problem === timeoutError
