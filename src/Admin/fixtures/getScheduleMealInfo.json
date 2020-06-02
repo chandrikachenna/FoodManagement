@@ -1,0 +1,25 @@
+[
+    {
+        "breakfast":[{"name":"Poori"  ,"category":"Indian Bread" },
+                    {"name":"Aloo Curry"  ,"category":"Curry" },
+                    {"name":"Masala Rice"  ,"category":"Rice" },
+                    {"name":"Pulihora"  ,"category":"Rice" },
+                    {"name":"Fried Rice"  ,"category":"Rice" },
+                    {"name":"Tomato Curry"  ,"category":"Curry" }
+                ],
+        "lunch":[{"name":"Poori"  ,"category":"Indian Bread" },
+                {"name":"Aloo Curry"  ,"category":"Curry" },
+                {"name":"Masala Rice"  ,"category":"Rice" },
+                {"name":"Pulihora"  ,"category":"Rice" },
+                {"name":"Fried Rice"  ,"category":"Rice" },
+                {"name":"Tomato Curry"  ,"category":"Curry" }
+            ],
+        "dinner":[{"name":"Poori"  ,"category":"Indian Bread" },
+                {"name":"Aloo Curry"  ,"category":"Curry" },
+                {"name":"Masala Rice"  ,"category":"Rice" },
+                {"name":"Pulihora"  ,"category":"Rice" },
+                {"name":"Fried Rice"  ,"category":"Rice" },
+                {"name":"Tomato Curry"  ,"category":"Curry" }
+            ]
+    }
+]

@@ -6,7 +6,7 @@ class MealItemModel{
    @observable quantity;
    constructor(mealItemInfo){
        this.mealItemInfo=mealItemInfo.item;
-       this.quantity=mealItemInfo.quantity.number;
+       this.quantity=mealItemInfo.quantity.number || 0;
    }
    @action.bound
    onIncrement(){

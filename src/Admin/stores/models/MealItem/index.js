@@ -1,0 +1,1 @@
+export {MealItem} from './MealItem';
