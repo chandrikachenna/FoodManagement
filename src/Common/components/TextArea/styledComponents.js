@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 import { COLORS } from '../../../Common/theme/Colors'
 import { Typo14Steel60HKGroteskRegular } from '../../styleGuide/Typo'
+
 const Area = styled.textarea`
    ${tw``}
    width:516px;

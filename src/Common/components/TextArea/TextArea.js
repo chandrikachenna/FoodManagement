@@ -6,8 +6,7 @@ class TextArea extends Component {
       return (
          <Area>
             {/* <RandomText>{'fds'}</RandomText> */}
-            {/* {'Write Review'} */}
-            <span>text</span>
+            {'Write Review'}
          </Area>
       )
    }

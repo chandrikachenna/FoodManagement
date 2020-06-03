@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { HomePageContainer } from './styledComponents'
 import { Navbar } from '../../common/Navbar'
 import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure'
-import { TextArea } from '../../../Common/components/TextArea'
 
 class HomePage extends Component {
    render() {
@@ -20,7 +19,6 @@ class HomePage extends Component {
                onClickSignOut={onClickSignOut}
                onClickGoHome={onClickGoHome}
             />
-            <TextArea />
             <LoadingWrapperWithLoader
                apiStatus={getMealInfoAPIStatus}
                apiError={getMealInfoAPIError}

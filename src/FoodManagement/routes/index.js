@@ -7,13 +7,13 @@ import {
 } from '../constants/RouteConstants'
 
 import { HomePageRoute } from './HomePageRoute'
-import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
-
 import { MealPreferenceRoute } from './MealPreferenceRoute'
+import { ReviewPageRoute } from './ReviewPageRoute'
+
+import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
 {
    /* <ProtectedRoute exact path={SMART_FOOD_MANAGEMENT_PATH} component={HomePageRoute} /> */
 }
-import { ReviewPageRoute } from './ReviewPageRoute'
 
 const routes = [
    <Route exact path={SMART_FOOD_MANAGEMENT_PATH} component={HomePageRoute} />,
