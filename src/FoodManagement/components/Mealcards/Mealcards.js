@@ -8,7 +8,7 @@ const mealTypeIcons ={'break_fast':BreakFastIcon,'lunch':LunchIcon,'dinner':Dinn
 
 class Mealcards extends Component {
     render() {
-        const {mealInfoList,onClickEdit}=this.props;
+        const {mealInfoList,onClickEdit,timeCounter}=this.props;
         let list;
         if(mealInfoList.length){
             Object.entries(mealInfoList[0]).forEach(([key, value]) => {
@@ -20,7 +20,7 @@ class Mealcards extends Component {
                 <>
                     {
                      list && list.map(info => 
-                        <MealInfoCard key={(Math.random()).toString()} info={info} onClickEdit={onClickEdit} />)  
+                        <MealInfoCard key={(Math.random()).toString()} info={info} onClickEdit={onClickEdit} timeCounter={timeCounter}/>)  
                     }
                 </>
         );

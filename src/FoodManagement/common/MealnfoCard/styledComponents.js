@@ -48,6 +48,11 @@ const Right=styled.div`
     ${tw`flex flex-col items-end`}
     flex-grow:1;
 `
+const Review=styled.div`
+    ${tw`flex flex-row justify-between`}
+    width:314px;
+`
+
 const FoodItem=styled(Typo16SteelHKGroteskRegular)``
-export {CardLayout,Header,TitleBox,FoodType,FoodTimigs,FoodItemsContainer,Left,Right,FoodItem,Label}
+export {CardLayout,Header,TitleBox,FoodType,FoodTimigs,FoodItemsContainer,Left,Right,FoodItem,Label,Review}
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 
 import {CardLayout,Header,TitleBox,FoodType,FoodTimigs,
-    FoodItemsContainer,Left,Right,FoodItem,Label} from './styledComponents';
+    FoodItemsContainer,Left,Right,FoodItem,Label,Review} from './styledComponents';
 
 import {Button} from '../../../Common/components/Button';
 import {IconHolder} from '../../../Common/components/IconHolder';
@@ -11,7 +11,7 @@ import {TextLabel} from '../../../Common/components/TextLabel';
 import {COLORS} from '../../../Common/theme/Colors';
 import strings from '../../../Common/i18n/strings.json';
 import { observable } from "mobx";
-
+import {formatDistance,formatDistanceToNow,compareAsc} from 'date-fns';
 
 class MealInfoCard extends Component {
     onClick=()=>{
@@ -22,7 +22,19 @@ class MealInfoCard extends Component {
     render() {
         const {typeButton}=strings.authentication
         const {editPreference}=strings.foodManagement
-        const {meal_type,meal_items, meal_format,open_time,close_time,meal_icon}=this.props.info;
+        const {meal_type,meal_items, meal_format,open_time,close_time,meal_icon,edit_preference_dead_line}=this.props.info;
+       
+        let leftTime;
+        const difference=compareAsc( new Date(edit_preference_dead_line),new Date(this.props.timeCounter))
+        if(difference===1){
+            leftTime=formatDistance(
+                new Date(edit_preference_dead_line),
+                new Date(this.props.timeCounter),
+                { addSuffix: true }
+                ) 
+            
+            console.log(leftTime.substring(leftTime.length+1,2))
+        }
         return (
             <CardLayout>
                 <Header>
@@ -35,7 +47,6 @@ class MealInfoCard extends Component {
                         <Menubar />
                         <TextLabel text={meal_format}/>
                     </Label>
-                    
                 </Header>
                 <FoodItemsContainer>
                     <Left>
@@ -53,9 +64,20 @@ class MealInfoCard extends Component {
                         }   
                     </Right>
                 </FoodItemsContainer>
-                <Button onClick={this.onClick} name={editPreference} width={'314px'} variant={COLORS.brightBlue}
+                { difference===1
+                    ? <Button onClick={this.onClick} name={editPreference.concat(` ${leftTime.split(" ").splice(-2).join(" ")} Left`)} width={'314px'} variant={COLORS.brightBlue}
+                        type={typeButton} text={editPreference} 
+                    />
+                    :<Review>
+                        <Button onClick={this.onClick} name={'I Ate it'} width={'128px'} variant={COLORS.brightBlue}
                             type={typeButton} text={editPreference} 
                         />
+                        <Button onClick={this.onClick} name={'I Skipped'} width={'128px'} variant={COLORS.white}
+                            type={typeButton} text={editPreference} color={COLORS.black}
+                        />
+                    </Review>
+                }
+                
             </CardLayout>
         );
     }

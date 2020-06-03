@@ -2,6 +2,8 @@ import {observable,action,computed} from "mobx"
 import { API_INITIAL} from "@ib/api-constants";
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise'
 import {MealInfoItemModel} from '../models/MealInfoItemModel';
+//import { clearInterval } from "timers";
+
 
 class MealInfoStore{
     @observable getMealInfoAPIStatus;
@@ -13,21 +15,26 @@ class MealInfoStore{
     @observable selectedMealTypeInfo;
     @observable selectedMealType;
     @observable timeCounter;
-
+    initialTimerID;
     constructor(MealsAPIService,mealPreferenceFixture,UpdateMealsAPIService){
         this.MealsAPIService=MealsAPIService;
         this.mealPreferenceFixture=mealPreferenceFixture;
         this.UpdateMealsAPIService=UpdateMealsAPIService;
         this.init();
     }
-    componentDidMount=()=>{
-        this.timeCounter=Date.parse(new Date());
+    @action.bound
+    dateTime=()=>{
+        this.initialTimerID=setInterval(()=>{
+            this.timeCounter=new Date();
+        },1000)
+        //clearInterval(this.initialTimerID)
     }
     @action.bound
     init(){
         this.getMealInfoAPIStatus=API_INITIAL;
         this.getMealInfoAPIError=null;
         this.mealInfo=[];
+        this.dateTime();
     }
 
     @action.bound
@@ -71,9 +78,9 @@ class MealInfoStore{
     }
     @action.bound
     onChangeDate(changedDateTime){
-        this.timeCounter=Date.parse(changedDateTime);
+        clearInterval(this.initialTimerID);
+        this.timeCounter=changedDateTime;
     }
-    
 }
 
 export {MealInfoStore}

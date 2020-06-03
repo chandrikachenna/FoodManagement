@@ -21,7 +21,7 @@ class SigninRoute extends Component {
     }
     onSuccesSignIn=()=>{
         const {history}=this.props;
-        history.replace('/food-management/admin/home');
+        history.replace('/food-management/home');
     }
     onFailureSignIn=()=>{
         const { getUserSignInAPIError: apiError } = this.props.authStore;

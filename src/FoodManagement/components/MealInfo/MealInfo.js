@@ -12,27 +12,13 @@ import { observer } from "mobx-react";
 @observer
 class MealInfo extends Component {
     @observable date = new Date();
-    @observable time;
-    currentDate=new Date();
-    componentDidMount=()=>{
-        setInterval(()=>{
-            this.time = new Date();
-        },1000)
-    }
     handleChange = (date) => {
-          this.date = date;
-          this.props.onChangeDate(date);
+          this.date=date;
+          this.props.onChangeDate(this.date);
     }; 
     render() {
-        //console.log(this.time,"now.......");
-        console.log(
-            formatDistance(
-                new Date(this.currentDate),
-                new Date(this.date),
-                { addSuffix: true }
-              ) 
-        )
-        const {mealInfoList,onClickEdit}=this.props;
+        const {mealInfoList,onClickEdit,timeCounter}=this.props;
+        
         return (
             <>
                 <Carousel/>
@@ -43,7 +29,7 @@ class MealInfo extends Component {
                     />
                 </Div>
                 <CardsContainer>
-                    <Mealcards mealInfoList={mealInfoList} onClickEdit={onClickEdit} />
+                    <Mealcards mealInfoList={mealInfoList} onClickEdit={onClickEdit} timeCounter={timeCounter}/>
                 </CardsContainer>
             </>
         );

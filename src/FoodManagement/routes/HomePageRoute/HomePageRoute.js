@@ -30,12 +30,13 @@ class HomePageRoute extends Component {
                 mealInfoList={this.props.mealInfoStore.mealInfo}
                 onClickEdit={this.props.mealInfoStore.onClickEdit}
                 onChangeDate={this.props.mealInfoStore.onChangeDate}
+                timeCounter={this.props.mealInfoStore.timeCounter}
             />
            
         );
     })
     render() {
-        const {getMealInfoAPIStatus,getMealInfoAPIError}=this.props.mealInfoStore;
+        const {getMealInfoAPIStatus,getMealInfoAPIError,timeCounter}=this.props.mealInfoStore;
         return (
             <HomePage 
                 onClickSignOut={this.onClickSignOut}
