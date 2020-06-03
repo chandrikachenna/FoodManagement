@@ -18,7 +18,7 @@ import { MealPreferenceCustom } from '../../components/MealPreferenceCustom'
 import { MealPreferenceDefault } from '../../components/MealPreferenceDefault'
 
 import { DatePicker } from '../../../Common/components/DatePicker'
-import { TabBar } from '../../../Common/components/TabBar'
+import { TabBar ,TabExampleDefaultActiveIndex} from '../../../Common/components/TabBar'
 import FoodPreferenceImage from '../../../Common/images/foodPreference.png'
 import { Button } from '../../../Common/components/Button'
 import { COLORS } from '../../../Common/theme/Colors'

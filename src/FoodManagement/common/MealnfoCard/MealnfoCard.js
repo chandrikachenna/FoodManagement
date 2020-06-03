@@ -22,7 +22,7 @@ import { TextLabel } from '../../../Common/components/TextLabel'
 import { COLORS } from '../../../Common/theme/Colors'
 import strings from '../../../Common/i18n/strings.json'
 import { observable } from 'mobx'
-import { formatDistance, formatDistanceToNow, compareAsc } from 'date-fns'
+import { formatDistance, formatDistanceToNow, compareAsc ,format} from 'date-fns'
 
 class MealInfoCard extends Component {
    onClick = () => {
@@ -60,8 +60,11 @@ class MealInfoCard extends Component {
             new Date(timeCounter),
             { addSuffix: true }
          )
-         console.log(leftTime)
       }
+      // console.log(format(
+      //    new Date(timeCounter),
+      //    'yyyy-MM-dd'
+      //  ))
       return (
          <CardLayout>
             <Header>

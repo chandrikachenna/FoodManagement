@@ -8,6 +8,7 @@ import DatePicker from 'react-datepicker'
 import { observable } from 'mobx'
 import { compareAsc, format, formatDistance } from 'date-fns'
 import { observer } from 'mobx-react'
+import {ReactTabBar} from '../../../Common/components/ReactTabBar';
 
 @observer
 class MealInfo extends Component {
@@ -25,6 +26,7 @@ class MealInfo extends Component {
             <Div>
                <DatePicker selected={this.date} onChange={this.handleChange} />
             </Div>
+            <ReactTabBar/>
             <CardsContainer>
                <Mealcards
                   mealInfoList={mealInfoList}

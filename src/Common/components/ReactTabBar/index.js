@@ -1,0 +1,1 @@
+export {ReactTabBar} from './ReactTabBar';

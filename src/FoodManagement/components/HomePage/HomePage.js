@@ -13,6 +13,7 @@ class HomePage extends Component {
          getMealInfoAPIStatus,
          getMealInfoAPIError
       } = this.props
+      
       return (
          <HomePageContainer>
             <Navbar
