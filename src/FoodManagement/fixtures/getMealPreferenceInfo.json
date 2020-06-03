@@ -1,14 +1,13 @@
-{
+[
+  {
     "full_meal": [
       {
         "item": {
           "item_id": 0,
           "name": "Poori",
           "catageory": "Indian bread",
-          "unit": "piece"
-        },
-        "quantity": {
-          "number": 4
+          "unit": "piece",
+          "quantity":4
         }
       },
       {
@@ -16,10 +15,8 @@
           "item_id": 0,
           "name": "Aloo Curry",
           "catageory": "Curry",
-          "unit": "Cups"
-        },
-        "quantity": {
-          "number": 2
+          "unit": "Cups",
+          "quantity":2
         }
       }
     ],
@@ -29,10 +26,8 @@
           "item_id": 0,
           "name": "Poori",
           "catageory": "Indian bread",
-          "unit": "piece"
-        },
-        "quantity": {
-          "number": 2
+          "unit": "piece",
+          "quantity":2
         }
       },
       {
@@ -40,10 +35,8 @@
           "item_id": 0,
           "name": "Aloo Curry",
           "catageory": "Curry",
-          "unit": "Cups"
-        },
-        "quantity": {
-          "number": 1
+          "unit": "Cups",
+          "quantity":1
         }
       }
     ],
@@ -53,10 +46,8 @@
               "item_id": 0,
               "name": "Poori",
               "catageory": "Indian bread",
-              "unit": "piece"
-            },
-            "quantity": {
-              "number": 0
+              "unit": "piece",
+              "quantity":0
             }
           },
           {
@@ -64,13 +55,13 @@
               "item_id": 0,
               "name": "Aloo Curry",
               "catageory": "Curry",
-              "unit": "Cups"
-            },
-            "quantity": {
-              "number": 0
+              "unit": "Cups",
+              "quantity":0
             }
           }
     ]
   }
 
 
+
+]

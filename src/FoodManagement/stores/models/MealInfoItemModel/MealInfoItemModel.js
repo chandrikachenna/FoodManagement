@@ -40,7 +40,7 @@ class MealInfoItemModel {
    }
    @action.bound
    setMealItemsResponse(mealItemsResponse) {
-      Object.entries(mealItemsResponse).forEach(
+      Object.entries(mealItemsResponse[0]).forEach(
          ([mealFormate, mealItemsList]) => {
             let ItemModel = []
             mealItemsList.forEach(item => {

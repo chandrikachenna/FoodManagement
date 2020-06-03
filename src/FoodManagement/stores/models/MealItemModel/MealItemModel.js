@@ -5,15 +5,15 @@ class MealItemModel {
    @observable quantity
    constructor(mealItemInfo) {
       this.mealItemInfo = mealItemInfo.item
-      this.quantity = mealItemInfo.quantity.number || 0
+      this.quantity = mealItemInfo.item.quantity || 0;
    }
    @action.bound
    onIncrement() {
-      this.quantity++
+      this.quantity++;
    }
    @action.bound
    onDecrement() {
-      this.quantity--
+      this.quantity--;
    }
 }
 

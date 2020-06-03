@@ -26,7 +26,14 @@ import strings from '../../../Common/i18n/strings.json'
 
 @observer
 class MealPreferenceCard extends Component {
+   mealType;
    @observable mealFormate = 'full_meal'
+   constructor(props){
+      super(props);
+      const {match}=this.props;
+      this.mealType=match.params.mealType.slice(1);
+      console.log(match)
+   }
    onClick = () => {
       const { history } = this.props
       history.push('/food-management/home')
@@ -48,7 +55,7 @@ class MealPreferenceCard extends Component {
       return (
          <Layout>
             <Header>
-               <Title>{selectedMealType}</Title>
+               <Title>{this.mealType}</Title>
                <Button
                   variant={COLORS.white}
                   onClick={this.onClick}

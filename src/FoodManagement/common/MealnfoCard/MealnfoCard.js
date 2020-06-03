@@ -29,7 +29,12 @@ class MealInfoCard extends Component {
       const { history } = this.props
       const { onClickEdit } = this.props.mealInfoStore
       onClickEdit(this.props.info.meal_type)
-      history.push('/food-management/set-meal-preference')
+      // history.push('/food-management/set-meal-preference')
+      const { timeCounter } = this.props.mealInfoStore
+      history.push({
+         pathname:`/food-management/set-meal-preference/:${this.props.info.meal_type}`,
+      })
+      console.log(history);
    }
    goForReview = () => {
       const { history } = this.props
