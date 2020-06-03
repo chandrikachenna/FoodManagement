@@ -17,6 +17,7 @@ class MealPreferenceRoute extends Component {
    doNetworkCalls = () => {
       const { onClickEdit, selectedMealType } = this.props.mealInfoStore
       onClickEdit(selectedMealType)
+      console.log('net')
    }
    onClickSignOut = () => {
       this.props.authStore.userSignOut()

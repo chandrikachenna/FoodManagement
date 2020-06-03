@@ -23,10 +23,13 @@ class MealInfoStore {
    }
    @action.bound
    dateTime = () => {
-      this.initialTimerID = setInterval(() => {
-         this.timeCounter = new Date()
-      }, 1000)
-      //clearInterval(this.initialTimerID)
+      if(this.selectedMealTypeInfo)
+         this.timeCounter=this.selectedMealTypeInfo.date;
+      else{
+         this.initialTimerID = setInterval(() => {
+            this.timeCounter = new Date()
+         }, 1000)
+      }
    }
    @action.bound
    init() {
@@ -37,8 +40,8 @@ class MealInfoStore {
    }
 
    @action.bound
-   getMealInfo() {
-      const mealInfoPromise = this.MealsAPIService.getMealsAPI()
+   getMealInfo(date) {
+      const mealInfoPromise = this.MealsAPIService.getMealsAPI(date)
       return bindPromiseWithOnSuccess(mealInfoPromise)
          .to(this.setMealInfoAPIStatus, this.setMealInfoResponse)
          .catch(this.setMealInfoAPIError)
@@ -60,11 +63,13 @@ class MealInfoStore {
    }
    @action.bound
    onClickEdit(mealType) {
+      console.log(mealType)
       this.selectedMealTypeInfo = new MealInfoItemModel(
          this.mealPreferenceFixture,
-         mealType
+         mealType,
+         this.timeCounter
       )
-      this.selectedMealTypeInfo.getEditPreference()
+      this.selectedMealTypeInfo.getEditPreference(this.timeCounter,mealType)
       this.selectedMealType = mealType
    }
    @action.bound
@@ -84,6 +89,7 @@ class MealInfoStore {
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)
       this.timeCounter = changedDateTime
+      this.getMealInfo(this.timeCounter);
    }
 }
 

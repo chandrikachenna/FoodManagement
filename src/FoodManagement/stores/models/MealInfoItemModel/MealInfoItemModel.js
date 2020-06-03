@@ -9,9 +9,12 @@ class MealInfoItemModel {
    @observable editPreferenceAPI
    @observable mealItemsInfo
    @observable mealType
-   constructor(api, mealType) {
+   @observable date;
+   constructor(api, mealType,timeCounter) {
+      console.log(mealType)
       this.editPreferenceAPI = api
       this.mealType = mealType
+      this.date=timeCounter;
       this.init()
    }
    @action.bound
@@ -21,8 +24,9 @@ class MealInfoItemModel {
       this.mealItemsInfo = []
    }
    @action.bound
-   getEditPreference() {
-      const mealItemsPromise = this.editPreferenceAPI.getMealPreferenceAPI()
+   getEditPreference(date,mealType) {
+      this.date=date;
+      const mealItemsPromise = this.editPreferenceAPI.getMealPreferenceAPI(date,mealType)
       return bindPromiseWithOnSuccess(mealItemsPromise)
          .to(this.setMealItemsAPIStatus, this.setMealItemsResponse)
          .catch(this.setMealItemsAPIError)

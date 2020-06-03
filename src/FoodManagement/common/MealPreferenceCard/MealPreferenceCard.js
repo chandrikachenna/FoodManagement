@@ -31,8 +31,6 @@ class MealPreferenceCard extends Component {
    constructor(props){
       super(props);
       const {match}=this.props;
-      this.mealType=match.params.mealType.slice(1);
-      console.log(match)
    }
    onClick = () => {
       const { history } = this.props
@@ -49,13 +47,12 @@ class MealPreferenceCard extends Component {
    }
    render() {
       const { skipMeal, back, save } = strings.foodManagement
-      const { selectedMealType } = this.props
 
-      const { mealType, mealItemsInfo } = this.props.selectedMealTypeInfo
+      const { mealType, mealItemsInfo,date } = this.props.selectedMealTypeInfo
       return (
          <Layout>
             <Header>
-               <Title>{this.mealType}</Title>
+               <Title>{mealType}</Title>
                <Button
                   variant={COLORS.white}
                   onClick={this.onClick}

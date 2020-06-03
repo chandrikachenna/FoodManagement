@@ -9,8 +9,7 @@ class MealsAPI {
          baseURL: 'https://127.0.0.1:8080/'
       })
    }
-   getMealsAPI() {
-      const date = '2020-05-28'
+   getMealsAPI(date) {
       return networkCallWithApisauce(
          this.api,
          `food_management/menu/v1?date=${date}`,
