@@ -1,1 +1,1 @@
-export {default as HeadCountsRoute} from './HeadCountsRoute';
+export { default as HeadCountsRoute } from './HeadCountsRoute'

@@ -1,12 +1,11 @@
-import getMealInfo from '../../fixtures/getMealInfo.json';
+import getMealInfo from '../../fixtures/getMealInfo.json'
 
-class MealsFixture{
-    
-    getMealsAPI(){
-        return new Promise((resolve,reject)=>{
-            resolve(getMealInfo)
-        })
-    }
+class MealsFixture {
+   getMealsAPI() {
+      return new Promise((resolve, reject) => {
+         resolve(getMealInfo)
+      })
+   }
 }
 
-export {MealsFixture};
+export { MealsFixture }

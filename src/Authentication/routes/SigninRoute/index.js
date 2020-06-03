@@ -1,1 +1,1 @@
-export {default as SigninRoute} from './SigninRoute';
+export { default as SigninRoute } from './SigninRoute'

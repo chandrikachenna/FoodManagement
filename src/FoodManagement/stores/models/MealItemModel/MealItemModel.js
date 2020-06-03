@@ -1,21 +1,20 @@
+import { observable, action } from 'mobx'
 
-import { observable, action } from "mobx";
-
-class MealItemModel{
-   @observable mealItemInfo;
-   @observable quantity;
-   constructor(mealItemInfo){
-       this.mealItemInfo=mealItemInfo.item;
-       this.quantity=mealItemInfo.quantity.number || 0;
+class MealItemModel {
+   @observable mealItemInfo
+   @observable quantity
+   constructor(mealItemInfo) {
+      this.mealItemInfo = mealItemInfo.item
+      this.quantity = mealItemInfo.quantity.number || 0
    }
    @action.bound
-   onIncrement(){
-        this.quantity++;
+   onIncrement() {
+      this.quantity++
    }
    @action.bound
-   onDecrement(){
-        this.quantity--;
+   onDecrement() {
+      this.quantity--
    }
 }
 
-export {MealItemModel}
+export { MealItemModel }

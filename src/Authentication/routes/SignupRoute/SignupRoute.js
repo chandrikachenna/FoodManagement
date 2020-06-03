@@ -1,13 +1,11 @@
-import {SignupPage} from '../../components/SignupPage';
+import { SignupPage } from '../../components/SignupPage'
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class SignupRoute extends Component {
-    render() {
-        return (
-            <SignupPage />
-        );
-    }
+   render() {
+      return <SignupPage />
+   }
 }
 
-export {SignupRoute};
+export { SignupRoute }

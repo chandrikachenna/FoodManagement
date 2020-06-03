@@ -1,1 +1,1 @@
-export {MealPreferenceCustom} from './MealPreferenceCustom';
+export { MealPreferenceCustom } from './MealPreferenceCustom'

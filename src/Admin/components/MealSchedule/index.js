@@ -1,1 +1,1 @@
-export {default as MealSchedule} from './MealSchedule';
+export { default as MealSchedule } from './MealSchedule'

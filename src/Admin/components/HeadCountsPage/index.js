@@ -1,1 +1,1 @@
-export {HeadCountsPage} from './HeadCountsPage';
+export { HeadCountsPage } from './HeadCountsPage'

@@ -1,1 +1,1 @@
-export {MealItemModel} from './MealItemModel';
+export { MealItemModel } from './MealItemModel'

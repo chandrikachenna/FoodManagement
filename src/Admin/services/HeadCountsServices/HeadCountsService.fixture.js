@@ -1,11 +1,11 @@
-import getHeadCountsInfo from '../../fixtures/getHeadCountsInfo.json';
+import getHeadCountsInfo from '../../fixtures/getHeadCountsInfo.json'
 
-class HeadCountsService{
-    getHeadCountsInfo(){
-        return new Promise((resolve,reject)=>{
-            resolve(getHeadCountsInfo);
-        })
-    }
+class HeadCountsService {
+   getHeadCountsInfo() {
+      return new Promise((resolve, reject) => {
+         resolve(getHeadCountsInfo)
+      })
+   }
 }
 
-export {HeadCountsService}
+export { HeadCountsService }

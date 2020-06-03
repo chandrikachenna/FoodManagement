@@ -1,1 +1,1 @@
-export {MealPreferenceDefault} from './MealPreferenceDefault';
+export { MealPreferenceDefault } from './MealPreferenceDefault'

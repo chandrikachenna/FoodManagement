@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import {Area,Text} from './styledComponents';
-import strings from '../../i18n/strings.json';
+import React, { Component } from 'react'
+import { Area, RandomText } from './styledComponents'
+import strings from '../../i18n/strings.json'
 class TextArea extends Component {
-
-    render() {
-        return (
-            <Area>
-                {/* <Text>{'fds'}</Text> */}
-                {'Write Review'}
-            </Area>
-        );
-    }
+   render() {
+      return (
+         <Area>
+            {/* <RandomText>{'fds'}</RandomText> */}
+            {/* {'Write Review'} */}
+            <span>text</span>
+         </Area>
+      )
+   }
 }
 
-export {TextArea};
+export { TextArea }

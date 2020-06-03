@@ -1,1 +1,1 @@
-export {default as HomePageRoute} from './HomePageRoute';
+export { default as HomePageRoute } from './HomePageRoute'

@@ -1,1 +1,1 @@
-export {default as MealInfoCard} from './MealnfoCard';
+export { default as MealInfoCard } from './MealnfoCard'

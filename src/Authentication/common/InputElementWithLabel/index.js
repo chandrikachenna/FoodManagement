@@ -1,1 +1,1 @@
-export {InputElementWithLabel} from './InputElementWithLabel';
+export { InputElementWithLabel } from './InputElementWithLabel'

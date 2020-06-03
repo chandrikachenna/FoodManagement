@@ -1,1 +1,1 @@
-export {default as MealPreferenceRoute} from './MealPreferenceRoute';
+export { default as MealPreferenceRoute } from './MealPreferenceRoute'

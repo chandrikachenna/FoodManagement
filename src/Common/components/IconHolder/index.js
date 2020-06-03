@@ -1,2 +1,1 @@
-
-export {IconHolder} from './IconHolder';
+export { IconHolder } from './IconHolder'

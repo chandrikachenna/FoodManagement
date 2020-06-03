@@ -1,1 +1,1 @@
-export {MealPreference} from './MealPreference';
+export { MealPreference } from './MealPreference'

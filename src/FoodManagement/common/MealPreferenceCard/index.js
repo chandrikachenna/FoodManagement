@@ -1,1 +1,1 @@
-export {default as MealPreferenceCard} from './MealPreferenceCard';
+export { default as MealPreferenceCard } from './MealPreferenceCard'

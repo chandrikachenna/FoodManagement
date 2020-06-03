@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import {IconLayout,Icon} from './styledComponents';
+import React, { Component } from 'react'
+import { IconLayout, Icon } from './styledComponents'
 
 class IconHolder extends Component {
-    render() {
-        const {svg}=this.props;
-        return (
-           <IconLayout>
-               <Icon src={svg}/>
-           </IconLayout>
-        );
-    }
+   render() {
+      const { svg } = this.props
+      return (
+         <IconLayout>
+            <Icon src={svg} />
+         </IconLayout>
+      )
+   }
 }
 
-export  {IconHolder};
+export { IconHolder }

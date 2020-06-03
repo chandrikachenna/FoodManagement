@@ -1,1 +1,1 @@
-export {HeadCountsStore} from './HeadCountsStore';
+export { HeadCountsStore } from './HeadCountsStore'

@@ -1,19 +1,22 @@
-import {MealsAPI} from '../services/MealInfoServices/Meals.api';
-import {MealsFixture} from '../services/MealInfoServices/Meals.fixture';
+import { MealsAPI } from '../services/MealInfoServices/Meals.api'
+import { MealsFixture } from '../services/MealInfoServices/Meals.fixture'
 
-import {MealPreferenceFixture} from '../services/MealPreferenceServices/MealPreference.fixture';
+import { MealPreferenceFixture } from '../services/MealPreferenceServices/MealPreference.fixture'
 
-import {UpdateMealsAPI} from '../services/UpdateMealServices/UpdateMeal.api';
+import { UpdateMealsAPI } from '../services/UpdateMealServices/UpdateMeal.api'
 
-import {MealInfoStore} from './MealInfoStore';
+import { MealInfoStore } from './MealInfoStore'
 
+const mealsAPI = new MealsAPI()
+const mealsFixture = new MealsFixture()
 
-const mealsAPI=new MealsAPI();
-const mealsFixture=new MealsFixture();
+const mealPreferenceFixture = new MealPreferenceFixture()
 
-const mealPreferenceFixture=new MealPreferenceFixture()
+const updateMealsAPI = new UpdateMealsAPI()
+const mealInfoStore = new MealInfoStore(
+   mealsFixture,
+   mealPreferenceFixture,
+   updateMealsAPI
+)
 
-const updateMealsAPI=new UpdateMealsAPI()
-const mealInfoStore=new MealInfoStore(mealsFixture,mealPreferenceFixture,updateMealsAPI);
-
-export default {mealInfoStore}
+export default { mealInfoStore }
