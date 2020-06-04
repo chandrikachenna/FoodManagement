@@ -86,13 +86,13 @@ class MealInfoCard extends Component {
                <Left>
                   {meal_items.map(
                      (item, index) =>
-                        index < 3 && <FoodItem>{item.meal_item}</FoodItem>
+                        index < 3 && <FoodItem key={Math.random().toString()}>{item.meal_item}</FoodItem>
                   )}
                </Left>
                <Right>
                   {meal_items.map(
                      (item, index) =>
-                        index >= 3 && <FoodItem>{item.meal_item}</FoodItem>
+                        index >= 3 && <FoodItem key={Math.random().toString()}>{item.meal_item}</FoodItem>
                   )}
                </Right>
             </FoodItemsContainer>

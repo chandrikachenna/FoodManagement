@@ -42,6 +42,11 @@ class MealInfoItemModel {
       this.getMealItemsAPIError = error
    }
    @action.bound
+   onChangeDate(date) {
+      this.date=date;
+      this.getEditPreference(date,this.mealType);
+   }
+   @action.bound
    setMealItemsResponse(mealItemsResponse) {
       Object.entries(mealItemsResponse[0]).forEach(
          ([mealFormate, mealItemsList]) => {
@@ -65,7 +70,6 @@ class MealInfoItemModel {
    onClickBack() {
       console.log(Back)
    }
-   @action.bound
-   onSelectedDate() {}
+   
 }
 export { MealInfoItemModel }

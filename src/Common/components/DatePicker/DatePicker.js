@@ -8,12 +8,13 @@ import { observable } from 'mobx'
 class DatePicker extends Component {
    @observable startDate = new Date()
    handleChange = date => {
-      this.startDate = date
+      this.props.onChangeDate(date);
    }
    render() {
+      const {date}=this.props;
       return (
          <ReactDatePicker
-            selected={this.startDate}
+            selected={date}
             onChange={this.handleChange}
          />
       )

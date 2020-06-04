@@ -47,8 +47,8 @@ class MealPreferenceCard extends Component {
    }
    render() {
       const { skipMeal, back, save } = strings.foodManagement
-
-      const { mealType, mealItemsInfo,date } = this.props.selectedMealTypeInfo
+      const { mealType, mealItemsInfo,date } = {...this.props.selectedMealTypeInfo}
+      const {onChangeDate}=this.props.selectedMealTypeInfo
       return (
          <Layout>
             <Header>
@@ -67,7 +67,7 @@ class MealPreferenceCard extends Component {
                   onClikHalfMeal={this.onClikHalfMeal}
                   onClikCustom={this.onClikCustom}
                />
-               <DatePicker />
+               <DatePicker onChangeDate={onChangeDate} date={date}/>
             </SelectionField>
             <InfoBox>
                <Wrap>

@@ -63,7 +63,6 @@ class MealInfoStore {
    }
    @action.bound
    onClickEdit(mealType) {
-      console.log(mealType)
       this.selectedMealTypeInfo = new MealInfoItemModel(
          this.mealPreferenceFixture,
          mealType,

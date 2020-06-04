@@ -6,27 +6,11 @@ import { MealInfo } from '../../components/MealInfo'
 import {format} from 'date-fns';
 
 
-
-let array=[1,2,3];
-let a;
-function incrementArrayElements(array){
-   console.log(array.map((item)=> item+1));
-   
-}
-
 @inject('mealInfoStore', 'authStore')
 @observer
 class HomePageRoute extends Component {
-   constructor(props) {
-      super(props)
-      this.doNetworkCalls()
-      console.log('constructor');
-      
-   }
    componentDidMount(){
-      incrementArrayElements(array)
-      console.log(array);
-      //console.log('component did mount')
+      this.doNetworkCalls()
    }
    onClickSignOut = () => {
       this.props.authStore.userSignOut()

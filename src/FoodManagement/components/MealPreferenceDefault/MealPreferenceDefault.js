@@ -7,7 +7,7 @@ class MealPreferenceDefault extends Component {
       return (
          <Wrap>
             {mealItems.map(info => (
-               <Layout>
+               <Layout key={Math.random().toString()}>
                   <Left>
                      <p>{info.mealItemInfo.name}</p>
                      <p>{info.mealItemInfo.catageory}</p>

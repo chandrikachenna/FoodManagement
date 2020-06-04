@@ -17,7 +17,6 @@ class MealPreferenceRoute extends Component {
    doNetworkCalls = () => {
       const { onClickEdit, selectedMealType } = this.props.mealInfoStore
       onClickEdit(selectedMealType)
-      console.log('net')
    }
    onClickSignOut = () => {
       this.props.authStore.userSignOut()
@@ -29,10 +28,10 @@ class MealPreferenceRoute extends Component {
       history.push('/food-management/home')
    }
    renderSuccessUI = observer(() => {
-      const selectedMealTypeInfo = {
-         ...this.props.mealInfoStore.selectedMealTypeInfo
-      }
-      const { selectedMealType } = this.props.mealInfoStore
+      // const selectedMealTypeInfo = {
+      //    ...this.props.mealInfoStore.selectedMealTypeInfo
+      // }
+      const { selectedMealType,selectedMealTypeInfo } = this.props.mealInfoStore
       return (
          <MealPreference
             selectedMealTypeInfo={selectedMealTypeInfo}
