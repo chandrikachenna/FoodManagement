@@ -48,10 +48,7 @@ class MealInfoStore {
    }
    @action.bound
    setMealInfoAPIStatus(apiStatus) {
-      setTimeout(() => {
-         this.getMealInfoAPIStatus = apiStatus
-      }, 1000)
-      this.getMealInfoAPIStatus = 100
+      this.getMealInfoAPIStatus = apiStatus
    }
    @action.bound
    setMealInfoAPIError(error) {

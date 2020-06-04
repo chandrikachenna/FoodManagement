@@ -51,6 +51,7 @@ class HomePageRoute extends Component {
             onClickSignOut={this.onClickSignOut}
             mealInfoList={this.props.mealInfoStore.mealInfo}
             onClickEdit={this.props.mealInfoStore.onClickEdit}
+            mealInfoStore={this.props.mealInfoStore}
             onClickGoHome={this.onClickGoHome}
             doNetworkCalls={this.doNetworkCalls}
             renderSuccessUI={this.renderSuccessUI}

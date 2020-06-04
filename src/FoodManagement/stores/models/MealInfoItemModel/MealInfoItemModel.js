@@ -10,6 +10,7 @@ class MealInfoItemModel {
    @observable mealItemsInfo
    @observable mealType
    @observable date
+   @observable mealPreference
    constructor(api, mealType, timeCounter) {
       this.editPreferenceAPI = api
       this.mealType = mealType
@@ -35,10 +36,7 @@ class MealInfoItemModel {
    }
    @action.bound
    setMealItemsAPIStatus(apiStatus) {
-      setTimeout(() => {
-         this.getMealItemsAPIStatus = apiStatus
-      })
-      this.getMealItemsAPIStatus = 100
+         this.getMealItemsAPIStatus =apiStatus
    }
    @action.bound
    setMealItemsAPIError(error) {
@@ -51,7 +49,8 @@ class MealInfoItemModel {
    }
    @action.bound
    setMealItemsResponse(mealItemsResponse) {
-      Object.entries(mealItemsResponse[0]).forEach(
+      this.mealPreference=mealItemsResponse[0]['user_meal_format']
+      Object.entries(mealItemsResponse[0]['meal_preferences']).forEach(
          ([mealFormate, mealItemsList]) => {
             let ItemModel = []
             mealItemsList.forEach(item => {
