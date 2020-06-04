@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { HomePage } from '../../components/HomePage'
 import { withRouter } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
-import { MealInfo } from '../../components/MealInfo'
+import {Mealcards} from '../../components/Mealcards';
 import { format } from 'date-fns'
 
 @inject('mealInfoStore', 'authStore')
@@ -32,7 +32,7 @@ class HomePageRoute extends Component {
    }
    renderSuccessUI = observer(() => {
       return (
-         <MealInfo
+         <Mealcards
             mealInfoList={this.props.mealInfoStore.mealInfo}
             timeCounter={this.props.mealInfoStore.timeCounter}
             mealInfoStore={this.props.mealInfoStore}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HomePageContainer,Div } from './styledComponents'
+import { HomePageContainer,Div,CardsContainer } from './styledComponents'
 import { Navbar } from '../../common/Navbar'
 import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure'
 import {Carousel} from '../../common/Carousel';
@@ -29,12 +29,14 @@ class HomePage extends Component {
                   date={mealInfoStore.timeCounter}
                />
             </Div>
-            <LoadingWrapperWithLoader
-               apiStatus={getMealInfoAPIStatus}
-               apiError={getMealInfoAPIError}
-               onRetryClick={doNetworkCalls}
-               renderSuccessUI={renderSuccessUI}
-            />
+            <CardsContainer>
+               <LoadingWrapperWithLoader
+                  apiStatus={getMealInfoAPIStatus}
+                  apiError={getMealInfoAPIError}
+                  onRetryClick={doNetworkCalls}
+                  renderSuccessUI={renderSuccessUI}
+               />
+            </CardsContainer>
          </HomePageContainer>
       )
    }
