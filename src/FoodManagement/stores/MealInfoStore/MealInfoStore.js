@@ -23,9 +23,9 @@ class MealInfoStore {
    }
    @action.bound
    dateTime = () => {
-      if(this.selectedMealTypeInfo)
-         this.timeCounter=this.selectedMealTypeInfo.date;
-      else{
+      if (this.selectedMealTypeInfo)
+         this.timeCounter = this.selectedMealTypeInfo.date
+      else {
          this.initialTimerID = setInterval(() => {
             this.timeCounter = new Date()
          }, 1000)
@@ -68,7 +68,7 @@ class MealInfoStore {
          mealType,
          this.timeCounter
       )
-      this.selectedMealTypeInfo.getEditPreference(this.timeCounter,mealType)
+      this.selectedMealTypeInfo.getEditPreference(this.timeCounter, mealType)
       this.selectedMealType = mealType
    }
    @action.bound
@@ -88,7 +88,7 @@ class MealInfoStore {
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)
       this.timeCounter = changedDateTime
-      this.getMealInfo(this.timeCounter);
+      this.getMealInfo(this.timeCounter)
    }
 }
 

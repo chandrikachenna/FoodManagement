@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Layout, Button, Text } from './styledComponents'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
-
 
 @observer
 class TabBar extends Component {

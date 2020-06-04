@@ -18,7 +18,10 @@ import { MealPreferenceCustom } from '../../components/MealPreferenceCustom'
 import { MealPreferenceDefault } from '../../components/MealPreferenceDefault'
 
 import { DatePicker } from '../../../Common/components/DatePicker'
-import { TabBar ,TabExampleDefaultActiveIndex} from '../../../Common/components/TabBar'
+import {
+   TabBar,
+   TabExampleDefaultActiveIndex
+} from '../../../Common/components/TabBar'
 import FoodPreferenceImage from '../../../Common/images/foodPreference.png'
 import { Button } from '../../../Common/components/Button'
 import { COLORS } from '../../../Common/theme/Colors'
@@ -26,11 +29,11 @@ import strings from '../../../Common/i18n/strings.json'
 
 @observer
 class MealPreferenceCard extends Component {
-   mealType;
+   mealType
    @observable mealFormate = 'full_meal'
-   constructor(props){
-      super(props);
-      const {match}=this.props;
+   constructor(props) {
+      super(props)
+      const { match } = this.props
    }
    onClick = () => {
       const { history } = this.props
@@ -47,8 +50,10 @@ class MealPreferenceCard extends Component {
    }
    render() {
       const { skipMeal, back, save } = strings.foodManagement
-      const { mealType, mealItemsInfo,date } = {...this.props.selectedMealTypeInfo}
-      const {onChangeDate}=this.props.selectedMealTypeInfo
+      const { mealType, mealItemsInfo, date } = {
+         ...this.props.selectedMealTypeInfo
+      }
+      const { onChangeDate } = this.props.selectedMealTypeInfo
       return (
          <Layout>
             <Header>
@@ -67,7 +72,7 @@ class MealPreferenceCard extends Component {
                   onClikHalfMeal={this.onClikHalfMeal}
                   onClikCustom={this.onClikCustom}
                />
-               <DatePicker onChangeDate={onChangeDate} date={date}/>
+               <DatePicker onChangeDate={onChangeDate} date={date} />
             </SelectionField>
             <InfoBox>
                <Wrap>

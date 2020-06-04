@@ -12,11 +12,14 @@ import { ReviewPageRoute } from './ReviewPageRoute'
 
 import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
 {
-    
 }
 
 const routes = [
-   <ProtectedRoute exact path={SMART_FOOD_MANAGEMENT_PATH} component={HomePageRoute} />,
+   <ProtectedRoute
+      exact
+      path={SMART_FOOD_MANAGEMENT_PATH}
+      component={HomePageRoute}
+   />,
    <Route exact path={MEAL_PREFERENCE_PATH} component={MealPreferenceRoute} />,
    <Route exact path={MEAL_FEEDBACK_PATH} component={ReviewPageRoute} />
 ]

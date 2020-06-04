@@ -1,1 +1,1 @@
-export {ReactTabBar} from './ReactTabBar';
+export { ReactTabBar } from './ReactTabBar'
