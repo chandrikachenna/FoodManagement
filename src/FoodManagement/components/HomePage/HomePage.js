@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { HomePageContainer,Div,CardsContainer } from './styledComponents'
+import { HomePageContainer, Div, CardsContainer } from './styledComponents'
 import { Navbar } from '../../common/Navbar'
 import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure'
-import {Carousel} from '../../common/Carousel';
-import {DatePicker} from '../../../Common/components/DatePicker';
+import { Carousel } from '../../common/Carousel'
+import { DatePicker } from '../../../Common/components/DatePicker'
 class HomePage extends Component {
    render() {
       const {
@@ -14,8 +14,8 @@ class HomePage extends Component {
          getMealInfoAPIStatus,
          getMealInfoAPIError
       } = this.props
-      const {onChangeDate}=this.props.mealInfoStore;
-      const {mealInfoStore}=this.props;
+      const { onChangeDate } = this.props.mealInfoStore
+      const { mealInfoStore } = this.props
       return (
          <HomePageContainer>
             <Navbar

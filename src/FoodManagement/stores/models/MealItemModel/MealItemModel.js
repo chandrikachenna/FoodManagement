@@ -4,12 +4,12 @@ class MealItemModel {
    @observable mealItemInfo
    @observable quantity
    constructor(mealItemInfo) {
-      const {item_id,name,catageory,unit,quantity} = mealItemInfo.item
-      this.id=item_id
-      this.name=name
-      this.catageory=catageory
-      this.unit=unit
-      this.quantity = quantity 
+      const { item_id, name, catageory, unit, quantity } = mealItemInfo.item
+      this.id = item_id
+      this.name = name
+      this.catageory = catageory
+      this.unit = unit
+      this.quantity = quantity
    }
    @action.bound
    onIncrement() {

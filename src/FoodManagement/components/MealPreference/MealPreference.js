@@ -5,7 +5,11 @@ import { ReviewCard } from '../ReviewCard'
 
 class MealPreference extends Component {
    render() {
-      const { selectedMealTypeInfo, selectedMealType ,updateMealInfo} = this.props
+      const {
+         selectedMealTypeInfo,
+         selectedMealType,
+         updateMealInfo
+      } = this.props
       return (
          <>
             <Carousel />

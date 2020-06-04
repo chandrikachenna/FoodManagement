@@ -9,7 +9,7 @@ class MealPreference {
          baseURL: 'https://127.0.0.1:8080/'
       })
    }
-   getMealPreferenceAPI(date,mealType) {
+   getMealPreferenceAPI(date, mealType) {
       return networkCallWithApisauce(
          this.api,
          `food_management/set-meal-preference?date=${date}&meal_type=${mealType.toLowerCase()}

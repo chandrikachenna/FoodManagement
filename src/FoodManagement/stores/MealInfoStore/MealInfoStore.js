@@ -21,11 +21,16 @@ class MealInfoStore {
    @observable timeCounter
 
    initialTimerID
-   constructor(mealInfoService, mealPreferenceService, UpdateMealInfoService ,updateCustomMealInfoService) {
+   constructor(
+      mealInfoService,
+      mealPreferenceService,
+      UpdateMealInfoService,
+      updateCustomMealInfoService
+   ) {
       this.mealInfoService = mealInfoService
       this.mealPreferenceService = mealPreferenceService
       this.updateMealInfoService = UpdateMealInfoService
-      this.updateCustomMealInfoService=updateCustomMealInfoService
+      this.updateCustomMealInfoService = updateCustomMealInfoService
       this.init()
    }
    @action.bound
@@ -55,10 +60,10 @@ class MealInfoStore {
    }
    @action.bound
    setMealInfoAPIStatus(apiStatus) {
-      setTimeout(()=>{
+      setTimeout(() => {
          this.getMealInfoAPIStatus = apiStatus
       })
-      this.getMealInfoAPIStatus=100;
+      this.getMealInfoAPIStatus = 100
    }
    @action.bound
    setMealInfoAPIError(error) {
@@ -79,17 +84,16 @@ class MealInfoStore {
       this.selectedMealType = mealType
    }
    @action.bound
-   updateMealInfo(requestObject,isCustomed) {
+   updateMealInfo(requestObject, isCustomed) {
       console.log('hello...')
-      if(isCustomed){
+      if (isCustomed) {
          const updateMealInfoPromise = this.updateCustomMealInfoService.setCustomMealsAPI(
             requestObject
          )
          return bindPromiseWithOnSuccess(updateMealInfoPromise)
             .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
             .catch(this.setUpdateMealInfoAPIError)
-      }
-      else{
+      } else {
          const updateMealInfoPromise = this.updateMealInfoService.setMealsAPI(
             requestObject
          )
@@ -97,19 +101,18 @@ class MealInfoStore {
             .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
             .catch(this.setUpdateMealInfoAPIError)
       }
-      
    }
    @action.bound
-   setUpdateMealInfoAPIError(apiError){
-      getUpdateMealInfoAPIError=apiError
+   setUpdateMealInfoAPIError(apiError) {
+      getUpdateMealInfoAPIError = apiError
    }
    @action.bound
-   setUpdateMealInfoAPIStatus(apiStatus){
-      getUpdateMealInfoAPIStatus=apiStatus
+   setUpdateMealInfoAPIStatus(apiStatus) {
+      getUpdateMealInfoAPIStatus = apiStatus
    }
    @action.bound
    setUpdateMealInfoResponse(updateMealInfoResponse) {
-      this.updateMealInfoResponse = updateMealInfoResponse;
+      this.updateMealInfoResponse = updateMealInfoResponse
    }
    @action.bound
    onChangeDate(changedDateTime) {
