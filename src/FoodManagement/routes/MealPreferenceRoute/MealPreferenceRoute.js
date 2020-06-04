@@ -5,7 +5,9 @@ import { observer, inject } from 'mobx-react'
 import { MealPreferencePage } from '../../components/MealPreferencePage'
 import { MealPreference } from '../../components/MealPreference'
 
-@inject('authStore', 'mealInfoStore')
+import {withHeader} from '../../../Common/hocs/withHeader';
+
+@inject('mealInfoStore')
 @observer
 class MealPreferenceRoute extends Component {
    constructor(props) {
@@ -18,19 +20,7 @@ class MealPreferenceRoute extends Component {
       const { onClickEdit, selectedMealType } = this.props.mealInfoStore
       onClickEdit(selectedMealType)
    }
-   onClickSignOut = () => {
-      this.props.authStore.userSignOut()
-      const { history } = this.props
-      history.replace({ pathname: 'sign-in' })
-   }
-   onClickGoHome = () => {
-      const { history } = this.props
-      history.push('/food-management/home')
-   }
    renderSuccessUI = observer(() => {
-      // const selectedMealTypeInfo = {
-      //    ...this.props.mealInfoStore.selectedMealTypeInfo
-      // }
       const {
          selectedMealType,
          selectedMealTypeInfo,
@@ -54,8 +44,8 @@ class MealPreferenceRoute extends Component {
       } = selectedMealTypeInfo
       return (
          <MealPreferencePage
-            onClickSignOut={this.onClickSignOut}
-            onClickGoHome={this.onClickGoHome}
+            onClickSignOut={this.props.onClickSignOut}
+            onClickGoHome={this.props.onClickGoHome}
             getMealItemsAPIStatus={getMealItemsAPIStatus}
             getMealItemsAPIError={getMealItemsAPIError}
             doNetworkCalls={this.doNetworkCalls}
@@ -65,4 +55,4 @@ class MealPreferenceRoute extends Component {
    }
 }
 
-export default withRouter(MealPreferenceRoute)
+export default withRouter(withHeader(MealPreferenceRoute))

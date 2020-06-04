@@ -39,6 +39,10 @@
         "writeReview":"Write Review"
     },
     "admin":{
+        "home":"Home",
+        "foodItems":"Food Items",
+        "ratingsAndReviews":"Ratings & Reviews",
+        "logOut":"Logout",
         "scheduleMeal":"Schedule Meal",
         "headCount":"Head Count",
         "mealFeedback":"Meal feedback",

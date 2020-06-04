@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { COLORS } from '../../../Common/theme/Colors'
+import { COLORS } from '../../../../Common/theme/Colors'
 import {
    Typo18SteelHKGroteskMedium,
    Typo12CoolGreyHKGroteskRegular
-} from '../../../Common/styleGuide/Typo'
+} from '../../../../Common/styleGuide/Typo'
 
 const Layout = styled.div`
    width: 250px;

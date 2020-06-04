@@ -51,8 +51,6 @@ const Typo14DarkBlueGreyHKGroteskRegular = styled.span`
 `
 
 const Typo20DarkBlueGreyHKGroteskMedium = styled.span`
-   width: 57px;
-   height: 24px;
    font-family: HKGrotesk;
    font-size: 20px;
    font-weight: 500;

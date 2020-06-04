@@ -8,6 +8,7 @@ const Layout = styled.div`
 `
 const Wrap = styled.div`
    ${tw`flex flex-col `}
+   overflow:auto;
 `
 
 const Left = styled.div`

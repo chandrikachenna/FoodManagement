@@ -1,9 +1,10 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { Typo20DarkBlueGreyHKGroteskMedium } from '../../../Common/styleGuide/Typo'
+import { Typo20DarkBlueGreyHKGroteskMedium } from '../../../../Common/styleGuide/Typo'
 
 const Link = styled(Typo20DarkBlueGreyHKGroteskMedium)`
    ${tw`cursor-pointer`}
+   color:${props=>props.color || 'black'}
 `
 
 const Navbarcontainer = styled.div`
@@ -25,9 +26,8 @@ const Div = styled.div`
    ${tw`flex flex-row justify-between w-full`};
 `
 const SpareOptionsBar = styled.div`
-   ${tw`lg:hidden flex flex-row-reverse justify-around items-center`}
-   height: 60px;
-   box-shadow: 0 8px 16px 0 rgba(23, 31, 70, 0.08);
+   ${tw`lg:hidden flex flex-col-reverse justify-center items-center`}
+   height: 90px;
    background-color: #ffffff;
 `
 

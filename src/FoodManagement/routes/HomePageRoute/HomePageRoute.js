@@ -3,18 +3,14 @@ import { HomePage } from '../../components/HomePage'
 import { withRouter } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 import { Mealcards } from '../../components/Mealcards'
-import { format } from 'date-fns'
+import { format } from 'date-fns';
+import {withHeader} from '../../../Common/hocs/withHeader';
 
-@inject('mealInfoStore', 'authStore')
+@inject('mealInfoStore')
 @observer
 class HomePageRoute extends Component {
    componentDidMount() {
       this.doNetworkCalls()
-   }
-   onClickSignOut = () => {
-      this.props.authStore.userSignOut()
-      const { history } = this.props
-      history.replace({ pathname: 'sign-in' })
    }
    doNetworkCalls = () => {
       setTimeout(() => {
@@ -24,11 +20,6 @@ class HomePageRoute extends Component {
          )
          this.props.mealInfoStore.getMealInfo(date)
       }, 1000)
-   }
-   onClickGoHome = () => {
-      const { history } = this.props
-      this.doNetworkCalls()
-      history.push('/food-management/home')
    }
    renderSuccessUI = observer(() => {
       return (
@@ -48,11 +39,11 @@ class HomePageRoute extends Component {
       } = this.props.mealInfoStore
       return (
          <HomePage
-            onClickSignOut={this.onClickSignOut}
+            onClickSignOut={this.props.onClickSignOut}
             mealInfoList={this.props.mealInfoStore.mealInfo}
             onClickEdit={this.props.mealInfoStore.onClickEdit}
             mealInfoStore={this.props.mealInfoStore}
-            onClickGoHome={this.onClickGoHome}
+            onClickGoHome={this.props.onClickGoHome}
             doNetworkCalls={this.doNetworkCalls}
             renderSuccessUI={this.renderSuccessUI}
             getMealInfoAPIStatus={getMealInfoAPIStatus}
@@ -62,4 +53,4 @@ class HomePageRoute extends Component {
    }
 }
 
-export default withRouter(HomePageRoute)
+export default withRouter(withHeader(HomePageRoute))
