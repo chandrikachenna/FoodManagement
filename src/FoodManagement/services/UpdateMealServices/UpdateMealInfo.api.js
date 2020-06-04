@@ -2,7 +2,7 @@ import { networkCallWithApisauce } from '../../utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
 
-class UpdateMealsAPI {
+class UpdateMealInfo {
    api
    constructor() {
       this.api = create({
@@ -19,4 +19,4 @@ class UpdateMealsAPI {
    }
 }
 
-export { UpdateMealsAPI }
+export { UpdateMealInfo }

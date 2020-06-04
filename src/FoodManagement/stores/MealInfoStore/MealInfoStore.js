@@ -1,8 +1,7 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealInfoItemModel } from '../models/MealInfoItemModel'
-//import { clearInterval } from "timers";
 
 class MealInfoStore {
    @observable getMealInfoAPIStatus

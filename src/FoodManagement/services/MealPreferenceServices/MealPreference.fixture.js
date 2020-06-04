@@ -1,6 +1,6 @@
 import getMealPreferenceInfo from '../../fixtures/getMealPreferenceInfo.json'
 
-class MealPreferenceFixture {
+class MealPreference {
    getMealPreferenceAPI() {
       return new Promise((resolve, reject) => {
          resolve(getMealPreferenceInfo)
@@ -8,4 +8,4 @@ class MealPreferenceFixture {
    }
 }
 
-export { MealPreferenceFixture }
+export { MealPreference }
