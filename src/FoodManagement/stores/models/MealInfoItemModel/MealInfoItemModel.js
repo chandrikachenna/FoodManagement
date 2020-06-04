@@ -11,7 +11,6 @@ class MealInfoItemModel {
    @observable mealType
    @observable date;
    constructor(api, mealType,timeCounter) {
-      console.log(mealType)
       this.editPreferenceAPI = api
       this.mealType = mealType
       this.date=timeCounter;

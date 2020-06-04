@@ -4,12 +4,29 @@ import { withRouter } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 import { MealInfo } from '../../components/MealInfo'
 import {format} from 'date-fns';
+
+
+
+let array=[1,2,3];
+let a;
+function incrementArrayElements(array){
+   console.log(array.map((item)=> item+1));
+   
+}
+
 @inject('mealInfoStore', 'authStore')
 @observer
 class HomePageRoute extends Component {
    constructor(props) {
       super(props)
       this.doNetworkCalls()
+      console.log('constructor');
+      
+   }
+   componentDidMount(){
+      incrementArrayElements(array)
+      console.log(array);
+      //console.log('component did mount')
    }
    onClickSignOut = () => {
       this.props.authStore.userSignOut()
@@ -20,7 +37,6 @@ class HomePageRoute extends Component {
       setTimeout(()=>{
          const date=format(new Date(this.props.mealInfoStore.timeCounter),'yyyy-MM-dd')
          this.props.mealInfoStore.getMealInfo(date)
-         console.log(date)
       },1000)
    }
    onClickGoHome = () => {
@@ -37,14 +53,13 @@ class HomePageRoute extends Component {
          />
       )
    })
+   
    render() {
-      
       const {
          getMealInfoAPIStatus,
          getMealInfoAPIError,
          timeCounter
       } = this.props.mealInfoStore
-      console.log(timeCounter)
       return (
          <HomePage
             onClickSignOut={this.onClickSignOut}

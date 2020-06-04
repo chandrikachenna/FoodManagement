@@ -68,6 +68,7 @@ class SignInPage extends Component {
                   variant={COLORS.brightBlue}
                   type={typeButton}
                   text={signInText}
+                  loadingStatus={loginStatus}
                   disabled={loginStatus == 100 ? true : false}
                   data-testid={signInButtonTestId}
                />

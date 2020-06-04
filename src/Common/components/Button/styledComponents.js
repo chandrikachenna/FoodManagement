@@ -4,6 +4,7 @@ import { COLORS } from '../../theme/Colors'
 import { Typo14WhiteHKGroteskSemiBold } from '../../styleGuide/Typo'
 
 const ButtonTag = styled.button`
+   ${tw`focus:outline-none`}
    height: 40px;
    border-radius: 4px;
    border: solid 1px #d7dfe9;

@@ -36,7 +36,6 @@ class SigninRoute extends Component {
    }
    onClickSignIn = () => {
       if (this.username && this.password) {
-         this.errorMessage = loadingMsg
          this.props.authStore.userSignIn(
             this.onSuccesSignIn,
             this.onFailureSignIn
