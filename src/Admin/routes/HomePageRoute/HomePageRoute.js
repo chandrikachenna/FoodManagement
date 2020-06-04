@@ -2,19 +2,11 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { HomePage } from '../../components/HomePage'
 import { observer, inject } from 'mobx-react'
+import {withHeader} from '../../../Common/hocs/withHeader';
 
-@inject('authStore', 'scheduleMealStore')
+@inject( 'scheduleMealStore')
 @observer
 class HomePageRoute extends Component {
-   onClickSignOut = () => {
-      this.props.authStore.userSignOut()
-      const { history } = this.props
-      history.push('/food-management/sign-in')
-   }
-   onClickGoHome = () => {
-      const { history } = this.props
-      history.push('/food-management/admin/home')
-   }
    render() {
       return (
          <HomePage
@@ -26,4 +18,4 @@ class HomePageRoute extends Component {
    }
 }
 
-export default withRouter(HomePageRoute)
+export default withRouter(withHeader(HomePageRoute))

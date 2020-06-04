@@ -92,7 +92,7 @@ class MealPreferenceCard extends Component {
       const { mealType, mealItemsInfo, date } = {
          ...this.props.selectedMealTypeInfo
       }
-      const { onChangeDate, updateMealInfo } = this.props.selectedMealTypeInfo
+      const { onChangeDate } = this.props.selectedMealTypeInfo
       return (
          <Layout>
             <Header>

@@ -24,16 +24,16 @@ class Navbar extends Component {
                      <Link color={page.match(home)&&COLORS.brightBlue} onClick={onClickGoHome}>{home}</Link>
                   </SubNav>
                   <OptionsBar>
-                     <Link onClick={onClickSignOut}>{logOut}</Link>
-                     <Link onClick={onClickForRatingsAndReviews}>{ratingsAndReviews}</Link>
-                     <Link onClick={onClickForFoodItems}>{foodItems}</Link>
+                     <Link color={page.match(logOut)&&COLORS.brightBlue} onClick={onClickSignOut}>{logOut}</Link>
+                     <Link color={page.match(ratingsAndReviews)&&COLORS.brightBlue} onClick={onClickForRatingsAndReviews}>{ratingsAndReviews}</Link>
+                     <Link color={page.match(foodItems)&&COLORS.brightBlue} onClick={onClickForFoodItems}>{foodItems}</Link>
                   </OptionsBar>
                </Div>
             </Navbarcontainer>
             <SpareOptionsBar>
-               <Link onClick={onClickSignOut}>{logOut}</Link>
-               <Link onClick={onClickForRatingsAndReviews}>{ratingsAndReviews}</Link>
-               <Link onClick={onClickForFoodItems}>{foodItems}</Link>
+               <Link color={page.match(logOut)&&COLORS.brightBlue} onClick={onClickSignOut}>{logOut}</Link>
+               <Link color={page.match(ratingsAndReviews)&&COLORS.brightBlue} onClick={onClickForRatingsAndReviews}>{ratingsAndReviews}</Link>
+               <Link color={page.match(foodItems)&&COLORS.brightBlue} onClick={onClickForFoodItems}>{foodItems}</Link>
             </SpareOptionsBar>
          </>
       )
