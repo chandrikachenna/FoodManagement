@@ -5,7 +5,7 @@ import { ReviewCard } from '../ReviewCard'
 
 class MealPreference extends Component {
    render() {
-      const { selectedMealTypeInfo, selectedMealType } = this.props
+      const { selectedMealTypeInfo, selectedMealType ,updateMealInfo} = this.props
       return (
          <>
             <Carousel />
@@ -13,6 +13,7 @@ class MealPreference extends Component {
             <MealPreferenceCard
                selectedMealTypeInfo={selectedMealTypeInfo}
                selectedMealType={selectedMealType}
+               updateMealInfo={updateMealInfo}
             />
          </>
       )

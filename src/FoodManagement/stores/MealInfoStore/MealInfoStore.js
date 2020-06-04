@@ -6,18 +6,26 @@ import { MealInfoItemModel } from '../models/MealInfoItemModel'
 class MealInfoStore {
    @observable getMealInfoAPIStatus
    @observable getMealInfoAPIError
-   @observable MealsAPIService
-   @observable mealPreferenceFixture
-   @observable UpdateMealsAPIService
+
+   @observable getUpdateMealInfoAPIStatus
+   @observable getUpdateMealInfoAPIError
+
+   @observable mealInfoService
+   @observable mealPreferenceService
+   @observable updateMealInfoService
+   @observable updateCustomMealInfoService
+
    @observable mealInfo
    @observable selectedMealTypeInfo
    @observable selectedMealType
    @observable timeCounter
+
    initialTimerID
-   constructor(MealsAPIService, mealPreferenceFixture, UpdateMealsAPIService) {
-      this.MealsAPIService = MealsAPIService
-      this.mealPreferenceFixture = mealPreferenceFixture
-      this.UpdateMealsAPIService = UpdateMealsAPIService
+   constructor(mealInfoService, mealPreferenceService, UpdateMealInfoService ,updateCustomMealInfoService) {
+      this.mealInfoService = mealInfoService
+      this.mealPreferenceService = mealPreferenceService
+      this.updateMealInfoService = UpdateMealInfoService
+      this.updateCustomMealInfoService=updateCustomMealInfoService
       this.init()
    }
    @action.bound
@@ -40,7 +48,7 @@ class MealInfoStore {
 
    @action.bound
    getMealInfo(date) {
-      const mealInfoPromise = this.MealsAPIService.getMealsAPI(date)
+      const mealInfoPromise = this.mealInfoService.getMealsAPI(date)
       return bindPromiseWithOnSuccess(mealInfoPromise)
          .to(this.setMealInfoAPIStatus, this.setMealInfoResponse)
          .catch(this.setMealInfoAPIError)
@@ -63,7 +71,7 @@ class MealInfoStore {
    @action.bound
    onClickEdit(mealType) {
       this.selectedMealTypeInfo = new MealInfoItemModel(
-         this.mealPreferenceFixture,
+         this.mealPreferenceService,
          mealType,
          this.timeCounter
       )
@@ -71,17 +79,37 @@ class MealInfoStore {
       this.selectedMealType = mealType
    }
    @action.bound
-   updateMealInfo(requestObject) {
-      const updateMealInfoPromise = this.UpdateMealsAPIService.setMealsAPI(
-         requestObject
-      )
-      return bindPromiseWithOnSuccess(updateMealInfoPromise)
-         .to(this.setMealInfoAPIStatus, this.setUpdateMealInfoResponse)
-         .catch(this.setMealInfoAPIError)
+   updateMealInfo(requestObject,isCustomed) {
+      console.log('hello...')
+      if(isCustomed){
+         const updateMealInfoPromise = this.updateCustomMealInfoService.setCustomMealsAPI(
+            requestObject
+         )
+         return bindPromiseWithOnSuccess(updateMealInfoPromise)
+            .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
+            .catch(this.setUpdateMealInfoAPIError)
+      }
+      else{
+         const updateMealInfoPromise = this.updateMealInfoService.setMealsAPI(
+            requestObject
+         )
+         return bindPromiseWithOnSuccess(updateMealInfoPromise)
+            .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
+            .catch(this.setUpdateMealInfoAPIError)
+      }
+      
    }
    @action.bound
-   setUpdateMealInfoResponse(UpdateMealInfoResponse) {
-      this.mealInfo = UpdateMealInfoResponse
+   setUpdateMealInfoAPIError(apiError){
+      getUpdateMealInfoAPIError=apiError
+   }
+   @action.bound
+   setUpdateMealInfoAPIStatus(apiStatus){
+      getUpdateMealInfoAPIStatus=apiStatus
+   }
+   @action.bound
+   setUpdateMealInfoResponse(updateMealInfoResponse) {
+      this.updateMealInfoResponse = updateMealInfoResponse;
    }
    @action.bound
    onChangeDate(changedDateTime) {

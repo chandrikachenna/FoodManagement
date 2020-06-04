@@ -19,17 +19,19 @@ import { MealPreferenceDefault } from '../../components/MealPreferenceDefault'
 
 import { DatePicker } from '../../../Common/components/DatePicker'
 import {
-   TabBar,
-   TabExampleDefaultActiveIndex
+   TabBar
 } from '../../../Common/components/TabBar'
 import FoodPreferenceImage from '../../../Common/images/foodPreference.png'
 import { Button } from '../../../Common/components/Button'
 import { COLORS } from '../../../Common/theme/Colors'
 import strings from '../../../Common/i18n/strings.json'
 
+
 @observer
 class MealPreferenceCard extends Component {
    mealType
+   isCustom
+   requestObject
    @observable mealFormate = 'full_meal'
    constructor(props) {
       super(props)
@@ -48,19 +50,62 @@ class MealPreferenceCard extends Component {
    onClikCustom = () => {
       this.mealFormate = 'custom'
    }
+   getRequestObject=(mealItemsList)=>{
+      let requestObject=[];
+      mealItemsList.forEach((list)=>{
+         requestObject.push(
+            {
+               "item_id":list.id,
+               "name":list.name,
+               "catageory":list.catageory,
+               "unit":list.unit,
+               "quantity":list.quantity
+            }
+         )
+      })
+      return requestObject;
+   }
+   onClickSave=()=>{
+      this.isCustom=this.mealFormate.match('custom') ? true : false;
+      const { mealItemsInfo } = {
+         ...this.props.selectedMealTypeInfo
+      }
+      if(!this.isCustom){
+         this.requestObject={user_meal_format:this.mealFormate}
+      }
+      else{
+         this.requestObject=this.getRequestObject(mealItemsInfo[2])
+      }
+      this.onClick();
+      const {updateMealInfo}=this.props
+      updateMealInfo(this.requestObject,this.isCustom)
+   }
+   onClickSkipped=()=>{
+      this.isCustom=true;
+      const { mealItemsInfo } = {
+         ...this.props.selectedMealTypeInfo
+      }
+      let skippedMealData=mealItemsInfo[2].map((itemInfo)=>
+            Object.assign({}, itemInfo, {quantity: 0})
+      )
+      this.requestObject=this.getRequestObject(skippedMealData);
+      this.onClick();
+      const {updateMealInfo}=this.props
+      updateMealInfo(this.requestObject,this.isCustom)
+   }
    render() {
       const { skipMeal, back, save } = strings.foodManagement
       const { mealType, mealItemsInfo, date } = {
          ...this.props.selectedMealTypeInfo
       }
-      const { onChangeDate } = this.props.selectedMealTypeInfo
+      const { onChangeDate ,updateMealInfo} = this.props.selectedMealTypeInfo
       return (
          <Layout>
             <Header>
                <Title>{mealType}</Title>
                <Button
                   variant={COLORS.white}
-                  onClick={this.onClick}
+                  onClick={this.onClickSkipped}
                   width={'102px'}
                   name={skipMeal}
                   color={COLORS.black}
@@ -97,11 +142,11 @@ class MealPreferenceCard extends Component {
                   color={COLORS.black}
                />
                <Button
-                  variant={COLORS.white}
-                  onClick={this.onClick}
+                  variant={COLORS.jade}
+                  onClick={this.onClickSave}
                   width={'71px'}
                   name={save}
-                  color={COLORS.black}
+                  color={COLORS.white}
                />
             </Footer>
          </Layout>
@@ -110,3 +155,4 @@ class MealPreferenceCard extends Component {
 }
 
 export default withRouter(MealPreferenceCard)
+

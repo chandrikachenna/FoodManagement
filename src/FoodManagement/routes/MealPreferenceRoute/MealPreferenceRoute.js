@@ -33,12 +33,14 @@ class MealPreferenceRoute extends Component {
       // }
       const {
          selectedMealType,
-         selectedMealTypeInfo
+         selectedMealTypeInfo,
+         updateMealInfo
       } = this.props.mealInfoStore
       return (
          <MealPreference
             selectedMealTypeInfo={selectedMealTypeInfo}
             selectedMealType={selectedMealType}
+            updateMealInfo={updateMealInfo}
          />
       )
    })

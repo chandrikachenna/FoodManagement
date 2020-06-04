@@ -10,10 +10,10 @@ class MealPreferenceCustom extends Component {
       return (
          <Wrap>
             {mealItems.map(info => (
-               <Layout>
+               <Layout key={Math.random().toString()}>
                   <Left>
-                     <p>{info.mealItemInfo.name}</p>
-                     <p>{info.mealItemInfo.catageory}</p>
+                     <p>{info.name}</p>
+                     <p>{info.catageory}</p>
                   </Left>
                   <Right>
                      <Counter
@@ -21,7 +21,7 @@ class MealPreferenceCustom extends Component {
                         onIncrement={info.onIncrement}
                         onDecrement={info.onDecrement}
                      />
-                     {` ${info.mealItemInfo.unit}`}
+                     {` ${info.unit}`}
                   </Right>
                </Layout>
             ))}

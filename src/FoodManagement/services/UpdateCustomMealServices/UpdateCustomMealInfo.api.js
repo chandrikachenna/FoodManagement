@@ -2,21 +2,21 @@ import { networkCallWithApisauce } from '../../utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
 
-class MealsInfo {
+class UpdateCustomMealInfo {
    api
    constructor() {
       this.api = create({
-         baseURL: 'http://127.0.0.1:4040/'
+         baseURL: 'https://127.0.0.1:8080/'
       })
    }
-   getMealsAPI(date) {
+   setCustomMealsAPI(requestObject) {
       return networkCallWithApisauce(
          this.api,
-         `food_management/menu/v1?date=${date}`,
-         {},
-         apiMethods.get
+         `food_management/`,
+         requestObject,
+         apiMethods.post
       )
    }
 }
 
-export { MealsInfo }
+export { UpdateCustomMealInfo }

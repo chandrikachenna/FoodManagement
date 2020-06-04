@@ -15,7 +15,7 @@
         },
         {
           "item": {
-            "item_id": 0,
+            "item_id": 1,
             "name": "Aloo Curry",
             "catageory": "Curry",
             "unit": "Cups",
@@ -35,7 +35,7 @@
         },
         {
           "item": {
-            "item_id": 0,
+            "item_id": 1,
             "name": "Aloo Curry",
             "catageory": "Curry",
             "unit": "Cups",
@@ -55,7 +55,7 @@
             },
             {
               "item": {
-                "item_id": 0,
+                "item_id": 1,
                 "name": "Aloo Curry",
                 "catageory": "Curry",
                 "unit": "Cups",
@@ -69,3 +69,5 @@
 
 
 ]
+
+

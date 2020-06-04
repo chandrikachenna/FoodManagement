@@ -9,12 +9,12 @@ class MealPreferenceDefault extends Component {
             {mealItems.map(info => (
                <Layout key={Math.random().toString()}>
                   <Left>
-                     <p>{info.mealItemInfo.name}</p>
-                     <p>{info.mealItemInfo.catageory}</p>
+                     <p>{info.name}</p>
+                     <p>{info.catageory}</p>
                   </Left>
                   <Right>
                      <p>{info.quantity}</p>
-                     <p>{` ${info.mealItemInfo.unit}`}</p>
+                     <p>{` ${info.unit}`}</p>
                   </Right>
                </Layout>
             ))}
