@@ -74,8 +74,8 @@ class MealPreferenceCard extends Component {
          this.requestObject = this.getRequestObject(mealItemsInfo[2],'custom')
       }
       this.onClick()
-      const { updateMealInfo } = this.props
-      updateMealInfo(this.requestObject, this.isCustom)
+      const { onClickSave } = this.props.selectedMealTypeInfo
+      onClickSave(this.requestObject, this.isCustom)
    }
    onClickSkipped = () => {
       this.isCustom = true
@@ -87,8 +87,8 @@ class MealPreferenceCard extends Component {
       )
       this.requestObject = this.getRequestObject(skippedMealData,'skipped')
       this.onClick()
-      const { updateMealInfo } = this.props
-      updateMealInfo(this.requestObject, this.isCustom)
+      const { onClickSkipMeal } = this.props.selectedMealTypeInfo
+      onClickSkipMeal(this.requestObject, this.isCustom)
    }
    render() {
       const { skipMeal, back, save } = strings.foodManagement

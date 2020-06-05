@@ -11,10 +11,19 @@ class MealInfoItemModel {
    @observable mealType
    @observable date
    @observable mealPreference
-   constructor(api, mealType, timeCounter) {
+
+   @observable getUpdateMealInfoAPIStatus
+   @observable getUpdateMealInfoAPIError
+   @observable updateMealInfoService
+   @observable updateCustomMealInfoService
+   @observable updateMealInfoResponse
+
+   constructor(api, mealType, timeCounter,updateMealInfoService,updateCustomMealInfoService) {
       this.editPreferenceAPI = api
       this.mealType = mealType
       this.date = timeCounter
+      this.updateMealInfoService=updateMealInfoService
+      this.updateCustomMealInfoService=updateCustomMealInfoService
       this.init()
    }
    @action.bound
@@ -61,16 +70,46 @@ class MealInfoItemModel {
       )
    }
    @action.bound
-   onClickSkipMeal() {
-      console.log('post requested updated mealItems')
+   onClickSkipMeal(requestObject,isCustomed) {
+      
+      this.updateMealInfo(requestObject, isCustomed)
    }
    @action.bound
-   onClickSave() {
-      console.log('post requested updated mealItems')
+   onClickSave(requestObject,isCustomed) {
+      this.updateMealInfo(requestObject, isCustomed)
    }
    @action.bound
-   onClickBack() {
-      console.log(Back)
+   setUpdateMealInfoAPIError(apiError) {
+      this.getUpdateMealInfoAPIError = apiError
    }
+   @action.bound
+   setUpdateMealInfoAPIStatus(apiStatus) {
+      this.getUpdateMealInfoAPIStatus = apiStatus
+   }
+   @action.bound
+   setUpdateMealInfoResponse(updateMealInfoResponse) {
+      this.updateMealInfoResponse = updateMealInfoResponse
+   }
+   @action.bound
+   updateMealInfo(requestObject, isCustomed) {
+      if (isCustomed) {
+         const updateMealInfoPromise = this.updateCustomMealInfoService.setCustomMealsAPI(
+            requestObject
+         )
+         return bindPromiseWithOnSuccess(updateMealInfoPromise)
+            .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
+            .catch(this.setUpdateMealInfoAPIError)
+      } else {
+         const updateMealInfoPromise = this.updateMealInfoService.setMealsAPI(
+            requestObject
+         )
+         return bindPromiseWithOnSuccess(updateMealInfoPromise)
+            .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
+            .catch(this.setUpdateMealInfoAPIError)
+      }
+   }
+
+
+
 }
 export { MealInfoItemModel }

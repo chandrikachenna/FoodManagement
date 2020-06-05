@@ -1,0 +1,1 @@
+export {MealReviewInfoModel} from './MealReviewInfoModel';

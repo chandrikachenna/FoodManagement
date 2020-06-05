@@ -1,6 +1,5 @@
 import {
    API_INITIAL,
-   API_FAILED,
    API_SUCCESS,
    API_FETCHING
 } from '@ib/api-constants'
