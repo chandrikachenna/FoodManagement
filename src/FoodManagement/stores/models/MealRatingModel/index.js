@@ -1,0 +1,1 @@
+export {MealRatingModel} from './MealRatingModel';

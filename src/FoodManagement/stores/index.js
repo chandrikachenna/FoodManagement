@@ -4,7 +4,7 @@ import { MealPreference } from '../services/MealPreferenceServices/MealPreferenc
 import { UpdateMealInfo } from '../services/UpdateMealServices/UpdateMealInfo.api'
 import { UpdateCustomMealInfo } from '../services/UpdateCustomMealServices/UpdateCustomMealInfo.api'
 
-import { MealReviewInfo } from '../services/MealReviewInfoServices/MealReviewInfoService.api'
+import { MealReviewInfo } from '../services/MealReviewInfoServices/MealReviewInfoService.fixture'
 import { UpdateMealReviewInfo } from '../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.api'
 
 import { MealInfoStore } from './MealInfoStore'

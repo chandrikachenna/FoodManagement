@@ -1,9 +1,10 @@
 import getMealReviewInfo from '../../fixtures/getMealReviewInfo.json'
 
 class MealReviewInfo {
-   getMealReviewInfo() {
+   getMealReviewInfo(date,mealType) {
+      console.log('service')
       return new Promise((resolve, reject) => {
-         resolve(getMealPreferenceInfo)
+         resolve(getMealReviewInfo)
       })
    }
 }

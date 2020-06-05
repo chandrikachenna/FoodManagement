@@ -5,24 +5,24 @@ import {
    API_FETCHING
 } from '@ib/api-constants'
 
-import { MealPreferenceFixture } from '../../../services/MealPreferenceServices/MealPreference.fixture'
+import { MealPreference } from '../../../services/MealPreferenceServices/MealPreference.fixture'
 import getMealPreferenceInfo from '../../../fixtures/getMealPreferenceInfo.json'
 
-import { MealModel } from './MealInfoItemModel'
+import { MealInfoItemModel } from './MealInfoItemModel'
 
-describe('mealModel tests', () => {
+describe('MealInfoItemModel tests', () => {
    let mealPreferenceFixture
    let mealModel
 
    beforeEach(() => {
-      mealPreferenceFixture = new MealPreferenceFixture()
-      mealModel = new MealModel(mealPreferenceFixture)
+      mealPreferenceFixture = new MealPreference()
+      mealModel = new MealInfoItemModel(mealPreferenceFixture)
    })
 
    it('should test initialize mealModel', () => {
       expect(mealModel.getMealItemsAPIStatus).toBe(API_INITIAL)
       expect(mealModel.getMealItemsAPIError).toBe(null)
-      expect(mealModel.mealItems).toStrictEqual(new Array())
+      expect(mealModel.mealItemsInfo).toStrictEqual(new Array())
    })
 
    it('should test getMealInfo fetching state', () => {

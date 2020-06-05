@@ -3,11 +3,16 @@ import { render, fireEvent, waitForElement } from '@testing-library/react'
 import { Router, Route, withRouter } from 'react-router-dom'
 import { Provider } from 'mobx-react'
 import { createMemoryHistory } from 'history'
-
+import {
+   API_INITIAL,
+   API_FETCHING,
+   API_SUCCESS,
+   API_FAILED
+} from '@ib/api-constants'
 import { SIGN_UP_PATH, SIGN_IN_PATH } from '../../constants/RouteConstants'
 import { SMART_FOOD_MANAGEMENT_PATH } from '../../../FoodManagement/constants/RouteConstants'
 
-import AuthAPI from '../../services/AuthService/AuthAPI.api'
+import {AuthAPI} from '../../services/AuthService/AuthAPI.api'
 import { AuthStore } from '../../stores/AuthStore'
 
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
@@ -73,8 +78,9 @@ describe('SignInRoute tests', () => {
       fireEvent.change(usernameField, { target: { value: username } })
       fireEvent.change(passwordField, { target: { value: password } })
       fireEvent.click(logInButton)
-
-      getByText('Loading...')
+      
+      expect(authStore.getUserSignInAPIStatus).toBe(API_FETCHING)
+      
    })
 
    it('should render signInRoute loading state', async () => {
@@ -98,8 +104,7 @@ describe('SignInRoute tests', () => {
       fireEvent.change(usernameField, { target: { value: username } })
       fireEvent.change(passwordField, { target: { value: password } })
       fireEvent.click(logInButton)
-
-      getByText('Loading...')
+      expect(authStore.getUserSignInAPIStatus).toBe(API_FETCHING)
    })
 
    it('should render signInRoute success state', async () => {

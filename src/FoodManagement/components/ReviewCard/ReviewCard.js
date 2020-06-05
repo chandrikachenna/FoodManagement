@@ -14,14 +14,34 @@ import { Button } from '../../../Common/components/Button'
 import strings from '../../../Common/i18n/strings.json'
 import { COLORS } from '../../../Common/theme/Colors'
 import { TextArea } from '../../../Common/components/TextArea'
+import { observer } from "mobx-react"
+const width='73px';
 
+@observer
 class ReviewCard extends Component {
+   
+   requestedObject=()=>{
+      const reviewInfo=this.props.mealInfoStore.selectedMealTypeReview
+      const object={
+         items:[]}
+         reviewInfo.mealReviewInfo.forEach((item)=>
+                       object.items.push({
+                        item_name:item.name,
+                        quality_rating:item.qualityRating,
+                        taste_rating:item.tasteRating
+                       })
+                     )
+   }
    onClick = () => {
       const { history } = this.props
-      history.push('/food-management/home')
+      history.push('/food-management/home');
+      const reviewInfo=this.props.mealInfoStore.selectedMealTypeReview
+      reviewInfo.onSave()    //TODO --date,mealType from params
    }
    render() {
       const { done } = strings.foodManagement
+      const reviewInfo=this.props.mealInfoStore.selectedMealTypeReview
+      
       return (
          <Layout>
             <Title>Review</Title>
@@ -31,29 +51,32 @@ class ReviewCard extends Component {
             </Header>
             <Review>
                <InfoContainer>
-                  <Item>Poori</Item>
-                  <Item>Chapathi</Item>
-                  <Item>Dosa</Item>
-                  <Item>Idly </Item>
+                  {
+                     reviewInfo.mealReviewInfo.map((item)=>
+                        <Item>{item.name}</Item>
+                     )
+                  }
                </InfoContainer>
                <InfoContainer>
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
+                  {
+                     reviewInfo.mealReviewInfo.map((item)=>
+                        <StarRating onChange={item.onChangeQualityRating} />
+                     )
+                  }
                </InfoContainer>
                <InfoContainer>
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
-                  <StarRating />
+                  {
+                     reviewInfo.mealReviewInfo.map((item)=>
+                        <StarRating onChange={item.onChangeTasteRating} />
+                     )
+                  }
                </InfoContainer>
             </Review>
             <TextArea />
             <Button
                name={done}
                variant={COLORS.jade}
-               width={'73px'}
+               width={width}
                onClick={this.onClick}
             />
          </Layout>

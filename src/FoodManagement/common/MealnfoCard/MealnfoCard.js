@@ -37,6 +37,7 @@ class MealInfoCard extends Component {
       const { timeCounter } = this.props.mealInfoStore
       history.push(`/food-management/set-meal-preference`)
       const date = format(new Date(timeCounter), 'yyyy-MM-dd')
+      //TODO
       // history.push({
       //    pathname:`/food-management/set-meal-preference?date=${date}&meal_type=${this.props.info.meal_type}`,
       //  });
@@ -44,6 +45,8 @@ class MealInfoCard extends Component {
    goForReview = () => {
       const { history } = this.props
       history.push('/food-management/meal-feedback')
+      this.props.mealInfoStore.goForReview(this.props.info.meal_type)
+
    }
    render() {
       const { typeButton } = strings.authentication

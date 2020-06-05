@@ -10,9 +10,6 @@ import { withHeader } from '../../../Common/hocs/withHeader'
 @inject('mealInfoStore')
 @observer
 class MealPreferenceRoute extends Component {
-   constructor(props) {
-      super(props)
-   }
    componentDidMount = () => {
       this.doNetworkCalls()
    }

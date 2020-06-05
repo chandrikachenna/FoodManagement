@@ -57,22 +57,14 @@ class MealInfoStore {
       this.dateTime()
    }
    @action.bound
-   onSkippedMeal() {
+   async goForReview(mealType) {
       this.selectedMealTypeReview = new MealReviewInfoModel(
          mealType,
          this.mealReviewInfoService,
          this.updateMealReviewInfoService
       )
-      this.selectedMealTypeReview.getMealReviewInfo(this.timeCounter, mealType)
-   }
-   @action.bound
-   onIAteIt(date, mealType) {
-      this.selectedMealTypeReview = new MealReviewInfoModel(
-         mealType,
-         this.mealReviewInfoService,
-         this.updateMealReviewInfoService
-      )
-      this.selectedMealTypeReview.getMealReviewInfo(this.timeCounter, mealType)
+      await this.selectedMealTypeReview.getMealReviewInfo(this.timeCounter, mealType)
+      this.selectedMealType = mealType
    }
    @action.bound
    getMealInfo(date) {

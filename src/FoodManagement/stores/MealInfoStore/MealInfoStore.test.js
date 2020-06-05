@@ -5,8 +5,8 @@ import {
    API_FETCHING
 } from '@ib/api-constants'
 
-import { MealsFixture } from '../../services/MealInfoServices/MealsInfo.fixture'
-import getMealInfo from '../../../fixtures/getMealInfo.json'
+import {MealsInfo } from '../../services/MealInfoServices/MealsInfo.fixture'
+import getMealInfo from '../../fixtures/getMealInfo.json';
 
 import { MealInfoStore } from '.'
 
@@ -15,7 +15,7 @@ describe('mealInfoStore tests', () => {
    let mealInfoStore
 
    beforeEach(() => {
-      mealsFixture = new MealsFixture()
+      mealsFixture = new MealsInfo()
       mealInfoStore = new MealInfoStore(mealsFixture)
    })
 

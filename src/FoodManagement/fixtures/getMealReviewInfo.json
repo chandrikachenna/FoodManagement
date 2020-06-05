@@ -1,0 +1,25 @@
+{
+    
+    "items":[
+        {
+            "item_name":"Poori",
+            "quality_rating":4,
+            "taste_rating":4
+         },
+         {
+             "item_name":"Curry",
+             "quality_rating":4,
+             "taste_rating":4
+          },
+          {
+            "item_name":"Fried Rice",
+            "quality_rating":2,
+            "taste_rating":3
+         },
+         {
+            "item_name":"Fried Rice",
+            "quality_rating":4,
+            "taste_rating":4
+         }
+    ]
+}

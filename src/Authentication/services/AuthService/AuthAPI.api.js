@@ -5,7 +5,7 @@ class AuthAPI {
    api
    constructor() {
       this.api = create({
-         baseURL: 'https://e3c08171d6b8.ngrok.io/api/food_management/'
+         baseURL: 'https://cfc0a8b7ef7a.ngrok.io/api/food_management/'
       })
    }
    signInAPI(requestObject) {
