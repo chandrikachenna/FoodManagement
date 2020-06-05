@@ -2,6 +2,7 @@ import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealInfoItemModel } from '../models/MealInfoItemModel'
+import { MealReviewInfoModel } from '../models/MealReviewInfoModel'
 import { format } from 'date-fns'
 
 class MealInfoStore {
@@ -18,17 +19,24 @@ class MealInfoStore {
    @observable selectedMealType
    @observable timeCounter
 
+   @observable mealReviewInfoService
+   @observable updateMealReviewInfoService
+   @observable selectedMealTypeReview
    initialTimerID
    constructor(
       mealInfoService,
       mealPreferenceService,
       UpdateMealInfoService,
-      updateCustomMealInfoService
+      updateCustomMealInfoService,
+      mealReviewInfo,
+      updateMealReviewInfo
    ) {
       this.mealInfoService = mealInfoService
       this.mealPreferenceService = mealPreferenceService
       this.updateMealInfoService = UpdateMealInfoService
       this.updateCustomMealInfoService = updateCustomMealInfoService
+      this.mealReviewInfoService = mealReviewInfo
+      this.updateMealReviewInfoService = updateMealReviewInfo
       this.init()
    }
    @action.bound
@@ -48,7 +56,24 @@ class MealInfoStore {
       this.mealInfo = []
       this.dateTime()
    }
-
+   @action.bound
+   onSkippedMeal() {
+      this.selectedMealTypeReview = new MealReviewInfoModel(
+         mealType,
+         this.mealReviewInfoService,
+         this.updateMealReviewInfoService
+      )
+      this.selectedMealTypeReview.getMealReviewInfo(this.timeCounter, mealType)
+   }
+   @action.bound
+   onIAteIt(date, mealType) {
+      this.selectedMealTypeReview = new MealReviewInfoModel(
+         mealType,
+         this.mealReviewInfoService,
+         this.updateMealReviewInfoService
+      )
+      this.selectedMealTypeReview.getMealReviewInfo(this.timeCounter, mealType)
+   }
    @action.bound
    getMealInfo(date) {
       const mealInfoPromise = this.mealInfoService.getMealsAPI(date)

@@ -1,1 +1,1 @@
-export {MealReviewInfoModel} from './MealReviewInfoModel';
+export { MealReviewInfoModel } from './MealReviewInfoModel'

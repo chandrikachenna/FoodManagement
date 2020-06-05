@@ -21,10 +21,9 @@ const MsgShowField = styled.span`
    ${tw`text-red-700 text-sm self-center`}
    height:30px;
 `
-const Title = styled(Typo32DarkBlueGreyRubikRegular)`
+const Title = styled(Typo32DarkBlueGreyRubikRegular)``
+const TitleField = styled.div`
+   width: 150px;
+   text-align: center;
 `
-const TitleField=styled.div`
-   width:150px;
-   text-align:center;
-`
-export { MainPageContainer, SignInForm, Title, MsgShowField ,TitleField}
+export { MainPageContainer, SignInForm, Title, MsgShowField, TitleField }

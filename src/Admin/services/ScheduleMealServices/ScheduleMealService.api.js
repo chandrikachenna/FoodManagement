@@ -10,12 +10,7 @@ class ScheduleMealService {
       })
    }
    ScheduleMealService() {
-      return networkCallWithApisauce(
-         this.api,
-         ``,
-         {},
-         apiMethods.get
-      )
+      return networkCallWithApisauce(this.api, ``, {}, apiMethods.get)
    }
 }
 

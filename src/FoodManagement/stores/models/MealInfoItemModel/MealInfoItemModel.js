@@ -18,12 +18,18 @@ class MealInfoItemModel {
    @observable updateCustomMealInfoService
    @observable updateMealInfoResponse
 
-   constructor(api, mealType, timeCounter,updateMealInfoService,updateCustomMealInfoService) {
+   constructor(
+      api,
+      mealType,
+      timeCounter,
+      updateMealInfoService,
+      updateCustomMealInfoService
+   ) {
       this.editPreferenceAPI = api
       this.mealType = mealType
       this.date = timeCounter
-      this.updateMealInfoService=updateMealInfoService
-      this.updateCustomMealInfoService=updateCustomMealInfoService
+      this.updateMealInfoService = updateMealInfoService
+      this.updateCustomMealInfoService = updateCustomMealInfoService
       this.init()
    }
    @action.bound
@@ -70,12 +76,11 @@ class MealInfoItemModel {
       )
    }
    @action.bound
-   onClickSkipMeal(requestObject,isCustomed) {
-      
+   onClickSkipMeal(requestObject, isCustomed) {
       this.updateMealInfo(requestObject, isCustomed)
    }
    @action.bound
-   onClickSave(requestObject,isCustomed) {
+   onClickSave(requestObject, isCustomed) {
       this.updateMealInfo(requestObject, isCustomed)
    }
    @action.bound
@@ -108,8 +113,5 @@ class MealInfoItemModel {
             .catch(this.setUpdateMealInfoAPIError)
       }
    }
-
-
-
 }
 export { MealInfoItemModel }

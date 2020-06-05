@@ -10,9 +10,7 @@ import { MealItem } from '../../components/common/MealItem'
 
 class HomePage extends Component {
    render() {
-      const {
-         home
-      } = strings.admin
+      const { home } = strings.admin
       const { onClickSignOut, onClickGoHome } = this.props
       return (
          <HomePageContainer>

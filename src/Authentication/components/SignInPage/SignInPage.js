@@ -49,9 +49,9 @@ class SignInPage extends Component {
             <SignInForm>
                <Logo />
                <TitleField>
-               <Title>{signInTitle}</Title>
+                  <Title>{signInTitle}</Title>
                </TitleField>
-               
+
                <InputElementWithLabel
                   label={username}
                   type={typeText}

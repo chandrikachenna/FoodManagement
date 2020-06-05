@@ -47,10 +47,10 @@ class MealPreferenceCard extends Component {
    onClikCustom = () => {
       this.mealFormate = 'custom'
    }
-   getRequestObject = (mealItemsList,formate )=> {
+   getRequestObject = (mealItemsList, formate) => {
       let requestObject = {
-         user_meal_format:formate,
-         meal_preferences:[]
+         user_meal_format: formate,
+         meal_preferences: []
       }
       mealItemsList.forEach(list => {
          requestObject.meal_preferences.push({
@@ -71,7 +71,7 @@ class MealPreferenceCard extends Component {
       if (!this.isCustom) {
          this.requestObject = { user_meal_format: this.mealFormate }
       } else {
-         this.requestObject = this.getRequestObject(mealItemsInfo[2],'custom')
+         this.requestObject = this.getRequestObject(mealItemsInfo[2], 'custom')
       }
       this.onClick()
       const { onClickSave } = this.props.selectedMealTypeInfo
@@ -85,7 +85,7 @@ class MealPreferenceCard extends Component {
       let skippedMealData = mealItemsInfo[2].map(itemInfo =>
          Object.assign({}, itemInfo, { quantity: 0 })
       )
-      this.requestObject = this.getRequestObject(skippedMealData,'skipped')
+      this.requestObject = this.getRequestObject(skippedMealData, 'skipped')
       this.onClick()
       const { onClickSkipMeal } = this.props.selectedMealTypeInfo
       onClickSkipMeal(this.requestObject, this.isCustom)

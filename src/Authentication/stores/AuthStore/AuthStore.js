@@ -23,16 +23,18 @@ class AuthStore {
    }
    @action.bound
    setGetUserSignInAPIError(error) {
+      console.log(error)
       this.getUserSignInAPIError = error
    }
    @action.bound
    setUserSignInAPIResponse(SignInAPIResponse) {
       this.Access_token = SignInAPIResponse.access_token
+      console.log(SignInAPIResponse)
       setAccessToken(this.Access_token)
    }
    @action.bound
-   userSignIn(onSuccess, onFailure,requestObject) {
-      const signInPromise = this.authAPIService.signInAPI()
+   userSignIn(onSuccess, onFailure, requestObject) {
+      const signInPromise = this.authAPIService.signInAPI(requestObject)
       return bindPromiseWithOnSuccess(signInPromise)
          .to(this.setGetUserSignInAPIStatus, response => {
             this.setUserSignInAPIResponse(response)
@@ -48,4 +50,4 @@ class AuthStore {
       clearUserSession()
    }
 }
-export {AuthStore}
+export { AuthStore }

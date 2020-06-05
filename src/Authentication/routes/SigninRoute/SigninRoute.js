@@ -8,7 +8,7 @@ import strings from '../../../Common/i18n/strings.json'
 const {
    enterUsernameMsg,
    enterPasswordMsg,
-   networkErrorMsg,
+   networkErrorMsg
 } = strings.authentication
 
 @inject('authStore')
@@ -21,13 +21,11 @@ class SigninRoute extends Component {
    @observable errorMessage
    onChangeUsername = event => {
       this.username = event.target.value
-      if(this.username)
-         this.usernameErrorMessage='';
+      if (this.username) this.usernameErrorMessage = ''
    }
    onChangePassword = event => {
       this.password = event.target.value
-      if(this.password)
-         this.passwordErrorMessage='';
+      if (this.password) this.passwordErrorMessage = ''
    }
    onSuccesSignIn = () => {
       const { history } = this.props
@@ -41,7 +39,10 @@ class SigninRoute extends Component {
    }
    onClickSignIn = () => {
       if (this.username && this.password) {
-         const requestObject={username:this.username,password:this.password}
+         const requestObject = {
+            username: this.username,
+            password: this.password
+         }
          this.props.authStore.userSignIn(
             this.onSuccesSignIn,
             this.onFailureSignIn,

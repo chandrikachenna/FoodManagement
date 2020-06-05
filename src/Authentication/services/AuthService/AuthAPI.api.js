@@ -5,12 +5,17 @@ class AuthAPI {
    api
    constructor() {
       this.api = create({
-         baseURL: 'https://5ea1a14db9f5ca00166c1f27.mockapi.io/api/'
+         baseURL: 'https://e3c08171d6b8.ngrok.io/api/food_management/'
       })
    }
-   signInAPI() {
-      return networkCallWithApisauce(this.api, 'v1/signin/', {}, apiMethods.get)
+   signInAPI(requestObject) {
+      return networkCallWithApisauce(
+         this.api,
+         'v1/signin/',
+         requestObject,
+         apiMethods.post
+      )
    }
 }
 
-export  {AuthAPI}
+export { AuthAPI }

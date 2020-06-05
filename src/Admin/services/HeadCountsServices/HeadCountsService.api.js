@@ -10,12 +10,7 @@ class HeadCountsService {
       })
    }
    getHeadCountsInfo() {
-      return networkCallWithApisauce(
-         this.api,
-         ``,
-         {},
-         apiMethods.get
-      )
+      return networkCallWithApisauce(this.api, ``, {}, apiMethods.get)
    }
 }
 

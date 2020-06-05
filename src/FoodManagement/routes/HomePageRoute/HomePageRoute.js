@@ -23,7 +23,6 @@ class HomePageRoute extends Component {
    }
    renderSuccessUI = observer(() => {
       return (
-        
          <Mealcards
             mealInfoList={this.props.mealInfoStore.mealInfo}
             timeCounter={this.props.mealInfoStore.timeCounter}

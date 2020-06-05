@@ -6,7 +6,7 @@ import { observer } from 'mobx-react'
 @observer
 class InputElementWithLabel extends Component {
    render() {
-      const { label, value, type, placeholder, onChange ,message} = this.props
+      const { label, value, type, placeholder, onChange, message } = this.props
       return (
          <Div>
             <Label>{label}</Label>

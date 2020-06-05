@@ -1,6 +1,6 @@
 import getMealReviewInfo from '../../fixtures/getMealReviewInfo.json'
 
-class MealReviewInfo{
+class MealReviewInfo {
    getMealReviewInfo() {
       return new Promise((resolve, reject) => {
          resolve(getMealPreferenceInfo)

@@ -6,13 +6,13 @@ class MealPreference {
    api
    constructor() {
       this.api = create({
-         baseURL: 'https://127.0.0.1:8080/'
+         baseURL: 'https://5277955cd80f.ngrok.io/api/food_management/'
       })
    }
    getMealPreferenceAPI(date, mealType) {
       return networkCallWithApisauce(
          this.api,
-         `food_management/set-meal-preference?date=${date}&meal_type=${mealType.toLowerCase()}
+         `set-meal-preference?date=${date}&meal_type=${mealType.toLowerCase()}
          `,
          {},
          apiMethods.get

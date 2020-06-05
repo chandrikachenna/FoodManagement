@@ -1,7 +1,7 @@
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
 
 class AuthAPI {
-    signInAPI() {
+   signInAPI() {
       return new Promise((resolve, reject) => {
          resolve(getUserSignInResponse)
       })

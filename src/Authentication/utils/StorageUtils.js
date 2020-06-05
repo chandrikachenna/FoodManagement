@@ -1,7 +1,7 @@
 import Cookie from 'js-cookie'
 
 export const ACCESS_TOKEN = 'access_token'
-export const ROLL ='roll'
+export const ROLL = 'roll'
 
 export function getCookie(key) {
    return Cookie.get(key)
@@ -25,8 +25,6 @@ export function clearUserSession() {
    Cookie.remove(ACCESS_TOKEN, { path: '/' })
 }
 
-
-
 export function getRoll() {
    return getCookie(ROLL)
 }
@@ -37,5 +35,3 @@ export function setRoll(roll) {
 export function clearRoll() {
    Cookie.remove(ROLL, { path: '/' })
 }
-
-

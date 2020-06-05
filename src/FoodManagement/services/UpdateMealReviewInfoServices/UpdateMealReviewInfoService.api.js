@@ -9,7 +9,7 @@ class UpdateMealReviewInfo {
          baseURL: ''
       })
    }
-   setMealReviewInfo(date,mealType,requestObject) {
+   setMealReviewInfo(date, mealType, requestObject) {
       return networkCallWithApisauce(
          this.api,
          ``,

@@ -7,7 +7,7 @@ const Div = styled.div`
 `
 const MessageBox = styled.span`
    height: 30px;
-   color:red;
+   color: red;
 `
 const Label = styled(Typo12SteelHKGroteskSemiBold)`
    margin-bottom: 6px;

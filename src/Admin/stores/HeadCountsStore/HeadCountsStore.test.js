@@ -1,8 +1,4 @@
-import {
-   API_INITIAL,
-   API_SUCCESS,
-   API_FETCHING
-} from '@ib/api-constants'
+import { API_INITIAL, API_SUCCESS, API_FETCHING } from '@ib/api-constants'
 import { HeadCountsService } from '../../services/HeadCountsServices/HeadCountsService.fixture'
 import getHeadCountsInfo from '../../fixtures/getHeadCountsInfo.json'
 

@@ -13,14 +13,14 @@ const mealTypeIcons = {
 class Mealcards extends Component {
    render() {
       const { mealInfoList, mealInfoStore } = this.props
-      let list=[]
-      Object.entries(mealInfoList).forEach(([key, value],index) => {
+      let list = []
+      Object.entries(mealInfoList).forEach(([key, value], index) => {
          value.meal_icon = mealTypeIcons[index]
-         list.push(value);
+         list.push(value)
       })
       return (
          <>
-               {list &&
+            {list &&
                list.map(info => (
                   <MealInfoCard
                      key={Math.random().toString()}
