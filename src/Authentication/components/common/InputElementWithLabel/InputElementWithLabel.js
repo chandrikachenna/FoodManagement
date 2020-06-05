@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Div, MessageBox, Label } from './styledComponents'
-import { InputFormElement } from '../../../Common/components/InputFormElement'
+import { InputFormElement } from '../../../../Common/components/InputFormElement'
 import { observer } from 'mobx-react'
 
 @observer

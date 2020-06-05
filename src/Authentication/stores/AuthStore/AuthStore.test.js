@@ -4,7 +4,7 @@ import {
    API_SUCCESS,
    API_FAILED
 } from '@ib/api-constants'
-import AuthAPI from '../../services/AuthService/AuthAPI'
+import AuthAPI from '../../services/AuthService/AuthAPI.api'
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
 
 import { AuthStore } from '.'

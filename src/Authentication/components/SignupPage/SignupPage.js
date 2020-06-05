@@ -1,10 +1,10 @@
 import React from 'react'
 import { MainPageContainer, SignupForm, Title } from './styledComponent'
-import { Footer, Link, ButtonTextLabel } from '../../common/styledComponents'
+import { Footer, Link, ButtonTextLabel } from '../common/styledComponents'
 import strings from '../../../Common/i18n/strings.json'
 import { Logo } from '../../../Common/components/Logo'
 import { Button } from '../../../Common/components/Button'
-import { InputElementWithLabel } from '../../common/InputElementWithLabel'
+import { InputElementWithLabel } from '../common/InputElementWithLabel'
 
 class SignupPage extends React.Component {
    onClick = () => {}

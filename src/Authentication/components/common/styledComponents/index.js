@@ -3,7 +3,7 @@ import tw from 'tailwind.macro'
 import {
    Typo14DarkBlueGreyHKGroteskRegular,
    Typo14WhiteRubikMedium
-} from '../../../Common/styleGuide/Typo'
+} from '../../../../Common/styleGuide/Typo'
 
 const Footer = styled(Typo14DarkBlueGreyHKGroteskRegular)``
 const Link = styled.a``

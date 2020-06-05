@@ -1,85 +1,83 @@
-[
-	{ 
-		"break_fast": { 
-		  "meal_type":"Breakfast",
-		  "meal_format": "HalfMeal", 
-		  "open_time": "7:00", 
-		  "close_time": "10:00", 
-		  "meal_items": [
+{ 
+	"break_fast": { 
+	  "meal_type":"Breakfast",
+	  "meal_format": "HalfMeal", 
+	  "open_time": "7:00", 
+	  "close_time": "10:00", 
+	  "meal_items": [
+		  {
+			"meal_item":"Idly"
+		  },
+		  {
+			"meal_item":"Chutney"
+		  },
+		  {
+			"meal_item":"Sambar"
+		  },
+		  {
+			"meal_item":"Masala Rice"
+		  },
+		  {
+			"meal_item":"Upma"
+		  }
+		], 
+	  "edit_preference_dead_line": "Wed Jun 05 2020 07:00:00 +0000" 
+	}, 
+
+	"lunch": { 
+		"meal_type":"Lunch",
+		"meal_format":  "Custom", 
+		"open_time": "12:30", 
+		"close_time": "14:00", 
+		"meal_items":[
+			
 			  {
-				"meal_item":"Idly"
+				"meal_item":"White Rice"
 			  },
 			  {
-				"meal_item":"Chutney"
+				"meal_item":"Mango daal"
+			  },
+			  {
+				"meal_item":"Cabbage fry"
+			  },
+			  {
+				"meal_item":"Cabbage pickle"
 			  },
 			  {
 				"meal_item":"Sambar"
 			  },
 			  {
-				"meal_item":"Masala Rice"
+				"meal_item":"Butter Milk"
+			  }
+		], 
+		"edit_preference_dead_line": "Wed Jun 05 2020 12:30:00 +0000" 
+	}, 
+
+	"dinner": { 
+		"meal_type":"Dinner",
+		"meal_format":  "FullMeal", 
+		"open_time":"19:30", 
+		"close_time": "22:00", 
+		"meal_items": [
+			{
+				"meal_item":"White Rice"
 			  },
 			  {
-				"meal_item":"Upma"
+				"meal_item":"Mango daal"
+			  },
+			  {
+				"meal_item":"Cabbage fry"
+			  },
+			  {
+				"meal_item":"Cabbage pickle"
+			  },
+			  {
+				"meal_item":"Sambar"
+			  },
+			  {
+				"meal_item":"Butter Milk"
 			  }
-			], 
-		  "edit_preference_dead_line": "Wed Jun 05 2020 07:00:00 GMT+0530" 
-		}, 
-
-		"lunch": { 
-			"meal_type":"Lunch",
-			"meal_format":  "Custom", 
-			"open_time": "12:30", 
-			"close_time": "14:00", 
-			"meal_items":[
-				
-				  {
-					"meal_item":"White Rice"
-				  },
-				  {
-					"meal_item":"Mango daal"
-				  },
-				  {
-					"meal_item":"Cabbage fry"
-				  },
-				  {
-					"meal_item":"Cabbage pickle"
-				  },
-				  {
-					"meal_item":"Sambar"
-				  },
-				  {
-					"meal_item":"Butter Milk"
-			  	}
-			], 
-			"edit_preference_dead_line": "Wed Jun 04 2020 12:30:00 GMT+0530" 
-		}, 
-
-		"dinner": { 
-			"meal_type":"Dinner",
-			"meal_format":  "FullMeal", 
-			"open_time":"19:30", 
-			"close_time": "22:00", 
-			"meal_items": [
-				{
-					"meal_item":"White Rice"
-				  },
-				  {
-					"meal_item":"Mango daal"
-				  },
-				  {
-					"meal_item":"Cabbage fry"
-				  },
-				  {
-					"meal_item":"Cabbage pickle"
-				  },
-				  {
-					"meal_item":"Sambar"
-				  },
-				  {
-					"meal_item":"Butter Milk"
-			  	}
-			], 
-			"edit_preference_dead_line": "Wed Jun 04 2020 19:30:00 GMT+0530" 
-		}
-	  }  
-]
+		], 
+		"edit_preference_dead_line": "Wed Jun 05 2020 19:30:00 +0000" 
+	}
+  }  

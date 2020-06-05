@@ -49,8 +49,8 @@ class MealInfoItemModel {
    }
    @action.bound
    setMealItemsResponse(mealItemsResponse) {
-      this.mealPreference = mealItemsResponse[0]['user_meal_format']
-      Object.entries(mealItemsResponse[0]['meal_preferences']).forEach(
+      this.mealPreference = mealItemsResponse['user_meal_format']
+      Object.entries(mealItemsResponse['meal_preferences']).forEach(
          ([mealFormate, mealItemsList]) => {
             let ItemModel = []
             mealItemsList.forEach(item => {

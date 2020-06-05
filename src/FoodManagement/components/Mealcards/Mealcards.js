@@ -5,25 +5,22 @@ import LunchIcon from '../../../Common/icons/lunch_icon.svg'
 import DinnerIcon from '../../../Common/icons/dinner_icon.svg'
 
 const mealTypeIcons = {
-   break_fast: BreakFastIcon,
-   lunch: LunchIcon,
-   dinner: DinnerIcon
+   0: BreakFastIcon,
+   1: LunchIcon,
+   2: DinnerIcon
 }
 
 class Mealcards extends Component {
    render() {
       const { mealInfoList, mealInfoStore } = this.props
-      //const {mealInfoList}=mealInfoStore.mealInfoList;
-      let list
-      if (mealInfoList.length) {
-         Object.entries(mealInfoList[0]).forEach(([key, value]) => {
-            value.meal_icon = mealTypeIcons[key]
-         })
-         list = Object.entries(mealInfoList[0]).map(([key, value]) => value)
-      }
+      let list=[]
+      Object.entries(mealInfoList).forEach(([key, value],index) => {
+         value.meal_icon = mealTypeIcons[index]
+         list.push(value);
+      })
       return (
          <>
-            {list &&
+               {list &&
                list.map(info => (
                   <MealInfoCard
                      key={Math.random().toString()}

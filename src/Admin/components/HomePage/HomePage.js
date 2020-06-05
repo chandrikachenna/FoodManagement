@@ -11,10 +11,6 @@ import { MealItem } from '../../components/common/MealItem'
 class HomePage extends Component {
    render() {
       const {
-         scheduleMeal,
-         headCount,
-         mealFeedback,
-         foodTrack,
          home
       } = strings.admin
       const { onClickSignOut, onClickGoHome } = this.props

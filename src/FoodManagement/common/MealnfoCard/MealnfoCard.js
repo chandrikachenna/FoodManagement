@@ -53,6 +53,7 @@ class MealInfoCard extends Component {
          meal_icon,
          edit_preference_dead_line
       } = this.props.info
+     
       const { timeCounter } = this.props.mealInfoStore
 
       let leftTime
@@ -67,9 +68,7 @@ class MealInfoCard extends Component {
             { addSuffix: true }
          )
       }
-      // console.log(format(
-      //    new Date(timeCounter)
-      //  ))
+      
       return (
          <CardLayout>
             <Header>

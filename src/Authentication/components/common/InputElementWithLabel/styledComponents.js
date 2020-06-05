@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { Typo12SteelHKGroteskSemiBold } from '../../../Common/styleGuide/Typo'
+import { Typo12SteelHKGroteskSemiBold } from '../../../../Common/styleGuide/Typo'
 
 const Div = styled.div`
    ${tw`flex flex-col items-start`}

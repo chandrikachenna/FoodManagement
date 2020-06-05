@@ -1,73 +1,67 @@
-[
-  
-  {
-    "user_meal_format": "Full Meals",
-    "meal_preferences":{
-      "full_meal": [
-        {
-          "item": {
-            "item_id": 0,
-            "name": "Poori",
-            "catageory": "Indian bread",
-            "unit": "piece",
-            "quantity":4
-          }
-        },
-        {
-          "item": {
-            "item_id": 1,
-            "name": "Aloo Curry",
-            "catageory": "Curry",
-            "unit": "Cups",
-            "quantity":2
-          }
+{
+  "user_meal_format": "Full Meals",
+  "meal_preferences":{
+    "full_meal": [
+      {
+        "item": {
+          "item_id": 0,
+          "name": "Poori",
+          "catageory": "Indian bread",
+          "unit": "piece",
+          "quantity":4
         }
-      ],
-      "half_meal": [
-        {
-          "item": {
-            "item_id": 0,
-            "name": "Poori",
-            "catageory": "Indian bread",
-            "unit": "piece",
-            "quantity":2
-          }
-        },
-        {
-          "item": {
-            "item_id": 1,
-            "name": "Aloo Curry",
-            "catageory": "Curry",
-            "unit": "Cups",
-            "quantity":1
-          }
+      },
+      {
+        "item": {
+          "item_id": 1,
+          "name": "Aloo Curry",
+          "catageory": "Curry",
+          "unit": "Cups",
+          "quantity":2
         }
-      ],
-      "custom": [
-          {
-              "item": {
-                "item_id": 0,
-                "name": "Poori",
-                "catageory": "Indian bread",
-                "unit": "piece",
-                "quantity":0
-              }
-            },
-            {
-              "item": {
-                "item_id": 1,
-                "name": "Aloo Curry",
-                "catageory": "Curry",
-                "unit": "Cups",
-                "quantity":0
-              }
+      }
+    ],
+    "half_meal": [
+      {
+        "item": {
+          "item_id": 0,
+          "name": "Poori",
+          "catageory": "Indian bread",
+          "unit": "piece",
+          "quantity":2
+        }
+      },
+      {
+        "item": {
+          "item_id": 1,
+          "name": "Aloo Curry",
+          "catageory": "Curry",
+          "unit": "Cups",
+          "quantity":1
+        }
+      }
+    ],
+    "custom": [
+        {
+            "item": {
+              "item_id": 0,
+              "name": "Poori",
+              "catageory": "Indian bread",
+              "unit": "piece",
+              "quantity":0
             }
-      ]
-    }
-  
+          },
+          {
+            "item": {
+              "item_id": 1,
+              "name": "Aloo Curry",
+              "catageory": "Curry",
+              "unit": "Cups",
+              "quantity":0
+            }
+          }
+    ]
   }
 
-
-]
-
+}
 

@@ -7,8 +7,8 @@ import {
    MsgShowField
 } from './styledComponents'
 
-import { InputElementWithLabel } from '../../common/InputElementWithLabel'
-import { Footer, Link, ButtonTextLabel } from '../../common/styledComponents'
+import { InputElementWithLabel } from '../common/InputElementWithLabel'
+import { Footer, Link, ButtonTextLabel } from '../common/styledComponents'
 
 import strings from '../../../Common/i18n/strings.json'
 import { Logo } from '../../../Common/components/Logo'

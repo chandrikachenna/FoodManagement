@@ -35,7 +35,7 @@ class Navbar extends Component {
                </Div>
             </Navbarcontainer>
             <SpareOptionsBar>
-               <Link onClick={onClickForProfile}>{profile}</Link>
+               <Link onClick={onClickSignOut}>{'Logout'}</Link>
                <Link onClick={onClickGoWeeklyMenu}>{weeklyMenu}</Link>
             </SpareOptionsBar>
          </>

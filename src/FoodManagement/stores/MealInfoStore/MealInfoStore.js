@@ -61,17 +61,14 @@ class MealInfoStore {
    }
    @action.bound
    setMealInfoAPIStatus(apiStatus) {
-      console.log('status', apiStatus)
       this.getMealInfoAPIStatus = apiStatus
    }
    @action.bound
    setMealInfoAPIError(error) {
-      console.log('error', error)
       this.getMealInfoAPIError = error
    }
    @action.bound
    setMealInfoResponse(mealInfoResponse) {
-      console.log('response', mealInfoResponse)
       this.mealInfo = mealInfoResponse
    }
    @action.bound
@@ -118,7 +115,6 @@ class MealInfoStore {
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)
       this.timeCounter = changedDateTime
-      console.log(this.timeCounter)
       const date = format(new Date(this.timeCounter), 'yyyy-MM-dd')
       this.getMealInfo(date)
    }

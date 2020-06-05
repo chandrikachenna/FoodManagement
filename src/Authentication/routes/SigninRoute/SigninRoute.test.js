@@ -7,7 +7,7 @@ import { createMemoryHistory } from 'history'
 import { SIGN_UP_PATH, SIGN_IN_PATH } from '../../constants/RouteConstants'
 import { SMART_FOOD_MANAGEMENT_PATH } from '../../../FoodManagement/constants/RouteConstants'
 
-import AuthAPI from '../../services/AuthService/AuthAPI'
+import AuthAPI from '../../services/AuthService/AuthAPI.api'
 import { AuthStore } from '../../stores/AuthStore'
 
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
