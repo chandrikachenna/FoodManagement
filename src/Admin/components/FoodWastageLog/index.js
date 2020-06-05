@@ -1,0 +1,1 @@
+export {FoodWastageLog} from './FoodWastageLog';

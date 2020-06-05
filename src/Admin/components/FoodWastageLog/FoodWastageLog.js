@@ -6,7 +6,7 @@ import {COLORS} from '../../../Common/theme/Colors';
 import strings from '../../../Common/i18n/strings';
 const width='70px'
 
-class ScheduleMeal extends Component {
+class FoodWastageLog extends Component {
     onClickSave=()=>{
 
     }
@@ -14,7 +14,7 @@ class ScheduleMeal extends Component {
 
     }
     render() {
-        const {save,back,breakfast,lunch,dinner}=strings.admin;
+        const {submit,back,breakfast,lunch,dinner}=strings.admin;
         return (
             <div>
                 <MenuDisplayer menu={'Menu1'} menu1Name={breakfast} menu2Name={lunch} menu3Name={dinner} />
@@ -29,9 +29,9 @@ class ScheduleMeal extends Component {
                         />
                         <Button
                             onClick={this.onClickBack}
-                            name={save}
+                            name={submit}
                             width={width}
-                            variant={COLORS.jade}
+                            variant={COLORS.brightBlue}
                             color={COLORS.white}
                         />
                     </Layout>
@@ -41,4 +41,4 @@ class ScheduleMeal extends Component {
     }
 }
 
-export {ScheduleMeal};
+export {FoodWastageLog};

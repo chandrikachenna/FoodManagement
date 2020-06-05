@@ -47,7 +47,13 @@
         "headCount":"Head Count",
         "mealFeedback":"Meal feedback",
         "foodTrack":"Food Track",
-        "addAnItem":"ADD ITEM"
+        "addAnItem":"ADD ITEM",
+        "back":"Back",
+        "save":"Save",
+        "breakfast":"Breakfast",
+        "lunch":"Lunch",
+        "dinner":"Dinner",
+        "submit":"Submit"
     }
 
 }
