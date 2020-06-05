@@ -1,14 +1,14 @@
 import React from 'react'
 import { Tab } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
-import {CardLayout} from '../../common/CardLayout';
+import {MenuDisplayer} from '../MenuDisplayer';
 
 const panes = [
   {
     menuItem: 'Tab 1',
     render: () => 
     <Tab.Pane attached={false}>
-         <CardLayout/>
+         <MenuDisplayer/>
     </Tab.Pane>,
   },
   {

@@ -10,49 +10,54 @@ const width='102px';
 
 @observer
 class MenuBar extends Component {
-   @observable selectedBtn
+   @observable selectedMenu
    constructor(props){
        super(props)
-       this.selectedBtn=this.props.tab
+       this.selectedMenu=this.props.menu
    }
    onclickMenu1 = () => {
-      this.selectedBtn = menus.menu1
+      this.selectedMenu = menus.menu1
       this.props.onClickMenu1()
    }
    onclickMenu2 = () => {
-      this.selectedBtn = menus.menu2
-      this.props.onclickMenu2()
+      this.selectedMenu = menus.menu2
+      this.props.onClickMenu2()
    }
    onclickMenu3 = () => {
-      this.selectedBtn = menus.menu3
-      this.props.onclickMenu3()
+      this.selectedMenu = menus.menu3
+      this.props.onClickMenu3()
    }
    render() {
        const {menu1,menu2,menu3}=menus
        const {menu1Name,menu2Name,menu3Name}=this.props;
       return (
          <Layout>
-            <Button
-                  onClick={this.onclickMenu1}
-                  name={menu1Name}
-                  width={width}
-                  variant={this.selectedBtn.match(menu1) ? COLORS.brightBlue : COLORS.white}
-                  color={this.selectedBtn.match(menu1) ? COLORS.white : COLORS.black}
-               />
-            <Button
-                  onClick={this.onclickMenu2}
-                  name={menu2Name}
-                  width={width}
-                  variant={this.selectedBtn.match(menu2) ? COLORS.brightBlue : COLORS.white}
-                  color={this.selectedBtn.match(menu2) ? COLORS.white : COLORS.black}
-               />
-            <Button
-                  onClick={this.onclickMenu3}
-                  name={menu3Name}
-                  width={width}
-                  variant={this.selectedBtn.match(menu3) ? COLORS.brightBlue : COLORS.white}
-                  color={this.selectedBtn.match(menu3) ? COLORS.white : COLORS.black}
-               />
+             {
+                 this.selectedMenu &&
+                 <>
+                    <Button
+                        onClick={this.onclickMenu1}
+                        name={menu1Name}
+                        width={width}
+                        variant={this.selectedMenu.match(menu1) ? COLORS.brightBlue : COLORS.white}
+                        color={this.selectedMenu.match(menu1) ? COLORS.white : COLORS.black}
+                    />
+                    <Button
+                        onClick={this.onclickMenu2}
+                        name={menu2Name}
+                        width={width}
+                        variant={this.selectedMenu.match(menu2) ? COLORS.brightBlue : COLORS.white}
+                        color={this.selectedMenu.match(menu2) ? COLORS.white : COLORS.black}
+                    />
+                    <Button
+                        onClick={this.onclickMenu3}
+                        name={menu3Name}
+                        width={width}
+                        variant={this.selectedMenu.match(menu3) ? COLORS.brightBlue : COLORS.white}
+                        color={this.selectedMenu.match(menu3) ? COLORS.white : COLORS.black}
+                    />
+                </>
+             }
          </Layout>
       )
    }

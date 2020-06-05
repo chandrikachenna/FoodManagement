@@ -1,0 +1,1 @@
+export {ScheduleMeal} from './ScheduleMeal';
