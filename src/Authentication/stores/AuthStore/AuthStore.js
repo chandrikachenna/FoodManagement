@@ -31,7 +31,7 @@ class AuthStore {
       setAccessToken(this.Access_token)
    }
    @action.bound
-   userSignIn(onSuccess, onFailure) {
+   userSignIn(onSuccess, onFailure,requestObject) {
       const signInPromise = this.authAPIService.signInAPI()
       return bindPromiseWithOnSuccess(signInPromise)
          .to(this.setGetUserSignInAPIStatus, response => {
@@ -48,4 +48,4 @@ class AuthStore {
       clearUserSession()
    }
 }
-export default AuthStore
+export {AuthStore}

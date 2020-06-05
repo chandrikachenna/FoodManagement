@@ -9,7 +9,6 @@ const {
    enterUsernameMsg,
    enterPasswordMsg,
    networkErrorMsg,
-   loadingMsg
 } = strings.authentication
 
 @inject('authStore')
@@ -17,12 +16,18 @@ const {
 class SigninRoute extends Component {
    @observable username
    @observable password
+   @observable usernameErrorMessage
+   @observable passwordErrorMessage
    @observable errorMessage
    onChangeUsername = event => {
       this.username = event.target.value
+      if(this.username)
+         this.usernameErrorMessage='';
    }
    onChangePassword = event => {
       this.password = event.target.value
+      if(this.password)
+         this.passwordErrorMessage='';
    }
    onSuccesSignIn = () => {
       const { history } = this.props
@@ -36,12 +41,14 @@ class SigninRoute extends Component {
    }
    onClickSignIn = () => {
       if (this.username && this.password) {
+         const requestObject={username:this.username,password:this.password}
          this.props.authStore.userSignIn(
             this.onSuccesSignIn,
-            this.onFailureSignIn
+            this.onFailureSignIn,
+            requestObject
          )
-      } else if (!this.username) this.errorMessage = enterUsernameMsg
-      else if (!this.password) this.errorMessage = enterPasswordMsg
+      } else if (!this.username) this.usernameErrorMessage = enterUsernameMsg
+      else if (!this.password) this.passwordErrorMessage = enterPasswordMsg
    }
    render() {
       return (
@@ -51,8 +58,10 @@ class SigninRoute extends Component {
             onChangeUsername={this.onChangeUsername}
             onChangePassword={this.onChangePassword}
             onClickSignIn={this.onClickSignIn}
-            errorMessage={this.errorMessage}
             loginStatus={this.props.authStore.getUserSignInAPIStatus}
+            usernameErrorMessage={this.usernameErrorMessage}
+            passwordErrorMessage={this.passwordErrorMessage}
+            errorMessage={this.errorMessage}
          />
       )
    }

@@ -4,11 +4,12 @@ import {
    MainPageContainer,
    SignInForm,
    Title,
-   MsgShowField
+   MsgShowField,
+   TitleField
 } from './styledComponents'
 
 import { InputElementWithLabel } from '../common/InputElementWithLabel'
-import { Footer, Link, ButtonTextLabel } from '../common/styledComponents'
+import { Footer, Link } from '../common/styledComponents'
 
 import strings from '../../../Common/i18n/strings.json'
 import { Logo } from '../../../Common/components/Logo'
@@ -24,7 +25,9 @@ class SignInPage extends Component {
          onChangePassword,
          onClickSignIn,
          errorMessage,
-         loginStatus
+         loginStatus,
+         usernameErrorMessage,
+         passwordErrorMessage
       } = this.props
       const {
          signInText,
@@ -36,7 +39,6 @@ class SignInPage extends Component {
          signInTitle,
          username,
          password,
-         ButtonClassName,
          signIn,
          haveAnAccount,
          signUplink,
@@ -46,13 +48,17 @@ class SignInPage extends Component {
          <MainPageContainer>
             <SignInForm>
                <Logo />
+               <TitleField>
                <Title>{signInTitle}</Title>
+               </TitleField>
+               
                <InputElementWithLabel
                   label={username}
                   type={typeText}
                   placeholder={usernamePlaceholder}
                   value={userName}
                   onChange={onChangeUsername}
+                  message={usernameErrorMessage}
                />
                <InputElementWithLabel
                   label={password}
@@ -60,6 +66,7 @@ class SignInPage extends Component {
                   placeholder={passwordPlaceholder}
                   value={pwd}
                   onChange={onChangePassword}
+                  message={passwordErrorMessage}
                />
                <Button
                   onClick={onClickSignIn}

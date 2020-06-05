@@ -6,7 +6,7 @@ class MealsInfo {
    api
    constructor() {
       this.api = create({
-         baseURL: 'https://1c1e5f6dcb86.ngrok.io/api/food_management/'
+         baseURL: 'https://5277955cd80f.ngrok.io/api/food_management/'
       })
    }
    getMealsAPI(date) {

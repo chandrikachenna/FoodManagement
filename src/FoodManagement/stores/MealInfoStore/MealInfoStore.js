@@ -61,14 +61,17 @@ class MealInfoStore {
    }
    @action.bound
    setMealInfoAPIStatus(apiStatus) {
+      console.log(apiStatus)
       this.getMealInfoAPIStatus = apiStatus
    }
    @action.bound
    setMealInfoAPIError(error) {
       this.getMealInfoAPIError = error
+      console.log(error)
    }
    @action.bound
    setMealInfoResponse(mealInfoResponse) {
+      console.log(mealInfoResponse)
       this.mealInfo = mealInfoResponse
    }
    @action.bound
@@ -101,11 +104,13 @@ class MealInfoStore {
    }
    @action.bound
    setUpdateMealInfoAPIError(apiError) {
-      getUpdateMealInfoAPIError = apiError
+      console.log('erero')
+      this.getUpdateMealInfoAPIError = apiError
    }
    @action.bound
    setUpdateMealInfoAPIStatus(apiStatus) {
-      getUpdateMealInfoAPIStatus = apiStatus
+      console.log('apiStatus')
+      this.getUpdateMealInfoAPIStatus = apiStatus
    }
    @action.bound
    setUpdateMealInfoResponse(updateMealInfoResponse) {
