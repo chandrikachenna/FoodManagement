@@ -1,1 +1,1 @@
-export {MenuDisplayer} from './MenuDisplayer';
+export { MenuDisplayer } from './MenuDisplayer'

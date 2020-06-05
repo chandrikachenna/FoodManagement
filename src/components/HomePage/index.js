@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Text } from './styledComponents'
 import logo from '../../logo.svg'
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
             >
                Learn React
             </a>
-            <Link to='/food-management/home'>Food Management</Link>
+            <Link to='/food-management/home'>
+               <Text>Food Management</Text>
+            </Link>
          </header>
       </div>
    )

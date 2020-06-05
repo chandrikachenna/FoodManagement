@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { HomePage } from '../../components/HomePage'
 import { observer, inject } from 'mobx-react'
-import {withHeader} from '../../../Common/hocs/withHeader';
+import { withHeader } from '../../../Common/hocs/withHeader'
 
-@inject( 'scheduleMealStore')
+@inject('scheduleMealStore')
 @observer
 class HomePageRoute extends Component {
    render() {

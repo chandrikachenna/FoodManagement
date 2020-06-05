@@ -2,6 +2,7 @@ import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealInfoItemModel } from '../models/MealInfoItemModel'
+import { format } from 'date-fns'
 
 class MealInfoStore {
    @observable getMealInfoAPIStatus
@@ -60,17 +61,17 @@ class MealInfoStore {
    }
    @action.bound
    setMealInfoAPIStatus(apiStatus) {
-      setTimeout(() => {
-         this.getMealInfoAPIStatus = apiStatus
-      })
-      this.getMealInfoAPIStatus = 100
+      console.log('status', apiStatus)
+      this.getMealInfoAPIStatus = apiStatus
    }
    @action.bound
    setMealInfoAPIError(error) {
+      console.log('error', error)
       this.getMealInfoAPIError = error
    }
    @action.bound
    setMealInfoResponse(mealInfoResponse) {
+      console.log('response', mealInfoResponse)
       this.mealInfo = mealInfoResponse
    }
    @action.bound
@@ -85,7 +86,6 @@ class MealInfoStore {
    }
    @action.bound
    updateMealInfo(requestObject, isCustomed) {
-      console.log('hello...')
       if (isCustomed) {
          const updateMealInfoPromise = this.updateCustomMealInfoService.setCustomMealsAPI(
             requestObject
@@ -118,7 +118,9 @@ class MealInfoStore {
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)
       this.timeCounter = changedDateTime
-      this.getMealInfo(this.timeCounter)
+      console.log(this.timeCounter)
+      const date = format(new Date(this.timeCounter), 'yyyy-MM-dd')
+      this.getMealInfo(date)
    }
 }
 

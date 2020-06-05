@@ -1,44 +1,45 @@
-import React, { Component } from 'react';
-import {Buttons,Layout} from './styledComponets'
-import {Button} from '../../../Common/components/Button';
-import {MenuDisplayer} from '../common/MenuDisplayer';
-import {COLORS} from '../../../Common/theme/Colors';
-import strings from '../../../Common/i18n/strings';
-const width='70px'
+import React, { Component } from 'react'
+import { Buttons, Layout, Content } from './styledComponets'
+import { Button } from '../../../Common/components/Button'
+import { MenuDisplayer } from '../common/MenuDisplayer'
+import { COLORS } from '../../../Common/theme/Colors'
+import strings from '../../../Common/i18n/strings'
+const width = '70px'
 
 class ScheduleMeal extends Component {
-    onClickSave=()=>{
-
-    }
-    onClickBack=()=>{
-
-    }
-    render() {
-        const {save,back,breakfast,lunch,dinner}=strings.admin;
-        return (
-            <div>
-                <MenuDisplayer menu={'Menu1'} menu1Name={breakfast} menu2Name={lunch} menu3Name={dinner} />
-                <Buttons>
-                    <Layout>
-                        <Button
-                            onClick={this.onClickSave}
-                            name={back}
-                            width={width}
-                            variant={COLORS.white}
-                            color={COLORS.black}
-                        />
-                        <Button
-                            onClick={this.onClickBack}
-                            name={save}
-                            width={width}
-                            variant={COLORS.jade}
-                            color={COLORS.white}
-                        />
-                    </Layout>
-                </Buttons>
-            </div>
-        );
-    }
+   onClickSave = () => {}
+   onClickBack = () => {}
+   render() {
+      const { save, back, breakfast, lunch, dinner } = strings.admin
+      return (
+         <>
+            <MenuDisplayer
+               menu={'Menu1'}
+               menu1Name={breakfast}
+               menu2Name={lunch}
+               menu3Name={dinner}
+            />
+            <Buttons>
+               <Layout>
+                  <Button
+                     onClick={this.onClickSave}
+                     name={back}
+                     width={width}
+                     variant={COLORS.white}
+                     color={COLORS.black}
+                  />
+                  <Button
+                     onClick={this.onClickBack}
+                     name={save}
+                     width={width}
+                     variant={COLORS.jade}
+                     color={COLORS.white}
+                  />
+               </Layout>
+            </Buttons>
+         </>
+      )
+   }
 }
 
-export {ScheduleMeal};
+export { ScheduleMeal }

@@ -1,1 +1,1 @@
-export {ScheduleMeal} from './ScheduleMeal';
+export { ScheduleMeal } from './ScheduleMeal'

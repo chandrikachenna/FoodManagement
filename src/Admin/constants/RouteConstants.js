@@ -1,1 +1,1 @@
-export const ADMIN_PATH = '/food-management/admin/home';
+export const ADMIN_PATH = '/food-management/admin/home'

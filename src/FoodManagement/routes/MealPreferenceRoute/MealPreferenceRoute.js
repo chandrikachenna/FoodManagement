@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react'
 import { MealPreferencePage } from '../../components/MealPreferencePage'
 import { MealPreference } from '../../components/MealPreference'
 
-import {withHeader} from '../../../Common/hocs/withHeader';
+import { withHeader } from '../../../Common/hocs/withHeader'
 
 @inject('mealInfoStore')
 @observer

@@ -3,8 +3,8 @@ import { HomePage } from '../../components/HomePage'
 import { withRouter } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 import { Mealcards } from '../../components/Mealcards'
-import { format } from 'date-fns';
-import {withHeader} from '../../../Common/hocs/withHeader';
+import { format } from 'date-fns'
+import { withHeader } from '../../../Common/hocs/withHeader'
 
 @inject('mealInfoStore')
 @observer

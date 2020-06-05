@@ -7,14 +7,15 @@ import {
 } from '../../../../Common/styleGuide/Typo'
 
 const Layout = styled.div`
-   width: 250px;
-   ${tw`flex flex-row`}
+   width: 650px;
+   ${tw`flex flex-row justify-between items-center`}
 `
 const ItemInfo = styled.div`
    ${tw`flex flex-col`}
-   flex-grow:1;
+   width:120px;
 `
 const Item = styled(Typo18SteelHKGroteskMedium)``
 const Category = styled(Typo12CoolGreyHKGroteskRegular)``
 const Icon = styled.img``
+
 export { Layout, ItemInfo, Item, Category, Icon }

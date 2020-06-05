@@ -1,4 +1,4 @@
-import { MealsInfo } from '../services/MealInfoServices/MealsInfo.fixture'
+import { MealsInfo } from '../services/MealInfoServices/MealsInfo.api'
 import { MealPreference } from '../services/MealPreferenceServices/MealPreference.fixture'
 import { UpdateMealInfo } from '../services/UpdateMealServices/UpdateMealInfo.api'
 import { UpdateCustomMealInfo } from '../services/UpdateCustomMealServices/UpdateCustomMealInfo.api'

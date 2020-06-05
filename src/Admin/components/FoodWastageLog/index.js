@@ -1,1 +1,1 @@
-export {FoodWastageLog} from './FoodWastageLog';
+export { FoodWastageLog } from './FoodWastageLog'

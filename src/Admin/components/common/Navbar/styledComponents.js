@@ -2,9 +2,9 @@ import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 import { Typo20DarkBlueGreyHKGroteskMedium } from '../../../../Common/styleGuide/Typo'
 
-const Link = styled(Typo20DarkBlueGreyHKGroteskMedium)`
+const PageLink = styled(Typo20DarkBlueGreyHKGroteskMedium)`
    ${tw`cursor-pointer`}
-   color:${props=>props.color || 'black'}
+   color:${props => props.color || 'black'}
 `
 
 const Navbarcontainer = styled.div`
@@ -31,4 +31,4 @@ const SpareOptionsBar = styled.div`
    background-color: #ffffff;
 `
 
-export { Navbarcontainer, SubNav, OptionsBar, Div, SpareOptionsBar, Link }
+export { Navbarcontainer, SubNav, OptionsBar, Div, SpareOptionsBar, PageLink }

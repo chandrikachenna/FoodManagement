@@ -68,8 +68,7 @@ class MealInfoCard extends Component {
          )
       }
       // console.log(format(
-      //    new Date(timeCounter),
-      //    'yyyy-MM-dd'
+      //    new Date(timeCounter)
       //  ))
       return (
          <CardLayout>
