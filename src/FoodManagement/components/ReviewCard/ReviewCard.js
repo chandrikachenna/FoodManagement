@@ -23,6 +23,7 @@ class ReviewCard extends Component {
    requestedObject=()=>{
       const reviewInfo=this.props.mealInfoStore.selectedMealTypeReview
       const object={
+         user_reveiw:reviewInfo.reviewText,
          items:[]}
          reviewInfo.mealReviewInfo.forEach((item)=>
                        object.items.push({
@@ -31,17 +32,18 @@ class ReviewCard extends Component {
                         taste_rating:item.tasteRating
                        })
                      )
+      return object;
    }
    onClick = () => {
       const { history } = this.props
       history.push('/food-management/home');
       const reviewInfo=this.props.mealInfoStore.selectedMealTypeReview
+      this.requestedObject();
       reviewInfo.onSave()    //TODO --date,mealType from params
    }
    render() {
       const { done } = strings.foodManagement
       const reviewInfo=this.props.mealInfoStore.selectedMealTypeReview
-      
       return (
          <Layout>
             <Title>Review</Title>
@@ -72,7 +74,7 @@ class ReviewCard extends Component {
                   }
                </InfoContainer>
             </Review>
-            <TextArea />
+            <TextArea onChange={reviewInfo.onChangeReview}/>
             <Button
                name={done}
                variant={COLORS.jade}

@@ -4,6 +4,7 @@ class MealRatingModel{
     @observable qualityRating
     @observable tasteRating
     @observable name
+    
     constructor(itemInfo){
         const {quality_rating,taste_rating,item_name}=itemInfo
         this.qualityRating=quality_rating
@@ -18,6 +19,7 @@ class MealRatingModel{
     onChangeTasteRating(rating){
         this.tasteRating=rating;
     }
+    
 }
 
 export {MealRatingModel}

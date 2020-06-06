@@ -15,6 +15,7 @@ class MealReviewInfoModel {
    @observable updateMealReviewInfoResponse
 
    @observable mealType
+   @observable reviewText
    constructor(mealType, mealReviewInfoAPI, updateMealReviewInfoAPI) {
       this.mealReviewInfoAPI = mealReviewInfoAPI
       this.updateMealReviewInfoAPI = updateMealReviewInfoAPI
@@ -26,6 +27,7 @@ class MealReviewInfoModel {
       this.getMealReviewAPIStatus = API_INITIAL
       this.getMealReviewAPIError = null
       this.mealReviewInfo = []
+      this.reviewText=null
 
       this.getUpdateMealReviewAPIStatus = API_INITIAL
       this.getUpdateMealReviewAPIError = null
@@ -44,12 +46,10 @@ class MealReviewInfoModel {
    }
    @action.bound
    setMealReviewAPIStatus(apiStatus) {
-      console.log(apiStatus)
       this.getMealReviewAPIStatus = apiStatus
    }
    @action.bound
    setMealReviewAPIError(error) {
-      console.log(error)
       this.getMealReviewAPIError = error
    }
    @action.bound
@@ -82,6 +82,12 @@ class MealReviewInfoModel {
    onSave(date, mealType, requestObject) {
       this.setMealReviewInfo(date, mealType, requestObject)
    }
+   @action.bound
+    onChangeReview(reviewText)
+    {
+        this.reviewText=reviewText
+        console.log(this.reviewText)
+    }
 }
 
 export { MealReviewInfoModel }
