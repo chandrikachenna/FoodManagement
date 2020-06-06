@@ -63,7 +63,10 @@ class MealInfoStore {
          this.mealReviewInfoService,
          this.updateMealReviewInfoService
       )
-      await this.selectedMealTypeReview.getMealReviewInfo(this.timeCounter, mealType)
+      await this.selectedMealTypeReview.getMealReviewInfo(
+         this.timeCounter,
+         mealType
+      )
       this.selectedMealType = mealType
    }
    @action.bound

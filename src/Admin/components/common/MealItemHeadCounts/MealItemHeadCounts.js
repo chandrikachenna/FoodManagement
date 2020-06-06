@@ -4,13 +4,7 @@ import DelIcon from '../../../../Common/icons/deleteIcon.svg'
 import { Counter } from '../../../../Common/components/Counter'
 class MealItemHeadCounts extends Component {
    render() {
-      const {
-         name,
-         category,
-         quantity,
-         base_unit
-         
-      } = this.props.info
+      const { name, category, quantity, base_unit } = this.props.info
       return (
          <Layout>
             <ItemInfo>

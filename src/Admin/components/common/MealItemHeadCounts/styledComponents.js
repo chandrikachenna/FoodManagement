@@ -18,8 +18,8 @@ const ItemInfo = styled.div`
 const Text = styled(Typo18SteelHKGroteskMedium)``
 const Category = styled(Typo12CoolGreyHKGroteskRegular)``
 const Icon = styled.img``
-const Div=styled.div`
+const Div = styled.div`
    ${tw`flex flex-row`}
 `
 
-export {  Layout, ItemInfo, Text, Category, Icon,Div}
+export { Layout, ItemInfo, Text, Category, Icon, Div }

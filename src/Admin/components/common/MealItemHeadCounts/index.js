@@ -1,1 +1,1 @@
-export { MealItemHeadCounts } from './MealItemHeadCounts';
+export { MealItemHeadCounts } from './MealItemHeadCounts'

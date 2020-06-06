@@ -12,7 +12,7 @@ import {
 import { SIGN_UP_PATH, SIGN_IN_PATH } from '../../constants/RouteConstants'
 import { SMART_FOOD_MANAGEMENT_PATH } from '../../../FoodManagement/constants/RouteConstants'
 
-import {AuthAPI} from '../../services/AuthService/AuthAPI.api'
+import { AuthAPI } from '../../services/AuthService/AuthAPI.api'
 import { AuthStore } from '../../stores/AuthStore'
 
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
@@ -78,9 +78,8 @@ describe('SignInRoute tests', () => {
       fireEvent.change(usernameField, { target: { value: username } })
       fireEvent.change(passwordField, { target: { value: password } })
       fireEvent.click(logInButton)
-      
+
       expect(authStore.getUserSignInAPIStatus).toBe(API_FETCHING)
-      
    })
 
    it('should render signInRoute loading state', async () => {

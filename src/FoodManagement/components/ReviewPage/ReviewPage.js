@@ -4,18 +4,25 @@ import { Navbar } from '../../common/Navbar'
 import { ReviewCard } from '../ReviewCard'
 import { Carousel } from '../../common/Carousel'
 import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure'
-import { observer } from "mobx-react"
+import { observer } from 'mobx-react'
 
 @observer
 class ReviewPage extends Component {
    renderSuccessUI = observer(() => {
-      return <>
-         <Carousel />
-         <ReviewCard mealInfoStore={this.props.mealInfoStore}/>
-      </>
+      return (
+         <>
+            <Carousel />
+            <ReviewCard mealInfoStore={this.props.mealInfoStore} />
+         </>
+      )
    })
    render() {
-      const { onClickSignOut, onClickGoHome,mealInfoStore ,doNetworkCalls} = this.props
+      const {
+         onClickSignOut,
+         onClickGoHome,
+         mealInfoStore,
+         doNetworkCalls
+      } = this.props
       const selectedMealTypeReview = {
          ...mealInfoStore.selectedMealTypeReview
       }
@@ -29,7 +36,7 @@ class ReviewPage extends Component {
                onClickSignOut={onClickSignOut}
                onClickGoHome={onClickGoHome}
             />
-           <LoadingWrapperWithLoader
+            <LoadingWrapperWithLoader
                apiStatus={getMealReviewAPIStatus}
                apiError={getMealReviewAPIError}
                onRetryClick={doNetworkCalls}

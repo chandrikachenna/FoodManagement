@@ -4,7 +4,7 @@ import {
    API_SUCCESS,
    API_FAILED
 } from '@ib/api-constants'
-import {AuthAPI} from '../../services/AuthService/AuthAPI.api'
+import { AuthAPI } from '../../services/AuthService/AuthAPI.api'
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
 
 import { AuthStore } from '.'
@@ -76,5 +76,4 @@ describe('AuthStore Tests', () => {
       expect(authStore.getUserSignInAPIStatus).toBe(API_INITIAL)
       expect(authStore.getUserSignInAPIError).toBe(null)
    })
-
 })

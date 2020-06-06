@@ -1,2 +1,2 @@
-import  HeadCountsInfo from './HeadCountsInfo';
-export default HeadCountsInfo;
+import HeadCountsInfo from './HeadCountsInfo'
+export default HeadCountsInfo

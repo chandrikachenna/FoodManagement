@@ -5,8 +5,8 @@ import {
    API_FETCHING
 } from '@ib/api-constants'
 
-import {MealsInfo } from '../../services/MealInfoServices/MealsInfo.fixture'
-import getMealInfo from '../../fixtures/getMealInfo.json';
+import { MealsInfo } from '../../services/MealInfoServices/MealsInfo.fixture'
+import getMealInfo from '../../fixtures/getMealInfo.json'
 
 import { MealInfoStore } from '.'
 

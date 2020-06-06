@@ -4,7 +4,7 @@ import { MenuBar } from '../MenuBar'
 import { DatePicker } from '../../../../Common/components/DatePicker'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
-import HeadCountsInfo from '../HeadCountsInfo';
+import HeadCountsInfo from '../HeadCountsInfo'
 const menus = { menu1: 'Menu1', menu2: 'Menu2', menu3: 'Menu3' }
 
 @observer
@@ -24,7 +24,14 @@ class MenuDisplayer extends Component {
       this.selectedMenu = menus.menu3
    }
    render() {
-      const { menu, menu1Name, menu2Name, menu3Name ,data,tabPane} = this.props
+      const {
+         menu,
+         menu1Name,
+         menu2Name,
+         menu3Name,
+         data,
+         tabPane
+      } = this.props
       return (
          <>
             <Header>
@@ -41,21 +48,18 @@ class MenuDisplayer extends Component {
             </Header>
             {this.selectedMenu && (
                <Content>
-                  {this.selectedMenu.match(menus.menu1) && 
-                    (tabPane && tabPane.match('headCounts') && data )&&
-                     <HeadCountsInfo headCountsInfo={data[0]}/>
-                     
-                  }
-                  {this.selectedMenu.match(menus.menu2) && 
-                     (tabPane && tabPane.match('headCounts') && data )&&
-                     <HeadCountsInfo headCountsInfo={data[1]}/>
-                    
-                  }
-                  {this.selectedMenu.match(menus.menu3) && 
-                     (tabPane && tabPane.match('headCounts') && data )&&
-                     <HeadCountsInfo headCountsInfo={data[2]}/>
-                     
-                  }
+                  {this.selectedMenu.match(menus.menu1) &&
+                     tabPane && tabPane.match('headCounts') && data && (
+                        <HeadCountsInfo headCountsInfo={data[0]} />
+                     )}
+                  {this.selectedMenu.match(menus.menu2) &&
+                     tabPane && tabPane.match('headCounts') && data && (
+                        <HeadCountsInfo headCountsInfo={data[1]} />
+                     )}
+                  {this.selectedMenu.match(menus.menu3) &&
+                     tabPane && tabPane.match('headCounts') && data && (
+                        <HeadCountsInfo headCountsInfo={data[2]} />
+                     )}
                </Content>
             )}
          </>

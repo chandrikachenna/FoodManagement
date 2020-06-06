@@ -46,7 +46,6 @@ class MealInfoCard extends Component {
       const { history } = this.props
       history.push('/food-management/meal-feedback')
       this.props.mealInfoStore.goForReview(this.props.info.meal_type)
-
    }
    render() {
       const { typeButton } = strings.authentication

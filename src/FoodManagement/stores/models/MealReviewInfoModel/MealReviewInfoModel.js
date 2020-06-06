@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
-import {MealRatingModel} from '../MealRatingModel'
+import { MealRatingModel } from '../MealRatingModel'
 
 class MealReviewInfoModel {
    @observable getMealReviewAPIStatus
@@ -27,7 +27,7 @@ class MealReviewInfoModel {
       this.getMealReviewAPIStatus = API_INITIAL
       this.getMealReviewAPIError = null
       this.mealReviewInfo = []
-      this.reviewText=null
+      this.reviewText = null
 
       this.getUpdateMealReviewAPIStatus = API_INITIAL
       this.getUpdateMealReviewAPIError = null
@@ -54,7 +54,9 @@ class MealReviewInfoModel {
    }
    @action.bound
    setMealReviewAPIResponse(response) {
-      this.mealReviewInfo = response.items.map((item)=>new MealRatingModel(item))
+      this.mealReviewInfo = response.items.map(
+         item => new MealRatingModel(item)
+      )
    }
    setMealReviewInfo(date, mealType, requestObject) {
       const mealItemsPromise = this.updateMealReviewInfoAPI.setMealReviewInfo(
@@ -83,11 +85,10 @@ class MealReviewInfoModel {
       this.setMealReviewInfo(date, mealType, requestObject)
    }
    @action.bound
-    onChangeReview(reviewText)
-    {
-        this.reviewText=reviewText
-        console.log(this.reviewText)
-    }
+   onChangeReview(reviewText) {
+      this.reviewText = reviewText
+      console.log(this.reviewText)
+   }
 }
 
 export { MealReviewInfoModel }

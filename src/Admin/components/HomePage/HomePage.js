@@ -8,14 +8,20 @@ import { HeadCounts } from '../../components/HeadCounts'
 import { FoodWastageLog } from '../../components/FoodWastageLog'
 import { MealItem } from '../../components/common/MealItem'
 import LoadingWrapperWithLoader from '../../../FoodManagement/common/LoadingWrapperWithFailure'
-import { observer } from "mobx-react"
+import { observer } from 'mobx-react'
 
 @observer
 class HomePage extends Component {
    render() {
       const { home } = strings.admin
-      const { onClickSignOut, onClickGoHome ,getHeadCountsInfoAPIStatus,getHeadCountsInfoAPIError,
-         doNetworkCalls,renderSuccessUI} = this.props
+      const {
+         onClickSignOut,
+         onClickGoHome,
+         getHeadCountsInfoAPIStatus,
+         getHeadCountsInfoAPIError,
+         doNetworkCalls,
+         renderSuccessUI
+      } = this.props
       return (
          <HomePageContainer>
             <Navbar
@@ -24,7 +30,7 @@ class HomePage extends Component {
                page={home}
             />
             <Body>
-            <LoadingWrapperWithLoader
+               <LoadingWrapperWithLoader
                   apiStatus={getHeadCountsInfoAPIStatus}
                   apiError={getHeadCountsInfoAPIError}
                   onRetryClick={doNetworkCalls}
