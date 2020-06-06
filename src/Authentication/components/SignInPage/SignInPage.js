@@ -80,7 +80,7 @@ class SignInPage extends Component {
                   data-testid={signInButtonTestId}
                />
 
-               <MsgShowField>{errorMessage && errorMessage}</MsgShowField>
+               <MsgShowField>{errorMessage && loginStatus!==100 && errorMessage}</MsgShowField>
                <Footer>
                   {haveAnAccount}
                   <Link>{` ${signUplink}`}</Link>

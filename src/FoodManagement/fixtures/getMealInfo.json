@@ -21,7 +21,7 @@
 			"meal_item":"Upma"
 		  }
 		], 
-	  "edit_preference_dead_line": "Wed Jun 05 2020 07:00:00 +0000" 
+	  "edit_preference_dead_line": "Sat Jun 06 2020 7:00:00 GMT+0530" 
 	}, 
 
 	"lunch": { 
@@ -50,12 +50,12 @@
 				"meal_item":"Butter Milk"
 			  }
 		], 
-		"edit_preference_dead_line": "Wed Jun 05 2020 12:30:00 +0000" 
+		"edit_preference_dead_line": "Sat Jun 06 2020 12:30:00 GMT+0530" 
 	}, 
 
 	"dinner": { 
 		"meal_type":"Dinner",
-		"meal_format":  "FullMeal", 
+		"meal_format":  "Skipped", 
 		"open_time":"19:30", 
 		"close_time": "22:00", 
 		"meal_items": [
@@ -78,6 +78,6 @@
 				"meal_item":"Butter Milk"
 			  }
 		], 
-		"edit_preference_dead_line": "Wed Jun 05 2020 19:30:00 +0000" 
+		"edit_preference_dead_line": "Sat Jun 06 2020 19:30:00 GMT+0530" 
 	}
   }  

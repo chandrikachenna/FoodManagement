@@ -19,6 +19,11 @@ class SigninRoute extends Component {
    @observable usernameErrorMessage
    @observable passwordErrorMessage
    @observable errorMessage
+   constructor(props){
+      super(props)
+      this.username=''
+      this.password=''
+   }
    onChangeUsername = event => {
       this.username = event.target.value
       if (this.username) this.usernameErrorMessage = ''
@@ -34,7 +39,7 @@ class SigninRoute extends Component {
    onFailureSignIn = () => {
       const { getUserSignInAPIError: apiError } = this.props.authStore
       if (apiError !== null && apiError !== undefined) {
-         this.errorMessage = networkErrorMsg
+         this.errorMessage = apiError
       }
    }
    onClickSignIn = () => {

@@ -29,7 +29,7 @@ class Carousel extends React.Component {
                         fontSize: '13px'
                      }}
                   >
-                     Weekly Menu Change
+                     Weekly Menu Changed
                   </p>
                </TweenOne>
                <TweenOne
@@ -55,7 +55,7 @@ class Carousel extends React.Component {
                   Announcement
                   <p
                      style={{
-                        fontSize: '13px'
+                        fontSize:'13px'
                      }}
                   >
                      Weekly Menu Change
@@ -65,8 +65,15 @@ class Carousel extends React.Component {
                   className='banner-user-text'
                   animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
                >
+                  <p
+                     style={{
+                        fontSize:'13px'
+                     }}
+                  >
                   Idly has been Updated with poori on monday due to requests
                   from south Indians
+                  </p>
+                  
                </TweenOne>
             </Element>
          </BannerAnim>

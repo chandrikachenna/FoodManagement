@@ -1,17 +1,18 @@
-import { networkCallWithApisauce } from '../../../utils/APIUtils'
+import { networkCallWithApisauce } from '../../../utils/APIUtils';
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
+import {SIGNIN} from '../endpoints';
 class AuthAPI {
    api
    constructor() {
       this.api = create({
-         baseURL: 'https://cfc0a8b7ef7a.ngrok.io/api/food_management/'
+         baseURL: 'https://cb018461fabd.ngrok.io/api/food_management/'
       })
    }
    signInAPI(requestObject) {
       return networkCallWithApisauce(
          this.api,
-         'v1/signin/',
+         SIGNIN,
          requestObject,
          apiMethods.post
       )

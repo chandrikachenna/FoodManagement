@@ -8,6 +8,7 @@ const HomePageContainer = styled.div`
 `
 const Body = styled.div`
    ${tw`flex flex-col `}
+   margin-top:100px;
    margin-left:260px;
    margin-right: 260px;
 `

@@ -6,13 +6,13 @@ class MealsInfo {
    api
    constructor() {
       this.api = create({
-         baseURL: 'https://5277955cd80f.ngrok.io/api/food_management/'
+         baseURL: 'https://cb018461fabd.ngrok.io/api/food_management/'
       })
    }
    getMealsAPI(date) {
       return networkCallWithApisauce(
          this.api,
-         `menu/v1?Date=2020-06-03`,
+         `menu/v1?Date=${date}`,
          {},
          apiMethods.get
       )
