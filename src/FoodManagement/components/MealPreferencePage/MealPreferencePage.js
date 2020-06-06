@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MealPreferencePageContainer } from './styledComponents'
-import { Navbar } from '../../common/Navbar'
-import LoadingWrapperWithLoader from '../../common/LoadingWrapperWithFailure'
+import { Navbar } from '../common/Navbar'
+import LoadingWrapperWithLoader from '../common/LoadingWrapperWithFailure'
 
 class MealPreferencePage extends Component {
    render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { MealInfoCard } from '../../common/MealnfoCard'
+import { MealInfoCard } from '../common/MealnfoCard'
 import BreakFastIcon from '../../../Common/icons/breakfast_icon.svg'
 import LunchIcon from '../../../Common/icons/lunch_icon.svg'
 import DinnerIcon from '../../../Common/icons/dinner_icon.svg'

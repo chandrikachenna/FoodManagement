@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { Typo20DarkBlueGreyHKGroteskMedium } from '../../../Common/styleGuide/Typo'
+import { Typo20DarkBlueGreyHKGroteskMedium } from '../../../../Common/styleGuide/Typo'
 
 const Link = styled(Typo20DarkBlueGreyHKGroteskMedium)`
    ${tw`cursor-pointer`}

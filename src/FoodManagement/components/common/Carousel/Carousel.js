@@ -3,8 +3,8 @@ import './Carousel.css'
 import BannerAnim, { Element } from 'rc-banner-anim'
 import TweenOne from 'rc-tween-one'
 import 'rc-banner-anim/assets/index.css'
-import Layout1 from '../../../Common/images/layout1.png'
-import Layout2 from '../../../Common/images/layout2.png'
+import Layout1 from '../../../../Common/images/layout1.png'
+import Layout2 from '../../../../Common/images/layout2.png'
 
 const BgElement = Element.BgElement
 class Carousel extends React.Component {

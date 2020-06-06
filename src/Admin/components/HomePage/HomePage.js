@@ -7,7 +7,7 @@ import { ScheduleMeal } from '../../components/ScheduleMeal'
 import { HeadCounts } from '../../components/HeadCounts'
 import { FoodWastageLog } from '../../components/FoodWastageLog'
 import { MealItem } from '../../components/common/MealItem'
-import LoadingWrapperWithLoader from '../../../FoodManagement/common/LoadingWrapperWithFailure'
+import LoadingWrapperWithLoader from '../../../FoodManagement/components/common/LoadingWrapperWithFailure'
 import { observer } from 'mobx-react'
 
 @observer

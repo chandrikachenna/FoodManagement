@@ -14,15 +14,15 @@ import {
    Wrap
 } from './styledComponents'
 
-import { MealPreferenceCustom } from '../../components/MealPreferenceCustom'
-import { MealPreferenceDefault } from '../../components/MealPreferenceDefault'
+import { MealPreferenceCustom } from '../../MealPreferenceCustom'
+import { MealPreferenceDefault } from '../../MealPreferenceDefault'
 
-import { DatePicker } from '../../../Common/components/DatePicker'
-import { TabBar } from '../../../Common/components/TabBar'
-import FoodPreferenceImage from '../../../Common/images/foodPreference.png'
-import { Button } from '../../../Common/components/Button'
-import { COLORS } from '../../../Common/theme/Colors'
-import strings from '../../../Common/i18n/strings.json'
+import { DatePicker } from '../../../../Common/components/DatePicker'
+import { TabBar } from '../../../../Common/components/TabBar'
+import FoodPreferenceImage from '../../../../Common/images/foodPreference.png'
+import { Button } from '../../../../Common/components/Button'
+import { COLORS } from '../../../../Common/theme/Colors'
+import strings from '../../../../Common/i18n/strings.json'
 
 @observer
 class MealPreferenceCard extends Component {

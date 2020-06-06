@@ -11,8 +11,6 @@ import { MealPreferenceRoute } from './MealPreferenceRoute'
 import { ReviewPageRoute } from './ReviewPageRoute'
 
 import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
-{
-}
 
 const routes = [
    <ProtectedRoute

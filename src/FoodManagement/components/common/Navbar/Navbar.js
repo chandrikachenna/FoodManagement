@@ -7,8 +7,8 @@ import {
    SpareOptionsBar,
    Link
 } from './styledComponents'
-import { Logo } from '../../../Common/components/Logo'
-import strings from '../../../Common/i18n/strings.json'
+import { Logo } from '../../../../Common/components/Logo'
+import strings from '../../../../Common/i18n/strings.json'
 
 class Navbar extends Component {
    render() {

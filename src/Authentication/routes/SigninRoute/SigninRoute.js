@@ -4,11 +4,11 @@ import { observer, inject } from 'mobx-react'
 import { observable } from 'mobx'
 import { withRouter } from 'react-router-dom'
 import strings from '../../../Common/i18n/strings.json'
+import {HOME_PAGE_PATH} from '../../constants/RouteConstants';
 
 const {
    enterUsernameMsg,
    enterPasswordMsg,
-   networkErrorMsg
 } = strings.authentication
 
 @inject('authStore')
@@ -26,15 +26,21 @@ class SigninRoute extends Component {
    }
    onChangeUsername = event => {
       this.username = event.target.value
-      if (this.username) this.usernameErrorMessage = ''
+      if (this.username){
+         this.usernameErrorMessage = ''
+         this.passwordErrorMessage = ''
+      } 
    }
    onChangePassword = event => {
       this.password = event.target.value
-      if (this.password) this.passwordErrorMessage = ''
+      if (this.password){
+         this.usernameErrorMessage = ''
+         this.passwordErrorMessage = ''
+      } 
    }
    onSuccesSignIn = () => {
       const { history } = this.props
-      history.replace('/food-management/home')
+      history.replace(HOME_PAGE_PATH)
    }
    onFailureSignIn = () => {
       const { getUserSignInAPIError: apiError } = this.props.authStore

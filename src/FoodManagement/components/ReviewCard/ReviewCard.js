@@ -9,7 +9,7 @@ import {
    Item,
    InfoContainer
 } from './styledComponents'
-import { StarRating } from '../../common/StarRating'
+import { StarRating } from '../common/StarRating'
 import { Button } from '../../../Common/components/Button'
 import strings from '../../../Common/i18n/strings.json'
 import { COLORS } from '../../../Common/theme/Colors'

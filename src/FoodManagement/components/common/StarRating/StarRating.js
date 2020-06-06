@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactStarRating from 'react-star-rating-component'
-import StartIcon from '../../../Common/icons/star.svg'
+import StartIcon from '../../../../Common/icons/star.svg'
 import { observer } from 'mobx-react'
 
 @observer

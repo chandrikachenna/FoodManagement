@@ -15,12 +15,12 @@ import {
    Review
 } from './styledComponents'
 
-import { Button } from '../../../Common/components/Button'
-import { IconHolder } from '../../../Common/components/IconHolder'
-import { Menubar } from '../../../Common/components/Menubar'
-import { TextLabel } from '../../../Common/components/TextLabel'
-import { COLORS } from '../../../Common/theme/Colors'
-import strings from '../../../Common/i18n/strings.json'
+import { Button } from '../../../../Common/components/Button'
+import { IconHolder } from '../../../../Common/components/IconHolder'
+import { Menubar } from '../../../../Common/components/Menubar'
+import { TextLabel } from '../../../../Common/components/TextLabel'
+import { COLORS } from '../../../../Common/theme/Colors'
+import strings from '../../../../Common/i18n/strings.json'
 import { observable } from 'mobx'
 import {
    formatDistance,

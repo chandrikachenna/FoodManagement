@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { Typo32DarkBlueGreyHKGroteskMedium } from '../../../Common/styleGuide/Typo'
+import { Typo32DarkBlueGreyHKGroteskMedium } from '../../../../Common/styleGuide/Typo'
 const Layout = styled.div`
    width: 782px;
    height: 600px;

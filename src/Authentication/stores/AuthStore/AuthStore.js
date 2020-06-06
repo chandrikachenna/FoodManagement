@@ -28,7 +28,7 @@ class AuthStore {
    }
    @action.bound
    setUserSignInAPIResponse(SignInAPIResponse) {
-      this.Access_token = SignInAPIResponse['access_token']
+      this.Access_token = SignInAPIResponse.access_token
       console.log(SignInAPIResponse)
       setAccessToken(this.Access_token)
       console.log(getAccessToken())

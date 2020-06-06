@@ -4,7 +4,7 @@ import {
    Typo16SteelHKGroteskRegular,
    Typo16DarkBlueGreyHKGroteskMedium,
    Typo12SteelHKGroteskRegular
-} from '../../../Common/styleGuide/Typo'
+} from '../../../../Common/styleGuide/Typo'
 
 const CardLayout = styled.div`
    ${tw`flex flex-col justify-start items-center`}
