@@ -7,11 +7,15 @@ import { ScheduleMeal } from '../../components/ScheduleMeal'
 import { HeadCounts } from '../../components/HeadCounts'
 import { FoodWastageLog } from '../../components/FoodWastageLog'
 import { MealItem } from '../../components/common/MealItem'
+import LoadingWrapperWithLoader from '../../../FoodManagement/common/LoadingWrapperWithFailure'
+import { observer } from "mobx-react"
 
+@observer
 class HomePage extends Component {
    render() {
       const { home } = strings.admin
-      const { onClickSignOut, onClickGoHome } = this.props
+      const { onClickSignOut, onClickGoHome ,getHeadCountsInfoAPIStatus,getHeadCountsInfoAPIError,
+         doNetworkCalls,renderSuccessUI} = this.props
       return (
          <HomePageContainer>
             <Navbar
@@ -20,12 +24,12 @@ class HomePage extends Component {
                page={home}
             />
             <Body>
-               <TabBar
-                  renderedComponent1={ScheduleMeal}
-                  renderedComponent2={HeadCounts}
-                  renderedComponent3={FoodWastageLog}
+            <LoadingWrapperWithLoader
+                  apiStatus={getHeadCountsInfoAPIStatus}
+                  apiError={getHeadCountsInfoAPIError}
+                  onRetryClick={doNetworkCalls}
+                  renderSuccessUI={renderSuccessUI}
                />
-               <MealItem />
             </Body>
          </HomePageContainer>
       )

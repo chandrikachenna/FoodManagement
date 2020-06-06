@@ -1,36 +1,88 @@
-[
+
 	{
-        "food_prepared":[
-            {
-                "name":"Poori"  ,
-                "category":"Indian Bread" ,
-                "quantity":"1200",
-                "base_unit":"Pieces"
-            },
-            {
-                "name":"Aloo Curry"  ,
-                "category":"Curry" ,
-                "quantity":"200",
-                "base_unit":"Kgs"
-            },
-            {
-                "name":"Masala Rice"  ,
-                "category":"Rice" ,
-                "quantity":"100",
-                "base_unit":"Kgs"
-            },
-            {
-                "name":"Pulihora"  ,
-                "category":"Rice" ,
-                "quantity":"300",
-                "base_unit":"Kgs"
-            }
-        ],
-        "full_meal_head_count":400,
-        "half_meal_head_count":300,
-        "skipped_meal_head_count":400,
-        "customed_meal_head_count":300,
-        "total_meal_head_count":300,
-        "completed_meal_head_count":251
+        "breakfast":{
+            "food_prepared":[
+                {
+                    "name":"Poori"  ,
+                    "category":"Indian Bread" ,
+                    "quantity":"1200",
+                    "base_unit":"Pieces"
+                },
+                {
+                    "name":"Aloo Curry"  ,
+                    "category":"Curry" ,
+                    "quantity":"200",
+                    "base_unit":"Kgs"
+                },
+                {
+                    "name":"Masala Rice"  ,
+                    "category":"Rice" ,
+                    "quantity":"100",
+                    "base_unit":"Kgs"
+                },
+                {
+                    "name":"Pulihora"  ,
+                    "category":"Rice" ,
+                    "quantity":"300",
+                    "base_unit":"Kgs"
+                }
+            ],
+            "full_meal_head_count":400,
+            "half_meal_head_count":300,
+            "skipped_meal_head_count":400,
+            "customed_meal_head_count":300,
+            "total_meal_head_count":300,
+            "completed_meal_head_count":251
+        },
+        "lunch":{
+            "food_prepared":[
+                {
+                    "name":"Poori"  ,
+                    "category":"Indian Bread" ,
+                    "quantity":"1200",
+                    "base_unit":"Pieces"
+                },
+                {
+                    "name":"Pulihora"  ,
+                    "category":"Rice" ,
+                    "quantity":"300",
+                    "base_unit":"Kgs"
+                }
+            ],
+            "full_meal_head_count":400,
+            "half_meal_head_count":300,
+            "skipped_meal_head_count":400,
+            "customed_meal_head_count":300,
+            "total_meal_head_count":300,
+            "completed_meal_head_count":251
+        },
+        "dinner":{
+            "food_prepared":[
+                {
+                    "name":"Aloo Curry"  ,
+                    "category":"Curry" ,
+                    "quantity":"200",
+                    "base_unit":"Kgs"
+                },
+                {
+                    "name":"Masala Rice"  ,
+                    "category":"Rice" ,
+                    "quantity":"100",
+                    "base_unit":"Kgs"
+                },
+                {
+                    "name":"Pulihora"  ,
+                    "category":"Rice" ,
+                    "quantity":"300",
+                    "base_unit":"Kgs"
+                }
+            ],
+            "full_meal_head_count":400,
+            "half_meal_head_count":300,
+            "skipped_meal_head_count":400,
+            "customed_meal_head_count":300,
+            "total_meal_head_count":300,
+            "completed_meal_head_count":251
+        }
+    
     }
-]

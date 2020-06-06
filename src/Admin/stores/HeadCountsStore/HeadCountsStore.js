@@ -28,11 +28,11 @@ class HeadCountsStore {
    }
    @action.bound
    setHeadCountsInfoResponse(headCountsInfoResponse) {
-      console.log(headCountsInfoResponse)
+      this.headCountsInfo=headCountsInfoResponse
    }
    @action.bound
    getHeadCountsInfo() {
-      const headCountsInfoPromise = this.headCountsInfoService.getHeadCountsInfo()
+      const  headCountsInfoPromise = this.headCountsInfoService.getHeadCountsInfo()
       return bindPromiseWithOnSuccess(headCountsInfoPromise)
          .to(this.setHeadCountsInfoAPIStatus, this.setHeadCountsInfoResponse)
          .catch(this.setHeadCountsInfoAPIError)
