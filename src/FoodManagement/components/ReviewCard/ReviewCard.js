@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import { observer } from 'mobx-react'
 import {
    Layout,
    Title,
@@ -14,7 +15,7 @@ import { Button } from '../../../Common/components/Button'
 import strings from '../../../Common/i18n/strings.json'
 import { COLORS } from '../../../Common/theme/Colors'
 import { TextArea } from '../../../Common/components/TextArea'
-import { observer } from 'mobx-react'
+import {SMART_FOOD_MANAGEMENT_PATH} from '../../constants/RouteConstants'
 const width = '73px'
 
 @observer
@@ -36,7 +37,7 @@ class ReviewCard extends Component {
    }
    onClick = () => {
       const { history } = this.props
-      history.push('/food-management/home')
+      history.push(SMART_FOOD_MANAGEMENT_PATH)
       const reviewInfo = this.props.mealInfoStore.selectedMealTypeReview
       this.requestedObject()
       reviewInfo.onSave() //TODO --date,mealType from params

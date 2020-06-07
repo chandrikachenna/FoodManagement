@@ -10,6 +10,8 @@ import { HomePageRoute } from './HomePageRoute'
 import { MealPreferenceRoute } from './MealPreferenceRoute'
 import { ReviewPageRoute } from './ReviewPageRoute'
 
+import { HomePageRoute as AdminPage} from '../../Admin/routes/HomePageRoute'; 
+
 import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
 
 const routes = [
@@ -17,9 +19,10 @@ const routes = [
       exact
       path={SMART_FOOD_MANAGEMENT_PATH}
       component={HomePageRoute}
+      adminPage={AdminPage}
    />,
-   <Route exact path={MEAL_PREFERENCE_PATH} component={MealPreferenceRoute} />,
-   <Route exact path={MEAL_FEEDBACK_PATH} component={ReviewPageRoute} />
+   <Route  path={MEAL_PREFERENCE_PATH} component={MealPreferenceRoute} />,
+   <Route  path={MEAL_FEEDBACK_PATH} component={ReviewPageRoute} />
 ]
 
 export default routes

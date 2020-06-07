@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { observable } from 'mobx'
+import { observer } from 'mobx-react'
 import { Header, Content } from './styledComponents'
+import HeadCountsInfo from '../HeadCountsInfo'
 import { MenuBar } from '../MenuBar'
 import { DatePicker } from '../../../../Common/components/DatePicker'
-import { observer } from 'mobx-react'
-import { observable } from 'mobx'
-import HeadCountsInfo from '../HeadCountsInfo'
+
 const menus = { menu1: 'Menu1', menu2: 'Menu2', menu3: 'Menu3' }
 
 @observer

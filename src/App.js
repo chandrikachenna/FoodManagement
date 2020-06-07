@@ -27,6 +27,7 @@ class App extends React.Component {
                   <Route exact path='/'>
                      <HomePage />
                   </Route>
+                  <Route path="*" component={()=>"404 not Found"}/>
                </Switch>
             </Router>
          </Provider>

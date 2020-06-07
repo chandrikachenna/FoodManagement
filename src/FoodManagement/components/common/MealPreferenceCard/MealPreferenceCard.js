@@ -90,16 +90,23 @@ class MealPreferenceCard extends Component {
       const { onClickSkipMeal } = this.props.selectedMealTypeInfo
       onClickSkipMeal(this.requestObject, this.isCustom)
    }
+   capitalizeFirstLetter=([ first, ...rest ], locale = navigator.language)=> {
+      return [ first.toLocaleUpperCase(locale), ...rest ].join('');
+    }
    render() {
       const { skipMeal, back, save } = strings.foodManagement
       const { mealType, mealItemsInfo, date } = {
          ...this.props.selectedMealTypeInfo
       }
       const { onChangeDate } = this.props.selectedMealTypeInfo
+      console.log(this.props)
+      const queryString = require('query-string');
+      const parsed = queryString.parse(this.props.location.search);
+      console.log(parsed);
       return (
          <Layout>
             <Header>
-               <Title>{mealType}</Title>
+               <Title>{this.capitalizeFirstLetter(parsed.meal_type)}</Title>
                <Button
                   variant={COLORS.white}
                   onClick={this.onClickSkipped}

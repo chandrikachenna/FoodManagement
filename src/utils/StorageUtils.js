@@ -1,6 +1,7 @@
 import Cookie from 'js-cookie'
 
 export const ACCESS_TOKEN = 'dG6EABne5a'
+export const ROLE = 'role'
 
 export function getCookie(key) {
    return Cookie.get(key)
@@ -22,4 +23,16 @@ export function setAccessToken(accessToken) {
 
 export function clearUserSession() {
    Cookie.remove(ACCESS_TOKEN, { path: '/' })
+}
+
+
+export function getRole() {
+   return getCookie(ROLE)
+}
+export function setRole(role) {
+   setCookie(ROLE, role)
+}
+
+export function clearRole() {
+   Cookie.remove(ROLE, { path: '/' })
 }

@@ -17,8 +17,8 @@ class MealItem extends Component {
       return (
          <Layout>
             <ItemInfo>
-               <Item>{'item'}</Item>
-               <Category>{'category'}</Category>
+               <Item>{item}</Item>
+               <Category>{category}</Category>
             </ItemInfo>
             <Counter
                number={fullMealsQuantity}

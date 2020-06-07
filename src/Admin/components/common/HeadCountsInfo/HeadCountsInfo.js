@@ -36,7 +36,7 @@ class HeadCountsInfo extends Component {
                </Div>
                <Div>
                   <Text>
-                     Skipped Meal Head Count :{customed_meal_head_count}
+                     Customed Meal Head Count :{customed_meal_head_count}
                   </Text>
                   <Text>Total Meal Head Count :{total_meal_head_count}</Text>
                   <Text>

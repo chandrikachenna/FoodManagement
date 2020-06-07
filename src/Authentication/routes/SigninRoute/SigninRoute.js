@@ -4,7 +4,9 @@ import { observer, inject } from 'mobx-react'
 import { observable } from 'mobx'
 import { withRouter } from 'react-router-dom'
 import strings from '../../../Common/i18n/strings.json'
+import {getRole} from '../../../utils/StorageUtils';
 import {HOME_PAGE_PATH} from '../../constants/RouteConstants';
+import {ADMIN_PATH} from '../../../Admin/constants/RouteConstants';
 
 const {
    enterUsernameMsg,
@@ -40,7 +42,10 @@ class SigninRoute extends Component {
    }
    onSuccesSignIn = () => {
       const { history } = this.props
-      history.replace(HOME_PAGE_PATH)
+      // if(getRole().match('Admin'))
+      //    history.replace(ADMIN_PATH)
+      // else
+         history.replace(HOME_PAGE_PATH)
    }
    onFailureSignIn = () => {
       const { getUserSignInAPIError: apiError } = this.props.authStore
