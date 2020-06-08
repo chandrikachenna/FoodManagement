@@ -15,6 +15,7 @@ class HeadCountsInfo extends Component {
          completed_meal_head_count,
          food_prepared
       } = this.props.headCountsInfo
+      console.log(this.props)
       return (
          <>
             <Items>

@@ -99,10 +99,8 @@ class MealPreferenceCard extends Component {
          ...this.props.selectedMealTypeInfo
       }
       const { onChangeDate } = this.props.selectedMealTypeInfo
-      console.log(this.props)
       const queryString = require('query-string');
       const parsed = queryString.parse(this.props.location.search);
-      console.log(parsed);
       return (
          <Layout>
             <Header>
