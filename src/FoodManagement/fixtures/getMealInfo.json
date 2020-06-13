@@ -21,7 +21,7 @@
 			"meal_item":"Upma"
 		  }
 		], 
-	  "edit_preference_dead_line": "Sat Jun 06 2020 7:00:00 GMT+0530" 
+	  "edit_preference_dead_line": "Mon Jun 08 2020 7:00:00 GMT+0530" 
 	}, 
 
 	"lunch": { 
@@ -50,7 +50,7 @@
 				"meal_item":"Butter Milk"
 			  }
 		], 
-		"edit_preference_dead_line": "Sat Jun 06 2020 12:30:00 GMT+0530" 
+		"edit_preference_dead_line": "Mon Jun 08 2020 12:30:00 GMT+0530" 
 	}, 
 
 	"dinner": { 
@@ -78,6 +78,6 @@
 				"meal_item":"Butter Milk"
 			  }
 		], 
-		"edit_preference_dead_line": "Sat Jun 06 2020 19:30:00 GMT+0530" 
+		"edit_preference_dead_line": "Mon Jun 08 2020 19:30:00 GMT+0530" 
 	}
   }  

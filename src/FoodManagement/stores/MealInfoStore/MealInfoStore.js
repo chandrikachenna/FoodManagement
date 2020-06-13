@@ -100,6 +100,7 @@ class MealInfoStore {
          this.updateMealInfoService,
          this.updateCustomMealInfoService
       )
+      console.log(this.selectedMealTypeInfo)
       this.selectedMealTypeInfo.getEditPreference(this.timeCounter, mealType)
       this.selectedMealType = mealType
    }

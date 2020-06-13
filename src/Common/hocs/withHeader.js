@@ -12,7 +12,7 @@ export function withHeader(WrappedComponent) {
       }
       onClickGoHome = () => {
          const { history } = this.props
-         history.push('/food-management/home')
+         history.replace('/food-management/home')
       }
       render() {
          return (
