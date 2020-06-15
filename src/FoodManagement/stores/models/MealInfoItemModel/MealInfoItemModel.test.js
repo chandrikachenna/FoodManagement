@@ -29,32 +29,32 @@ describe('MealInfoItemModel tests', () => {
       const mockLoadingPromise = new Promise(function(resolve, reject) {})
       const mockMealTypeInfoAPI = jest.fn()
       mockMealTypeInfoAPI.mockReturnValue(mockLoadingPromise)
-      mealPreferenceFixture.getEditPreference = mockMealTypeInfoAPI
+      mealPreferenceFixture.getMealPreferenceAPI = mockMealTypeInfoAPI
 
       mealModel.getEditPreference()
       expect(mealModel.getMealItemsAPIStatus).toBe(API_FETCHING)
    })
    it('should test getMealInfo success state', async () => {
-      const mockLoadingPromise = new Promise(function(resolve, reject) {
+      const mockSuccessPromise = new Promise(function(resolve, reject) {
          resolve(getMealPreferenceInfo)
       })
       const mockMealTypeInfoAPI = jest.fn()
-      mockMealTypeInfoAPI.mockReturnValue(mockLoadingPromise)
-      mealPreferenceFixture.getEditPreference = mockMealTypeInfoAPI
+      mockMealTypeInfoAPI.mockReturnValue(mockSuccessPromise)
+      mealPreferenceFixture.getMealPreferenceAPI = mockMealTypeInfoAPI
 
       await mealModel.getEditPreference()
       expect(mealModel.getMealItemsAPIStatus).toBe(API_SUCCESS)
    })
    it('should test getMealInfo failure state', async () => {
-      const mockLoadingPromise = new Promise(function(resolve, reject) {
+      const mockFailurePromise = new Promise(function(resolve, reject) {
          reject(new Error('error'))
       })
       const mockMealTypeInfoAPI = jest.fn()
-      mockMealTypeInfoAPI.mockReturnValue(mockLoadingPromise)
-      mealPreferenceFixture.getEditPreference = mockMealTypeInfoAPI
+      mockMealTypeInfoAPI.mockReturnValue(mockFailurePromise)
+      mealPreferenceFixture.getMealPreferenceAPI = mockMealTypeInfoAPI
 
-      // await mealModel.getEditPreference();
-      // expect(mealModel.getMealItemsAPIStatus).toBe(API_FAILED);
-      // expect(mealModel.getMealItemsAPIError).toBe('error');
+      await mealModel.getEditPreference();
+      expect(mealModel.getMealItemsAPIStatus).toBe(API_FAILED);
+      expect(mealModel.getMealItemsAPIError).toBe('error');
    })
 })

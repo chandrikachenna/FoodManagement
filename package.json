@@ -50,7 +50,8 @@
       "deploy": "export PUBLIC_URL=/2019/$C9_USER/react && npm run build && ./deploy.sh",
       "storybook": "start-storybook -p 8080 -s public",
       "build-storybook": "build-storybook -s public",
-      "pretty": "npx prettier --write \"src/**/*.js\""
+      "pretty": "npx prettier --write \"src/**/*.js\"",
+      "coverage": "react-app-rewired test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false"
    },
    "husky": {
       "hooks": {

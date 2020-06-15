@@ -24,16 +24,13 @@ class AuthStore {
    @action.bound
    setGetUserSignInAPIError(error) {
       this.getUserSignInAPIError = getUserDisplayableErrorMessage(error)
-      console.log(this.getUserSignInAPIError);
    }
    @action.bound
    setUserSignInAPIResponse(SignInAPIResponse) {
       this.Access_token = SignInAPIResponse.access_token
       this.role=SignInAPIResponse.role
-      console.log(SignInAPIResponse)
       setAccessToken(this.Access_token)
       setRole(this.role)
-      console.log(getAccessToken(),getRole())
    }
    @action.bound
    userSignIn(onSuccess, onFailure, requestObject) {

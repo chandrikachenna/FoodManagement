@@ -4,7 +4,7 @@ import {
    API_SUCCESS,
    API_FAILED
 } from '@ib/api-constants'
-import { AuthAPI } from '../../services/AuthService/AuthAPI.api'
+import { AuthAPI } from '../../services/AuthService/AuthAPI.fixture'
 import getUserSignInResponse from '../../fixtures/getUserSignInResponse.json'
 
 import { AuthStore } from '.'
@@ -38,22 +38,22 @@ describe('AuthStore Tests', () => {
       expect(onSuccess).not.toBeCalled()
       expect(onFailure).not.toBeCalled()
    })
-   // it('should test userSignInAPI success state', async () => {
-   //    const onSuccess = jest.fn()
-   //    const onFailure = jest.fn()
-   //    const requestObject = { username: 'test-user', password: 'test-pwd' }
+   it('should test userSignInAPI success state', async () => {
+      const onSuccess = jest.fn()
+      const onFailure = jest.fn()
+      const requestObject = { username: 'test-user', password: 'test-pwd' }
 
-   //    const mockSuccessPromise = new Promise(function(resolve, rejects) {
-   //       resolve(getUserSignInResponse)
-   //    })
-   //    const mockSignInAPI = jest.fn()
-   //    mockSignInAPI.mockReturnValue(mockSuccessPromise)
-   //    AuthAPI.signInAPI = mockSignInAPI
+      const mockSuccessPromise = new Promise(function(resolve, rejects) {
+         resolve(getUserSignInResponse)
+      })
+      const mockSignInAPI = jest.fn()
+      mockSignInAPI.mockReturnValue(mockSuccessPromise)
+      AuthAPI.signInAPI = mockSignInAPI
 
-   //    await authStore.userSignIn(onSuccess, onFailure, requestObject)
-   //    expect(authStore.getUserSignInAPIStatus).toBe(API_SUCCESS)
-   //    expect(onSuccess).toBeCalled()
-   // })
+      await authStore.userSignIn(onSuccess, onFailure, requestObject)
+      expect(authStore.getUserSignInAPIStatus).toBe(API_SUCCESS)
+      expect(onSuccess).toBeCalled()
+   })
    it('should test userSignInAPI failure state', async () => {
       const onSuccess = jest.fn()
       const onFailure = jest.fn()
@@ -68,7 +68,7 @@ describe('AuthStore Tests', () => {
 
       await authStore.userSignIn(onSuccess, onFailure, requestObject)
       expect(authStore.getUserSignInAPIStatus).toBe(API_FAILED)
-      expect(authStore.getUserSignInAPIError).toBe('error')
+      expect(authStore.getUserSignInAPIError).toBe("We're having some trouble completing your request. Please try again.")
       expect(onFailure).toBeCalled()
    })
    it('should test user sign-out', () => {
