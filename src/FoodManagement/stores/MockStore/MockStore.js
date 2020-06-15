@@ -20,7 +20,7 @@ class MockStore{
     @action.bound
     getMockInfo(){
         const mockInfoPromise=this.mockService.getMockInfo();
-        return bindPromiseWithOnSuccess(mealInfoPromise)
+        return bindPromiseWithOnSuccess(mockInfoPromise)
          .to(this.setMockAPIStatus, this.setMockAPIResponse)
          .catch(this.setMockAPIError)
     }

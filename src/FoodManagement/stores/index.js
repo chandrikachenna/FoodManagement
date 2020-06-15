@@ -8,6 +8,8 @@ import { MealReviewInfo } from '../services/MealReviewInfoServices/MealReviewInf
 import { UpdateMealReviewInfo } from '../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.api'
 
 import { MealInfoStore } from './MealInfoStore'
+import { MockStore } from "./MockStore"
+import { MockService } from "../services/MockServices/MockService.fixture"
 
 const mealsInfo = new MealsInfo()
 
@@ -26,4 +28,7 @@ const mealInfoStore = new MealInfoStore(
    updateMealReviewInfo
 )
 
-export default { mealInfoStore }
+const mockService=new MockService()
+const mockStore=new MockStore(mockService)
+
+export default { mealInfoStore ,mockStore}

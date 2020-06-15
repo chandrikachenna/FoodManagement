@@ -7,7 +7,7 @@ import { MealPreference } from '../../components/MealPreference'
 
 import { withHeader } from '../../../Common/hocs/withHeader'
 
-import getLoadingStatus from '@ib/api-utils';
+
 
 
 @inject('mealInfoStore')
