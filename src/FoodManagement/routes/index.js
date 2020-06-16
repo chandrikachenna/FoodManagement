@@ -12,7 +12,7 @@ import { ReviewPageRoute } from './ReviewPageRoute'
 
 import { HomePageRoute as AdminPage } from '../../Admin/routes/HomePageRoute'
 
-import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
+import { ProtectedRoute } from '../../Common/components/ProtectedRoute/ProtectedRoute'
 
 const routes = [
    <ProtectedRoute
