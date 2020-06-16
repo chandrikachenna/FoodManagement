@@ -1,7 +1,7 @@
 import getUpdateCustomMealInfoResponse from '../../fixtures/getUpdateCustomMealInfoResponse.json'
 
 class UpdateCustomMealInfo {
-   getMealReviewInfo(date, mealType) {
+   setCustomMealsAPI(requestObject) {
       return new Promise((resolve, reject) => {
          resolve(getUpdateCustomMealInfoResponse)
       })
