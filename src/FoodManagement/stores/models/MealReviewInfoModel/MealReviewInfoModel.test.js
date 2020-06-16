@@ -8,7 +8,7 @@ import getMealReviewInfo from '../../../fixtures/getMealReviewInfo.json'
 import { MealReviewInfo } from '../../../services/MealReviewInfoServices/MealReviewInfoService.fixture'
 
 import getUpdateMealReviewInfoResponse from '../../../fixtures/getUpdateMealReviewInfoResponse.json'
-import { UpdateMealReviewInfoService } from '../../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture'
+import { UpdateMealReviewInfo } from '../../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture'
 
 import { MealReviewInfoModel } from './MealReviewInfoModel'
 
@@ -19,7 +19,7 @@ describe('MealReviewInfoModel tests', () => {
 
    beforeEach(() => {
       mealReviewInfoService = new MealReviewInfo()
-      setMealReviewInfoService = new UpdateMealReviewInfoService()
+      setMealReviewInfoService = new UpdateMealReviewInfo()
       mealReviewInfoModel = new MealReviewInfoModel(
          'mealType',
          mealReviewInfoService,

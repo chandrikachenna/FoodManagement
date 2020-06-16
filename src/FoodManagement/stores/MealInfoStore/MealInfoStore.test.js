@@ -14,7 +14,7 @@ import getMealPreferenceInfo from '../../fixtures/getMealPreferenceInfo.json'
 import {UpdateMealInfo} from '../../services/UpdateMealServices/UpdateMealInfo.fixture';
 import {UpdateCustomMealInfo} from '../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture';
 import {MealReviewInfo} from '../../services/MealReviewInfoServices/MealReviewInfoService.fixture';
-import {UpdateMealReviewInfoService} from '../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture';
+import {UpdateMealReviewInfo} from '../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture';
 import { MealInfoStore } from '.'
 
 describe('mealInfoStore tests', () => {
@@ -32,7 +32,7 @@ describe('mealInfoStore tests', () => {
       updateMealInfo= new UpdateMealInfo()
       updateCustomMealInfo = new UpdateCustomMealInfo()
       mealReviewInfo=new MealReviewInfo()
-      updateMealReviewInfoService=new UpdateMealReviewInfoService()
+      updateMealReviewInfoService=new UpdateMealReviewInfo()
 
       mealInfoStore = new MealInfoStore(
          mealsFixture,

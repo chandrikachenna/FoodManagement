@@ -1,11 +1,11 @@
 import { MealsInfo } from '../services/MealInfoServices/MealsInfo.fixture'
 import { MealPreference } from '../services/MealPreferenceServices/MealPreference.fixture'
 
-import { UpdateMealInfo } from '../services/UpdateMealServices/UpdateMealInfo.api'
-import { UpdateCustomMealInfo } from '../services/UpdateCustomMealServices/UpdateCustomMealInfo.api'
+import { UpdateMealInfo } from '../services/UpdateMealServices/UpdateMealInfo.fixture'
+import { UpdateCustomMealInfo } from '../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture'
 
 import { MealReviewInfo } from '../services/MealReviewInfoServices/MealReviewInfoService.fixture'
-import { UpdateMealReviewInfo } from '../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.api'
+import { UpdateMealReviewInfo } from '../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture'
 
 import { MealInfoStore } from './MealInfoStore'
 

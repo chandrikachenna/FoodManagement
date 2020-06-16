@@ -1,6 +1,6 @@
 import getUpdateMealReviewInfoResponse from '../../fixtures/getUpdateMealReviewInfoResponse.json'
 
-class UpdateMealReviewInfoService {
+class UpdateMealReviewInfo {
    setMealReviewInfo(date, mealType) {
       return new Promise((resolve, reject) => {
          resolve(getUpdateMealReviewInfoResponse)
@@ -8,4 +8,4 @@ class UpdateMealReviewInfoService {
    }
 }
 
-export { UpdateMealReviewInfoService }
+export { UpdateMealReviewInfo }
