@@ -174,8 +174,12 @@ describe('SignInRoute tests', () => {
       fireEvent.click(logInButton)
 
       const serverError = await waitForElement(() =>
-         getByText(/We're having some trouble completing your request. Please try again./i)
+         getByText(
+            /We're having some trouble completing your request. Please try again./i
+         )
       )
-      expect(serverError).toHaveTextContent(/We're having some trouble completing your request. Please try again./i)
+      expect(serverError).toHaveTextContent(
+         /We're having some trouble completing your request. Please try again./i
+      )
    })
 })

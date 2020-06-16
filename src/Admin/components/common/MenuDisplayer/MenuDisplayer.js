@@ -31,7 +31,7 @@ class MenuDisplayer extends Component {
          menu2Name,
          menu3Name,
          data,
-         renderedComponent:RenderedComponent
+         renderedComponent: RenderedComponent
       } = this.props
       return (
          <>
@@ -49,15 +49,15 @@ class MenuDisplayer extends Component {
             </Header>
             {this.selectedMenu && (
                <Content>
-                  {this.selectedMenu.match(menus.menu1) &&
-                        <RenderedComponent data={data[0]} />
-                  }
-                  {this.selectedMenu.match(menus.menu2) &&
-                        <RenderedComponent data={data[1]} />
-                  }
-                  {this.selectedMenu.match(menus.menu3) &&
-                        <RenderedComponent data={data[2]} />
-                  }
+                  {this.selectedMenu.match(menus.menu1) && (
+                     <RenderedComponent data={data[0]} />
+                  )}
+                  {this.selectedMenu.match(menus.menu2) && (
+                     <RenderedComponent data={data[1]} />
+                  )}
+                  {this.selectedMenu.match(menus.menu3) && (
+                     <RenderedComponent data={data[2]} />
+                  )}
                </Content>
             )}
          </>

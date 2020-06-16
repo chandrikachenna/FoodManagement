@@ -1,1 +1,1 @@
-export const SIGNIN='sign_in/v1/'
+export const SIGNIN = 'sign_in/v1/'

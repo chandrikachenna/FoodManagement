@@ -10,7 +10,7 @@ import { HomePageRoute } from './HomePageRoute'
 import { MealPreferenceRoute } from './MealPreferenceRoute'
 import { ReviewPageRoute } from './ReviewPageRoute'
 
-import { HomePageRoute as AdminPage} from '../../Admin/routes/HomePageRoute'; 
+import { HomePageRoute as AdminPage } from '../../Admin/routes/HomePageRoute'
 
 import { ProtectedRoute } from '../../Common/utils/ProtectedRoute/ProtectedRoute'
 
@@ -21,8 +21,8 @@ const routes = [
       component={HomePageRoute}
       adminPage={AdminPage}
    />,
-   <Route  path={MEAL_PREFERENCE_PATH} component={MealPreferenceRoute} />,
-   <Route  path={MEAL_FEEDBACK_PATH} component={ReviewPageRoute} />
+   <Route path={MEAL_PREFERENCE_PATH} component={MealPreferenceRoute} />,
+   <Route path={MEAL_FEEDBACK_PATH} component={ReviewPageRoute} />
 ]
 
 export default routes

@@ -53,8 +53,8 @@ describe('MealInfoItemModel tests', () => {
       mockMealTypeInfoAPI.mockReturnValue(mockFailurePromise)
       mealPreferenceFixture.getMealPreferenceAPI = mockMealTypeInfoAPI
 
-      await mealModel.getEditPreference();
-      expect(mealModel.getMealItemsAPIStatus).toBe(API_FAILED);
-      expect(mealModel.getMealItemsAPIError).toBe('error');
+      await mealModel.getEditPreference()
+      expect(mealModel.getMealItemsAPIStatus).toBe(API_FAILED)
+      expect(mealModel.getMealItemsAPIError).toBe('error')
    })
 })

@@ -1,7 +1,7 @@
 import getMealReviewInfo from '../../fixtures/getMealReviewInfo.json'
 
 class MockService {
-    getMockInfo() {
+   getMockInfo() {
       return new Promise((resolve, reject) => {
          resolve(getMealReviewInfo)
       })

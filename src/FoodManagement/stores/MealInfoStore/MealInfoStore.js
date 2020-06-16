@@ -104,7 +104,7 @@ class MealInfoStore {
    @action.bound
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)
-      console.log(changedDateTime);
+      console.log(changedDateTime)
       this.timeCounter = changedDateTime
       const date = format(new Date(this.timeCounter), 'yyyy-MM-dd')
       this.getMealInfo(date)

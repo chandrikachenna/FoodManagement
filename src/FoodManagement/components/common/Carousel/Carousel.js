@@ -55,7 +55,7 @@ class Carousel extends React.Component {
                   Announcement
                   <p
                      style={{
-                        fontSize:'13px'
+                        fontSize: '13px'
                      }}
                   >
                      Weekly Menu Change
@@ -67,13 +67,12 @@ class Carousel extends React.Component {
                >
                   <p
                      style={{
-                        fontSize:'13px'
+                        fontSize: '13px'
                      }}
                   >
-                  Idly has been Updated with poori on monday due to requests
-                  from south Indians
+                     Idly has been Updated with poori on monday due to requests
+                     from south Indians
                   </p>
-                  
                </TweenOne>
             </Element>
          </BannerAnim>

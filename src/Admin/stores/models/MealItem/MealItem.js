@@ -14,32 +14,32 @@ class MealItem {
       this.category = itemInfo.category
       this.baseUnit = itemInfo.base_unit || null
       this.quantity = itemInfo.quantity || 0
-      this.fullMealQuantity=itemInfo.full_meal_quantity || 0
-      this.halfMealQuantity=itemInfo.half_meal_quantity || 0
+      this.fullMealQuantity = itemInfo.full_meal_quantity || 0
+      this.halfMealQuantity = itemInfo.half_meal_quantity || 0
    }
    @action.bound
-   incrementQuantity(){
+   incrementQuantity() {
       this.quantity++
    }
    @action.bound
-   decrementQuantity(){
-      this.quantity--;
+   decrementQuantity() {
+      this.quantity--
    }
    @action.bound
-   incrementFullMealQuantity(){
-      this.fullMealQuantity++;
+   incrementFullMealQuantity() {
+      this.fullMealQuantity++
    }
    @action.bound
-   decrementFullMealQuantity(){
-      this.fullMealQuantity--;
+   decrementFullMealQuantity() {
+      this.fullMealQuantity--
    }
    @action.bound
-   incrementHalfMealQuantity(){
-      this.halfMealQuantity++;
+   incrementHalfMealQuantity() {
+      this.halfMealQuantity++
    }
    @action.bound
-   decrementHalfMealQuantity(){
-      this.halfMealQuantity--;
+   decrementHalfMealQuantity() {
+      this.halfMealQuantity--
    }
 }
 

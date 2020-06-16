@@ -2,13 +2,13 @@ import React from 'react'
 import { Tab } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
-function panesList(One, Two, Three, firstData,secondDate) {
+function panesList(One, Two, Three, firstData, secondDate) {
    return [
       {
          menuItem: 'SHEDULE MEAL',
          render: () => (
             <Tab.Pane attached={false}>
-               <One data={firstData}/>
+               <One data={firstData} />
             </Tab.Pane>
          )
       },

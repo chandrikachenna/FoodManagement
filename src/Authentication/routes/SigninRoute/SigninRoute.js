@@ -4,14 +4,11 @@ import { observer, inject } from 'mobx-react'
 import { observable } from 'mobx'
 import { withRouter } from 'react-router-dom'
 import strings from '../../../Common/i18n/strings.json'
-import {getRole} from '../../../utils/StorageUtils';
-import {HOME_PAGE_PATH} from '../../constants/RouteConstants';
-import {ADMIN_PATH} from '../../../Admin/constants/RouteConstants';
+import { getRole } from '../../../utils/StorageUtils'
+import { HOME_PAGE_PATH } from '../../constants/RouteConstants'
+import { ADMIN_PATH } from '../../../Admin/constants/RouteConstants'
 
-const {
-   enterUsernameMsg,
-   enterPasswordMsg,
-} = strings.authentication
+const { enterUsernameMsg, enterPasswordMsg } = strings.authentication
 
 @inject('authStore')
 @observer
@@ -21,31 +18,31 @@ class SigninRoute extends Component {
    @observable usernameErrorMessage
    @observable passwordErrorMessage
    @observable errorMessage
-   constructor(props){
+   constructor(props) {
       super(props)
-      this.username=''
-      this.password=''
+      this.username = ''
+      this.password = ''
    }
    onChangeUsername = event => {
       this.username = event.target.value
-      if (this.username){
+      if (this.username) {
          this.usernameErrorMessage = ''
          this.passwordErrorMessage = ''
-      } 
+      }
    }
    onChangePassword = event => {
       this.password = event.target.value
-      if (this.password){
+      if (this.password) {
          this.usernameErrorMessage = ''
          this.passwordErrorMessage = ''
-      } 
+      }
    }
    onSuccesSignIn = () => {
       const { history } = this.props
       // if(getRole().match('Admin'))
       //    history.replace(ADMIN_PATH)
       // else
-         history.replace(HOME_PAGE_PATH)
+      history.replace(HOME_PAGE_PATH)
    }
    onFailureSignIn = () => {
       const { getUserSignInAPIError: apiError } = this.props.authStore

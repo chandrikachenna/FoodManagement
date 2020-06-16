@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Layout, ItemInfo, Item, Category, Icon } from './styledComponents'
 import DelIcon from '../../../../Common/icons/deleteIcon.svg'
 import { Counter } from '../../../../Common/components/Counter'
-import { observer } from "mobx-react"
+import { observer } from 'mobx-react'
 
 @observer
 class MealItem extends Component {
@@ -29,13 +29,13 @@ class MealItem extends Component {
                onIncrement={incrementFullMealQuantity}
                onDecrement={decrementFullMealQuantity}
             />
-            
+
             <Counter
                number={halfMealQuantity}
                onIncrement={incrementHalfMealQuantity}
                onDecrement={decrementHalfMealQuantity}
             />
-            
+
             <Icon src={DelIcon} />
          </Layout>
       )

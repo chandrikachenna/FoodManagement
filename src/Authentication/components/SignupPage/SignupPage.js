@@ -5,7 +5,7 @@ import strings from '../../../Common/i18n/strings.json'
 import { Logo } from '../../../Common/components/Logo'
 import { Button } from '../../../Common/components/Button'
 import { InputElementWithLabel } from '../common/InputElementWithLabel'
-const width='320px';
+const width = '320px'
 
 class SignupPage extends React.Component {
    onClick = () => {}

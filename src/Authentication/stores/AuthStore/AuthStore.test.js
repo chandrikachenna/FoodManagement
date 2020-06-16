@@ -68,7 +68,9 @@ describe('AuthStore Tests', () => {
 
       await authStore.userSignIn(onSuccess, onFailure, requestObject)
       expect(authStore.getUserSignInAPIStatus).toBe(API_FAILED)
-      expect(authStore.getUserSignInAPIError).toBe("We're having some trouble completing your request. Please try again.")
+      expect(authStore.getUserSignInAPIError).toBe(
+         "We're having some trouble completing your request. Please try again."
+      )
       expect(onFailure).toBeCalled()
    })
    it('should test user sign-out', () => {

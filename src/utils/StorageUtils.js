@@ -25,7 +25,6 @@ export function clearUserSession() {
    Cookie.remove(ACCESS_TOKEN, { path: '/' })
 }
 
-
 export function getRole() {
    return getCookie(ROLE)
 }

@@ -1,1 +1,1 @@
-export {MockStore} from './MockStore';
+export { MockStore } from './MockStore'

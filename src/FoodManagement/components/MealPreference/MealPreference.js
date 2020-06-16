@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Carousel } from '../common/Carousel'
 import { MealPreferenceCard } from '../common/MealPreferenceCard'
 
-
 class MealPreference extends Component {
    render() {
       const {

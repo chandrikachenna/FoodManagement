@@ -7,9 +7,6 @@ import { MealPreference } from '../../components/MealPreference'
 
 import { withHeader } from '../../../Common/hocs/withHeader'
 
-
-
-
 @inject('mealInfoStore')
 @observer
 class MealPreferenceRoute extends Component {
