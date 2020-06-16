@@ -6,6 +6,7 @@ import { MealItemHeadCounts } from '../MealItemHeadCounts'
 @observer
 class HeadCountsInfo extends Component {
    render() {
+      const{data:headCountsInfo}=this.props;
       const {
          full_meal_head_count,
          half_meal_head_count,
@@ -14,7 +15,7 @@ class HeadCountsInfo extends Component {
          total_meal_head_count,
          completed_meal_head_count,
          food_prepared
-      } = this.props.headCountsInfo
+      } = headCountsInfo
       console.log(this.props)
       return (
          <>

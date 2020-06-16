@@ -4,11 +4,12 @@ import { Button } from '../../../Common/components/Button'
 import { MenuDisplayer } from '../common/MenuDisplayer'
 import { COLORS } from '../../../Common/theme/Colors'
 import strings from '../../../Common/i18n/strings'
+import { ScheduleMealList } from "../ScheduleMealList"
 const width = '70px'
 
 class Sample extends Component{
    render(){
-      return <p>ScheduleMeal</p>
+      return <ScheduleMealList/>
    }
 }
 
@@ -17,6 +18,7 @@ class ScheduleMeal extends Component {
    onClickBack = () => {}
    render() {
       const { save, back, breakfast, lunch, dinner } = strings.admin
+      const {data}=this.props;
       return (
          <>
             <MenuDisplayer
@@ -24,9 +26,8 @@ class ScheduleMeal extends Component {
                menu1Name={breakfast}
                menu2Name={lunch}
                menu3Name={dinner}
-               data={[1,2,3]}
-               tabPane={'Schedule'}
-               renderedComponent={Sample}
+               data={data.scheduleMealInfo}
+               renderedComponent={ScheduleMealList}
             />
             <Buttons>
                <Layout>
@@ -46,6 +47,7 @@ class ScheduleMeal extends Component {
                   />
                </Layout>
             </Buttons>
+            
          </>
       )
    }

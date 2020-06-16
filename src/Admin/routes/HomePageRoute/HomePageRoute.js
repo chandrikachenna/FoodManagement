@@ -14,6 +14,7 @@ class HomePageRoute extends Component {
       this.doNetworkCalls()
    }
    doNetworkCalls = () => {
+      this.props.scheduleMealStore.getScheduleMealInfo()
       this.props.headCountsStore.getHeadCountsInfo()
    }
    onClickSignOut = () => {
@@ -31,7 +32,8 @@ class HomePageRoute extends Component {
             renderedComponent1={ScheduleMeal}
             renderedComponent2={HeadCounts}
             renderedComponent3={FoodWastageLog}
-            dataForComponent1={this.props.headCountsStore}
+            dataForComponent1={this.props.scheduleMealStore}
+            dataForComponent2={this.props.headCountsStore}
          />
       )
    })
@@ -44,7 +46,6 @@ class HomePageRoute extends Component {
          <HomePage
             onClickGoHome={this.onClickGoHome}
             onClickSignOut={this.onClickSignOut}
-            onClickScheduleMeal={this.onClickScheduleMeal}
             getHeadCountsInfoAPIStatus={getHeadCountsInfoAPIStatus}
             getHeadCountsInfoAPIError={getHeadCountsInfoAPIError}
             doNetworkCalls={this.doNetworkCalls}

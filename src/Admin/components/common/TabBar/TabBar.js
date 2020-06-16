@@ -2,13 +2,13 @@ import React from 'react'
 import { Tab } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
-function panesList(One, Two, Three, oneData) {
+function panesList(One, Two, Three, firstData,secondDate) {
    return [
       {
          menuItem: 'SHEDULE MEAL',
          render: () => (
             <Tab.Pane attached={false}>
-               <One />
+               <One data={firstData}/>
             </Tab.Pane>
          )
       },
@@ -16,7 +16,7 @@ function panesList(One, Two, Three, oneData) {
          menuItem: 'HEAD COUNT',
          render: () => (
             <Tab.Pane attached={false}>
-               <Two data={oneData} />
+               <Two data={secondDate} />
             </Tab.Pane>
          )
       },
@@ -37,7 +37,8 @@ class TabBar extends React.Component {
          renderedComponent1,
          renderedComponent2,
          renderedComponent3,
-         dataForComponent1
+         dataForComponent1,
+         dataForComponent2
       } = this.props
       return (
          <Tab
@@ -46,7 +47,8 @@ class TabBar extends React.Component {
                renderedComponent1,
                renderedComponent2,
                renderedComponent3,
-               dataForComponent1
+               dataForComponent1,
+               dataForComponent2
             )}
          />
       )

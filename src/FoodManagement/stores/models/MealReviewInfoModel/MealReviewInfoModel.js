@@ -80,15 +80,6 @@ class MealReviewInfoModel {
    setMealReviewInfoResponse(response) {
       this.updateMealReviewInfoResponse = response
    }
-   @action.bound
-   onSave(date, mealType, requestObject) {
-      this.setMealReviewInfo(date, mealType, requestObject)
-   }
-   @action.bound
-   onChangeReview(reviewText) {
-      this.reviewText = reviewText
-      console.log(this.reviewText)
-   }
 }
 
 export { MealReviewInfoModel }

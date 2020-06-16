@@ -16,10 +16,13 @@ import strings from '../../../Common/i18n/strings.json'
 import { COLORS } from '../../../Common/theme/Colors'
 import { TextArea } from '../../../Common/components/TextArea'
 import {SMART_FOOD_MANAGEMENT_PATH} from '../../constants/RouteConstants'
+import { observable } from "mobx"
 const width = '73px'
 
 @observer
 class ReviewCard extends Component {
+   
+   @observable reviewText;
    requestedObject = () => {
       const reviewInfo = this.props.mealInfoStore.selectedMealTypeReview
       const object = {
@@ -40,7 +43,12 @@ class ReviewCard extends Component {
       history.push(SMART_FOOD_MANAGEMENT_PATH)
       const reviewInfo = this.props.mealInfoStore.selectedMealTypeReview
       this.requestedObject()
-      reviewInfo.onSave() //TODO --date,mealType from params
+      reviewInfo.setMealReviewInfo() //TODO --date,mealType from params
+   }
+   onChangeReview=(event)=>{
+      const reviewInfo = this.props.mealInfoStore.selectedMealTypeReview
+      this.reviewText=event.target.value;
+      reviewInfo.reviewText=this.reviewText;
    }
    render() {
       const { done } = strings.foodManagement
@@ -69,7 +77,7 @@ class ReviewCard extends Component {
                   ))}
                </InfoContainer>
             </Review>
-            <TextArea onChange={reviewInfo.onChangeReview} />
+            <TextArea onChange={reviewInfo.onChangeReview} value={this.reviewText}/>
             <Button
                name={done}
                variant={COLORS.jade}

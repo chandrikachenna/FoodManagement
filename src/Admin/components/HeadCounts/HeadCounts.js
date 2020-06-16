@@ -26,10 +26,8 @@ class HeadCounts extends Component {
                menu2Name={lunch}
                menu3Name={dinner}
                data={headCountsInfo}
-               tabPane={'headCounts'}
                renderedComponent={HeadCountsInfo}
             />
-            {/* <HeadCountsInfo headCountsInfo={headCountsInfo[0]} /> */}
          </>
       )
    }

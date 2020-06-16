@@ -37,7 +37,6 @@ class ScheduleMealStore {
             this.scheduleMealInfo.push(mealItems)
          }
       )
-      console.log(this.scheduleMealInfo)
    }
    @action.bound
    getScheduleMealInfo() {

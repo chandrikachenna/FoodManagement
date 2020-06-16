@@ -2,34 +2,40 @@ import React, { Component } from 'react'
 import { Layout, ItemInfo, Item, Category, Icon } from './styledComponents'
 import DelIcon from '../../../../Common/icons/deleteIcon.svg'
 import { Counter } from '../../../../Common/components/Counter'
+import { observer } from "mobx-react"
+
+@observer
 class MealItem extends Component {
    render() {
       const {
-         item,
+         name,
          category,
-         fullMealsQuantity,
-         halfMealsQuantity,
-         onIncrementFullMealsQuantity,
-         onDecrementFullMealsQuantity,
-         onIncrementHalfMealsQuantity,
-         onDecrementHalfMealsQuantity
-      } = this.props
+         baseUnit,
+         fullMealQuantity,
+         halfMealQuantity,
+         incrementFullMealQuantity,
+         decrementFullMealQuantity,
+         incrementHalfMealQuantity,
+         decrementHalfMealQuantity
+      } = this.props.itemInfo
       return (
          <Layout>
             <ItemInfo>
-               <Item>{item}</Item>
+               <Item>{name}</Item>
                <Category>{category}</Category>
             </ItemInfo>
             <Counter
-               number={fullMealsQuantity}
-               onIncrement={onIncrementFullMealsQuantity}
-               onDecrement={onDecrementFullMealsQuantity}
+               number={fullMealQuantity}
+               onIncrement={incrementFullMealQuantity}
+               onDecrement={decrementFullMealQuantity}
             />
+            
             <Counter
-               number={halfMealsQuantity}
-               onIncrement={onIncrementHalfMealsQuantity}
-               onDecrement={onDecrementHalfMealsQuantity}
+               number={halfMealQuantity}
+               onIncrement={incrementHalfMealQuantity}
+               onDecrement={decrementHalfMealQuantity}
             />
+            
             <Icon src={DelIcon} />
          </Layout>
       )

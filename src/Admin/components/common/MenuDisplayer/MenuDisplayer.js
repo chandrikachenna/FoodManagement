@@ -50,13 +50,13 @@ class MenuDisplayer extends Component {
             {this.selectedMenu && (
                <Content>
                   {this.selectedMenu.match(menus.menu1) &&
-                        <RenderedComponent headCountsInfo={data[0]} />
+                        <RenderedComponent data={data[0]} />
                   }
                   {this.selectedMenu.match(menus.menu2) &&
-                        <RenderedComponent headCountsInfo={data[1]} />
+                        <RenderedComponent data={data[1]} />
                   }
                   {this.selectedMenu.match(menus.menu3) &&
-                        <RenderedComponent headCountsInfo={data[2]} />
+                        <RenderedComponent data={data[2]} />
                   }
                </Content>
             )}
