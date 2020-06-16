@@ -55,19 +55,22 @@ class MealInfoStore {
       this.getMealInfoAPIError = null
       this.mealInfo = []
       this.dateTime()
+      this.selectedMealTypeReview=null
+      this.selectedMealType=null
    }
    @action.bound
    async goForReview(mealType) {
+      this.selectedMealType = mealType
       this.selectedMealTypeReview = new MealReviewInfoModel(
-         mealType,
+         this.this.selectedMealType ,
          this.mealReviewInfoService,
          this.updateMealReviewInfoService
       )
       await this.selectedMealTypeReview.getMealReviewInfo(
          this.timeCounter,
-         mealType
+         this.selectedMealType
       )
-      this.selectedMealType = mealType
+      
    }
    @action.bound
    getMealInfo(date) {
@@ -90,16 +93,16 @@ class MealInfoStore {
    }
    @action.bound
    onClickEdit(mealType) {
+      this.selectedMealType = mealType
       this.selectedMealTypeInfo = new MealInfoItemModel(
          this.mealPreferenceService,
-         mealType,
+         this.selectedMealType,
          this.timeCounter,
          this.updateMealInfoService,
          this.updateCustomMealInfoService
       )
-      console.log(this.selectedMealTypeInfo)
       this.selectedMealTypeInfo.getEditPreference(this.timeCounter, mealType)
-      this.selectedMealType = mealType
+      
    }
    @action.bound
    onChangeDate(changedDateTime) {

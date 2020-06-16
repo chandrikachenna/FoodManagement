@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { MealItem } from '../common/MealItem'
+import { observer } from "mobx-react";
 
+@observer
 class ScheduleMealList extends Component {
    render() {
-      const { data: scheduleMealInfo } = this.props
+      const { mealTypeInfo,removeMealItem } = this.props.data
+      console.log(mealTypeInfo)
       return (
          <>
-            {scheduleMealInfo.map(itemInfo => (
-               <MealItem itemInfo={itemInfo} />
+            {mealTypeInfo.map(itemInfo => (
+               <MealItem key={Math.random().toString()} itemInfo={itemInfo} removeMealItem={removeMealItem}/>
             ))}
          </>
       )

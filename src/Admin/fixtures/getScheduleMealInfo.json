@@ -1,4 +1,4 @@
-[
+
     {
         "breakfast":[{"name":"Poori"  ,"category":"Indian Bread" ,"base_unit":"Base Unit" , "full_meal_quantity":0 ,"half_meal_quantity":0 },
                     {"name":"Fried Rice"  ,"category":"Rice","base_unit":"Base Unit" , "full_meal_quantity":0 ,"half_meal_quantity":0 },
@@ -16,4 +16,3 @@
                 {"name":"Pulihora"  ,"category":"Rice" ,"base_unit":"Base Unit" , "full_meal_quantity":0 ,"half_meal_quantity":0}
             ]
     }
-]

@@ -7,22 +7,34 @@ import {
 
 import { MealsInfo } from '../../services/MealInfoServices/MealsInfo.fixture'
 import getMealInfo from '../../fixtures/getMealInfo.json'
+import { MealPreference } from "../../services/MealPreferenceServices/MealPreference.fixture"
 
 import { MealInfoStore } from '.'
 
 describe('mealInfoStore tests', () => {
    let mealsFixture
+   let mealPreferenceInfoService
    let mealInfoStore
 
    beforeEach(() => {
       mealsFixture = new MealsInfo()
-      mealInfoStore = new MealInfoStore(mealsFixture)
+      mealPreferenceInfoService=new MealPreference()
+      mealInfoStore = new MealInfoStore(
+         mealsFixture,
+         mealPreferenceInfoService
+      )
+   })
+
+   it('should test instance of MealReviewInfoModel',()=>{
+      
    })
 
    it('should test initialize mealInfoStore', () => {
       expect(mealInfoStore.getMealInfoAPIStatus).toBe(API_INITIAL)
       expect(mealInfoStore.getMealInfoAPIError).toBe(null)
       expect(mealInfoStore.mealInfo).toStrictEqual(new Array())
+      expect(mealInfoStore.selectedMealTypeReview).toBe(null)
+      expect(mealInfoStore.selectedMealType).toBe(null)
    })
 
    it('should test getMealInfo fetching state', () => {
@@ -57,4 +69,5 @@ describe('mealInfoStore tests', () => {
       expect(mealInfoStore.getMealInfoAPIStatus).toBe(API_FAILED)
       expect(mealInfoStore.getMealInfoAPIError).toBe('error')
    })
+
 })

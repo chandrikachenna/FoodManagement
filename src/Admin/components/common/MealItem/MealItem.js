@@ -6,6 +6,9 @@ import { observer } from 'mobx-react'
 
 @observer
 class MealItem extends Component {
+   removeMealItem=()=>{
+      this.props.removeMealItem(this.props.itemInfo.id) 
+   }
    render() {
       const {
          name,
@@ -36,7 +39,7 @@ class MealItem extends Component {
                onDecrement={decrementHalfMealQuantity}
             />
 
-            <Icon src={DelIcon} />
+            <Icon src={DelIcon} onClick={this.removeMealItem}/>
          </Layout>
       )
    }

@@ -1,0 +1,1 @@
+export {MealTypeInfoMode} from './MealTypeInfoModel'

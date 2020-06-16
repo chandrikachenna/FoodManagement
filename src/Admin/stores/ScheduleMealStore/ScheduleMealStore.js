@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
-import { MealItem } from '../models/MealItem'
+import { MealTypeInfoMode } from "../models/MealTypeInfoMode"
 
 class ScheduleMealStore {
    @observable scheduleMealInfo
@@ -28,13 +28,9 @@ class ScheduleMealStore {
    }
    @action.bound
    setScheduleMealInfoResponse(mealInfoResponse) {
-      Object.entries(mealInfoResponse[0]).forEach(
+      Object.entries(mealInfoResponse).forEach(
          ([mealType, mealItemsList]) => {
-            let mealItems = []
-            mealItemsList.forEach(item => {
-               mealItems.push(new MealItem(item))
-            })
-            this.scheduleMealInfo.push(mealItems)
+            this.scheduleMealInfo.push(new MealTypeInfoMode(mealItemsList))
          }
       )
    }
