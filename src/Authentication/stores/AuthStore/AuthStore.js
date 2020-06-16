@@ -8,8 +8,8 @@ import {
    getRole,
    clearRole,
    setRole
-} from '../../../utils/StorageUtils'
-import { getUserDisplayableErrorMessage } from '../../../utils/APIUtils'
+} from '../../../Common/utils/StorageUtils'
+import { getUserDisplayableErrorMessage } from '../../../Common/utils/APIUtils'
 class AuthStore {
    @observable getUserSignInAPIStatus
    @observable getUserSignInAPIError

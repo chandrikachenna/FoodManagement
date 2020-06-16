@@ -5,7 +5,7 @@ import {
    statusCodes,
    resStatuses,
    apiErrorProblems
-} from '../Common/constants/APIConstants'
+} from '../constants/APIConstants'
 
 import { getAccessToken } from './StorageUtils'
 
