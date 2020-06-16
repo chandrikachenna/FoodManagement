@@ -54,6 +54,7 @@ class MealInfoStore {
       this.getMealInfoAPIStatus = API_INITIAL
       this.getMealInfoAPIError = null
       this.mealInfo = []
+      this.timeCounter=null
       this.dateTime()
       this.selectedMealTypeReview=null
       this.selectedMealType=null
@@ -62,7 +63,7 @@ class MealInfoStore {
    async goForReview(mealType) {
       this.selectedMealType = mealType
       this.selectedMealTypeReview = new MealReviewInfoModel(
-         this.this.selectedMealType ,
+         this.selectedMealType ,
          this.mealReviewInfoService,
          this.updateMealReviewInfoService
       )
@@ -102,12 +103,10 @@ class MealInfoStore {
          this.updateCustomMealInfoService
       )
       this.selectedMealTypeInfo.getEditPreference(this.timeCounter, mealType)
-      
    }
    @action.bound
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)
-      console.log(changedDateTime)
       this.timeCounter = changedDateTime
       const date = format(new Date(this.timeCounter), 'yyyy-MM-dd')
       this.getMealInfo(date)

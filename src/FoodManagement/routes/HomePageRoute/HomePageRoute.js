@@ -7,7 +7,7 @@ import { format } from 'date-fns'
 import { withHeader } from '../../../Common/hocs/withHeader'
 import { getLoadingStatus } from '@ib/api-utils'
 
-@inject('mealInfoStore', 'mockStore')
+@inject('mealInfoStore', )
 @observer
 class HomePageRoute extends Component {
    componentDidMount() {
@@ -22,7 +22,6 @@ class HomePageRoute extends Component {
          )
          this.props.mealInfoStore.getMealInfo(date)
       }, 1000)
-      this.props.mockStore.getMockInfo()
    }
    renderSuccessUI = observer(() => {
       return (
@@ -39,12 +38,6 @@ class HomePageRoute extends Component {
          getMealInfoAPIError,
          timeCounter
       } = this.props.mealInfoStore
-      const { getMockAPIStatus } = this.props.mockStore
-      console.log(
-         getLoadingStatus(getMockAPIStatus, getMealInfoAPIStatus),
-         getMealInfoAPIStatus,
-         getMockAPIStatus
-      )
       return (
          <HomePage
             onClickSignOut={this.props.onClickSignOut}

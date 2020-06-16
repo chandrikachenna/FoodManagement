@@ -4,7 +4,7 @@ import { Provider, observer } from 'mobx-react'
 
 import './App.css'
 
-import HomePage from './components/HomePage'
+import HomePage from './Common/components/HomePage'
 
 import authRoutes from './Authentication/routes'
 import foodManagementRoutes from './FoodManagement/routes'
