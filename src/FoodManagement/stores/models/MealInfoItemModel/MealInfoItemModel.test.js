@@ -142,4 +142,9 @@ describe('MealInfoItemModel tests', () => {
       await mealModel.updateMealInfo(mockRequestObject,isMockCustom)
       expect(mealModel.getUpdateMealInfoAPIStatus).toBe(API_FAILED)
    })
+   it('should test onChangeDate',()=>{
+      const mockDate=new Date();
+      mealModel.onChangeDate(mockDate)
+      expect(mealModel.date).toBe(mockDate)
+   })
 })

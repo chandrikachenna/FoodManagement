@@ -79,14 +79,6 @@ class MealInfoItemModel {
       )
    }
    @action.bound
-   onClickSkipMeal(requestObject, isCustomed) {
-      this.updateMealInfo(requestObject, isCustomed)
-   }
-   @action.bound
-   onClickSave(requestObject, isCustomed) {
-      this.updateMealInfo(requestObject, isCustomed)
-   }
-   @action.bound
    setUpdateMealInfoAPIError(apiError) {
       this.getUpdateMealInfoAPIError = apiError
    }
