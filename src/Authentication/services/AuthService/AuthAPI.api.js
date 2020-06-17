@@ -1,7 +1,8 @@
-import { networkCallWithApisauce } from '../../../Common/utils/APIUtils'
+import { networkCallWithApisauce } from '../../../utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
 import { SIGNIN } from '../endpoints'
+
 class AuthAPI {
    api
    constructor() {
@@ -18,5 +19,4 @@ class AuthAPI {
       )
    }
 }
-
 export { AuthAPI }
