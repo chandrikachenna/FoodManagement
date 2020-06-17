@@ -6,4 +6,6 @@ const CardsContainer = styled.div`
    min-height:400px;
    padding: 0px 100px;
 `
-export { CardsContainer }
+const Div=styled.div`
+`
+export { CardsContainer ,Div}

@@ -3,7 +3,7 @@ import { MealInfoCard } from '../common/MealnfoCard'
 import BreakFastIcon from '../../../Common/icons/breakfast_icon.svg'
 import LunchIcon from '../../../Common/icons/lunch_icon.svg'
 import DinnerIcon from '../../../Common/icons/dinner_icon.svg'
-
+import {Div} from './styledComponents'
 const mealTypeIcons = {
    0: BreakFastIcon,
    1: LunchIcon,
@@ -19,16 +19,16 @@ class Mealcards extends Component {
          list.push(value)
       })
       return (
-         <>
+         <Div data-testid="meal-cards-display">
             {list &&
                list.map(info => (
-                  <MealInfoCard
+                  <MealInfoCard 
                      key={Math.random().toString()}
                      info={info}
                      mealInfoStore={mealInfoStore}
                   />
                ))}
-         </>
+         </Div>
       )
    }
 }

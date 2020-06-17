@@ -15,7 +15,7 @@ class MealPreferencePage extends Component {
       } = this.props
 
       return (
-         <MealPreferencePageContainer>
+         <MealPreferencePageContainer data-test-id='preference-page'>
             <Navbar
                onClickSignOut={onClickSignOut}
                onClickGoHome={onClickGoHome}

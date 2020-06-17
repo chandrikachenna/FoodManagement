@@ -54,6 +54,7 @@ class MealInfoItemModel {
    }
    @action.bound
    setMealItemsAPIStatus(apiStatus) {
+      console.log(apiStatus)
       this.getMealItemsAPIStatus = apiStatus
    }
    @action.bound
@@ -68,6 +69,7 @@ class MealInfoItemModel {
    @action.bound
    setMealItemsResponse(mealItemsResponse) {
       this.mealPreference = mealItemsResponse['user_meal_format']
+      console.log(mealItemsResponse)
       Object.entries(mealItemsResponse['meal_preferences']).forEach(
          ([mealFormate, mealItemsList]) => {
             let ItemModel = []

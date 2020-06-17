@@ -2,8 +2,12 @@ import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
 import { Typo20DarkBlueGreyHKGroteskMedium } from '../../../../Common/styleGuide/Typo'
 
-const Link = styled(Typo20DarkBlueGreyHKGroteskMedium)`
+const Text = styled(Typo20DarkBlueGreyHKGroteskMedium)`
+   
+`
+const Link=styled.button`
    ${tw`cursor-pointer`}
+   border:none
 `
 
 const Navbarcontainer = styled.div`
@@ -31,4 +35,4 @@ const SpareOptionsBar = styled.div`
    background-color: #ffffff;
 `
 
-export { Navbarcontainer, SubNav, OptionsBar, Div, SpareOptionsBar, Link }
+export { Navbarcontainer, SubNav, OptionsBar, Div, SpareOptionsBar, Link ,Text}

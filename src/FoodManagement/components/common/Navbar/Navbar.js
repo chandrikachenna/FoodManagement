@@ -5,7 +5,8 @@ import {
    OptionsBar,
    Div,
    SpareOptionsBar,
-   Link
+   Link,
+   Text
 } from './styledComponents'
 import { Logo } from '../../../../Common/components/Logo'
 import strings from '../../../../Common/i18n/strings.json'
@@ -25,18 +26,18 @@ class Navbar extends Component {
                <Div>
                   <SubNav>
                      <Logo />
-                     <Link onClick={onClickGoHome}>{home}</Link>
+                     <Link onClick={onClickGoHome}><Text>{home}</Text></Link>
                   </SubNav>
-                  <OptionsBar>
-                     <Link onClick={onClickSignOut}>{'Logout'}</Link>
-                     <Link onClick={onClickForProfile}>{profile}</Link>
-                     <Link onClick={onClickGoWeeklyMenu}>{weeklyMenu}</Link>
+                  <OptionsBar>   
+                     <Link onClick={onClickSignOut}><Text>{'Logout'}</Text></Link>
+                     <Link onClick={onClickForProfile}><Text>{profile}</Text></Link>
+                     <Link onClick={onClickGoWeeklyMenu}><Text>{weeklyMenu}</Text></Link>
                   </OptionsBar>
                </Div>
             </Navbarcontainer>
             <SpareOptionsBar>
-               <Link onClick={onClickSignOut}>{'Logout'}</Link>
-               <Link onClick={onClickGoWeeklyMenu}>{weeklyMenu}</Link>
+               <Link onClick={onClickSignOut}><Text>{'Logout'}</Text></Link>
+               <Link onClick={onClickGoWeeklyMenu}><Text>{weeklyMenu}</Text></Link>
             </SpareOptionsBar>
          </>
       )
