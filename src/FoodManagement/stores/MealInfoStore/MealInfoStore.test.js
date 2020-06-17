@@ -58,19 +58,20 @@ describe('mealInfoStore tests', () => {
       mealInfoStore.dateTime()
       expect(mealInfoStore.timeCounter).not.toBe(null)
    })
+
    // it('should test timeCounter',()=>{
    //    const mockSelectedMealTypeInfo=false
    //    mealInfoStore.selectedMealTypeInfo=mockSelectedMealTypeInfo;
    //    mealInfoStore.dateTime()
    //    expect(mealInfoStore.timeCounter).not.toBe(null)
    // })
+
    it('should test timeCounter onChangeDate',()=>{
       const mockDate=new Date();
      
       mealInfoStore.onChangeDate(mockDate)
       expect(mealInfoStore.initialTimerID).toBe(12)
       expect(mealInfoStore.timeCounter).toBe(mockDate)
-      
    })
 
    it('should test instance of MealInfoItemModel',()=>{
@@ -78,6 +79,7 @@ describe('mealInfoStore tests', () => {
       mealInfoStore.onClickEdit(mockMealType)
       expect(mealInfoStore.selectedMealTypeInfo).not.toBe(null)
    })
+
    it('should test instance of MealReviewInfoModel',async()=>{
       const mockMealType='mealType'
       mealInfoStore.goForReview(mockMealType)
@@ -93,6 +95,7 @@ describe('mealInfoStore tests', () => {
       mealInfoStore.getMealInfo()
       expect(mealInfoStore.getMealInfoAPIStatus).toBe(API_FETCHING)
    })
+
    it('should test getMealInfo success state', async () => {
       const mockLoadingPromise = new Promise(function(resolve, reject) {
          resolve(getMealInfo)
@@ -104,6 +107,7 @@ describe('mealInfoStore tests', () => {
       await mealInfoStore.getMealInfo()
       expect(mealInfoStore.getMealInfoAPIStatus).toBe(API_SUCCESS)
    })
+   
    it('should test getMealInfo failure state', async () => {
       const mockLoadingPromise = new Promise(function(resolve, reject) {
          reject(new Error('error'))

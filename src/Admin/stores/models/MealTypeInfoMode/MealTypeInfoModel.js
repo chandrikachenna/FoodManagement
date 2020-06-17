@@ -1,7 +1,7 @@
 import { observable, action } from "mobx";
 import { MealItem } from "../MealItem";
 
-class MealTypeInfoMode{
+class MealTypeInfoModel{
     @observable mealTypeInfo
     constructor(mealTypeInfo){
         this.init();
@@ -20,8 +20,7 @@ class MealTypeInfoMode{
     @action.bound
     removeMealItem(mealItemId){
         this.mealTypeInfo=this.mealTypeInfo.filter((mealItem)=>(mealItemId!==mealItem.id));
-        console.log(this.mealTypeInfo.length,this.mealTypeInfo)
     }
 }
 
-export {MealTypeInfoMode}
+export {MealTypeInfoModel }

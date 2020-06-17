@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
-import { MealTypeInfoMode } from "../models/MealTypeInfoMode"
+import { MealTypeInfoModel } from "../models/MealTypeInfoMode"
 
 class ScheduleMealStore {
    @observable scheduleMealInfo
@@ -30,7 +30,7 @@ class ScheduleMealStore {
    setScheduleMealInfoResponse(mealInfoResponse) {
       Object.entries(mealInfoResponse).forEach(
          ([mealType, mealItemsList]) => {
-            this.scheduleMealInfo.push(new MealTypeInfoMode(mealItemsList))
+            this.scheduleMealInfo.push(new MealTypeInfoModel(mealItemsList))
          }
       )
    }

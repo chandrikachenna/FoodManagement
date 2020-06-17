@@ -7,13 +7,14 @@ import { format } from 'date-fns'
 import { withHeader } from '../../../Common/hocs/withHeader'
 import { getLoadingStatus } from '@ib/api-utils'
 
-@inject('mealInfoStore', )
+@inject('mealInfoStore')
 @observer
 class HomePageRoute extends Component {
    componentDidMount() {
       this.props.mealInfoStore.getMealInfoAPIStatus = 0
       this.doNetworkCalls()
    }
+   
    doNetworkCalls = () => {
       setTimeout(() => {
          const date = format(
@@ -23,6 +24,7 @@ class HomePageRoute extends Component {
          this.props.mealInfoStore.getMealInfo(date)
       }, 1000)
    }
+
    renderSuccessUI = observer(() => {
       return (
          <Mealcards
@@ -32,6 +34,7 @@ class HomePageRoute extends Component {
          />
       )
    })
+
    render() {
       const {
          getMealInfoAPIStatus,
@@ -52,6 +55,7 @@ class HomePageRoute extends Component {
          />
       )
    }
+   
 }
 
 export default withRouter(withHeader(HomePageRoute))
