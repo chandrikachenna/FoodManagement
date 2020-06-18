@@ -5,7 +5,7 @@ import {
    statusCodes,
    resStatuses,
    apiErrorProblems
-} from '../constants/APIConstants'
+} from '../../Common/constants/APIConstants';
 
 export const networkCallWithApisauce = async (
    api,
@@ -48,20 +48,24 @@ export const getFormattedError = apiError => {
    let errorConstant = ''
    let title = errorViewTitle
    let errorCode = statusCodes.internalServerErrorCode
+   
    if (apiError !== null && apiError !== undefined) {
+      
       try {
          const parsedMessage = JSON.parse(apiError)
          let parsedError
-
+         
          if (parsedMessage.data === undefined || parsedMessage.data === null) {
             // To handle case when we are directly returning backend error message
             parsedError = parsedMessage
+            
          } else {
             // To handle case when we are adding all the requests to backend error message
             parsedError = parsedMessage.data
          }
 
          if (parsedError !== undefined && parsedError !== null) {
+            
             if (
                parsedError.message &&
                parsedError.message === resStatuses.requestTimedOut
@@ -72,11 +76,13 @@ export const getFormattedError = apiError => {
 
             if (parsedError.response) {
                try {
+                  
                   const response = JSON.parse(parsedError.response)
                   const {
                      title: errorTitle,
                      description: errorDescription
                   } = response
+                 
                   if (errorTitle) {
                      title = errorTitle
                   }
@@ -86,6 +92,7 @@ export const getFormattedError = apiError => {
                      description = parsedError.response
                   }
                } catch (e) {
+                  
                   description = parsedError.response
                }
                errorConstant = parsedError.res_status
@@ -102,6 +109,8 @@ export const getFormattedError = apiError => {
                }
             }
          }
+        
+         
          if (isNetworkError(JSON.stringify(parsedError))) {
             title = connectionLost
             description = internetConnection
