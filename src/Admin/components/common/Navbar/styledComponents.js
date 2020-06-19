@@ -31,4 +31,8 @@ const SpareOptionsBar = styled.div`
    background-color: #ffffff;
 `
 
-export { Navbarcontainer, SubNav, OptionsBar, Div, SpareOptionsBar, PageLink }
+const Button=styled.button`
+
+`
+
+export { Navbarcontainer, SubNav, OptionsBar, Div, SpareOptionsBar, PageLink ,Button}

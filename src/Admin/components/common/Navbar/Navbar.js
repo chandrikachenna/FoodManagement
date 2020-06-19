@@ -5,7 +5,8 @@ import {
    OptionsBar,
    Div,
    SpareOptionsBar,
-   PageLink
+   PageLink,
+   Button
 } from './styledComponents'
 import { Logo } from '../../../../Common/components/Logo'
 import strings from '../../../../Common/i18n/strings.json'
@@ -27,20 +28,24 @@ class Navbar extends Component {
                <Div>
                   <SubNav>
                      <Logo />
+                     <Button  onClick={onClickGoHome}>
                      <PageLink
                         color={page.match(home) && COLORS.brightBlue}
-                        onClick={onClickGoHome}
+                       
                      >
                         {home}
                      </PageLink>
+                     </Button>
                   </SubNav>
                   <OptionsBar>
-                     <PageLink
-                        color={page.match(logOut) && COLORS.brightBlue}
-                        onClick={onClickSignOut}
-                     >
-                        {logOut}
-                     </PageLink>
+                     <Button  onClick={onClickSignOut}>
+                        <PageLink
+                           color={page.match(logOut) && COLORS.brightBlue}
+                          
+                        >
+                           {logOut}
+                        </PageLink>
+                     </Button>
                      <PageLink
                         color={
                            page.match(ratingsAndReviews) && COLORS.brightBlue
@@ -59,12 +64,14 @@ class Navbar extends Component {
                </Div>
             </Navbarcontainer>
             <SpareOptionsBar>
-               <PageLink
-                  color={page.match(logOut) && COLORS.brightBlue}
-                  onClick={onClickSignOut}
-               >
-                  {logOut}
-               </PageLink>
+               <Button onClick={onClickSignOut}>
+                     <PageLink
+                        color={page.match(logOut) && COLORS.brightBlue}
+                        
+                     >
+                        {logOut}
+                     </PageLink>
+               </Button>
                <PageLink
                   color={page.match(ratingsAndReviews) && COLORS.brightBlue}
                   onClick={onClickForRatingsAndReviews}
