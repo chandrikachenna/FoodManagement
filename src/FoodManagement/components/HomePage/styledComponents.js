@@ -11,7 +11,7 @@ const Div = styled.div`
    height: 70px;
 `
 const CardsContainer = styled.div`
-   ${tw`flex flex-col xl:flex-row items-center justify-between w-full`}
+   ${tw`flex flex-row  items-center justify-between w-full`}
    width:100%;
    min-height: 400px;
    padding: 0px 100px;
