@@ -28,20 +28,16 @@ class Navbar extends Component {
                <Div>
                   <SubNav>
                      <Logo />
-                     <Button  onClick={onClickGoHome}>
-                     <PageLink
-                        color={page.match(home) && COLORS.brightBlue}
-                       
-                     >
-                        {home}
-                     </PageLink>
+                     <Button onClick={onClickGoHome}>
+                        <PageLink color={page.match(home) && COLORS.brightBlue}>
+                           {home}
+                        </PageLink>
                      </Button>
                   </SubNav>
                   <OptionsBar>
-                     <Button  onClick={onClickSignOut}>
+                     <Button onClick={onClickSignOut}>
                         <PageLink
                            color={page.match(logOut) && COLORS.brightBlue}
-                          
                         >
                            {logOut}
                         </PageLink>
@@ -65,12 +61,9 @@ class Navbar extends Component {
             </Navbarcontainer>
             <SpareOptionsBar>
                <Button onClick={onClickSignOut}>
-                     <PageLink
-                        color={page.match(logOut) && COLORS.brightBlue}
-                        
-                     >
-                        {logOut}
-                     </PageLink>
+                  <PageLink color={page.match(logOut) && COLORS.brightBlue}>
+                     {logOut}
+                  </PageLink>
                </Button>
                <PageLink
                   color={page.match(ratingsAndReviews) && COLORS.brightBlue}

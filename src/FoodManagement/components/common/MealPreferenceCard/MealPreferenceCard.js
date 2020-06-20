@@ -74,7 +74,7 @@ class MealPreferenceCard extends Component {
          this.requestObject = this.getRequestObject(mealItemsInfo[2], 'custom')
       }
       this.onClick()
-      const {updateMealInfo} = this.props.selectedMealTypeInfo
+      const { updateMealInfo } = this.props.selectedMealTypeInfo
       updateMealInfo(this.requestObject, this.isCustom)
    }
    onClickSkipped = () => {
@@ -87,7 +87,7 @@ class MealPreferenceCard extends Component {
       )
       this.requestObject = this.getRequestObject(skippedMealData, 'skipped')
       this.onClick()
-      const {updateMealInfo } = this.props.selectedMealTypeInfo
+      const { updateMealInfo } = this.props.selectedMealTypeInfo
       updateMealInfo(this.requestObject, this.isCustom)
    }
    capitalizeFirstLetter = ([first, ...rest], locale = navigator.language) => {

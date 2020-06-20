@@ -18,7 +18,6 @@ class FoodWastageLog extends Component {
                menu1Name={breakfast}
                menu2Name={lunch}
                menu3Name={dinner}
-               
             />
             <Buttons>
                <Layout>

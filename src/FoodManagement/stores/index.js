@@ -9,7 +9,6 @@ import { UpdateMealReviewInfo } from '../services/UpdateMealReviewInfoServices/U
 
 import { MealInfoStore } from './MealInfoStore'
 
-
 const mealsInfo = new MealsInfo()
 
 const mealPreference = new MealPreference()
@@ -26,7 +25,5 @@ const mealInfoStore = new MealInfoStore(
    mealReviewInfo,
    updateMealReviewInfo
 )
-
-
 
 export default { mealInfoStore }

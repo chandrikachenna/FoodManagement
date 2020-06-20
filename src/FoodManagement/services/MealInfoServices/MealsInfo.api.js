@@ -1,4 +1,4 @@
-import { networkCallWithApisauce } from '../../../Common/utils/APIUtils';
+import { networkCallWithApisauce } from '../../../Common/utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
 

@@ -26,18 +26,30 @@ class Navbar extends Component {
                <Div>
                   <SubNav>
                      <Logo />
-                     <Link onClick={onClickGoHome}><Text>{home}</Text></Link>
+                     <Link onClick={onClickGoHome}>
+                        <Text>{home}</Text>
+                     </Link>
                   </SubNav>
-                  <OptionsBar>   
-                     <Link onClick={onClickSignOut}><Text>{'Logout'}</Text></Link>
-                     <Link onClick={onClickForProfile}><Text>{profile}</Text></Link>
-                     <Link onClick={onClickGoWeeklyMenu}><Text>{weeklyMenu}</Text></Link>
+                  <OptionsBar>
+                     <Link onClick={onClickSignOut}>
+                        <Text>{'Logout'}</Text>
+                     </Link>
+                     <Link onClick={onClickForProfile}>
+                        <Text>{profile}</Text>
+                     </Link>
+                     <Link onClick={onClickGoWeeklyMenu}>
+                        <Text>{weeklyMenu}</Text>
+                     </Link>
                   </OptionsBar>
                </Div>
             </Navbarcontainer>
             <SpareOptionsBar>
-               <Link onClick={onClickSignOut}><Text>{'Logout'}</Text></Link>
-               <Link onClick={onClickGoWeeklyMenu}><Text>{weeklyMenu}</Text></Link>
+               <Link onClick={onClickSignOut}>
+                  <Text>{'Logout'}</Text>
+               </Link>
+               <Link onClick={onClickGoWeeklyMenu}>
+                  <Text>{weeklyMenu}</Text>
+               </Link>
             </SpareOptionsBar>
          </>
       )

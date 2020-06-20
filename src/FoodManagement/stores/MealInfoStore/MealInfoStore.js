@@ -54,16 +54,16 @@ class MealInfoStore {
       this.getMealInfoAPIStatus = API_INITIAL
       this.getMealInfoAPIError = null
       this.mealInfo = []
-      this.timeCounter=null
+      this.timeCounter = null
       this.dateTime()
-      this.selectedMealTypeReview=null
-      this.selectedMealType=null
+      this.selectedMealTypeReview = null
+      this.selectedMealType = null
    }
    @action.bound
    async goForReview(mealType) {
       this.selectedMealType = mealType
       this.selectedMealTypeReview = new MealReviewInfoModel(
-         this.selectedMealType ,
+         this.selectedMealType,
          this.mealReviewInfoService,
          this.updateMealReviewInfoService
       )
@@ -71,7 +71,6 @@ class MealInfoStore {
          this.timeCounter,
          this.selectedMealType
       )
-      
    }
    @action.bound
    getMealInfo(date) {

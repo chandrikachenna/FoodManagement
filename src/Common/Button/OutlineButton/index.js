@@ -1,1 +1,1 @@
-export {OutlineButton} from './OutlineButton';
+export { OutlineButton } from './OutlineButton'

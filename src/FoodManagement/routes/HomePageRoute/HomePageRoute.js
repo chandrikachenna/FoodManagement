@@ -14,7 +14,7 @@ class HomePageRoute extends Component {
       this.props.mealInfoStore.getMealInfoAPIStatus = 0
       this.doNetworkCalls()
    }
-   
+
    doNetworkCalls = () => {
       setTimeout(() => {
          const date = format(
@@ -55,7 +55,6 @@ class HomePageRoute extends Component {
          />
       )
    }
-   
 }
 
 export default withRouter(withHeader(HomePageRoute))

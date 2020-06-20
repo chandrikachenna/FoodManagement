@@ -1,8 +1,6 @@
-import styled from '@emotion/styled';
-import tw from 'tailwind.macro';
-import css from '@emotion/core'
+import styled from '@emotion/styled'
 
-export const ButtonWrapper=styled.button`
-    background-color:${props=>disabled?'grey':'blue'};
-    cursor:${props=>disabled?'none':'pointer'};
+export const ButtonWrapper = styled.button`
+   background-color: ${props => (props.disabled ? 'grey' : 'blue')};
+   cursor: ${props => (props.disabled ? 'none' : 'pointer')};
 `

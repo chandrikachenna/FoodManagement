@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import {OutlineButtonWrapper} from './styledCompoents';
+import React, { Component } from 'react'
+import { OutlineButtonWrapper } from './styledCompoents'
 
 class OutlineButton extends Component {
-    render() {
-        return (
-            <OutlineButtonWrapper {...this.props}/>
-        );
-    }
+   render() {
+      return <OutlineButtonWrapper {...this.props} />
+   }
 }
 
-export {OutlineButton};
+export { OutlineButton }

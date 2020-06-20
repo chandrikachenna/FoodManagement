@@ -8,13 +8,13 @@ import {
 import { MealsInfo } from '../../services/MealInfoServices/MealsInfo.fixture'
 import getMealInfo from '../../fixtures/getMealInfo.json'
 
-import { MealPreference } from "../../services/MealPreferenceServices/MealPreference.fixture"
+import { MealPreference } from '../../services/MealPreferenceServices/MealPreference.fixture'
 import getMealPreferenceInfo from '../../fixtures/getMealPreferenceInfo.json'
 
-import {UpdateMealInfo} from '../../services/UpdateMealServices/UpdateMealInfo.fixture';
-import {UpdateCustomMealInfo} from '../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture';
-import {MealReviewInfo} from '../../services/MealReviewInfoServices/MealReviewInfoService.fixture';
-import {UpdateMealReviewInfo} from '../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture';
+import { UpdateMealInfo } from '../../services/UpdateMealServices/UpdateMealInfo.fixture'
+import { UpdateCustomMealInfo } from '../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture'
+import { MealReviewInfo } from '../../services/MealReviewInfoServices/MealReviewInfoService.fixture'
+import { UpdateMealReviewInfo } from '../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture'
 import { MealInfoStore } from '.'
 
 describe('mealInfoStore tests', () => {
@@ -28,11 +28,11 @@ describe('mealInfoStore tests', () => {
 
    beforeEach(() => {
       mealsFixture = new MealsInfo()
-      mealPreferenceInfoService=new MealPreference()
-      updateMealInfo= new UpdateMealInfo()
+      mealPreferenceInfoService = new MealPreference()
+      updateMealInfo = new UpdateMealInfo()
       updateCustomMealInfo = new UpdateCustomMealInfo()
-      mealReviewInfo=new MealReviewInfo()
-      updateMealReviewInfoService=new UpdateMealReviewInfo()
+      mealReviewInfo = new MealReviewInfo()
+      updateMealReviewInfoService = new UpdateMealReviewInfo()
 
       mealInfoStore = new MealInfoStore(
          mealsFixture,
@@ -52,9 +52,9 @@ describe('mealInfoStore tests', () => {
       expect(mealInfoStore.timeCounter).toBe(null)
    })
 
-   it('should test timeCounter',()=>{
-      const mockSelectedMealTypeInfo=true
-      mealInfoStore.selectedMealTypeInfo=mockSelectedMealTypeInfo;
+   it('should test timeCounter', () => {
+      const mockSelectedMealTypeInfo = true
+      mealInfoStore.selectedMealTypeInfo = mockSelectedMealTypeInfo
       mealInfoStore.dateTime()
       expect(mealInfoStore.timeCounter).not.toBe(null)
    })
@@ -66,26 +66,26 @@ describe('mealInfoStore tests', () => {
    //    expect(mealInfoStore.timeCounter).not.toBe(null)
    // })
 
-   it('should test timeCounter onChangeDate',()=>{
-      const mockDate=new Date();
-     
+   it('should test timeCounter onChangeDate', () => {
+      const mockDate = new Date()
+
       mealInfoStore.onChangeDate(mockDate)
       expect(mealInfoStore.initialTimerID).toBe(12)
       expect(mealInfoStore.timeCounter).toBe(mockDate)
    })
 
-   it('should test instance of MealInfoItemModel',()=>{
-      const mockMealType='mealType'
+   it('should test instance of MealInfoItemModel', () => {
+      const mockMealType = 'mealType'
       mealInfoStore.onClickEdit(mockMealType)
       expect(mealInfoStore.selectedMealTypeInfo).not.toBe(null)
    })
 
-   it('should test instance of MealReviewInfoModel',async()=>{
-      const mockMealType='mealType'
+   it('should test instance of MealReviewInfoModel', async () => {
+      const mockMealType = 'mealType'
       mealInfoStore.goForReview(mockMealType)
       expect(mealInfoStore.selectedMealTypeReview).not.toBe(null)
    })
-   
+
    it('should test getMealInfo fetching state', () => {
       const mockLoadingPromise = new Promise(function(resolve, reject) {})
       const mockMealsAPI = jest.fn()
@@ -107,7 +107,7 @@ describe('mealInfoStore tests', () => {
       await mealInfoStore.getMealInfo()
       expect(mealInfoStore.getMealInfoAPIStatus).toBe(API_SUCCESS)
    })
-   
+
    it('should test getMealInfo failure state', async () => {
       const mockLoadingPromise = new Promise(function(resolve, reject) {
          reject(new Error('error'))
@@ -120,5 +120,4 @@ describe('mealInfoStore tests', () => {
       expect(mealInfoStore.getMealInfoAPIStatus).toBe(API_FAILED)
       expect(mealInfoStore.getMealInfoAPIError).toBe('error')
    })
-
 })

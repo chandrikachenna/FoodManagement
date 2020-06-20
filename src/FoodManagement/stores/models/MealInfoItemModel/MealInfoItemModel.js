@@ -37,9 +37,9 @@ class MealInfoItemModel {
       this.getMealItemsAPIStatus = API_INITIAL
       this.getMealItemsAPIError = null
       this.mealItemsInfo = []
-      this.getUpdateMealInfoAPIStatus=API_INITIAL
-      this.getUpdateMealInfoAPIError=null
-      this.updateMealInfoResponse=null
+      this.getUpdateMealInfoAPIStatus = API_INITIAL
+      this.getUpdateMealInfoAPIError = null
+      this.updateMealInfoResponse = null
    }
    @action.bound
    getEditPreference(date, mealType) {

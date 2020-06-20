@@ -38,7 +38,7 @@ class MealInfoCard extends Component {
       // history.push(`/food-management/set-meal-preference`)
       const date = format(new Date(timeCounter), 'yyyy-MM-dd')
       //TODO
-      
+
       history.push(
          `/food-management/set-meal-preference?date=${date}&meal_type=${this.props.info.meal_type.toLowerCase()}`
       )

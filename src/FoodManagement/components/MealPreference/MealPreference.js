@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Carousel } from '../common/Carousel'
 import { MealPreferenceCard } from '../common/MealPreferenceCard'
-import {Div} from './styledComponents'
+import { Div } from './styledComponents'
 
 class MealPreference extends Component {
    render() {
