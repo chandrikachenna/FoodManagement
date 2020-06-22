@@ -9,11 +9,14 @@ import {
    clearRole,
    setRole
 } from '../../../Common/utils/StorageUtils'
+
+
 import { getUserDisplayableErrorMessage } from '../../../Common/utils/APIUtils'
 class AuthStore {
-   @observable getUserSignInAPIStatus
-   @observable getUserSignInAPIError
-   @observable Access_token
+   @observable getUserSignInAPIStatus:number=API_INITIAL
+   @observable getUserSignInAPIError:null|number|string=null
+   Access_token
+   role
    authAPIService
    constructor(authAPIService) {
       this.authAPIService = authAPIService

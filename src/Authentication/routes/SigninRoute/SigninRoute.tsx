@@ -7,12 +7,20 @@ import strings from '../../../Common/i18n/strings.json'
 import { getRole } from '../../../Common/utils/StorageUtils'
 import { HOME_PAGE_PATH } from '../../constants/RouteConstants'
 import { ADMIN_PATH } from '../../../Admin/constants/RouteConstants'
+import {History} from 'history'
+import { AuthStore } from "../../stores/AuthStore"
 
 const { enterUsernameMsg, enterPasswordMsg } = strings.authentication
 
+interface SigninRouteProps{
+   history:History,
+   authStore:AuthStore
+}
+
+
 @inject('authStore')
 @observer
-class SigninRoute extends Component {
+class SigninRoute extends Component <SigninRouteProps>{
    @observable username
    @observable password
    @observable usernameErrorMessage

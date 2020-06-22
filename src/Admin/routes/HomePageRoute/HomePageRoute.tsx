@@ -6,10 +6,22 @@ import { TabBar } from '../../components/common/TabBar'
 import { ScheduleMeal } from '../../components/ScheduleMeal'
 import { HeadCounts } from '../../components/HeadCounts'
 import { FoodWastageLog } from '../../components/FoodWastageLog'
+import { ScheduleMealStore } from "../../stores/ScheduleMealStore"
+import { HeadCountsStore } from "../../stores/HeadCountsStore"
+import { AuthStore } from "../../../Authentication/stores/AuthStore"
+import {History} from 'history'
+
+interface HomePageRouteProps{
+   scheduleMealStore:ScheduleMealStore,
+   headCountsStore:HeadCountsStore,
+   authStore:AuthStore,
+   history:History
+}
+
 
 @inject('scheduleMealStore', 'headCountsStore', 'authStore')
 @observer
-class HomePageRoute extends Component {
+class HomePageRoute extends Component <HomePageRouteProps>{
    componentDidMount() {
       this.doNetworkCalls()
    }
