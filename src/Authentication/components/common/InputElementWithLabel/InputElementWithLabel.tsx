@@ -3,8 +3,18 @@ import { Div, MessageBox, Label } from './styledComponents'
 import { InputFormElement } from '../../../../Common/components/InputFormElement'
 import { observer } from 'mobx-react'
 
+interface InputElementWithLabelProps{
+   label:string,
+   value:string,
+   type:string,
+   placeholder:string,
+   onChange:()=>void,
+   message:string
+}
+
+
 @observer
-class InputElementWithLabel extends Component {
+class InputElementWithLabel extends Component<InputElementWithLabelProps> {
    render() {
       const { label, value, type, placeholder, onChange, message } = this.props
       return (

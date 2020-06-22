@@ -7,24 +7,24 @@ import './App.css'
 import HomePage from './Common/components/HomePage'
 
 import authRoutes from './Authentication/routes'
-// import foodManagementRoutes from './FoodManagement/routes'
+import foodManagementRoutes from './FoodManagement/routes'
 // import adminRoutes from './Admin/routes'
 
 import authStore from './Authentication/stores'
-// import foodManagementStores from './FoodManagement/stores'
+import foodManagementStores from './FoodManagement/stores'
 // import adminStores from './Admin/stores'
-// {...foodManagementStores} {...adminStores}
+// {...adminStores}
 
 @observer
 class App extends React.Component {
    render() {
       return (
-         <Provider {...authStore} >
+         <Provider {...authStore} {...foodManagementStores} >
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   {authRoutes}
-                  {/* {foodManagementRoutes}
-                  {adminRoutes} */}
+                  {foodManagementRoutes}
+                  {/* {adminRoutes} */}
                   <Route exact path='/'>
                      <HomePage />
                   </Route>

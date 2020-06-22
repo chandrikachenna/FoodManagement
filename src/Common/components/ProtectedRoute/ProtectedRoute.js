@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
-import { getAccessToken, getRole } from '../../utils/StorageUtils'
+import { getAccessToken, getRole, clearUserSession } from '../../utils/StorageUtils'
 
 class ProtectedRoute extends React.Component {
    render() {
