@@ -3,12 +3,14 @@ import { HomePageContainer, Body } from './styledComponents'
 import { Navbar } from '../common/Navbar'
 import strings from '../../../Common/i18n/strings.json'
 import { TabBar } from '../common/TabBar'
-import { ScheduleMeal } from '../../components/ScheduleMeal'
-import { HeadCounts } from '../../components/HeadCounts'
-import { FoodWastageLog } from '../../components/FoodWastageLog'
-import { MealItem } from '../../components/common/MealItem'
+import { ScheduleMeal } from '../ScheduleMeal'
+import { HeadCounts } from '../HeadCounts'
+import { FoodWastageLog } from '../FoodWastageLog'
+import { MealItem } from '../common/MealItem'
 import LoadingWrapperWithLoader from '../../../FoodManagement/components/common/LoadingWrapperWithFailure'
 import { observer } from 'mobx-react'
+
+
 
 @observer
 class HomePage extends Component {

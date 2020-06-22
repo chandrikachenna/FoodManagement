@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 
 import { MenuDisplayer } from '../common/MenuDisplayer'
-import { COLORS } from '../../../Common/theme/Colors'
-import strings from '../../../Common/i18n/strings'
+import strings from '../../../Common/i18n/strings.json'
 import { observer } from 'mobx-react'
 import HeadCountsInfo from '../common/HeadCountsInfo'
+type Data={
+   headCountsInfo:object[],
+}
+
+interface HeadCountsProps{
+   data:Data,
+}
 
 @observer
-class HeadCounts extends Component {
+class HeadCounts extends Component<HeadCountsProps> {
    renderedSuccess = observer(() => {
       return <div>hey..</div>
    })
