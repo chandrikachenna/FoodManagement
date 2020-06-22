@@ -6,10 +6,17 @@ import { MealPreferencePage } from '../../components/MealPreferencePage'
 import { MealPreference } from '../../components/MealPreference'
 
 import { withHeader } from '../../../Common/hocs/withHeader'
+import { MealInfoStore } from "../../stores/MealInfoStore"
+
+interface MealPreferenceRouteProps{
+   mealInfoStore:MealInfoStore,
+   onClickSignOut:()=>void,
+   onClickGoHome:()=>void
+}
 
 @inject('mealInfoStore')
 @observer
-class MealPreferenceRoute extends Component {
+class MealPreferenceRoute extends Component<MealPreferenceRouteProps> {
    componentDidMount = () => {
       this.doNetworkCalls()
    }
@@ -21,8 +28,8 @@ class MealPreferenceRoute extends Component {
       const {
          selectedMealType,
          selectedMealTypeInfo,
-         updateMealInfo
       } = this.props.mealInfoStore
+      const {updateMealInfo}=this.props.mealInfoStore.selectedMealTypeInfo
       return (
          <MealPreference
             selectedMealTypeInfo={selectedMealTypeInfo}

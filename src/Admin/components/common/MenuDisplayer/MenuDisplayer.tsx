@@ -8,8 +8,17 @@ import { DatePicker } from '../../../../Common/components/DatePicker'
 
 const menus = { menu1: 'Menu1', menu2: 'Menu2', menu3: 'Menu3' }
 
+interface MenuDisplayerProps{
+   menu:string,
+   menu1Name:string,
+   menu2Name:string,
+   menu3Name:string,
+   data:object[],
+   renderedComponent:Function
+}
+
 @observer
-class MenuDisplayer extends Component {
+class MenuDisplayer extends Component<MenuDisplayerProps>{
    @observable selectedMenu
    constructor(props) {
       super(props)

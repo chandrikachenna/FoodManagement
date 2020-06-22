@@ -3,8 +3,12 @@ import { observer } from 'mobx-react'
 import { Layout, Text, Div, Items } from './styledComponents'
 import { MealItemHeadCounts } from '../MealItemHeadCounts'
 
+interface HeadCountsInfoProps{
+   data:any
+}
+
 @observer
-class HeadCountsInfo extends Component {
+class HeadCountsInfo extends Component<HeadCountsInfoProps> {
    render() {
       const { data: headCountsInfo } = this.props
       const {

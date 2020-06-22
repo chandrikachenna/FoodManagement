@@ -3,10 +3,16 @@ import { withRouter } from 'react-router-dom'
 import { ReviewPage } from '../../components/ReviewPage'
 import { observer, inject } from 'mobx-react'
 import { withHeader } from '../../../Common/hocs/withHeader'
+import { MealInfoStore } from "../../stores/MealInfoStore"
 
+interface ReviewPageRouteProps{
+   mealInfoStore:MealInfoStore,
+   onClickSignOut:()=>void,
+   onClickGoHome:()=>void
+}
 @inject('mealInfoStore')
 @observer
-class ReviewPageRoute extends Component {
+class ReviewPageRoute extends Component <ReviewPageRouteProps>{
    componentDidMount = () => {
       this.doNetworkCalls()
    }

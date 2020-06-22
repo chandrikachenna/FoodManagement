@@ -4,15 +4,20 @@ import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealInfoItemModel } from '../models/MealInfoItemModel'
 import { MealReviewInfoModel } from '../models/MealReviewInfoModel'
 import { format } from 'date-fns'
+import { MealsInfo } from "../../services/MealInfoServices/MealsInfo.fixture"
+import { MealPreference } from "../../services/MealPreferenceServices/MealPreference.fixture"
+import { UpdateCustomMealInfo } from "../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture"
+import { UpdateMealInfo } from "../../services/UpdateMealServices/UpdateMealInfo.fixture"
+
 
 class MealInfoStore {
-   @observable getMealInfoAPIStatus
-   @observable getMealInfoAPIError
+   @observable getMealInfoAPIStatus:number=API_INITIAL
+   @observable getMealInfoAPIError:string|null|number=null
 
-   @observable mealInfoService
-   @observable mealPreferenceService
-   @observable updateMealInfoService
-   @observable updateCustomMealInfoService
+   @observable mealInfoService:MealsInfo
+   @observable mealPreferenceService:MealPreference
+   @observable updateMealInfoService:UpdateMealInfo
+   @observable updateCustomMealInfoService:UpdateCustomMealInfo
 
    @observable mealInfo
    @observable selectedMealTypeInfo

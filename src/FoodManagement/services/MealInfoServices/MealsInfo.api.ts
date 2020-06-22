@@ -9,7 +9,7 @@ class MealsInfo {
          baseURL: 'https://127.0.0.1:8080/'
       })
    }
-   getMealsAPI(date) {
+   getMealsAPI(date:object) {
       return networkCallWithApisauce(
          this.api,
          `menu/v1?Date=${date}`,
