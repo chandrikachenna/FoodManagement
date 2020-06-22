@@ -5,9 +5,18 @@ import { ReviewCard } from '../ReviewCard'
 import { Carousel } from '../common/Carousel'
 import LoadingWrapperWithLoader from '../common/LoadingWrapperWithFailure'
 import { observer } from 'mobx-react'
+import { MealInfoStore } from "../../stores/MealInfoStore"
+
+
+interface ReviewPageProps{
+   mealInfoStore:MealInfoStore,
+   onClickSignOut:()=>void,
+   onClickGoHome:()=>void,
+   doNetworkCalls:()=>void
+}
 
 @observer
-class ReviewPage extends Component {
+class ReviewPage extends Component<ReviewPageProps>{
    renderSuccessUI = observer(() => {
       return (
          <>

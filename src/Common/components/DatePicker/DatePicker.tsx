@@ -4,8 +4,13 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
 
+interface DatePickerProps{
+   onChangeDate:(Date)=>void,
+   date:Date
+}
+
 @observer
-class DatePicker extends Component {
+class DatePicker extends Component<DatePickerProps> {
    @observable startDate = new Date()
    handleChange = date => {
       if (this.props.onChangeDate) {

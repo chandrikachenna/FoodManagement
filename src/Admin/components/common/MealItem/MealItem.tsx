@@ -3,9 +3,15 @@ import { Layout, ItemInfo, Item, Category, Icon } from './styledComponents'
 import DelIcon from '../../../../Common/icons/deleteIcon.svg'
 import { Counter } from '../../../../Common/components/Counter'
 import { observer } from 'mobx-react'
+import {MealItem as MealItemModel} from '../../../stores/models/MealItem' 
+
+interface MealItemProps{
+   itemInfo:MealItemModel,
+   removeMealItem:(number)=>void
+}
 
 @observer
-class MealItem extends Component {
+class MealItem extends Component<MealItemProps>{
    removeMealItem = () => {
       this.props.removeMealItem(this.props.itemInfo.id)
    }

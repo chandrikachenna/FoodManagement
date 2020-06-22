@@ -6,10 +6,20 @@ import { Button } from '../../../../Common/components/Button'
 import { COLORS } from '../../../../Common/theme/Colors'
 
 const menus = { menu1: 'Menu1', menu2: 'Menu2', menu3: 'Menu3' }
-const width = '102px'
+const width:any = '102px'
+
+interface MenuBarProps{
+   menu:string,
+   menu1Name:string,
+   menu2Name:string,
+   menu3Name:string,
+   onClickMenu1:()=>void,
+   onClickMenu2:()=>void,
+   onClickMenu3:()=>void
+}
 
 @observer
-class MenuBar extends Component {
+class MenuBar extends Component<MenuBarProps>{
    @observable selectedMenu
    constructor(props) {
       super(props)

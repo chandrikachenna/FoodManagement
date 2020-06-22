@@ -4,8 +4,9 @@ import { MenuDisplayer } from '../common/MenuDisplayer'
 import strings from '../../../Common/i18n/strings.json'
 import { observer } from 'mobx-react'
 import HeadCountsInfo from '../common/HeadCountsInfo'
+
 type Data={
-   headCountsInfo:object[],
+   headCountsInfo:[],
 }
 
 interface HeadCountsProps{

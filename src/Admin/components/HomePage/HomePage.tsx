@@ -9,11 +9,24 @@ import { FoodWastageLog } from '../FoodWastageLog'
 import { MealItem } from '../common/MealItem'
 import LoadingWrapperWithLoader from '../../../FoodManagement/components/common/LoadingWrapperWithFailure'
 import { observer } from 'mobx-react'
+import { HeadCountsStore } from "../../stores/HeadCountsStore"
 
+interface HeadCountsAPIsTypes{
+   getHeadCountsInfoAPIError:null|number|string
+   getHeadCountsInfoAPIStatus:number
+}
+interface NavigationFunction{
+   onClickSignOut:()=>void
+   onClickGoHome:()=>void
+}
+interface HomePageProps extends HeadCountsAPIsTypes,NavigationFunction{
+   doNetworkCalls:()=>void
+   renderSuccessUI:Function
+}
 
 
 @observer
-class HomePage extends Component {
+class HomePage extends Component <HomePageProps>{
    render() {
       const { home } = strings.admin
       const {

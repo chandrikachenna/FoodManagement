@@ -13,7 +13,7 @@ type ButtonProps= {
    onClick:()=>void,
    variant:string,
    name:string,
-   width:number,
+   width:any,
    color:string,
    loadingStatus:number|boolean|undefined,
    disabled:false
@@ -23,6 +23,7 @@ type ButtonProps= {
 @observer
 class Button extends Component<ButtonProps> {
    static defaultProps={
+      loadingStatus:200,
       disabled:false
    }
    render() {

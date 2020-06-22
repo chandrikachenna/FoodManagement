@@ -14,7 +14,7 @@ interface MenuDisplayerProps{
    menu2Name:string,
    menu3Name:string,
    data:object[],
-   renderedComponent:Function
+   renderedComponent:Function,
 }
 
 @observer
