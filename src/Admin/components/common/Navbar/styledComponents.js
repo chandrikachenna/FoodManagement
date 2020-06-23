@@ -8,7 +8,7 @@ const PageLink = styled(Typo20DarkBlueGreyHKGroteskMedium)`
 `
 
 const Navbarcontainer = styled.div`
-   width: 1440px;
+   width: vw;
    height: 90px;
    box-shadow: 0 8px 16px 0 rgba(23, 31, 70, 0.08);
    background-color: #ffffff;

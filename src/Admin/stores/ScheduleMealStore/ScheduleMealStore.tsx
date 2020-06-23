@@ -2,12 +2,13 @@ import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealTypeInfoModel } from '../models/MealTypeInfoMode'
+import { ScheduleMealService } from "../../services/ScheduleMealServices/ScheduleMealService.fixture"
 
 class ScheduleMealStore {
-   @observable scheduleMealInfo
-   @observable getScheduleMealInfoAPIStatus
-   @observable getScheduleMealInfoAPIError
-   @observable scheduleMealInfoService
+   @observable scheduleMealInfo:Array<MealTypeInfoModel>=[]
+   @observable getScheduleMealInfoAPIStatus:number=API_INITIAL
+   @observable getScheduleMealInfoAPIError:null|number|string=null
+   @observable scheduleMealInfoService:ScheduleMealService
    constructor(scheduleMealInfoService) {
       this.scheduleMealInfoService = scheduleMealInfoService
       this.init()
