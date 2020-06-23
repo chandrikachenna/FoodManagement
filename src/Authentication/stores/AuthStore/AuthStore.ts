@@ -1,17 +1,16 @@
 import { observable, action } from 'mobx'
+
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
+
 import {
    setAccessToken,
    clearUserSession,
-   getAccessToken,
-   getRole,
    clearRole,
    setRole
 } from '../../../Common/utils/StorageUtils'
-
-
 import { getUserDisplayableErrorMessage } from '../../../Common/utils/APIUtils'
+
 class AuthStore {
    @observable getUserSignInAPIStatus:number=API_INITIAL
    @observable getUserSignInAPIError:null|number|string=null

@@ -12,7 +12,15 @@ import { Logo } from '../../../../Common/components/Logo'
 import strings from '../../../../Common/i18n/strings.json'
 import { COLORS } from '../../../../Common/theme/Colors'
 
-class Navbar extends Component {
+interface NavbarProps{
+   onClickGoHome:()=>void
+   onClickForRatingsAndReviews:()=>void,
+   onClickForFoodItems:()=>void
+   onClickSignOut:()=>void
+   page:string
+}
+
+class Navbar extends Component<NavbarProps> {
    render() {
       const {
          onClickGoHome,

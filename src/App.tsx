@@ -2,17 +2,14 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider, observer } from 'mobx-react'
 
-import './App.css'
-
 import HomePage from './Common/components/HomePage'
-
 import authRoutes from './Authentication/routes'
 import foodManagementRoutes from './FoodManagement/routes'
 import adminRoutes from './Admin/routes'
-
 import authStore from './Authentication/stores'
 import foodManagementStores from './FoodManagement/stores'
 import adminStores from './Admin/stores'
+import './App.css'
 
 @observer
 class App extends React.Component {
