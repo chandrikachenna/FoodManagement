@@ -21,6 +21,10 @@ interface NavbarProps{
 }
 
 class Navbar extends Component<NavbarProps> {
+   static defaultProps={
+      onClickForRatingsAndReviews:null,
+      onClickForFoodItems:null
+   }
    render() {
       const {
          onClickGoHome,
@@ -30,6 +34,7 @@ class Navbar extends Component<NavbarProps> {
          page
       } = this.props
       const { home, foodItems, ratingsAndReviews, logOut } = strings.admin
+      //TODO color --page.match(foodItems) && COLORS.brightBlue
       return (
          <>
             <Navbarcontainer>
@@ -37,7 +42,7 @@ class Navbar extends Component<NavbarProps> {
                   <SubNav>
                      <Logo />
                      <Button onClick={onClickGoHome}>
-                        <PageLink color={page.match(home) && COLORS.brightBlue}>
+                        <PageLink color={'blue'}>
                            {home}
                         </PageLink>
                      </Button>
@@ -45,21 +50,21 @@ class Navbar extends Component<NavbarProps> {
                   <OptionsBar>
                      <Button onClick={onClickSignOut}>
                         <PageLink
-                           color={page.match(logOut) && COLORS.brightBlue}
+                           color={'black'}
                         >
                            {logOut}
                         </PageLink>
                      </Button>
                      <PageLink
                         color={
-                           page.match(ratingsAndReviews) && COLORS.brightBlue
+                           'black'
                         }
                         onClick={onClickForRatingsAndReviews}
                      >
                         {ratingsAndReviews}
                      </PageLink>
                      <PageLink
-                        color={page.match(foodItems) && COLORS.brightBlue}
+                        color={'black'}
                         onClick={onClickForFoodItems}
                      >
                         {foodItems}
@@ -69,18 +74,18 @@ class Navbar extends Component<NavbarProps> {
             </Navbarcontainer>
             <SpareOptionsBar>
                <Button onClick={onClickSignOut}>
-                  <PageLink color={page.match(logOut) && COLORS.brightBlue}>
+                  <PageLink color={'black'}>
                      {logOut}
                   </PageLink>
                </Button>
                <PageLink
-                  color={page.match(ratingsAndReviews) && COLORS.brightBlue}
+                  color={'black'}
                   onClick={onClickForRatingsAndReviews}
                >
                   {ratingsAndReviews}
                </PageLink>
                <PageLink
-                  color={page.match(foodItems) && COLORS.brightBlue}
+                  color={'black'}
                   onClick={onClickForFoodItems}
                >
                   {foodItems}
