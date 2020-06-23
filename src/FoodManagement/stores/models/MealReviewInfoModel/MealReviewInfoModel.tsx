@@ -2,17 +2,19 @@ import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealRatingModel } from '../MealRatingModel'
+import { MealReviewInfo } from "../../../services/MealReviewInfoServices/MealReviewInfoService.fixture"
+import { UpdateMealReviewInfo } from "../../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture"
 
 class MealReviewInfoModel {
-   @observable getMealReviewAPIStatus
-   @observable getMealReviewAPIError
-   @observable mealReviewInfoAPI
-   @observable mealReviewInfo
+   @observable getMealReviewAPIStatus:number=API_INITIAL
+   @observable getMealReviewAPIError:null|number|string=null
+   @observable mealReviewInfoAPI:MealReviewInfo
+   @observable mealReviewInfo:object[]=[]
 
-   @observable getUpdateMealReviewAPIStatus
-   @observable getUpdateMealReviewAPIError
-   @observable updateMealReviewInfoAPI
-   @observable updateMealReviewInfoResponse
+   @observable getUpdateMealReviewAPIStatus:number=API_INITIAL
+   @observable getUpdateMealReviewAPIError:null|number|string=null
+   @observable updateMealReviewInfoAPI:UpdateMealReviewInfo
+   @observable updateMealReviewInfoResponse:object[]=[]
 
    @observable mealType
    @observable reviewText

@@ -4,8 +4,12 @@ import strings from '../../i18n/strings.json'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
 
+interface TextAreaProps{
+   onChange:(props:string)=>void
+}
+
 @observer
-class TextArea extends Component {
+class TextArea extends Component<TextAreaProps> {
    @observable value
    onChange = event => {
       this.value = event.target.value

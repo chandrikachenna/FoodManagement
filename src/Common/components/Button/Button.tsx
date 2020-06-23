@@ -24,7 +24,8 @@ type ButtonProps= {
 class Button extends Component<ButtonProps> {
    static defaultProps={
       loadingStatus:200,
-      disabled:false
+      disabled:false,
+      color:'white'
    }
    render() {
       const { variant, onClick, name, width, color, loadingStatus } = this.props

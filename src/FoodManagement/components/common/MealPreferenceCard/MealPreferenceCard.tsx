@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouterProps } from 'react-router-dom'
 
 import {
    Layout,
@@ -24,8 +24,16 @@ import { Button } from '../../../../Common/components/Button'
 import { COLORS } from '../../../../Common/theme/Colors'
 import strings from '../../../../Common/i18n/strings.json'
 
+interface selectedMealTypeInfo{
+   mealItemsInfo:any
+}
+interface MealPreferenceCardProps {
+   selectedMealTypeInfo:selectedMealTypeInfo
+}
+
+
 @observer
-class MealPreferenceCard extends Component {
+class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps>{
    mealType
    isCustom
    requestObject
@@ -48,7 +56,7 @@ class MealPreferenceCard extends Component {
       this.mealFormate = 'custom'
    }
    getRequestObject = (mealItemsList, formate) => {
-      let requestObject = {
+      let requestObject:any = {
          user_meal_format: formate,
          meal_preferences: []
       }
@@ -65,7 +73,7 @@ class MealPreferenceCard extends Component {
    }
    onClickSave = () => {
       this.isCustom = this.mealFormate.match('custom') ? true : false
-      const { mealItemsInfo } = {
+      const { mealItemsInfo} = {
          ...this.props.selectedMealTypeInfo
       }
       if (!this.isCustom) {

@@ -17,14 +17,22 @@ import { COLORS } from '../../../Common/theme/Colors'
 import { TextArea } from '../../../Common/components/TextArea'
 import { SMART_FOOD_MANAGEMENT_PATH } from '../../constants/RouteConstants'
 import { observable } from 'mobx'
-const width = '73px'
+import { MealInfoStore } from "../../stores/MealInfoStore"
+import {History} from 'history'
+
+const width:string = '73px'
+
+interface ReviewCardProps{
+   mealInfoStore:MealInfoStore,
+   history:History
+}
 
 @observer
-class ReviewCard extends Component {
+class ReviewCard extends Component<ReviewCardProps> {
    @observable reviewText
    requestedObject = () => {
       const reviewInfo = this.props.mealInfoStore.selectedMealTypeReview
-      const object = {
+      const object:any = {
          user_reveiw: reviewInfo.reviewText,
          items: []
       }

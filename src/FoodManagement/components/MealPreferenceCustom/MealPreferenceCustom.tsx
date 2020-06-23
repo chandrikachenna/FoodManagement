@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import { Layout, Left, Right, Wrap } from './styledComponents'
 import { Counter } from '../../../Common/components/Counter'
 import { observer } from 'mobx-react'
+import { MealItemModel } from "../../stores/models/MealItemModel"
+
+
+interface MealPreferenceCustomProps{
+   mealItems:MealItemModel[]
+}
 
 @observer
-class MealPreferenceCustom extends Component {
+class MealPreferenceCustom extends Component<MealPreferenceCustomProps> {
    render() {
       const { mealItems } = this.props
       return (

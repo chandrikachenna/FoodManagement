@@ -2,21 +2,23 @@ import { observable, action } from 'mobx'
 import { API_INITIAL } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealItemModel } from '../MealItemModel'
+import { UpdateMealInfo } from "../../../services/UpdateMealServices/UpdateMealInfo.fixture"
+import { UpdateCustomMealInfo } from "../../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture"
 
 class MealInfoItemModel {
-   @observable getMealItemsAPIStatus
-   @observable getMealItemsAPIError
+   @observable getMealItemsAPIStatus:number=API_INITIAL
+   @observable getMealItemsAPIError:string|null|number=null
    @observable editPreferenceAPI
-   @observable mealItemsInfo
-   @observable mealType
-   @observable date
-   @observable mealPreference
+   @observable mealItemsInfo:object=[]
+   @observable mealType:string=''
+   @observable date:Date
+   @observable mealPreference:object[]=[]
 
-   @observable getUpdateMealInfoAPIStatus
-   @observable getUpdateMealInfoAPIError
-   @observable updateMealInfoService
-   @observable updateCustomMealInfoService
-   @observable updateMealInfoResponse
+   @observable getUpdateMealInfoAPIStatus:number=API_INITIAL
+   @observable getUpdateMealInfoAPIError:string|null|number=null
+   @observable updateMealInfoService:UpdateMealInfo
+   @observable updateCustomMealInfoService:UpdateCustomMealInfo
+   @observable updateMealInfoResponse:object|null=null
 
    constructor(
       api,
@@ -67,12 +69,11 @@ class MealInfoItemModel {
       this.getEditPreference(date, this.mealType)
    }
    @action.bound
-   setMealItemsResponse(mealItemsResponse) {
+   setMealItemsResponse(mealItemsResponse:any) {
       this.mealPreference = mealItemsResponse['user_meal_format']
-      console.log(mealItemsResponse)
       Object.entries(mealItemsResponse['meal_preferences']).forEach(
          ([mealFormate, mealItemsList]) => {
-            let ItemModel = []
+            let ItemModel:any = []
             mealItemsList.forEach(item => {
                ItemModel.push(new MealItemModel(item))
             })

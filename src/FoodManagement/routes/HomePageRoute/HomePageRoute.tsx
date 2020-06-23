@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { format } from 'date-fns'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouteProps } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 
 import { withHeader } from '../../../Common/hocs/withHeader'
@@ -9,14 +9,14 @@ import { Mealcards } from '../../components/Mealcards'
 import { MealInfoStore } from "../../stores/MealInfoStore"
 
 interface HomePageRouteProps{
-   mealInfoStore:MealInfoStore,
+   
    onClickSignOut:()=>void,
    onClickGoHome:()=>void
 }
 
 @inject('mealInfoStore')
 @observer
-class HomePageRoute extends Component <HomePageRouteProps>{
+class HomePageRoute extends Component <HomePageRouteProps & RouteProps>{
    componentDidMount() {
       this.props.mealInfoStore.getMealInfoAPIStatus = 0
       this.doNetworkCalls()

@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 import { Layout, Button as ButtonTag, Text } from './styledComponents'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
-import { Button } from '../../components/Button'
+import { Button } from '../Button'
 import { COLORS } from '../../theme/Colors'
+
+interface TabBarProps{
+   onClikFullMeal:()=>void
+   onClikHalfMeal:()=>void
+   onClikCustom:()=>void
+
+
 @observer
-class TabBar extends Component {
+class TabBar extends Component <TabBarProps>{
    // @observable selectedBtn=this.props.mealFormat;
    @observable selectedBtn = 'FullMeal'
    onclickFullMeal = () => {

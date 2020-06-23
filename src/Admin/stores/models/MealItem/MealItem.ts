@@ -1,13 +1,13 @@
 import { observable, action } from 'mobx'
 
 class MealItem {
-   id
-   @observable name
-   @observable category
-   @observable quantity
-   @observable baseUnit
-   @observable fullMealQuantity
-   @observable halfMealQuantity
+   id:number
+   @observable name:string
+   @observable category:string
+   @observable quantity:number
+   @observable baseUnit:string
+   @observable fullMealQuantity:number
+   @observable halfMealQuantity:number
    constructor(itemInfo) {
       this.id = Math.random()
       this.name = itemInfo.name
