@@ -9,11 +9,10 @@ class MealInfoItemModel {
    @observable getMealItemsAPIStatus:number=API_INITIAL
    @observable getMealItemsAPIError:string|null|number=null
    @observable editPreferenceAPI
-   @observable mealItemsInfo:object=[]
+   @observable mealItemsInfo:Array<object>=[]
    @observable mealType:string=''
    @observable date:Date
-   @observable mealPreference:object[]=[]
-
+   @observable mealPreference:any
    @observable getUpdateMealInfoAPIStatus:number=API_INITIAL
    @observable getUpdateMealInfoAPIError:string|null|number=null
    @observable updateMealInfoService:UpdateMealInfo
@@ -56,12 +55,11 @@ class MealInfoItemModel {
    }
    @action.bound
    setMealItemsAPIStatus(apiStatus) {
-      console.log(apiStatus)
       this.getMealItemsAPIStatus = apiStatus
    }
    @action.bound
    setMealItemsAPIError(error) {
-      this.getMealItemsAPIError = error
+         this.getMealItemsAPIError = error
    }
    @action.bound
    onChangeDate(date) {
@@ -69,15 +67,15 @@ class MealInfoItemModel {
       this.getEditPreference(date, this.mealType)
    }
    @action.bound
-   setMealItemsResponse(mealItemsResponse:any) {
+   setMealItemsResponse(mealItemsResponse) {
       this.mealPreference = mealItemsResponse['user_meal_format']
+      let itemModel:any=[];
       Object.entries(mealItemsResponse['meal_preferences']).forEach(
-         ([mealFormate, mealItemsList]) => {
-            let ItemModel:any = []
+         ([mealFormate, mealItemsList]:any={}) => {
             mealItemsList.forEach(item => {
-               ItemModel.push(new MealItemModel(item))
+               itemModel.push(new MealItemModel(item))
             })
-            this.mealItemsInfo.push(ItemModel)
+            this.mealItemsInfo.push(itemModel)
          }
       )
    }

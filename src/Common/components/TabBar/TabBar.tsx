@@ -9,7 +9,7 @@ interface TabBarProps{
    onClikFullMeal:()=>void
    onClikHalfMeal:()=>void
    onClikCustom:()=>void
-
+}
 
 @observer
 class TabBar extends Component <TabBarProps>{

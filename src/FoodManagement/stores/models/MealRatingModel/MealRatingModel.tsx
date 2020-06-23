@@ -1,9 +1,9 @@
 import { observable, action } from 'mobx'
 
 class MealRatingModel {
-   @observable qualityRating
-   @observable tasteRating
-   @observable name
+   @observable qualityRating:number
+   @observable tasteRating:number
+   @observable name:string
 
    constructor(itemInfo) {
       const { quality_rating, taste_rating, item_name } = itemInfo

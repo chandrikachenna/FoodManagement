@@ -73,7 +73,7 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps
    }
    onClickSave = () => {
       this.isCustom = this.mealFormate.match('custom') ? true : false
-      const { mealItemsInfo} = {
+      const { mealItemsInfo} :any={} = {
          ...this.props.selectedMealTypeInfo
       }
       if (!this.isCustom) {
@@ -87,7 +87,7 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps
    }
    onClickSkipped = () => {
       this.isCustom = true
-      const { mealItemsInfo } = {
+      const { mealItemsInfo } :any={}  = {
          ...this.props.selectedMealTypeInfo
       }
       let skippedMealData = mealItemsInfo[2].map(itemInfo =>
@@ -103,7 +103,7 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps
    }
    render() {
       const { skipMeal, back, save } = strings.foodManagement
-      const { mealType, mealItemsInfo, date } = {
+      const { mealType, mealItemsInfo, date } :any={} = {
          ...this.props.selectedMealTypeInfo
       }
       const { onChangeDate } = this.props.selectedMealTypeInfo

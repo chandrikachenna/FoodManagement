@@ -5,13 +5,14 @@ import { observer } from 'mobx-react'
 import { observable } from 'mobx'
 
 interface TextAreaProps{
-   onChange:(props:string)=>void
+   onChange:(event:React.ChangeEvent<HTMLTextAreaElement>)=>void
+   value:string
 }
 
 @observer
 class TextArea extends Component<TextAreaProps> {
    @observable value
-   onChange = event => {
+   onChange = (event:React.ChangeEvent<HTMLTextAreaElement>):void=> {
       this.value = event.target.value
       this.props.onChange(this.value)
    }
@@ -21,7 +22,7 @@ class TextArea extends Component<TextAreaProps> {
          <Area
             placeholder={writeReview}
             onChange={this.onChange}
-            value={this.value}
+            value={this.props.value}
          ></Area>
       )
    }

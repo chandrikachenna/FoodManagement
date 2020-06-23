@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import ReactStarRating from 'react-star-rating-component'
 import StartIcon from '../../../../Common/icons/star.svg'
 import { observer } from 'mobx-react'
-
+interface IState {
+   rating: number;
+ }
+interface StarRatingProps{
+   onChange:(props:number)=>void
+}
 @observer
-class StarRating extends Component {
+class StarRating extends Component<StarRatingProps,IState> {
    constructor(props) {
       super(props)
       this.state = {
@@ -17,7 +22,7 @@ class StarRating extends Component {
    }
 
    render() {
-      const { rating } = this.state
+      const { rating} = this.state
       return (
          <ReactStarRating
             name='rate1'

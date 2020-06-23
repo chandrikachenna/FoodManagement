@@ -54,7 +54,7 @@ class MenuDisplayer extends Component<MenuDisplayerProps>{
                   onClickMenu2={this.onClickMenu2}
                   onClickMenu3={this.onClickMenu3}
                />
-               <DatePicker />
+               <DatePicker onChangeDate={()=>{}} date={new Date()}/> 
             </Header>
             {this.selectedMenu && (
                <Content>
