@@ -1,22 +1,24 @@
 import { networkCallWithApisauce } from '../../../Common/utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
+import { UpdateMealReviewService } from "."
 
-class UpdateMealInfo {
-   api
+class UpdateMealReviewInfo implements UpdateMealReviewService{
+   api :Record<string, any>
+
    constructor() {
       this.api = create({
-         baseURL: 'https://127.0.0.1:8080/'
+         baseURL: ''
       })
    }
-   setMealsAPI(requestObject) {
+   setMealReviewInfo(date, mealType, requestObject) {
       return networkCallWithApisauce(
          this.api,
-         `food_management/`,
+         ``,
          requestObject,
          apiMethods.post
       )
    }
 }
 
-export { UpdateMealInfo }
+export { UpdateMealReviewInfo }

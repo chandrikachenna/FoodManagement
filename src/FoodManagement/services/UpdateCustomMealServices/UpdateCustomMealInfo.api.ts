@@ -1,9 +1,12 @@
 import { networkCallWithApisauce } from '../../../Common/utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
+import { UpdateCustomMealService } from "."
 
-class UpdateCustomMealInfo {
-   api
+
+class UpdateCustomMealInfo implements UpdateCustomMealService{
+   api: Record<string, any>
+
    constructor() {
       this.api = create({
          baseURL: 'https://127.0.0.1:8080/'

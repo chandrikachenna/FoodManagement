@@ -1,8 +1,9 @@
 import getMealInfo from '../../fixtures/getMealInfo.json'
+import { resolveWithTimeout } from "../../../Common/utils/TestUtils"
 
 class MealsInfo {
-   getMealsAPI(props:object) {
-      return Promise.resolve(getMealInfo)
+   getMealsAPI(date) {
+      return resolveWithTimeout(getMealInfo)
    }
 }
 

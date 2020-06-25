@@ -1,9 +1,11 @@
 import { networkCallWithApisauce } from '../../../Common/utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
+import { MealReviewService } from "."
 
-class MealReviewInfo {
-   api
+class MealReviewInfo implements MealReviewService{
+   api: Record<string, any>
+
    constructor() {
       this.api = create({
          baseURL: 'https://5277955cd80f.ngrok.io/api/food_management/'

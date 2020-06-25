@@ -19,8 +19,8 @@ class App extends React.Component {
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   {authRoutes}
-                  {/* {foodManagementRoutes}
-                  {adminRoutes} */}
+                  {foodManagementRoutes}
+                  {/* {adminRoutes} */}
                   <Route exact path='/'>
                      <HomePage />
                   </Route>

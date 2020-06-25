@@ -62,11 +62,13 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps>{
       }
       mealItemsList.forEach(list => {
          requestObject.meal_preferences.push({
-            item_id: list.id,
+            item:{
+               item_id: list.id,
             name: list.name,
             catageory: list.catageory,
             unit: list.unit,
             quantity: list.quantity
+            }
          })
       })
       return requestObject

@@ -18,13 +18,11 @@ import { TextArea } from '../../../Common/components/TextArea'
 import { SMART_FOOD_MANAGEMENT_PATH } from '../../constants/RouteConstants'
 import { observable } from 'mobx'
 import { MealInfoStore } from "../../stores/MealInfoStore"
-import {History} from 'history'
 
 const width:string = '73px'
 
 interface ReviewCardProps extends RouteComponentProps{
    mealInfoStore:MealInfoStore,
-   history:History
 }
 
 @observer

@@ -37,7 +37,7 @@ class MealReviewInfoModel {
    }
 
    @action.bound
-   getMealReviewInfo(date, mealType) {
+   getMealReviewInfo(date:Date, mealType:string) {
       const mealItemsPromise = this.mealReviewInfoAPI.getMealReviewInfo(
          date,
          mealType
