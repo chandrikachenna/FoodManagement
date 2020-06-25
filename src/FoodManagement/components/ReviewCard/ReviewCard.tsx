@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouteComponentProps } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import {
    Layout,
@@ -22,7 +22,7 @@ import {History} from 'history'
 
 const width:string = '73px'
 
-interface ReviewCardProps{
+interface ReviewCardProps extends RouteComponentProps{
    mealInfoStore:MealInfoStore,
    history:History
 }

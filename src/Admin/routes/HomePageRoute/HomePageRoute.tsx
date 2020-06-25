@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouteComponentProps } from 'react-router-dom'
 import { HomePage } from '../../components/HomePage'
 import { observer, inject } from 'mobx-react'
 import { TabBar } from '../../components/common/TabBar'
@@ -9,15 +9,16 @@ import { FoodWastageLog } from '../../components/FoodWastageLog'
 import { ScheduleMealStore } from "../../stores/ScheduleMealStore"
 import { HeadCountsStore } from "../../stores/HeadCountsStore"
 import { AuthStore } from "../../../Authentication/stores/AuthStore"
-import {History} from 'history'
 
-interface HomePageRouteProps{
-   scheduleMealStore:ScheduleMealStore,
-   headCountsStore:HeadCountsStore,
-   authStore:AuthStore,
-   history:History
+
+interface HomePageRouteProps extends RouteComponentProps{
+   
 }
-
+interface InjectedProps extends HomePageRouteProps{
+   scheduleMealStore:ScheduleMealStore
+   headCountsStore:HeadCountsStore
+   authStore:AuthStore
+}
 
 @inject('scheduleMealStore', 'headCountsStore', 'authStore')
 @observer
@@ -25,12 +26,13 @@ class HomePageRoute extends Component <HomePageRouteProps>{
    componentDidMount() {
       this.doNetworkCalls()
    }
+   getInjectedProps=():InjectedProps=>this.props as InjectedProps
    doNetworkCalls = () => {
-      this.props.scheduleMealStore.getScheduleMealInfo()
-      this.props.headCountsStore.getHeadCountsInfo()
+      this.getInjectedProps().scheduleMealStore.getScheduleMealInfo()
+      this.getInjectedProps().headCountsStore.getHeadCountsInfo()
    }
    onClickSignOut = () => {
-      this.props.authStore.userSignOut()
+      this.getInjectedProps().authStore.userSignOut()
       const { history } = this.props
       history.push('/food-management/sign-in')
    }
@@ -44,8 +46,8 @@ class HomePageRoute extends Component <HomePageRouteProps>{
             renderedComponent1={ScheduleMeal}
             renderedComponent2={HeadCounts}
             renderedComponent3={FoodWastageLog}
-            dataForComponent1={this.props.scheduleMealStore}
-            dataForComponent2={this.props.headCountsStore}
+            dataForComponent1={this.getInjectedProps().scheduleMealStore}
+            dataForComponent2={this.getInjectedProps().headCountsStore}
          />
       )
    })
@@ -53,7 +55,7 @@ class HomePageRoute extends Component <HomePageRouteProps>{
       const {
          getHeadCountsInfoAPIStatus,
          getHeadCountsInfoAPIError
-      } = this.props.headCountsStore
+      } = this.getInjectedProps().headCountsStore
       return (
          <HomePage
             onClickGoHome={this.onClickGoHome}

@@ -83,7 +83,7 @@ class MealInfoItemModel {
    setUpdateMealInfoAPIError(apiError) {
       this.getUpdateMealInfoAPIError = apiError
    }
-   @action.bound
+   @action.bound  
    setUpdateMealInfoAPIStatus(apiStatus) {
       this.getUpdateMealInfoAPIStatus = apiStatus
    }

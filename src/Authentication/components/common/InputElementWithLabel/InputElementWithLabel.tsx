@@ -8,7 +8,7 @@ interface InputElementWithLabelProps{
    value:string,
    type:string,
    placeholder:string,
-   onChange:()=>void,
+   onChange:(event:React.ChangeEvent<HTMLInputElement>)=>void
    message:string
 }
 

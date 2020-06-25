@@ -2,36 +2,36 @@ import React, { Component } from 'react'
 import { SignInPage } from '../../components/SignInPage'
 import { observer, inject } from 'mobx-react'
 import { observable } from 'mobx'
-import { withRouter } from 'react-router-dom'
+import { withRouter ,RouteComponentProps} from 'react-router-dom'
 import strings from '../../../Common/i18n/strings.json'
-import { getRole } from '../../../Common/utils/StorageUtils'
 import { HOME_PAGE_PATH } from '../../constants/RouteConstants'
-import { ADMIN_PATH } from '../../../Admin/constants/RouteConstants'
-import {History} from 'history'
 import { AuthStore } from "../../stores/AuthStore"
 
 const { enterUsernameMsg, enterPasswordMsg } = strings.authentication
 
-interface SigninRouteProps{
-   history:History,
+interface SigninRouteProps extends RouteComponentProps{
+   
+}
+interface InjectedProps extends SigninRouteProps{
    authStore:AuthStore
 }
-
 
 @inject('authStore')
 @observer
 class SigninRoute extends Component <SigninRouteProps>{
-   @observable username
-   @observable password
-   @observable usernameErrorMessage
-   @observable passwordErrorMessage
-   @observable errorMessage
+   @observable username:string
+   @observable password:string
+   @observable usernameErrorMessage!:string
+   @observable passwordErrorMessage!:string
+   @observable errorMessage!:string
    constructor(props) {
       super(props)
       this.username = ''
       this.password = ''
    }
-   onChangeUsername = event => {
+   getInjectedProps = (): InjectedProps => this.props as InjectedProps
+
+   onChangeUsername = (event:React.ChangeEvent<HTMLInputElement>):void=> {
       this.username = event.target.value
       if (this.username) {
          this.usernameErrorMessage = ''
@@ -53,7 +53,7 @@ class SigninRoute extends Component <SigninRouteProps>{
       history.replace(HOME_PAGE_PATH)
    }
    onFailureSignIn = () => {
-      const { getUserSignInAPIError: apiError } = this.props.authStore
+      const { getUserSignInAPIError: apiError } = this.getInjectedProps().authStore
       if (apiError !== null && apiError !== undefined) {
          this.errorMessage = apiError
       }
@@ -64,7 +64,7 @@ class SigninRoute extends Component <SigninRouteProps>{
             username: this.username,
             password: this.password
          }
-         this.props.authStore.userSignIn(
+         this.getInjectedProps().authStore.userSignIn(
             this.onSuccesSignIn,
             this.onFailureSignIn,
             requestObject
@@ -80,7 +80,7 @@ class SigninRoute extends Component <SigninRouteProps>{
             onChangeUsername={this.onChangeUsername}
             onChangePassword={this.onChangePassword}
             onClickSignIn={this.onClickSignIn}
-            loginStatus={this.props.authStore.getUserSignInAPIStatus}
+            loginStatus={this.getInjectedProps().authStore.getUserSignInAPIStatus}
             usernameErrorMessage={this.usernameErrorMessage}
             passwordErrorMessage={this.passwordErrorMessage}
             errorMessage={this.errorMessage}

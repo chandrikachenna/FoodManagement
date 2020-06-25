@@ -19,12 +19,12 @@ class App extends React.Component {
             <Router basename={process.env.PUBLIC_URL}>
                <Switch>
                   {authRoutes}
-                  {foodManagementRoutes}
-                  {adminRoutes}
+                  {/* {foodManagementRoutes}
+                  {adminRoutes} */}
                   <Route exact path='/'>
                      <HomePage />
                   </Route>
-                  <Route path='*' component={() => '404 not Found'} />
+                  {/* <Route path='*' component={() => '404 not Found'} /> */}
                </Switch>
             </Router>
          </Provider>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import { observable } from 'mobx'
-import { withRouter,RouterProps } from 'react-router-dom'
+import { withRouter,RouteComponentProps } from 'react-router-dom'
 
 import {
    Layout,
@@ -24,16 +24,16 @@ import { Button } from '../../../../Common/components/Button'
 import { COLORS } from '../../../../Common/theme/Colors'
 import strings from '../../../../Common/i18n/strings.json'
 
-interface selectedMealTypeInfo{
+interface selectedMealTypeInfo {
    mealItemsInfo:any
 }
-interface MealPreferenceCardProps {
+interface MealPreferenceCardProps extends RouteComponentProps{
    selectedMealTypeInfo:selectedMealTypeInfo
 }
 
 
 @observer
-class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps>{
+class MealPreferenceCard extends Component<MealPreferenceCardProps>{
    mealType
    isCustom
    requestObject
@@ -82,7 +82,7 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps
          this.requestObject = this.getRequestObject(mealItemsInfo[2], 'custom')
       }
       this.onClick()
-      const { updateMealInfo } = this.props.selectedMealTypeInfo
+      const { updateMealInfo }:any = this.props.selectedMealTypeInfo
       updateMealInfo(this.requestObject, this.isCustom)
    }
    onClickSkipped = () => {
@@ -95,7 +95,7 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps
       )
       this.requestObject = this.getRequestObject(skippedMealData, 'skipped')
       this.onClick()
-      const { updateMealInfo } = this.props.selectedMealTypeInfo
+      const { updateMealInfo }:any = this.props.selectedMealTypeInfo
       updateMealInfo(this.requestObject, this.isCustom)
    }
    capitalizeFirstLetter = ([first, ...rest], locale = navigator.language) => {
@@ -106,7 +106,7 @@ class MealPreferenceCard extends Component<MealPreferenceCardProps & RouterProps
       const { mealType, mealItemsInfo, date } :any={} = {
          ...this.props.selectedMealTypeInfo
       }
-      const { onChangeDate } = this.props.selectedMealTypeInfo
+      const { onChangeDate }:any = this.props.selectedMealTypeInfo
       const queryString = require('query-string')
       const parsed = queryString.parse(this.props.location.search)
       return (

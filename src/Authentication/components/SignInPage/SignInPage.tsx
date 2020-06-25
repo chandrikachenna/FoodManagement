@@ -7,7 +7,7 @@ import {
    MsgShowField,
    TitleField
 } from './styledComponents'
-import { API_FETCHING } from '@ib/api-constants'
+import { API_FETCHING, APIStatus } from '@ib/api-constants'
 
 import { InputElementWithLabel } from '../common/InputElementWithLabel'
 import { Footer, Link } from '../common/styledComponents'
@@ -18,7 +18,19 @@ import { Button } from '../../../Common/components/Button'
 import { COLORS } from '../../../Common/theme/Colors'
 const width = '320px'
 
-class SignInPage extends Component {
+interface SignInPageProps{
+   username:string
+   password:string
+   errorMessage:string
+   usernameErrorMessage:string
+   passwordErrorMessage:string
+   loginStatus:APIStatus
+   onChangeUsername:(event:React.ChangeEvent<HTMLInputElement>)=>void
+   onChangePassword:(event:React.ChangeEvent<HTMLInputElement>)=>void
+   onClickSignIn:()=>void
+}
+
+class SignInPage extends Component<SignInPageProps> {
    render() {
       const {
          username: userName,

@@ -2,8 +2,9 @@ import { networkCallWithApisauce } from '../../utils/APIUtils'
 import { create } from 'apisauce'
 import { apiMethods } from '../../constants/APIConstants'
 import { SIGNIN } from '../endpoints'
+import AuthService from "."
 
-class AuthAPI {
+class AuthAPI implements AuthService{
    api
    constructor() {
       this.api = create({

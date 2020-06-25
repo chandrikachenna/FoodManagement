@@ -1,4 +1,4 @@
-export interface AuthenticateUserRequest {
+export interface UpdateUserRequest {
     name: string
     password: string
   }
