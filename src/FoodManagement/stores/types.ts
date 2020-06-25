@@ -29,6 +29,14 @@ export interface MealPreferenceItemObject{
 	}
 }
 
+export interface MealPreferenceObject{
+	item_id:number
+		name:string
+		catageory:string
+		unit:string
+		quantity:number
+}
+
 export interface MealPreferenceInfoResponse{
 	user_meal_format:string
 	meal_preferences:{

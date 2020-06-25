@@ -1,23 +1,26 @@
 import { observable, action } from 'mobx'
-import { API_INITIAL } from '@ib/api-constants'
+import { API_INITIAL, APIStatus } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealItemModel } from '../MealItemModel'
-import { UpdateMealInfo } from "../../../services/UpdateMealServices/UpdateMealInfo.fixture"
-import { UpdateCustomMealInfo } from "../../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture"
+
+import { MealPreferenceService } from "../../../services/MealPreferenceServices"
+import { UpdateMealService } from "../../../services/UpdateMealServices"
+import { UpdateCustomMealService } from "../../../services/UpdateCustomMealServices"
 
 class MealInfoItemModel {
-   @observable getMealItemsAPIStatus:number=API_INITIAL
-   @observable getMealItemsAPIError:string|null|number=null
-   @observable editPreferenceAPI
-   @observable mealItemsInfo:Array<object>=[]
+   @observable getMealItemsAPIStatus!:APIStatus
+   @observable getMealItemsAPIError!:null|Error
+   editPreferenceAPI:MealPreferenceService
+   @observable mealItemsInfo!:Array<MealItemModel>
+
    @observable mealType:string=''
-   @observable date:Date
-   @observable mealPreference:any
-   @observable getUpdateMealInfoAPIStatus:number=API_INITIAL
-   @observable getUpdateMealInfoAPIError:string|null|number=null
-   @observable updateMealInfoService:UpdateMealInfo
-   @observable updateCustomMealInfoService:UpdateCustomMealInfo
-   @observable updateMealInfoResponse:object|null=null
+   @observable date:Date|string|number
+   @observable mealPreference!:string
+   
+   @observable getUpdateMealInfoAPIStatus!:APIStatus
+   @observable getUpdateMealInfoAPIError!:null|Error
+   updateMealInfoService:UpdateMealService
+   updateCustomMealInfoService:UpdateCustomMealService
 
    constructor(
       api,
@@ -40,7 +43,6 @@ class MealInfoItemModel {
       this.mealItemsInfo = []
       this.getUpdateMealInfoAPIStatus = API_INITIAL
       this.getUpdateMealInfoAPIError = null
-      this.updateMealInfoResponse = null
    }
    @action.bound
    getEditPreference(date, mealType) {
@@ -88,24 +90,20 @@ class MealInfoItemModel {
       this.getUpdateMealInfoAPIStatus = apiStatus
    }
    @action.bound
-   setUpdateMealInfoResponse(updateMealInfoResponse) {
-      this.updateMealInfoResponse = updateMealInfoResponse
-   }
-   @action.bound
    updateMealInfo(requestObject, isCustomed) {
       if (isCustomed) {
          const updateMealInfoPromise = this.updateCustomMealInfoService.setCustomMealsAPI(
             requestObject
          )
          return bindPromiseWithOnSuccess(updateMealInfoPromise)
-            .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
+            .to(this.setUpdateMealInfoAPIStatus, ()=>({}))
             .catch(this.setUpdateMealInfoAPIError)
       } else {
          const updateMealInfoPromise = this.updateMealInfoService.setMealsAPI(
             requestObject
          )
          return bindPromiseWithOnSuccess(updateMealInfoPromise)
-            .to(this.setUpdateMealInfoAPIStatus, this.setUpdateMealInfoResponse)
+            .to(this.setUpdateMealInfoAPIStatus, ()=>({}))
             .catch(this.setUpdateMealInfoAPIError)
       }
    }

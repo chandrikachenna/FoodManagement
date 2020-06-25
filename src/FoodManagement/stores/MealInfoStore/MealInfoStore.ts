@@ -1,33 +1,39 @@
 import { observable, action } from 'mobx'
-import { API_INITIAL } from '@ib/api-constants'
+import { API_INITIAL, APIStatus } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealInfoItemModel } from '../models/MealInfoItemModel'
 import { MealReviewInfoModel } from '../models/MealReviewInfoModel'
 import { format } from 'date-fns'
-import { MealsInfo } from "../../services/MealInfoServices/MealsInfo.fixture"
-import { MealPreference } from "../../services/MealPreferenceServices/MealPreference.fixture"
-import { UpdateCustomMealInfo } from "../../services/UpdateCustomMealServices/UpdateCustomMealInfo.fixture"
-import { UpdateMealInfo } from "../../services/UpdateMealServices/UpdateMealInfo.fixture"
+
+import { MealInfoService } from "../../services/MealInfoServices"
+import { MealPreferenceService } from "../../services/MealPreferenceServices"
+import { UpdateMealService } from "../../services/UpdateMealServices"
+import { UpdateCustomMealService } from "../../services/UpdateCustomMealServices"
+import { MealReviewService } from "../../services/MealReviewInfoServices"
+import { UpdateMealReviewService } from "../../services/UpdateMealReviewInfoServices"
+import { GetMealInfoResponse } from "../types"
 
 
 class MealInfoStore {
-   @observable getMealInfoAPIStatus:number=API_INITIAL
-   @observable getMealInfoAPIError:string|null|number=null
+   @observable getMealInfoAPIStatus!:APIStatus
+   @observable getMealInfoAPIError!:Error|null
 
-   @observable mealInfoService:MealsInfo
-   @observable mealPreferenceService:MealPreference
-   @observable updateMealInfoService:UpdateMealInfo
-   @observable updateCustomMealInfoService:UpdateCustomMealInfo
+   mealInfoService:MealInfoService
+   mealPreferenceService:MealPreferenceService
+   updateMealInfoService:UpdateMealService
+   updateCustomMealInfoService:UpdateCustomMealService
 
-   @observable mealInfo
-   @observable selectedMealTypeInfo
-   @observable selectedMealType
-   @observable timeCounter
+   @observable mealInfo!:GetMealInfoResponse|null
+   @observable selectedMealTypeInfo!:MealInfoItemModel|any
+   @observable selectedMealType!:string|null
+   @observable timeCounter!:Date|string|number
 
-   @observable mealReviewInfoService
-   @observable updateMealReviewInfoService
-   @observable selectedMealTypeReview
-   initialTimerID
+   mealReviewInfoService:MealReviewService
+   updateMealReviewInfoService:UpdateMealReviewService
+
+   @observable selectedMealTypeReview:MealReviewInfoModel|any
+   initialTimerID!:NodeJS.Timeout
+
    constructor(
       mealInfoService,
       mealPreferenceService,
@@ -54,16 +60,18 @@ class MealInfoStore {
          }, 1000)
       }
    }
+
    @action.bound
    init() {
       this.getMealInfoAPIStatus = API_INITIAL
       this.getMealInfoAPIError = null
-      this.mealInfo = []
-      this.timeCounter = null
+      this.mealInfo = null
+      this.timeCounter = new Date()
       this.dateTime()
       this.selectedMealTypeReview = null
       this.selectedMealType = null
    }
+
    @action.bound
    async goForReview(mealType) {
       this.selectedMealType = mealType
@@ -77,6 +85,7 @@ class MealInfoStore {
          this.selectedMealType
       )
    }
+
    @action.bound
    getMealInfo(date) {
       const mealInfoPromise = this.mealInfoService.getMealsAPI(date)
@@ -84,18 +93,22 @@ class MealInfoStore {
          .to(this.setMealInfoAPIStatus, this.setMealInfoResponse)
          .catch(this.setMealInfoAPIError)
    }
+
    @action.bound
    setMealInfoAPIStatus(apiStatus) {
       this.getMealInfoAPIStatus = apiStatus
    }
+
    @action.bound
    setMealInfoAPIError(error) {
       this.getMealInfoAPIError = error
    }
+
    @action.bound
    setMealInfoResponse(mealInfoResponse) {
       this.mealInfo = mealInfoResponse
    }
+
    @action.bound
    onClickEdit(mealType) {
       this.selectedMealType = mealType
@@ -108,6 +121,7 @@ class MealInfoStore {
       )
       this.selectedMealTypeInfo.getEditPreference(this.timeCounter, mealType)
    }
+
    @action.bound
    onChangeDate(changedDateTime) {
       clearInterval(this.initialTimerID)

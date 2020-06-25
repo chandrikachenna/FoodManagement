@@ -6,7 +6,7 @@ import { observable } from 'mobx'
 
 interface DatePickerProps{
    onChangeDate:(Date)=>void,
-   date:Date
+   date:Date|string|number
 }
 
 @observer

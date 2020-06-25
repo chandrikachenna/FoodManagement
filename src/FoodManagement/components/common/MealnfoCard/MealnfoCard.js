@@ -21,10 +21,8 @@ import { Menubar } from '../../../../Common/components/Menubar'
 import { TextLabel } from '../../../../Common/components/TextLabel'
 import { COLORS } from '../../../../Common/theme/Colors'
 import strings from '../../../../Common/i18n/strings.json'
-import { observable } from 'mobx'
 import {
    formatDistance,
-   formatDistanceToNow,
    compareAsc,
    format
 } from 'date-fns'

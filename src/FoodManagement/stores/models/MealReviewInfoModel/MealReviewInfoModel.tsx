@@ -1,23 +1,22 @@
 import { observable, action } from 'mobx'
-import { API_INITIAL } from '@ib/api-constants'
+import { API_INITIAL, APIStatus } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
 import { MealRatingModel } from '../MealRatingModel'
 import { MealReviewInfo } from "../../../services/MealReviewInfoServices/MealReviewInfoService.fixture"
 import { UpdateMealReviewInfo } from "../../../services/UpdateMealReviewInfoServices/UpdateMealReviewInfoService.fixture"
 
 class MealReviewInfoModel {
-   @observable getMealReviewAPIStatus:number=API_INITIAL
-   @observable getMealReviewAPIError:null|number|string=null
+   @observable getMealReviewAPIStatus!:APIStatus
+   @observable getMealReviewAPIError!:null|Error
    @observable mealReviewInfoAPI:MealReviewInfo
-   @observable mealReviewInfo:object[]=[]
+   @observable mealReviewInfo!:Array<MealRatingModel>
 
-   @observable getUpdateMealReviewAPIStatus:number=API_INITIAL
-   @observable getUpdateMealReviewAPIError:null|number|string=null
+   @observable getUpdateMealReviewAPIStatus!:APIStatus
+   @observable getUpdateMealReviewAPIError!:null|Error
    @observable updateMealReviewInfoAPI:UpdateMealReviewInfo
-   @observable updateMealReviewInfoResponse:object[]=[]
 
-   @observable mealType
-   @observable reviewText
+   @observable mealType:string
+   @observable reviewText!:string|null
    constructor(mealType, mealReviewInfoAPI, updateMealReviewInfoAPI) {
       this.mealReviewInfoAPI = mealReviewInfoAPI
       this.updateMealReviewInfoAPI = updateMealReviewInfoAPI
@@ -33,18 +32,7 @@ class MealReviewInfoModel {
 
       this.getUpdateMealReviewAPIStatus = API_INITIAL
       this.getUpdateMealReviewAPIError = null
-      this.updateMealReviewInfoResponse = []
-   }
-
-   @action.bound
-   getMealReviewInfo(date:Date, mealType:string) {
-      const mealItemsPromise = this.mealReviewInfoAPI.getMealReviewInfo(
-         date,
-         mealType
-      )
-      return bindPromiseWithOnSuccess(mealItemsPromise)
-         .to(this.setMealReviewAPIStatus, this.setMealReviewAPIResponse)
-         .catch(this.setMealReviewAPIError)
+   
    }
    @action.bound
    setMealReviewAPIStatus(apiStatus) {
@@ -60,15 +48,15 @@ class MealReviewInfoModel {
          item => new MealRatingModel(item)
       )
    }
-   setMealReviewInfo(date, mealType, requestObject) {
-      const mealItemsPromise = this.updateMealReviewInfoAPI.setMealReviewInfo(
+   @action.bound
+   getMealReviewInfo(date, mealType) {
+      const mealItemsPromise = this.mealReviewInfoAPI.getMealReviewInfo(
          date,
-         mealType,
-         requestObject
+         mealType
       )
       return bindPromiseWithOnSuccess(mealItemsPromise)
-         .to(this.setUpdateMealReviewAPIStatus, this.setMealReviewInfoResponse)
-         .catch(this.setUpdateMealReviewAPIError)
+         .to(this.setMealReviewAPIStatus, this.setMealReviewAPIResponse)
+         .catch(this.setMealReviewAPIError)
    }
    @action.bound
    setUpdateMealReviewAPIStatus(apiStatus) {
@@ -78,10 +66,18 @@ class MealReviewInfoModel {
    setUpdateMealReviewAPIError(error) {
       this.getUpdateMealReviewAPIError = error
    }
-   @action.bound
-   setMealReviewInfoResponse(response) {
-      this.updateMealReviewInfoResponse = response
+   setMealReviewInfo(date, mealType, requestObject) {
+      const mealItemsPromise = this.updateMealReviewInfoAPI.setMealReviewInfo(
+         date,
+         mealType,
+         requestObject
+      )
+      return bindPromiseWithOnSuccess(mealItemsPromise)
+         .to(this.setUpdateMealReviewAPIStatus, ()=>({}))
+         .catch(this.setUpdateMealReviewAPIError)
    }
+  
+  
 }
 
 export { MealReviewInfoModel }

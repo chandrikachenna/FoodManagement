@@ -2,8 +2,18 @@ import React, { Component } from 'react'
 import { MealPreferencePageContainer } from './styledComponents'
 import { Navbar } from '../common/Navbar'
 import LoadingWrapperWithLoader from '../common/LoadingWrapperWithFailure'
+import { MealInfoStore } from "../../stores/MealInfoStore"
+import { APIStatus } from "@ib/api-constants"
 
-class MealPreferencePage extends Component {
+interface MealPreferencePageProps{
+   onClickSignOut:()=>void,
+   onClickGoHome:()=>void,
+   doNetworkCalls:()=>void
+   getMealItemsAPIError:Error|null
+   getMealItemsAPIStatus:APIStatus
+   renderSuccessUI:Function
+}
+class MealPreferencePage extends Component<MealPreferencePageProps> {
    render() {
       const {
          onClickSignOut,

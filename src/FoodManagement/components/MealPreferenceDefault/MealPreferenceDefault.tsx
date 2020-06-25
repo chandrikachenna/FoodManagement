@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { Layout, Left, Right, Wrap } from './styledcomponents'
+import {  MealPreferenceObject } from "../../stores/types"
 
-class MealPreferenceDefault extends Component {
+interface MealPreferenceDefaultProps{
+   mealItems:Array<MealPreferenceObject>
+}
+class MealPreferenceDefault extends Component <MealPreferenceDefaultProps>{
    render() {
       const { mealItems } = this.props
       return (

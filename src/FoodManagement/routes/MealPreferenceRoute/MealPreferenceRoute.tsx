@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,RouteComponentProps } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 
 import { MealPreferencePage } from '../../components/MealPreferencePage'
@@ -8,10 +8,12 @@ import { MealPreference } from '../../components/MealPreference'
 import { withHeader } from '../../../Common/hocs/withHeader'
 import { MealInfoStore } from "../../stores/MealInfoStore"
 
-interface MealPreferenceRouteProps{
-   mealInfoStore:MealInfoStore,
+interface MealPreferenceRouteProps extends RouteComponentProps{
    onClickSignOut:()=>void,
    onClickGoHome:()=>void
+}
+interface InjectedProps extends MealPreferenceRouteProps{
+   mealInfoStore:MealInfoStore
 }
 
 @inject('mealInfoStore')
@@ -21,15 +23,16 @@ class MealPreferenceRoute extends Component<MealPreferenceRouteProps> {
       this.doNetworkCalls()
    }
    doNetworkCalls = () => {
-      const { onClickEdit, selectedMealType } = this.props.mealInfoStore
+      const { onClickEdit, selectedMealType } = this.getInjectedProps().mealInfoStore
       onClickEdit(selectedMealType)
    }
+   getInjectedProps=():InjectedProps=>this.props as InjectedProps
    renderSuccessUI = observer(() => {
       const {
          selectedMealType,
          selectedMealTypeInfo,
-      } = this.props.mealInfoStore
-      const {updateMealInfo}=this.props.mealInfoStore.selectedMealTypeInfo
+      } = this.getInjectedProps().mealInfoStore
+      const {updateMealInfo}=this.getInjectedProps().mealInfoStore.selectedMealTypeInfo
       return (
          <MealPreference
             selectedMealTypeInfo={selectedMealTypeInfo}
@@ -40,7 +43,7 @@ class MealPreferenceRoute extends Component<MealPreferenceRouteProps> {
    })
    render() {
       const selectedMealTypeInfo = {
-         ...this.props.mealInfoStore.selectedMealTypeInfo
+         ...this.getInjectedProps().mealInfoStore.selectedMealTypeInfo
       }
       const {
          getMealItemsAPIStatus,

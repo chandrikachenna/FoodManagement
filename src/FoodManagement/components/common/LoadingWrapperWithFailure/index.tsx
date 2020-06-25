@@ -12,7 +12,7 @@ interface LoadingWrapperWithFailureProps{
    apiStatus:number,
    renderSuccessUI:Function,
    onRetryClick:()=>void,
-   apiError:null|string|number
+   apiError:Error|null
 }
 
 @observer

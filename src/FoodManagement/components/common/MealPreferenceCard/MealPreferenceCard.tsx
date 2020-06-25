@@ -23,12 +23,13 @@ import FoodPreferenceImage from '../../../../Common/images/foodPreference.png'
 import { Button } from '../../../../Common/components/Button'
 import { COLORS } from '../../../../Common/theme/Colors'
 import strings from '../../../../Common/i18n/strings.json'
+import { MealInfoItemModel } from "../../../stores/models/MealInfoItemModel"
 
-interface selectedMealTypeInfo {
-   mealItemsInfo:any
-}
+
 interface MealPreferenceCardProps extends RouteComponentProps{
-   selectedMealTypeInfo:selectedMealTypeInfo
+   selectedMealTypeInfo:MealInfoItemModel
+   selectedMealType:string|null
+   updateMealInfo:()=>void
 }
 
 

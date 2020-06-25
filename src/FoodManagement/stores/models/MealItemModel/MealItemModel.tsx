@@ -5,7 +5,6 @@ class MealItemModel {
    name:string
    catageory:string
    unit:string
-   @observable mealItemInfo:any
    @observable quantity:number
    constructor(mealItemInfo) {
       const { item_id, name, catageory, unit, quantity } = mealItemInfo.item
