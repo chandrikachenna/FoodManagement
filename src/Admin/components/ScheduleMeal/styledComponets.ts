@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import tw from 'tailwind.macro'
-import { COLORS } from '../../../Common/theme/Colors'
+
 
 const Buttons = styled.div`
    ${tw`flex flex-row justify-end`}

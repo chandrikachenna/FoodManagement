@@ -30,8 +30,15 @@ function panesList(One, Two, Three, firstData, secondDate) {
       }
    ]
 }
+interface TabBarProps{
+   renderedComponent1:Function
+   renderedComponent2:Function
+   renderedComponent3:Function
+   dataForComponent1:any
+   dataForComponent2:any
+}
 
-class TabBar extends React.Component {
+class TabBar extends React.Component <TabBarProps>{
    render() {
       const {
          renderedComponent1,

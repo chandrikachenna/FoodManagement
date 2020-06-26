@@ -3,7 +3,7 @@ import { Buttons, Layout } from './styledComponets'
 import { Button } from '../../../Common/components/Button'
 import { MenuDisplayer } from '../common/MenuDisplayer'
 import { COLORS } from '../../../Common/theme/Colors'
-import strings from '../../../Common/i18n/strings'
+import strings from '../../../Common/i18n/strings.json'
 const width = '70px'
 
 class FoodWastageLog extends Component {
@@ -16,7 +16,6 @@ class FoodWastageLog extends Component {
             <MenuDisplayer
                menu={'Menu1'}
                menu1Name={breakfast}
-               menu2Name={lunch}
                menu3Name={dinner}
             />
             <Buttons>

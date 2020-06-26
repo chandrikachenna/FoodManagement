@@ -3,17 +3,15 @@ import { Buttons, Layout, Content } from './styledComponets'
 import { Button } from '../../../Common/components/Button'
 import { MenuDisplayer } from '../common/MenuDisplayer'
 import { COLORS } from '../../../Common/theme/Colors'
-import strings from '../../../Common/i18n/strings'
+import strings from '../../../Common/i18n/strings.json'
 import { ScheduleMealList } from '../ScheduleMealList'
+import { ScheduleMealStore } from "../../stores/ScheduleMealStore"
+
 const width = '70px'
-
-class Sample extends Component {
-   render() {
-      return <ScheduleMealList />
-   }
+interface ScheduleMealProps{
+   data:ScheduleMealStore
 }
-
-class ScheduleMeal extends Component {
+class ScheduleMeal extends Component<ScheduleMealProps>{
    onClickSave = () => {}
    onClickBack = () => {}
    render() {

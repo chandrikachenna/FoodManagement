@@ -2,7 +2,7 @@ import { API_INITIAL, API_SUCCESS, API_FETCHING } from '@ib/api-constants'
 import { HeadCountsService } from '../../services/HeadCountsServices/HeadCountsService.fixture'
 import getHeadCountsInfo from '../../fixtures/getHeadCountsInfo.json'
 
-import { HeadCountsStore } from '../HeadCountsStore'
+import { HeadCountsStore } from '.'
 
 describe('HeadCountsStore tests', () => {
    let headCountsInfo

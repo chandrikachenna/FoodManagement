@@ -2,7 +2,7 @@ import { observable, action } from 'mobx'
 import { MealItem } from '../MealItem'
 
 class MealTypeInfoModel {
-   @observable mealTypeInfo:Array<MealItem>=[]
+   @observable mealTypeInfo!:Array<MealItem>
    constructor(mealTypeInfo) {
       this.init()
       this.setMealItemModels(mealTypeInfo)

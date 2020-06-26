@@ -1,10 +1,9 @@
 import getHeadCountsInfo from '../../fixtures/getHeadCountsInfo.json'
+import { resolveWithTimeout } from "../../../Common/utils/TestUtils"
 
 class HeadCountsService {
    getHeadCountsInfo() {
-      return new Promise((resolve, reject) => {
-         resolve(getHeadCountsInfo)
-      })
+      return resolveWithTimeout(getHeadCountsInfo)
    }
 }
 

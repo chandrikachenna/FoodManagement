@@ -1,16 +1,13 @@
 import { observable, action } from 'mobx'
 import { API_INITIAL, APIStatus } from '@ib/api-constants'
 import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
-import { HeadCountsService } from "../../services/HeadCountsServices/HeadCountsService.fixture"
-
-
-
+import { HeadCountsInfoService } from "../../services/HeadCountsServices"
 
 class HeadCountsStore {
    @observable getHeadCountsInfoAPIStatus!:APIStatus
    @observable getHeadCountsInfoAPIError!:Error|null
    @observable headCountsInfo:object[]=[]
-   headCountsInfoService : HeadCountsService
+   headCountsInfoService : HeadCountsInfoService
    constructor(headCountsInfoService) {
       this.headCountsInfoService = headCountsInfoService
       this.init()

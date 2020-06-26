@@ -13,7 +13,7 @@ interface MenuDisplayerProps{
    menu1Name:string,
    menu2Name:string,
    menu3Name:string,
-   data:object[],
+   data:Array<object>,
    renderedComponent:Function,
 }
 

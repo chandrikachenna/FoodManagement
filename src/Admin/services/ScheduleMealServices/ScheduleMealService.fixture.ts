@@ -1,10 +1,9 @@
 import getScheduleMealInfo from '../../fixtures/getScheduleMealInfo.json'
+import { resolveWithTimeout } from "../../../Common/utils/TestUtils"
 
 class ScheduleMealService {
    getScheduleMealInfo() {
-      return new Promise((resolve, reject) => {
-         resolve(getScheduleMealInfo)
-      })
+      return resolveWithTimeout(getScheduleMealInfo)
    }
 }
 

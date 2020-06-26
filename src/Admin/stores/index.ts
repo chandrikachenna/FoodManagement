@@ -3,10 +3,7 @@ import { HeadCountsService } from '../services/HeadCountsServices/HeadCountsServ
 import { ScheduleMealStore } from './ScheduleMealStore'
 import { HeadCountsStore } from './HeadCountsStore'
 
-const scheduleMealService = new ScheduleMealService()
-const scheduleMealStore = new ScheduleMealStore(scheduleMealService)
-
-const headCountsService = new HeadCountsService()
-const headCountsStore = new HeadCountsStore(headCountsService)
+const scheduleMealStore = new ScheduleMealStore(new ScheduleMealService())
+const headCountsStore = new HeadCountsStore(new HeadCountsService())
 
 export default { scheduleMealStore, headCountsStore }

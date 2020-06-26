@@ -9,21 +9,14 @@ import { UpdateMealReviewInfo } from '../services/UpdateMealReviewInfoServices/U
 
 import { MealInfoStore } from './MealInfoStore'
 
-const mealsInfo = new MealsInfo()
-
-const mealPreference = new MealPreference()
-const updateMealInfo = new UpdateMealInfo()
-const updateCustomMealInfo = new UpdateCustomMealInfo()
-const mealReviewInfo = new MealReviewInfo()
-const updateMealReviewInfo = new UpdateMealReviewInfo()
 
 const mealInfoStore = new MealInfoStore(
-   mealsInfo,
-   mealPreference,
-   updateMealInfo,
-   updateCustomMealInfo,
-   mealReviewInfo,
-   updateMealReviewInfo
+   new MealsInfo(),
+   new MealPreference(),
+   new UpdateMealInfo(),
+   new UpdateCustomMealInfo(),
+   new MealReviewInfo(),
+   new UpdateMealReviewInfo()
 )
 
 export default { mealInfoStore }

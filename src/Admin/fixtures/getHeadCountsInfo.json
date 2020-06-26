@@ -5,25 +5,25 @@
                 {
                     "name":"Poori"  ,
                     "category":"Indian Bread" ,
-                    "quantity":"1200",
+                    "quantity":1200,
                     "base_unit":"Pieces"
                 },
                 {
                     "name":"Aloo Curry"  ,
                     "category":"Curry" ,
-                    "quantity":"200",
+                    "quantity":200,
                     "base_unit":"Kgs"
                 },
                 {
                     "name":"Masala Rice"  ,
                     "category":"Rice" ,
-                    "quantity":"100",
+                    "quantity":100,
                     "base_unit":"Kgs"
                 },
                 {
                     "name":"Pulihora"  ,
                     "category":"Rice" ,
-                    "quantity":"300",
+                    "quantity":300,
                     "base_unit":"Kgs"
                 }
             ],
@@ -37,15 +37,15 @@
         "lunch":{
             "food_prepared":[
                 {
-                    "name":"Poori"  ,
+                    "name":"Poori",
                     "category":"Indian Bread" ,
-                    "quantity":"1200",
+                    "quantity":1200,
                     "base_unit":"Pieces"
                 },
                 {
                     "name":"Pulihora"  ,
                     "category":"Rice" ,
-                    "quantity":"300",
+                    "quantity":300,
                     "base_unit":"Kgs"
                 }
             ],
@@ -61,19 +61,19 @@
                 {
                     "name":"Aloo Curry"  ,
                     "category":"Curry" ,
-                    "quantity":"200",
+                    "quantity":200,
                     "base_unit":"Kgs"
                 },
                 {
                     "name":"Masala Rice"  ,
                     "category":"Rice" ,
-                    "quantity":"100",
+                    "quantity":100,
                     "base_unit":"Kgs"
                 },
                 {
                     "name":"Pulihora"  ,
                     "category":"Rice" ,
-                    "quantity":"300",
+                    "quantity":300,
                     "base_unit":"Kgs"
                 }
             ],

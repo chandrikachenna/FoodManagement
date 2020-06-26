@@ -9,7 +9,7 @@ class ScheduleMealService {
          baseURL: ''
       })
    }
-   ScheduleMealService() {
+   getScheduleMealService() {
       return networkCallWithApisauce(this.api, ``, {}, apiMethods.get)
    }
 }

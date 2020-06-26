@@ -6,19 +6,15 @@ import LoadingWrapperWithLoader from '../../../FoodManagement/components/common/
 import { observer } from 'mobx-react'
 
 
-interface HeadCountsAPIsTypes{
+
+interface HomePageProps {
    getHeadCountsInfoAPIError:Error|null
    getHeadCountsInfoAPIStatus:number
-}
-interface NavigationFunction{
+   doNetworkCalls:()=>void
+   renderSuccessUI:Function
    onClickSignOut:()=>void
    onClickGoHome:()=>void
 }
-interface HomePageProps extends HeadCountsAPIsTypes,NavigationFunction{
-   doNetworkCalls:()=>void
-   renderSuccessUI:Function
-}
-
 
 @observer
 class HomePage extends Component <HomePageProps>{
