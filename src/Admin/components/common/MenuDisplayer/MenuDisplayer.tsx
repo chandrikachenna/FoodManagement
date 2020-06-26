@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import { Header, Content } from './styledComponents'
-import HeadCountsInfo from '../HeadCountsInfo'
 import { MenuBar } from '../MenuBar'
 import { DatePicker } from '../../../../Common/components/DatePicker'
 
@@ -14,7 +13,7 @@ interface MenuDisplayerProps{
    menu2Name:string,
    menu3Name:string,
    data:Array<object>,
-   renderedComponent:Function,
+   renderedComponent:Function
 }
 
 @observer
