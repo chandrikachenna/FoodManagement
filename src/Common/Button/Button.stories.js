@@ -20,7 +20,7 @@ export const defaultView = () => <Button
     textTypo={TextTypo}
     variant={Button.buttonVariants.oval}
     type={Button.buttonTypes.outline}
-    disabled={true}
+    disabled={false}
 />
 
 export const knobs = () => <Button

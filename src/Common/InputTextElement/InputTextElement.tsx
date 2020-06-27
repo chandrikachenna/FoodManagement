@@ -15,12 +15,13 @@ class InputTextElement extends React.Component<InputTextElementProps>{
     @observable shouldShowMessage=false
     @observable errorMessage=''
     onChange=(event:React.ChangeEvent<HTMLInputElement>):void=>{
+        this.errorMessage=''
         this.value=event.target.value
         this.props.onChange(this.value)
     }
     onBlur=(event:React.FocusEvent<HTMLInputElement>):void=>{
-        this.value=event.target.value
-        const {shouldShowMessage,errorMessage}=this.props.validate(this.value)
+        const {validate}=this.props
+        const {shouldShowMessage,errorMessage}=validate(this.value)
         this.shouldShowMessage=shouldShowMessage
         this.errorMessage=errorMessage
     }
