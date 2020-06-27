@@ -10,7 +10,7 @@ import authStore from './Authentication/stores'
 import foodManagementStores from './FoodManagement/stores'
 import adminStores from './Admin/stores'
 import './App.css'
-
+//"typescript.updateImportsOnFileMove.enabled": "always",
 @observer
 class App extends React.Component {
    render() {

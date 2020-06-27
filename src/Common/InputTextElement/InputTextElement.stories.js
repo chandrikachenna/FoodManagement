@@ -15,7 +15,6 @@ export const defaultView = () => <InputTextElement
     validate={ValidateUsername}
 />
 
-
 export const knobs = () => <InputTextElement 
     placeholder={text('Placeholder','Username')}
     validate={ValidateUsername}

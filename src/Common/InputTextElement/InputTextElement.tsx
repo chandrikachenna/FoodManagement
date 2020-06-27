@@ -11,9 +11,14 @@ interface InputTextElementProps{
 
 @observer
 class InputTextElement extends React.Component<InputTextElementProps>{
+    textInput
     @observable value=''
     @observable shouldShowMessage=false
     @observable errorMessage=''
+    constructor(props){
+        super(props)
+        this.textInput = React.createRef();
+    }
     onChange=(event:React.ChangeEvent<HTMLInputElement>):void=>{
         this.errorMessage=''
         this.value=event.target.value
@@ -29,7 +34,7 @@ class InputTextElement extends React.Component<InputTextElementProps>{
         const {placeholder}=this.props
         return(
             <InputWrapper>
-                <Input placeholder={placeholder} onChange={this.onChange} onBlur={this.onBlur}/>
+                <Input placeholder={placeholder} onChange={this.onChange} onBlur={this.onBlur} ref={this.textInput}/>
                 {this.shouldShowMessage &&
                     <ErrorMessage>{this.errorMessage}</ErrorMessage>
                 }
