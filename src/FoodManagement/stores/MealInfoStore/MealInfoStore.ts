@@ -5,34 +5,33 @@ import { MealInfoItemModel } from '../models/MealInfoItemModel'
 import { MealReviewInfoModel } from '../models/MealReviewInfoModel'
 import { format } from 'date-fns'
 
-import { MealInfoService } from "../../services/MealInfoServices"
-import { MealPreferenceService } from "../../services/MealPreferenceServices"
-import { UpdateMealService } from "../../services/UpdateMealServices"
-import { UpdateCustomMealService } from "../../services/UpdateCustomMealServices"
-import { MealReviewService } from "../../services/MealReviewInfoServices"
-import { UpdateMealReviewService } from "../../services/UpdateMealReviewInfoServices"
-import { GetMealInfoResponse } from "../types"
-
+import { MealInfoService } from '../../services/MealInfoServices'
+import { MealPreferenceService } from '../../services/MealPreferenceServices'
+import { UpdateMealService } from '../../services/UpdateMealServices'
+import { UpdateCustomMealService } from '../../services/UpdateCustomMealServices'
+import { MealReviewService } from '../../services/MealReviewInfoServices'
+import { UpdateMealReviewService } from '../../services/UpdateMealReviewInfoServices'
+import { GetMealInfoResponse } from '../types'
 
 class MealInfoStore {
-   @observable getMealInfoAPIStatus!:APIStatus
-   @observable getMealInfoAPIError!:Error|null
+   @observable getMealInfoAPIStatus!: APIStatus
+   @observable getMealInfoAPIError!: Error | null
 
-   mealInfoService:MealInfoService
-   mealPreferenceService:MealPreferenceService
-   updateMealInfoService:UpdateMealService
-   updateCustomMealInfoService:UpdateCustomMealService
+   mealInfoService: MealInfoService
+   mealPreferenceService: MealPreferenceService
+   updateMealInfoService: UpdateMealService
+   updateCustomMealInfoService: UpdateCustomMealService
 
-   @observable mealInfo!:GetMealInfoResponse|null
-   @observable selectedMealTypeInfo!:MealInfoItemModel|any
-   @observable selectedMealType!:string|null
-   @observable timeCounter!:Date|string|number
+   @observable mealInfo!: GetMealInfoResponse | null
+   @observable selectedMealTypeInfo!: MealInfoItemModel | any
+   @observable selectedMealType!: string | null
+   @observable timeCounter!: Date | string | number
 
-   mealReviewInfoService:MealReviewService
-   updateMealReviewInfoService:UpdateMealReviewService
+   mealReviewInfoService: MealReviewService
+   updateMealReviewInfoService: UpdateMealReviewService
 
-   @observable selectedMealTypeReview:MealReviewInfoModel|any
-   initialTimerID!:NodeJS.Timeout
+   @observable selectedMealTypeReview: MealReviewInfoModel | any
+   initialTimerID!: NodeJS.Timeout
 
    constructor(
       mealInfoService,

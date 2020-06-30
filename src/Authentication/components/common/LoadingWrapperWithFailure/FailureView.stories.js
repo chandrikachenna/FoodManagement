@@ -4,6 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 
 import '../../../../styles/tailwind.css'
 import FailureView from './FailureView'
+import { getMapLikeKeys } from 'mobx/lib/internal'
 
 export default {
    component: FailureView,
