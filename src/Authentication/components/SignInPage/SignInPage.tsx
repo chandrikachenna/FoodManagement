@@ -18,19 +18,31 @@ import { Button } from '../../../Common/components/Button'
 import { COLORS } from '../../../Common/theme/Colors'
 const width = '320px'
 
-interface SignInPageProps{
-   username:string
-   password:string
-   errorMessage:string
-   usernameErrorMessage:string
-   passwordErrorMessage:string
-   loginStatus:APIStatus
-   onChangeUsername:(event:React.ChangeEvent<HTMLInputElement>)=>void
-   onChangePassword:(event:React.ChangeEvent<HTMLInputElement>)=>void
-   onClickSignIn:()=>void
+interface SignInPageProps {
+   username: string
+   password: string
+   errorMessage: string
+   usernameErrorMessage: string
+   passwordErrorMessage: string
+   loginStatus: APIStatus
+   onChangeUsername: (event: React.ChangeEvent<HTMLInputElement>) => void
+   onChangePassword: (event: React.ChangeEvent<HTMLInputElement>) => void
+   onClickSignIn: () => void
 }
 
 class SignInPage extends Component<SignInPageProps> {
+   userNameRef: React.RefObject<HTMLInputElement>
+   pwdRef: React.RefObject<HTMLInputElement>
+   constructor(props) {
+      super(props)
+      this.userNameRef = React.createRef()
+      this.pwdRef = React.createRef()
+   }
+   componentDidMount() {
+      console.log(this.userNameRef)
+
+      this.userNameRef.current?.focus()
+   }
    render() {
       const {
          username: userName,
@@ -65,8 +77,8 @@ class SignInPage extends Component<SignInPageProps> {
                <TitleField>
                   <Title>{signInTitle}</Title>
                </TitleField>
-
                <InputElementWithLabel
+                  forwardRef={this.userNameRef}
                   label={username}
                   type={typeText}
                   placeholder={usernamePlaceholder}
@@ -75,6 +87,7 @@ class SignInPage extends Component<SignInPageProps> {
                   message={usernameErrorMessage}
                />
                <InputElementWithLabel
+                  forwardRef={this.pwdRef}
                   label={password}
                   type={typePassword}
                   placeholder={passwordPlaceholder}
