@@ -1,7 +1,4 @@
-
-    
-
-    {
-        "access_token":"surya",
-        "role":"User"
-    }
+{
+   "access_token": "surya",
+   "role": "Admin"
+}

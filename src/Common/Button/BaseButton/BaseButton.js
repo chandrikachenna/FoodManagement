@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { ButtonWrapper } from './styledComponents'
 
+import { ButtonWrapper } from './styledComponents'
 class BaseButton extends Component {
    static defaultProps = {
       className: ''

@@ -56,7 +56,7 @@ class MealInfoStore {
       else {
          this.initialTimerID = setInterval(() => {
             this.timeCounter = new Date()
-         }, 1000)
+         }, 500)
       }
    }
 

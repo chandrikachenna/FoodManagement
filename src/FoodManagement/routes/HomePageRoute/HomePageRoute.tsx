@@ -1,29 +1,30 @@
 import React, { Component } from 'react'
 import { format } from 'date-fns'
-import { withRouter,RouteComponentProps } from 'react-router-dom'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 
 import { withHeader } from '../../../Common/hocs/withHeader'
 import { HomePage } from '../../components/HomePage'
 import { Mealcards } from '../../components/Mealcards'
-import { MealInfoStore } from "../../stores/MealInfoStore"
-import { API_INITIAL } from "@ib/api-constants"
+import { MealInfoStore } from '../../stores/MealInfoStore'
+import { API_INITIAL } from '@ib/api-constants'
 
-interface HomePageRouteProps extends RouteComponentProps{
-   onClickSignOut:()=>void,
-   onClickGoHome:()=>void
+interface HomePageRouteProps extends RouteComponentProps {
+   onClickSignOut: () => void
+   onClickGoHome: () => void
 }
-interface InjectedProps extends HomePageRouteProps{
-   mealInfoStore:MealInfoStore
+interface InjectedProps extends HomePageRouteProps {
+   mealInfoStore: MealInfoStore
 }
+console.log('home')
 @inject('mealInfoStore')
 @observer
-class HomePageRoute extends Component <HomePageRouteProps>{
+class HomePageRoute extends Component<HomePageRouteProps> {
    componentDidMount() {
       this.getInjectedProps().mealInfoStore.getMealInfoAPIStatus = API_INITIAL
       this.doNetworkCalls()
    }
-   getInjectedProps=():InjectedProps=>this.props as InjectedProps
+   getInjectedProps = (): InjectedProps => this.props as InjectedProps
    doNetworkCalls = () => {
       setTimeout(() => {
          const date = format(

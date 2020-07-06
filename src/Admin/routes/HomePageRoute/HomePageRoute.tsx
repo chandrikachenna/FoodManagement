@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter,RouteComponentProps } from 'react-router-dom'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { HomePage } from '../../components/HomePage'
 import { observer, inject } from 'mobx-react'
 import { TabBar } from '../../components/common/TabBar'
@@ -10,22 +10,21 @@ import { ScheduleMealStore } from '../../stores/ScheduleMealStore'
 import { HeadCountsStore } from '../../stores/HeadCountsStore'
 import { AuthStore } from '../../../Authentication/stores/AuthStore'
 
+interface HomePageRouteProps extends RouteComponentProps {}
 
-interface HomePageRouteProps extends RouteComponentProps{}
-
-interface InjectedProps extends HomePageRouteProps{
-   scheduleMealStore:ScheduleMealStore
-   headCountsStore:HeadCountsStore
-   authStore:AuthStore
+interface InjectedProps extends HomePageRouteProps {
+   scheduleMealStore: ScheduleMealStore
+   headCountsStore: HeadCountsStore
+   authStore: AuthStore
 }
 
 @inject('scheduleMealStore', 'headCountsStore', 'authStore')
 @observer
-class HomePageRoute extends Component <HomePageRouteProps>{
+class HomePageRoute extends Component<HomePageRouteProps> {
    componentDidMount() {
       this.doNetworkCalls()
    }
-   getInjectedProps=():InjectedProps=>this.props as InjectedProps
+   getInjectedProps = (): InjectedProps => this.props as InjectedProps
    doNetworkCalls = () => {
       this.getInjectedProps().scheduleMealStore.getScheduleMealInfo()
       this.getInjectedProps().headCountsStore.getHeadCountsInfo()
@@ -55,6 +54,8 @@ class HomePageRoute extends Component <HomePageRouteProps>{
          getHeadCountsInfoAPIStatus,
          getHeadCountsInfoAPIError
       } = this.getInjectedProps().headCountsStore
+      console.log('hello')
+
       return (
          <HomePage
             onClickGoHome={this.onClickGoHome}

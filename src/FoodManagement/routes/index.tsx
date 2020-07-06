@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import {
    SMART_FOOD_MANAGEMENT_PATH,
@@ -6,9 +6,12 @@ import {
    MEAL_FEEDBACK_PATH
 } from '../constants/RouteConstants'
 
-import { HomePageRoute } from './HomePageRoute'
-import { MealPreferenceRoute } from './MealPreferenceRoute'
-import { ReviewPageRoute } from './ReviewPageRoute'
+// const HomePageRoute = lazy(() => import('./HomePageRoute'))
+// const MealPreferenceRoute = lazy(() => import('./MealPreferenceRoute'))
+// const ReviewPageRoute = lazy(() => import('./ReviewPageRoute'))
+import HomePageRoute from './HomePageRoute'
+import MealPreferenceRoute from './MealPreferenceRoute'
+import ReviewPageRoute from './ReviewPageRoute'
 
 import { HomePageRoute as AdminPage } from '../../Admin/routes/HomePageRoute'
 

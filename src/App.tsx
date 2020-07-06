@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Provider, observer } from 'mobx-react'
 
@@ -16,17 +16,19 @@ class App extends React.Component {
    render() {
       return (
          <Provider {...authStore} {...foodManagementStores} {...adminStores}>
-            <Router basename={process.env.PUBLIC_URL}>
-               <Switch>
-                  {authRoutes}
-                  {foodManagementRoutes}
-                  {/* {adminRoutes} */}
-                  <Route exact path='/'>
-                     <HomePage />
-                  </Route>
-                  {/* <Route path='*' component={() => '404 not Found'} /> */}
-               </Switch>
-            </Router>
+            <Suspense fallback={<div />}>
+               <Router basename={process.env.PUBLIC_URL}>
+                  <Switch>
+                     {authRoutes}
+                     {foodManagementRoutes}
+                     {adminRoutes}
+                     <Route exact path='/'>
+                        <HomePage />
+                     </Route>
+                     {/* <Route path='*' component={() => '404 not Found'} /> */}
+                  </Switch>
+               </Router>
+            </Suspense>
          </Provider>
       )
    }
