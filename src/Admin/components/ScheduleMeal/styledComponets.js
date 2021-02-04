@@ -4,6 +4,7 @@ import { COLORS } from '../../../Common/theme/Colors'
 
 const Buttons = styled.div`
    ${tw`flex flex-row justify-end`}
+   padding-top:20px;
 `
 const Layout = styled.div`
    ${tw`flex flex-row justify-between`}
